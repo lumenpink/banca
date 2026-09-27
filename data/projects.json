@@ -1,0 +1,507 @@
+[
+  {
+    "name": "ListaDeFármacos",
+    "forge": "codeberg",
+    "slug": "lumenpink/ListaDeFarmacos",
+    "description": "Parser e estruturador de formas farmacêuticas e apresentações de medicamentos",
+    "topics": [
+      "pharmacy",
+      "drugs",
+      "anvisa",
+      "typescript",
+      "sqlite",
+      "healthcare"
+    ],
+    "license": "MIT",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "aura",
+    "forge": "github",
+    "slug": "Canimandra/aura",
+    "description": "Ecossistema médico e prontuário com receitas digitais criptografadas em ledger",
+    "topics": [
+      "healthcare",
+      "medical-records",
+      "electronic-prescriptions",
+      "cryptography",
+      "typescript"
+    ],
+    "license": "AGPL-3.0",
+    "website": "https://aura.lumen.pink",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "baquara-infra",
+    "forge": "github",
+    "slug": "lumenpink/baquara",
+    "description": "Infraestrutura conteinerizada de homelab com SSO (Authelia), DNS local e dashboard",
+    "topics": [
+      "homelab",
+      "self-hosted",
+      "docker",
+      "authelia",
+      "caddy",
+      "dns",
+      "proxmox"
+    ],
+    "license": "MIT",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "baquara-install",
+    "forge": "github",
+    "slug": "lumenpink/baquara",
+    "description": "Scripts automatizados de instalação e bootstrapping da arquitetura Baquara Homelab",
+    "topics": [
+      "homelab",
+      "installer",
+      "bootstrap",
+      "shell",
+      "automation"
+    ],
+    "license": "MIT",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "cartoes",
+    "forge": "tildegit",
+    "slug": "lumen/cartoes",
+    "description": "Gerador automatizado de flashcards médicos e de anatomia a partir de notas e PDFs",
+    "topics": [
+      "flashcards",
+      "anatomy",
+      "medicine",
+      "anki",
+      "php",
+      "pdf"
+    ],
+    "license": "CC0-1.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "cccp",
+    "forge": "codeberg",
+    "slug": "lumenpink/cccp",
+    "description": "Utilitários e automações de shell para padronização e deploy contínuo em servidores Unix",
+    "topics": [
+      "shell",
+      "automation",
+      "devops",
+      "unix",
+      "posix",
+      "cli"
+    ],
+    "license": "CC0-1.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": "assets/banners/cccp-poster.jpg"
+  },
+  {
+    "name": "fuxico",
+    "forge": "codeberg",
+    "slug": "lumenpink/fuxico",
+    "description": "Compartilhamento de arquivos na borda e encurtador de URLs compatível com 0x0 e rustypaste",
+    "topics": [
+      "file-sharing",
+      "url-shortener",
+      "indieweb",
+      "php",
+      "caddy",
+      "edge"
+    ],
+    "license": "CC0-1.0",
+    "website": "https://fuxico.lumen.pink",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "garden_infra",
+    "forge": "codeberg",
+    "slug": "lumenpink/garden_infra",
+    "description": "Infraestrutura de serviços independentes do jardim digital lumen.pink (Caddy, Gemini, Gopher)",
+    "topics": [
+      "indieweb",
+      "digital-garden",
+      "caddy",
+      "gemini-protocol",
+      "gopher",
+      "docker"
+    ],
+    "license": "MIT",
+    "website": "https://lumen.pink",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "guara",
+    "forge": "codeberg",
+    "slug": "lumenpink/guara",
+    "description": "Modelagem 3D paramétrica em FreeCAD da motocicleta customizada Guará",
+    "topics": [
+      "freecad",
+      "cad",
+      "3d-modeling",
+      "motorcycle",
+      "hardware"
+    ],
+    "license": "CC-BY-SA-4.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "indieinabox",
+    "forge": "codeberg",
+    "slug": "indieinabox/indieinabox",
+    "description": "Social personal website swiss knife: static site generator modular em PHP para a IndieWeb",
+    "topics": [
+      "indieweb",
+      "ssg",
+      "php",
+      "micropub",
+      "webmention",
+      "microformats",
+      "fediverse"
+    ],
+    "license": "Apache-2.0",
+    "website": "https://indieinabox.org",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "install_i3",
+    "forge": "tildegit",
+    "slug": "lumen/install_i3",
+    "description": "Setup automatizado e resiliente para i3wm, terminal st e ecossistema de produtividade",
+    "topics": [
+      "i3wm",
+      "dotfiles",
+      "suckless",
+      "st-terminal",
+      "debian",
+      "termux"
+    ],
+    "license": "MIT",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "ixcondidim",
+    "forge": "codeberg",
+    "slug": "lumenpink/ixcondidim",
+    "description": "Filtro Milter Postfix em Rust para Autocrypt L1 server-side com gestão automática OpenPGP",
+    "topics": [
+      "rust",
+      "milter",
+      "postfix",
+      "autocrypt",
+      "email",
+      "openpgp",
+      "encryption"
+    ],
+    "license": "CC0-1.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "kokorosim",
+    "forge": "github",
+    "slug": "KokoroSim/KokoroSim",
+    "description": "Simulador cardíaco open source de eletrofisiologia, dromotropismo e hemodinâmica com Rust e Wasm",
+    "topics": [
+      "cardiology",
+      "electrophysiology",
+      "hemodynamics",
+      "simulation",
+      "rust",
+      "wasm",
+      "medical"
+    ],
+    "license": "GPL-3.0",
+    "website": "https://kokorosim.org",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "lacraia",
+    "forge": "codeberg",
+    "slug": "lumenpink/lacraia",
+    "description": "Decentralized Automotive Audio & Heads-Up Display Ecosystem",
+    "topics": [
+      "automotive",
+      "hud",
+      "audio",
+      "decentralized",
+      "embedded"
+    ],
+    "license": "Apache-2.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "navalha",
+    "forge": "codeberg",
+    "slug": "lumenpink/navalha",
+    "description": "> **Motor gráfico e ambiente de composição visual anti-design, fanzine punk e estética de alta fricção.**",
+    "topics": [],
+    "license": "CC0-1.0",
+    "website": "https://codeberg.org/lumenpink/navalha",
+    "is_upstream": false,
+    "group": "",
+    "banner": "assets/banners/navalha-poster.png"
+  },
+  {
+    "name": "papeli",
+    "forge": "codeberg",
+    "slug": "lumenpink/papeli",
+    "description": "Filtro Milter Postfix em Rust para envelopar e-mails em papel de carta responsivo MJML",
+    "topics": [
+      "rust",
+      "milter",
+      "postfix",
+      "email",
+      "mjml",
+      "corporate-email"
+    ],
+    "license": "MIT",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "paranormARTIr",
+    "forge": "codeberg",
+    "slug": "lumenpink/paranormARTIr",
+    "description": "Sistema web e motor de regras para RPG de mesa (Ordem Paranormal / HackRom)",
+    "topics": [
+      "rpg",
+      "ttrpg",
+      "ordem-paranormal",
+      "rust",
+      "wasm",
+      "typescript"
+    ],
+    "license": "Apache-2.0",
+    "website": "https://github.com/lumenpink/paranormartir",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "scripts",
+    "forge": "codeberg",
+    "slug": "lumenpink/scripts",
+    "description": "Coleção de scripts de administração e manutenção da estação de trabalho",
+    "topics": [
+      "shell",
+      "linux",
+      "sysadmin",
+      "productivity",
+      "bash"
+    ],
+    "license": "CC0-1.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "whostyles",
+    "forge": "codeberg",
+    "slug": "whostyles/whostyles",
+    "description": "Structured, data-driven format for syndicating personal typographic and cosmetic styles (V1)",
+    "topics": [
+      "indieweb",
+      "typography",
+      "css",
+      "design-system",
+      "specification"
+    ],
+    "license": "Apache-2.0",
+    "website": "https://whostyles.org",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "whostyles-wordpress",
+    "forge": "codeberg",
+    "slug": "whostyles/whostyles-wordpress",
+    "description": "WordPress plugin adding native support for the Whostyles V1 (Hash Protocol) specification",
+    "topics": [
+      "wordpress",
+      "wordpress-plugin",
+      "whostyles",
+      "indieweb",
+      "php"
+    ],
+    "license": "GPL-2.0-or-later",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "zoteroExtract",
+    "forge": "tildegit",
+    "slug": "lumen/zoteroExtract",
+    "description": "Extrator e sincronizador automatizado de notas e referências bibliográficas do Zotero",
+    "topics": [
+      "zotero",
+      "obsidian",
+      "academic",
+      "references",
+      "sync",
+      "nodejs"
+    ],
+    "license": "MIT",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "kvant",
+    "forge": "codeberg",
+    "slug": "lumenpink/kvant",
+    "description": "Micro terminal text editor in pure Rust with full keyboard navigation",
+    "topics": [
+      "editor",
+      "terminal",
+      "rust",
+      "cli",
+      "minimalist",
+      "gosplan"
+    ],
+    "license": "CC0-1.0",
+    "website": "https://kvant.2lp.in",
+    "is_upstream": false,
+    "group": "comrades",
+    "banner": "assets/banners/kvant-banner.png"
+  },
+  {
+    "name": "gost",
+    "forge": "codeberg",
+    "slug": "lumenpink/gost",
+    "description": "Especificação padrão para arquitetura de repositórios, ciclo DD-TDD e documentação pública",
+    "topics": [
+      "specification",
+      "standard",
+      "documentation",
+      "templates",
+      "cccp",
+      "gost"
+    ],
+    "license": "CC0-1.0",
+    "website": "https://gost.2lp.in",
+    "is_upstream": false,
+    "group": "",
+    "banner": ""
+  },
+  {
+    "name": "svyaz",
+    "forge": "codeberg",
+    "slug": "lumenpink/svyaz",
+    "description": "Micro HTTP/HTTPS client in pure Rust (Gosplan Ministry of Communications)",
+    "topics": [
+      "http",
+      "https",
+      "client",
+      "rust",
+      "cli",
+      "minimalist",
+      "gosplan"
+    ],
+    "license": "CC0-1.0",
+    "website": "https://svyaz.2lp.in",
+    "is_upstream": false,
+    "group": "comrades",
+    "banner": "assets/banners/svyaz-banner.png"
+  },
+  {
+    "name": "mayak",
+    "forge": "codeberg",
+    "slug": "lumenpink/mayak",
+    "description": "Micro static HTTP server in pure Rust (Gosplan Radio & Static Broadcasting)",
+    "topics": [
+      "http",
+      "server",
+      "static",
+      "rust",
+      "cli",
+      "minimalist",
+      "gosplan"
+    ],
+    "license": "CC0-1.0",
+    "website": "https://mayak.2lp.in",
+    "is_upstream": false,
+    "group": "comrades",
+    "banner": "assets/banners/mayak-banner.png"
+  },
+  {
+    "name": "banca",
+    "forge": "codeberg",
+    "slug": "lumenpink/banca",
+    "description": "A Banca de Zines e Projetos: vitrine estática e anti-design do ecossistema Lumen",
+    "topics": [
+      "showcase",
+      "fanzine",
+      "anti-design",
+      "static-site",
+      "shell",
+      "gost"
+    ],
+    "license": "GPL-3.0",
+    "website": "https://banca.2lp.in",
+    "is_upstream": false,
+    "group": "",
+    "banner": "assets/banners/banca-banner.png"
+  },
+  {
+    "name": "banca",
+    "forge": "codeberg",
+    "slug": "lumenpink/banca",
+    "description": "A Banca de Zines e Projetos: vitrine estática e anti-design do ecossistema Lumen",
+    "topics": [
+      "showcase",
+      "fanzine",
+      "anti-design",
+      "static-site",
+      "shell",
+      "gost"
+    ],
+    "license": "GPL-3.0",
+    "website": "https://banca.2lp.in",
+    "is_upstream": false,
+    "group": "",
+    "banner": "assets/banners/banca-banner.png"
+  }
+]

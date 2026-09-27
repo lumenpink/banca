@@ -1,0 +1,5 @@
+.antigravity
+.cache
+dist/
+node_modules/
+*.old
