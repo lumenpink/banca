@@ -74,8 +74,9 @@ xdg-open site/index.html
 
 ---
 
-## 📜 Política de Licenciamento
+## 📜 Política de Licenciamento & Matriz Modular
 
 Em conformidade com a norma [GOST v1.1.0](.gost/GOST.md):
 * **Código-Fonte e Gerador Shell (`build.sh`, `scripts/`):** Licenciados sob a [GNU General Public License v3.0 (GPL-3.0)](LICENSE).
-* **Pôsteres e Arte Visual (`site/assets/banners/`):** Licenciados sob a [Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional (CC-BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
+* **Identidade Visual, Emblema e Insígnia:** Licenciados sob a [Creative Commons Atribuição-SemDerivações 4.0 Internacional (CC-BY-ND 4.0)](LICENSE-LOGO).
+* **Pôsteres e Arte Visual (`site/assets/banners/`):** Licenciados sob a [Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional (CC-BY-SA 4.0)](LICENSE-MEDIA).
