@@ -27,6 +27,8 @@ jobs:
   deploy-site:
     name: "Deploy Documentation Site"
     runs-on: ubuntu-latest
+    container:
+      image: codeberg.org/lumenpink/gost-ci-deploy:latest
     needs: [test]
     if: github.ref == 'refs/heads/main'
     steps:
@@ -37,7 +39,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
-            npx wrangler deploy
+            wrangler deploy
           else
             echo "CLOUDFLARE_API_TOKEN not set, skipping Cloudflare deploy."
           fi
