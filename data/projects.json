@@ -245,7 +245,7 @@
     "website": "https://kokorosim.org",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/kokorosim-banner.png"
   },
   {
     "name": "lacraia",
@@ -263,7 +263,7 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/lacraia-banner.png"
   },
   {
     "name": "navalha",
@@ -486,22 +486,23 @@
     "banner": "assets/banners/banca-banner.png"
   },
   {
-    "name": "banca",
+    "name": "joaju",
     "forge": "codeberg",
-    "slug": "lumenpink/banca",
-    "description": "A Banca de Zines e Projetos: vitrine estática e anti-design do ecossistema Lumen",
+    "slug": "lumenpink/joaju",
+    "description": "Orquestrador declarativo local e compilador acadêmico com suporte a grafos, diagramas e heredogramas clínicos (NSGC / ABNT / Vancouver)",
     "topics": [
-      "showcase",
-      "fanzine",
-      "anti-design",
-      "static-site",
-      "shell",
-      "gost"
+      "obsidian",
+      "academic",
+      "compiler",
+      "abnt",
+      "graphs",
+      "healthcare",
+      "rust"
     ],
     "license": "GPL-3.0",
-    "website": "https://banca.2lp.in",
+    "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/banca-banner.png"
+    "banner": "assets/banners/joaju-banner.png"
   }
 ]

@@ -14,6 +14,58 @@ fi
 
 mkdir -p site/assets/banners
 
+SYNC_RAWS=false
+FORCE=false
+for arg in "$@"; do
+    case "$arg" in
+        --sync-raws|--fetch-raws) SYNC_RAWS=true ;;
+        --force) FORCE=true ;;
+    esac
+done
+
+# Detecta cliente HTTP (preferência estrita pelo Comrade sv / svyaz do Gosplan)
+HTTP_GET=""
+if command -v sv >/dev/null 2>&1; then
+    HTTP_GET="sv -s -L -f -m 3 -o"
+elif command -v svyaz >/dev/null 2>&1; then
+    HTTP_GET="svyaz -s -L -f -m 3 -o"
+elif command -v curl >/dev/null 2>&1; then
+    HTTP_GET="curl -s -L -f -m 3 -o"
+fi
+
+# Se flag --sync-raws for informada, sincroniza pôsteres das URLs raw
+if [ "$SYNC_RAWS" = "true" ] && [ -n "$HTTP_GET" ]; then
+    echo "✦ [BANCA] Sincronizando raws remotos com nosso comrade ${HTTP_GET%% *}..."
+    jq -c '.[]' "$DATA_FILE" | while read -r item; do
+        NAME=$(echo "$item" | jq -r '.name')
+        FORGE=$(echo "$item" | jq -r '.forge')
+        SLUG=$(echo "$item" | jq -r '.slug')
+        DEST="site/assets/banners/${NAME}-banner.png"
+
+        if [ -s "$DEST" ] && [ "$FORCE" != "true" ]; then
+            continue
+        fi
+
+        URLS=""
+        if [ "$FORGE" = "codeberg" ]; then
+            URLS="https://codeberg.org/${SLUG}/raw/branch/main/site/assets/poster.png https://codeberg.org/${SLUG}/raw/branch/main/site/assets/og_preview.png"
+        elif [ "$FORGE" = "github" ]; then
+            URLS="https://raw.githubusercontent.com/${SLUG}/main/site/assets/poster.png https://raw.githubusercontent.com/${SLUG}/main/site/assets/og_preview.png"
+        fi
+
+        for url in $URLS; do
+            if $HTTP_GET "$DEST" "$url" 2>/dev/null; then
+                if [ -s "$DEST" ]; then
+                    echo "  [RAW] Pôster de '$NAME' obtido via ${HTTP_GET%% *}: $url"
+                    break
+                else
+                    rm -f "$DEST"
+                fi
+            fi
+        done
+    done
+fi
+
 echo "✦ [BANCA] Compilando vitrine estática anti-design..."
 
 # Extrai e formata os dados dos projetos usando jq para montar o catálogo pré-renderizado
@@ -73,6 +125,17 @@ cat << 'EOF' > "$OUTPUT_HTML"
   <title>BANCA // Zines, Projetos & Código Independente</title>
   <meta name="description" content="Mostra e vitrine anti-design dos projetos e fanzines de código desenvolvidos por Lumen Pink.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✂</text></svg>">
+
+  <!-- OpenGraph & Twitter Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BANCA // Zines, Projetos &amp; Código Independente">
+  <meta property="og:description" content="Mostra e vitrine anti-design dos projetos e fanzines de código desenvolvidos por Lumen Pink.">
+  <meta property="og:image" content="https://banca.2lp.in/assets/poster.png">
+  <meta property="og:url" content="https://banca.2lp.in">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BANCA // Zines, Projetos &amp; Código Independente">
+  <meta name="twitter:description" content="Mostra e vitrine anti-design dos projetos e fanzines de código desenvolvidos por Lumen Pink.">
+  <meta name="twitter:image" content="https://banca.2lp.in/assets/poster.png">
   <style>
     /* =========================================================================
        BANCA // ESTÉTICA ANTI-DESIGN / FANZINE PUNK TROPICAL / ALTA FRICÇÃO
@@ -531,8 +594,8 @@ cat << 'EOF' > "$OUTPUT_HTML"
         Vitrine de código aberto, ferramentas de terminal, utilitários de fricção, publicações e experimentações criadas e mantidas por <strong>Lumen Pink</strong>. Arquitetura soberana, anti-design e autonomia técnica na borda.
       </p>
       <div class="meta-bar">
-        <span class="stat-pill" id="stat-total">25 PROJETOS AUTORAIS</span>
-        <span class="stat-pill" id="stat-comrades">★ 3 CCCP COMRADES</span>
+        <span class="stat-pill" id="stat-total">__TOTAL_COUNT__ PROJETOS AUTORAIS</span>
+        <span class="stat-pill" id="stat-comrades">★ __COMRADES_COUNT__ CCCP COMRADES</span>
         <span class="stat-pill">100% CÓDIGO LIVRE</span>
         <span class="stat-pill">NORMA GOST v1.1.0</span>
       </div>
@@ -638,5 +701,7 @@ cat << 'EOF' >> "$OUTPUT_HTML"
 </body>
 </html>
 EOF
+
+sed -i "s/__TOTAL_COUNT__/$COUNT/g; s/__COMRADES_COUNT__/$COMRADES_COUNT/g" "$OUTPUT_HTML"
 
 echo "✔ [BANCA] Site estático gerado com sucesso em '$OUTPUT_HTML' ($COUNT projetos)!"
