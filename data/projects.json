@@ -225,7 +225,7 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/ixcondidim-banner.png"
   },
   {
     "name": "kokorosim",
@@ -242,7 +242,7 @@
       "medical"
     ],
     "license": "GPL-3.0",
-    "website": "https://kokorosim.org",
+    "website": "https://kokorosim.github.io",
     "is_upstream": false,
     "group": "",
     "banner": "assets/banners/kokorosim-banner.png"
