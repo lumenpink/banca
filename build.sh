@@ -86,7 +86,7 @@ PROJECTS_HTML=$(jq -r '
   (if .banner != "" then
     "    <img src=\"" + .banner + "\" alt=\"Pôster de " + .name + "\" loading=\"lazy\" class=\"zine-poster\">"
   else
-    "    <div class=\"standby-poster\"><div class=\"standby-stamp\">[ STANDBY ]</div><div class=\"standby-label\">AGUARDANDO PÔSTER NAVALHA</div></div>"
+    "    <div class=\"standby-poster\"><div class=\"standby-stamp\">[ STANDBY ]</div><div class=\"standby-label\">AGUARDANDO PÔSTER</div></div>"
   end) +
   "  </div>" +
   "  <div class=\"zine-body\">" +
@@ -605,7 +605,7 @@ cat << 'EOF' > "$OUTPUT_HTML"
       <div class="filter-buttons">
         <button class="filter-btn active" data-filter="all">★ Todos os Zines</button>
         <button class="filter-btn" data-filter="comrades">⚡ CCCP Comrades</button>
-        <button class="filter-btn" data-filter="has-banner">✂ Com Cartaz Navalha</button>
+        <button class="filter-btn" data-filter="has-banner">✂ Com Cartaz</button>
       </div>
       <div class="search-box">
         <input type="text" id="search-input" class="search-input" placeholder="🔍 Filtrar projetos, tópicos, tags..." autocomplete="off">

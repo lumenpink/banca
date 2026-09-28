@@ -424,7 +424,7 @@
     "website": "https://gost.2lp.in",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/gost-banner.png"
   },
   {
     "name": "svyaz",
