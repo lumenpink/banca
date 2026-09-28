@@ -16,7 +16,7 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/ListaDeFármacos-banner.png"
   },
   {
     "name": "aura",
@@ -34,7 +34,7 @@
     "website": "https://aura.lumen.pink",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/aura-banner.png"
   },
   {
     "name": "baquara-infra",
@@ -54,7 +54,7 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/baquara-infra-banner.png"
   },
   {
     "name": "baquara-install",
@@ -72,7 +72,7 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/baquara-install-banner.png"
   },
   {
     "name": "cartoes",
@@ -91,7 +91,7 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/cartoes-banner.png"
   },
   {
     "name": "cccp",
@@ -129,7 +129,7 @@
     "website": "https://fuxico.lumen.pink",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/fuxico-banner.png"
   },
   {
     "name": "garden_infra",
@@ -148,7 +148,7 @@
     "website": "https://lumen.pink",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/garden_infra-banner.png"
   },
   {
     "name": "guara",
@@ -166,7 +166,7 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/guara-banner.png"
   },
   {
     "name": "indieinabox",
@@ -186,7 +186,7 @@
     "website": "https://indieinabox.org",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/indieinabox-banner.png"
   },
   {
     "name": "install_i3",
@@ -205,7 +205,7 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/install_i3-banner.png"
   },
   {
     "name": "ixcondidim",
@@ -294,7 +294,7 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/papeli-banner.png"
   },
   {
     "name": "paranormARTIr",
@@ -313,7 +313,7 @@
     "website": "https://github.com/lumenpink/paranormartir",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/paranormARTIr-banner.png"
   },
   {
     "name": "scripts",
@@ -331,7 +331,7 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/scripts-banner.png"
   },
   {
     "name": "whostyles",
@@ -349,7 +349,7 @@
     "website": "https://whostyles.org",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/whostyles-banner.png"
   },
   {
     "name": "whostyles-wordpress",
@@ -367,7 +367,7 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/whostyles-wordpress-banner.png"
   },
   {
     "name": "zoteroExtract",
@@ -386,7 +386,7 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": ""
+    "banner": "assets/banners/zoteroExtract-banner.png"
   },
   {
     "name": "kvant",

@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Features
+  - (showcase) vincular banners oficiais dos 16 projetos restantes e atingir 100% de cobertura (closes #7)
   - (showcase) vincular banner oficial do gost e atualizar placeholder para termo neutro (closes #6)
   - (showcase) vincular banner do ixcondidim e atualizar website do kokorosim (closes #5)
   - (banca) integrar suporte ao comrade sv, projeto joaju e card oficial da banca (closes #3)
