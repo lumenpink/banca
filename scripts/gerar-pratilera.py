@@ -112,6 +112,23 @@ def create_mock_icons():
                 # 1x1 transparent PNG bytes
                 f.write(b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x06\x00\x00\x00\x1f\x15c4\x00\x00\x00\nIDATx\x9cc\x00\x01\x00\x00\x05\x00\x01\r\n-\xb4\x00\x00\x00\x00IEND\xaeB`\x82')
 
+def is_prerelease(version_name: str) -> bool:
+    """Detecta se uma versão SemVer do CCCP é considerada pré-release/dev."""
+    v = version_name.lower()
+    return any(marker in v for marker in ["-dev", "-alpha", "-beta", "-rc", "+"])
+
+def get_project_version(project_name: str, fallback: str = "0.2.0") -> str:
+    """Tenta ler a versão canônica do CCCP em VERSION do projeto irmão."""
+    candidate = REPO_ROOT.parent / project_name / "VERSION"
+    if candidate.exists():
+        try:
+            val = candidate.read_text(encoding="utf-8").strip()
+            if val:
+                return val
+        except Exception:
+            pass
+    return fallback
+
 def build_index_v1():
     now_ms = int(time.time() * 1000)
     
@@ -124,6 +141,16 @@ def build_index_v1():
         apk_size = apk_path.stat().st_size if has_apk else 1024
         apk_hash = sha256_file(apk_path) if has_apk else "0" * 64
 
+        # Resolver versão via CCCP se disponível no projeto irmão
+        project_slug = "lacraia" if "lacraia" in pkg_id else ("lauda" if "lauda" in pkg_id else "")
+        ver_name = get_project_version(project_slug, meta["version_name"]) if project_slug else meta["version_name"]
+        ver_code = meta.get("version_code", 1)
+
+        # Gestão soberana de pré-releases F-Droid
+        # suggestedVersionCode define a versão estável; pré-releases não forçam atualização
+        is_pre = is_prerelease(ver_name)
+        suggested_code = meta.get("stable_version_code", 1) if is_pre else ver_code
+
         apps_list.append({
             "packageName": pkg_id,
             "name": meta["name"],
@@ -132,7 +159,7 @@ def build_index_v1():
             "icon": meta["icon"],
             "added": now_ms,
             "lastUpdated": now_ms,
-            "suggestedVersionCode": meta["version_code"],
+            "suggestedVersionCode": suggested_code,
             "authorName": "Lumen Pink",
             "license": meta["license"],
             "categories": meta["categories"],
@@ -152,8 +179,8 @@ def build_index_v1():
                 "sig": "d41d8cd98f00b204e9800998ecf8427e",
                 "signer": "in_twolp",
                 "size": apk_size,
-                "versionCode": meta["version_code"],
-                "versionName": meta["version_name"]
+                "versionCode": ver_code,
+                "versionName": ver_name
             }
         ]
 
