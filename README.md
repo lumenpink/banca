@@ -20,6 +20,17 @@ Inspirada na estética de **fanzine punk brasileiro, zines de rua, lambe-lambe u
 
 ---
 
+## 📲 A Pratilera (Loja Android F-Droid & Droid-ify)
+
+A Banca hospeda a **Pratilera**, o repositório oficial e soberano de aplicativos Android do ecossistema 2lp (`in.twolp.*`):
+* **URL Oficial da Loja:** `https://banca.2lp.in/pratilera`
+* **Deep Link no Droid-ify:** `fdroidrepos://banca.2lp.in/pratilera`
+* **Aliases Amigáveis:** `https://banca.2lp.in/patilera`, `/prateleira` e `/repo` (redirecionam automaticamente com afeto)
+* **Assinatura Soberana:** Índices F-Droid (`index-v1.jar`) assinados com a chave criptográfica oficial `in_twolp`
+* **Catálogo Ativo:** La Craia App, Simbiótyka HUD e Lauda Smolclient.
+
+---
+
 ## 📁 Estrutura do Repositório
 
 ```text
@@ -36,10 +47,13 @@ Inspirada na estética de **fanzine punk brasileiro, zines de rua, lambe-lambe u
 ├── data/
 │   └── projects.json          # Base de dados canônica dos projetos autorais
 ├── scripts/
-│   └── gerar-banner.sh        # Utilitário de geração de pôsteres via Navalha
+│   ├── gerar-banner.sh        # Utilitário de geração de pôsteres via Navalha
+│   └── gerar-pratilera.py     # Gerador e assinador de catálogo F-Droid
 ├── site/
 │   ├── _headers               # Cabeçalhos HTTP de segurança
+│   ├── _redirects             # Aliases e redirecionamentos (/patilera, etc.)
 │   ├── index.html             # Vitrine compilada (Single-File responsivo)
+│   ├── pratilera/             # Índices e catálogo F-Droid da Pratilera
 │   └── assets/
 │       └── banners/           # Cartazes e banners gerados
 └── wrangler.jsonc             # Deploy Cloudflare Workers / Pages (*.2lp.in)
