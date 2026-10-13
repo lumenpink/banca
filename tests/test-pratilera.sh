@@ -101,11 +101,10 @@ fi
 # 6. Validar cartão da Pratilera e piada dos erros de digitação em site/index.html
 echo -n "-> 6. Verificando vitrine e notas de digitação em site/index.html... "
 if [ -f "$SITE_DIR/index.html" ]; then
-    HTML_CONTENT=$(cat "$SITE_DIR/index.html")
-    if echo "$HTML_CONTENT" | grep -qi "pratilera" && \
-       echo "$HTML_CONTENT" | grep -qi "patilera" && \
-       echo "$HTML_CONTENT" | grep -qi "prateleira" && \
-       echo "$HTML_CONTENT" | grep -q "fdroidrepos://banca.2lp.in/pratilera"; then
+    if grep -qi "pratilera" "$SITE_DIR/index.html" && \
+       grep -qi "patilera" "$SITE_DIR/index.html" && \
+       grep -qi "prateleira" "$SITE_DIR/index.html" && \
+       grep -q "fdroidrepos://banca.2lp.in/pratilera" "$SITE_DIR/index.html"; then
         echo "✅ OK"
     else
         echo "❌ FALHOU (menções à Pratilera, links fdroidrepos ou notas de patilera/prateleira ausentes)"
