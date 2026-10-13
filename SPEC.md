@@ -38,3 +38,12 @@ site/pratilera/
 - Todos os pacotes são identificados sob o domínio `in.twolp.*`.
 - O arquivo `index-v1.jar` é assinado utilizando a chave soberana `in_twolp` oriunda de `~/.android/in_twolp_release.keystore`.
 - A impressão digital SHA256 da chave garante integridade e confiança unificada em um único repositório no smartphone do usuário.
+
+### 3.4 Versionamento CCCP, Pré-Releases e UX HTTPS Canônica
+- **Sincronização de Versão**:
+  - `versionName`: Reflete 100% a versão SemVer 2.0.0 gerada pelo CCCP (`VERSION` ou `cccp version`), contendo sufixos de desenvolvimento e commit hash (ex: `0.2.0-dev.68+20261013.f409263`).
+  - `versionCode`: Inteiro positivo monotonicamente crescente exigido pelo instalador do Android (derivado de timestamp `YYYYMMDDHH` ou contagem de commits).
+- **Gestão de Pré-Releases (Canal Único com `suggestedVersionCode`)**:
+  - Builds contendo identificadores de pré-lançamento (`-dev`, `-alpha`, `-beta`, `-rc`) são disponibilizadas no catálogo sob o array de versões, mas não promovem o campo `suggestedVersionCode` da aplicação, assegurando que usuários gerais permaneçam na versão estável enquanto testadores podem instalar versões experimentais manualmente no Droid-ify.
+- **Interface e Aderência ao Formulário do Droid-ify**:
+  - Como formulários de clientes F-Droid (notadamente Droid-ify) rejeitam esquemas não-HTTP com a mensagem "endereço inválido", a vitrine web prioriza a URL canônica `https://banca.2lp.in/pratilera` e botão de 1-toque com cópia para o clipboard, que é detectado automaticamente pelo aplicativo.
