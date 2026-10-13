@@ -22,7 +22,9 @@ jobs:
           sh -n build.sh || { echo "Syntax error in build.sh"; exit 1; }
           ./build.sh
           test -f site/index.html || { echo "site/index.html missing after build"; exit 1; }
-          echo "All essential files and static build validated successfully."
+          python3 scripts/gerar-pratilera.py
+          ./tests/test-pratilera.sh
+          echo "All essential files, static build and Pratilera F-Droid store validated successfully."
 
   deploy-site:
     name: "Deploy Documentation Site"

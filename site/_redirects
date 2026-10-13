@@ -1,0 +1,6 @@
+/patilera  /pratilera/  301
+/patilera/*  /pratilera/:splat  301
+/prateleira  /pratilera/  301
+/prateleira/*  /pratilera/:splat  301
+/repo  /pratilera/  301
+/repo/*  /pratilera/:splat  301

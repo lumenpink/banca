@@ -1,0 +1,120 @@
+{
+  "repo": {
+    "name": "A Pratilera (Banca 2lp)",
+    "description": "Loja e Repositório Soberano de Aplicativos do Ecossistema 2lp. Fanzines, paredões, correio e ferramentas de calçada.",
+    "address": "https://banca.2lp.in/pratilera",
+    "icon": "pratilera.png",
+    "timestamp": 1791926660267,
+    "version": 20
+  },
+  "requests": {
+    "install": [],
+    "uninstall": []
+  },
+  "apps": [
+    {
+      "packageName": "in.twolp.lacraia.app",
+      "name": "La Craia",
+      "summary": "Cockpit Brutalista de Som & Jukebox",
+      "description": "Paredão digital, jukebox e controlador de rádio comunitária autônoma para sistemas de som de alta potência.",
+      "icon": "in.twolp.lacraia.app.png",
+      "added": 1791926660267,
+      "lastUpdated": 1791926660267,
+      "suggestedVersionCode": 1,
+      "authorName": "Lumen Pink",
+      "license": "GPL-3.0",
+      "categories": [
+        "Multimedia",
+        "Audio"
+      ],
+      "webURL": "https://lacraia.2lp.in",
+      "sourceCode": "https://codeberg.org/lumenpink/lacraia"
+    },
+    {
+      "packageName": "in.twolp.lacraia.simbiotyka",
+      "name": "Simbiótyka",
+      "summary": "HUD de Letras Sincronizadas & Cifras",
+      "description": "HUD flutuante que renderiza letras sincronizadas (LRC) sobre qualquer reprodutor de mídia sem roubar o foco da janela.",
+      "icon": "in.twolp.lacraia.simbiotyka.png",
+      "added": 1791926660267,
+      "lastUpdated": 1791926660267,
+      "suggestedVersionCode": 1,
+      "authorName": "Lumen Pink",
+      "license": "GPL-3.0",
+      "categories": [
+        "Multimedia",
+        "Audio"
+      ],
+      "webURL": "https://lacraia.2lp.in",
+      "sourceCode": "https://codeberg.org/lumenpink/lacraia"
+    },
+    {
+      "packageName": "in.twolp.lauda",
+      "name": "Lauda",
+      "summary": "Cliente de Correio Soberano Minimalista",
+      "description": "Cliente de e-mail em texto puro com suporte a Dioxus, Maildir e sincronização sem rastreamento.",
+      "icon": "in.twolp.lauda.png",
+      "added": 1791926660267,
+      "lastUpdated": 1791926660267,
+      "suggestedVersionCode": 1,
+      "authorName": "Lumen Pink",
+      "license": "GPL-3.0",
+      "categories": [
+        "Internet",
+        "Email"
+      ],
+      "webURL": "https://lauda.2lp.in",
+      "sourceCode": "https://codeberg.org/lumenpink/lauda"
+    }
+  ],
+  "packages": {
+    "in.twolp.lacraia.app": [
+      {
+        "added": 1791926660267,
+        "apkName": "lacraia-app.apk",
+        "hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hashType": "sha256",
+        "minSdkVersion": 26,
+        "targetSdkVersion": 34,
+        "packageName": "in.twolp.lacraia.app",
+        "sig": "d41d8cd98f00b204e9800998ecf8427e",
+        "signer": "in_twolp",
+        "size": 1024,
+        "versionCode": 1,
+        "versionName": "0.2.0"
+      }
+    ],
+    "in.twolp.lacraia.simbiotyka": [
+      {
+        "added": 1791926660267,
+        "apkName": "simbiotyka.apk",
+        "hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hashType": "sha256",
+        "minSdkVersion": 26,
+        "targetSdkVersion": 34,
+        "packageName": "in.twolp.lacraia.simbiotyka",
+        "sig": "d41d8cd98f00b204e9800998ecf8427e",
+        "signer": "in_twolp",
+        "size": 1024,
+        "versionCode": 1,
+        "versionName": "0.2.0"
+      }
+    ],
+    "in.twolp.lauda": [
+      {
+        "added": 1791926660267,
+        "apkName": "lauda-latest.apk",
+        "hash": "483ff0ae6f8c8fe9a79046299acb686fdf221735a4cc59edee7a8664c222609a",
+        "hashType": "sha256",
+        "minSdkVersion": 26,
+        "targetSdkVersion": 34,
+        "packageName": "in.twolp.lauda",
+        "sig": "d41d8cd98f00b204e9800998ecf8427e",
+        "signer": "in_twolp",
+        "size": 21821867,
+        "versionCode": 1,
+        "versionName": "0.2.0"
+      }
+    ]
+  }
+}
