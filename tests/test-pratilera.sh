@@ -98,20 +98,36 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
-# 6. Validar cartão da Pratilera e piada dos erros de digitação em site/index.html
-echo -n "-> 6. Verificando vitrine e notas de digitação em site/index.html... "
+# 6. Validar cartão da Pratilera, botão de cópia e notas de digitação em site/index.html
+echo -n "-> 6. Verificando vitrine, botão de cópia e HTTPS canônico em site/index.html... "
 if [ -f "$SITE_DIR/index.html" ]; then
     if grep -qi "pratilera" "$SITE_DIR/index.html" && \
        grep -qi "patilera" "$SITE_DIR/index.html" && \
        grep -qi "prateleira" "$SITE_DIR/index.html" && \
-       grep -q "fdroidrepos://banca.2lp.in/pratilera" "$SITE_DIR/index.html"; then
+       grep -q "https://banca.2lp.in/pratilera" "$SITE_DIR/index.html" && \
+       grep -qi "copiar" "$SITE_DIR/index.html"; then
         echo "✅ OK"
     else
-        echo "❌ FALHOU (menções à Pratilera, links fdroidrepos ou notas de patilera/prateleira ausentes)"
+        echo "❌ FALHOU (botão de cópia, URL https canônica ou notas de patilera/prateleira ausentes)"
         FAILURES=$((FAILURES + 1))
     fi
 else
     echo "❌ FALHOU (site/index.html ausente)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 7. Validar suporte a suggestedVersionCode e prereleases no gerador da Pratilera
+echo -n "-> 7. Verificando suporte a pré-releases e suggestedVersionCode em gerar-pratilera.py... "
+if [ -f "$REPO_ROOT/scripts/gerar-pratilera.py" ]; then
+    if grep -q "suggestedVersionCode" "$REPO_ROOT/scripts/gerar-pratilera.py" && \
+       grep -q "is_prerelease" "$REPO_ROOT/scripts/gerar-pratilera.py"; then
+        echo "✅ OK"
+    else
+        echo "❌ FALHOU (lógica de pré-release ou suggestedVersionCode ausente em gerar-pratilera.py)"
+        FAILURES=$((FAILURES + 1))
+    fi
+else
+    echo "❌ FALHOU (scripts/gerar-pratilera.py ausente)"
     FAILURES=$((FAILURES + 1))
 fi
 
