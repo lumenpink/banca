@@ -62,3 +62,26 @@ site/pratilera/
   - No CSS da vitrine, o container `.zine-media` adota `aspect-ratio: 1200 / 630; width: 100%; height: auto; object-fit: contain;` eliminando qualquer corte ou achatamento de imagens nas bordas.
 - **Aceite de Rotas & Dica da Calçada**:
   - Acolhimento de rotas alternativas com humor e tolerância explícita a "erros para mais e para menos" (`/patilera`, `/prateleira`, `/repo`).
+
+## 5. Expansão para 27 Projetos Autorais e Taxonomia Semântica
+
+- **Adição dos 7 Projetos Autorais Estratégicos**:
+  - `lauda`: Cliente de correio soberano ultraleve (Rust, Dioxus, Android/Desktop).
+  - `ayvu`: Compilador declarativo de tirinhas e fanzines em quadrinhos (Rust, SVG).
+  - `muiraquita`: Suíte social soberana para a IndieWeb e ecossistema IndieInABox (Rust, Dioxus).
+  - `tuitata`: Cliente TUI para IA em Rust com streaming, estética Boitatá e exportação Obsidian.
+  - `urupema`: Utilitário post-queue em Rust para dissecação de MIME e triagem para Markdown.
+  - `tatupeba`: Extrator e sincronizador contínuo do acervo Zotero para o cofre Obsidian.
+  - `baquara-rs`: Motor nativo de IA local, RAG semântico híbrido e servidor MCP em Rust.
+- **Taxonomia Semântica em 6 Categorias (`data/projects.json`)**:
+  1. `apps`: 📱 Aplicativos & Som (Pratilera)
+  2. `terminal`: ⚡ Terminal, CLI & Sistemas
+  3. `indieweb`: 🌐 IndieWeb & Fediverse
+  4. `editorial`: ✂ Editorial, Arte & Zines
+  5. `pesquisa`: 📚 Conhecimento, Saúde & Ciência
+  6. `governance`: ☭ Normas Técnicas & Gosplan (CCCP Comrades)
+- **Interface e Navegação Reativa**:
+  - Filtros no `controls-panel` por categoria (`apps`, `terminal`, `indieweb`, `editorial`, `pesquisa`, `governance`, `all`).
+  - Badges visuais de categoria estampados nos cartazes de cada zine/projeto.
+- **Renderização e Pôsteres Exclusivos (Safe Zone 4:3)**:
+  - Produção determinística via `navalha poster` com presets gráficos personalizados para os 7 novos projetos.
