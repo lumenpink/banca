@@ -327,6 +327,55 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 18. Validar metadados Fastlane (bloco localized no index-v1 e pastas <pkg>/<locale>/icon.png)
+echo -n "-> 18. Verificando metadados Fastlane (localized e pastas <pkg>/<locale>/icon.png)... "
+FASTLANE_FAIL=0
+PACKAGES=("in.twolp.lacraia.app" "in.twolp.lacraia.simbiotyka" "in.twolp.lauda")
+LOCALES=("pt-BR" "en-US")
+
+# 1. Verificar index-v1.json para localized
+if [ -f "$PRATILERA_DIR/index-v1.json" ]; then
+    for pkg in "${PACKAGES[@]}"; do
+        for loc in "${LOCALES[@]}"; do
+            HAS_LOC=$(jq -r --arg pkg "$pkg" --arg loc "$loc" \
+                '.apps[] | select(.packageName == $pkg) | .localized[$loc].icon // empty' "$PRATILERA_DIR/index-v1.json")
+            if [ -z "$HAS_LOC" ]; then
+                FASTLANE_FAIL=1
+                break 2
+            fi
+        done
+    done
+else
+    FASTLANE_FAIL=1
+fi
+
+# 2. Verificar pastas físicas Fastlane
+for pkg in "${PACKAGES[@]}"; do
+    for loc in "${LOCALES[@]}"; do
+        FASTLANE_ICON="$PRATILERA_DIR/$pkg/$loc/icon.png"
+        if [ ! -f "$FASTLANE_ICON" ] || [ "$(wc -c < "$FASTLANE_ICON" | tr -d ' ')" -lt 1024 ]; then
+            FASTLANE_FAIL=1
+            break 2
+        fi
+    done
+done
+
+# 3. Verificar fallback na raiz do domínio (site/icons/icon.png) e _redirects
+if [ ! -f "$SITE_DIR/icons/icon.png" ] || [ "$(wc -c < "$SITE_DIR/icons/icon.png" | tr -d ' ')" -lt 1024 ]; then
+    FASTLANE_FAIL=1
+fi
+
+if ! grep -q "/icons/\*" "$SITE_DIR/_redirects" 2>/dev/null; then
+    FASTLANE_FAIL=1
+fi
+
+if [ "$FASTLANE_FAIL" -eq 0 ]; then
+    echo "✅ OK (metadados Fastlane e localized configurados para todos os apps)"
+else
+    echo "❌ FALHOU (metadados Fastlane, localized, site/icons ou _redirects ausentes)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
