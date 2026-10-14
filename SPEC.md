@@ -28,9 +28,14 @@ A **Pratilera** é o repositório centralizado de distribuição de aplicativos 
 site/pratilera/
 ├── index-v1.jar          # Índice assinado criptograficamente com a chave in_twolp via jarsigner
 ├── index-v1.json         # Manifesto canônico de pacotes, versões, tamanhos e hashes SHA256
-├── entry.json            # Ponto de entrada do protocolo Index-v2 moderno
-├── index-v2.json         # Payload estruturado Index-v2
-├── icons/                # Ícones dos aplicativos em alta resolução
+├── icons/                # Ícones dos aplicativos em alta resolução (fallback)
+├── icons-120/            # Ícones de densidade ldpi (120 dpi) para Droid-ify / F-Droid
+├── icons-160/            # Ícones de densidade mdpi (160 dpi) para Droid-ify / F-Droid
+├── icons-240/            # Ícones de densidade hdpi (240 dpi) para Droid-ify / F-Droid
+├── icons-320/            # Ícones de densidade xhdpi (320 dpi) para Droid-ify / F-Droid
+├── icons-480/            # Ícones de densidade xxhdpi (480 dpi) para Droid-ify / F-Droid
+├── icons-640/            # Ícones de densidade xxxhdpi (640 dpi) para Droid-ify / F-Droid
+├── icon.png, pratilera.png, *.png # Ícones replicados na raiz para resolução direta
 └── *.apk                 # Binários Android de produção assinados (lacraia-app.apk, etc.)
 ```
 

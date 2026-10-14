@@ -256,6 +256,11 @@ def main():
         Path("/home/lumen/.gemini/antigravity-cli/brain/000d8ca9-03ae-4b21-8834-3953b1772a3d/pratilera_icon.png")
     ]
 
+    density_dpis = [120, 160, 240, 320, 480, 640]
+    for dpi in density_dpis:
+        targets.append(PRATILERA_DIR / f"icons-{dpi}" / "icon.png")
+        targets.append(PRATILERA_DIR / f"icons-{dpi}" / "pratilera.png")
+
     for t in targets:
         t.parent.mkdir(parents=True, exist_ok=True)
         img.save(t, format="PNG")

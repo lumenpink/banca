@@ -73,9 +73,13 @@ def sha256_file(path: Path) -> str:
             h.update(chunk)
     return h.hexdigest()
 
+DENSITY_DPIS = [120, 160, 240, 320, 480, 640]
+
 def ensure_dirs():
     PRATILERA_DIR.mkdir(parents=True, exist_ok=True)
     ICONS_DIR.mkdir(parents=True, exist_ok=True)
+    for dpi in DENSITY_DPIS:
+        (PRATILERA_DIR / f"icons-{dpi}").mkdir(parents=True, exist_ok=True)
 
 def import_external_apks():
     """Tenta puxar APKs recém-gerados nos diretórios irmãos dos projetos (lacraia, lauda)."""
@@ -91,12 +95,17 @@ def import_external_apks():
                 shutil.copy2(src, dst)
                 print(f"-> Importado do Lacraia: {apk}")
 
-    # 2. Lauda APK
+    # 2. Lauda APK e Ícone
     lauda_apk = src_dir / "lauda" / "site" / "lauda-latest.apk"
     if lauda_apk.exists():
         dst = PRATILERA_DIR / "lauda-latest.apk"
         shutil.copy2(lauda_apk, dst)
         print("-> Importado do Lauda: lauda-latest.apk")
+
+    lauda_icon = src_dir / "lauda" / "site" / "lauda-logo.png"
+    if lauda_icon.exists():
+        shutil.copy2(lauda_icon, ICONS_DIR / "in.twolp.lauda.png")
+        print("-> Importado ícone do Lauda: lauda-logo.png")
 
 def ensure_official_icons():
     """Garante a existência e integridade dos ícones oficiais da Pratilera (Droid-ify / F-Droid)."""
@@ -120,6 +129,27 @@ def create_mock_icons():
             with open(icon_path, "wb") as f:
                 # 1x1 transparent PNG bytes
                 f.write(b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x06\x00\x00\x00\x1f\x15c4\x00\x00\x00\nIDATx\x9cc\x00\x01\x00\x00\x05\x00\x01\r\n-\xb4\x00\x00\x00\x00IEND\xaeB`\x82')
+
+def sync_density_and_root_icons():
+    """Replica todos os ícones da Pratilera e dos apps em todas as densidades (icons-<dpi>) e na raiz."""
+    ensure_official_icons()
+    
+    icon_filenames = [meta["icon"] for meta in APPS_METADATA.values()] + ["icon.png", "pratilera.png"]
+    
+    for filename in icon_filenames:
+        src = ICONS_DIR / filename
+        if not src.exists() or src.stat().st_size == 0:
+            continue
+        
+        # 1. Replicar para a raiz de site/pratilera/
+        dst_root = PRATILERA_DIR / filename
+        shutil.copy2(src, dst_root)
+        
+        # 2. Replicar para cada pasta de densidade icons-<dpi>/
+        for dpi in DENSITY_DPIS:
+            dst_dpi = PRATILERA_DIR / f"icons-{dpi}" / filename
+            shutil.copy2(src, dst_dpi)
+    print("✅ Ícones sincronizados em todas as densidades (icons-120 a icons-640) e na raiz")
 
 
 def is_prerelease(version_name: str) -> bool:
@@ -266,21 +296,9 @@ def build_index_v1():
         json.dump(index_v1, f, indent=2, ensure_ascii=False)
     print(f"✅ Gerado {index_v1_path}")
 
-    # Index v2 entry
-    entry_v2 = {
-        "version": 20000,
-        "timestamp": now_ms,
-        "maxAge": 14,
-        "index": {
-            "name": "/index-v2.json",
-            "sha256": sha256_file(index_v1_path),
-            "size": index_v1_path.stat().st_size
-        }
-    }
-    with open(PRATILERA_DIR / "entry.json", "w", encoding="utf-8") as f:
-        json.dump(entry_v2, f, indent=2)
-    with open(PRATILERA_DIR / "index-v2.json", "w", encoding="utf-8") as f:
-        json.dump(index_v1, f, indent=2, ensure_ascii=False)
+    # Remove qualquer index-v2/entry.json residual para garantir conformidade estrita com Index V1
+    (PRATILERA_DIR / "entry.json").unlink(missing_ok=True)
+    (PRATILERA_DIR / "index-v2.json").unlink(missing_ok=True)
 
 def package_and_sign_jar():
     index_json = PRATILERA_DIR / "index-v1.json"
@@ -369,6 +387,7 @@ def main():
     ensure_dirs()
     import_external_apks()
     create_mock_icons()
+    sync_density_and_root_icons()
     build_index_v1()
     package_and_sign_jar()
     print("=================================================================")
