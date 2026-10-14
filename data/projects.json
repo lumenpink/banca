@@ -16,7 +16,8 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/cartoes-banner.png"
+    "banner": "assets/banners/cartoes-banner.png",
+    "category": "editorial"
   },
   {
     "name": "cccp",
@@ -35,7 +36,8 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/cccp-poster.jpg"
+    "banner": "assets/banners/cccp-poster.jpg",
+    "category": "governance"
   },
   {
     "name": "fuxico",
@@ -54,7 +56,8 @@
     "website": "https://fuxico.lumen.pink",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/fuxico-banner.png"
+    "banner": "assets/banners/fuxico-banner.png",
+    "category": "indieweb"
   },
   {
     "name": "guara",
@@ -72,7 +75,8 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/guara-banner.png"
+    "banner": "assets/banners/guara-banner.png",
+    "category": "terminal"
   },
   {
     "name": "indieinabox",
@@ -92,7 +96,8 @@
     "website": "https://indieinabox.org",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/indieinabox-banner.png"
+    "banner": "assets/banners/indieinabox-banner.png",
+    "category": "indieweb"
   },
   {
     "name": "ishcondidim",
@@ -112,7 +117,8 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/ishcondidim-banner.png"
+    "banner": "assets/banners/ishcondidim-banner.png",
+    "category": "terminal"
   },
   {
     "name": "kokorosim",
@@ -132,7 +138,8 @@
     "website": "https://kokorosim.github.io",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/kokorosim-banner.png"
+    "banner": "assets/banners/kokorosim-banner.png",
+    "category": "pesquisa"
   },
   {
     "name": "lacraia",
@@ -150,7 +157,8 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/lacraia-banner.png"
+    "banner": "assets/banners/lacraia-banner.png",
+    "category": "apps"
   },
   {
     "name": "navalha",
@@ -162,7 +170,8 @@
     "website": "https://codeberg.org/lumenpink/navalha",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/navalha-poster.png"
+    "banner": "assets/banners/navalha-poster.png",
+    "category": "editorial"
   },
   {
     "name": "papeli",
@@ -181,7 +190,8 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/papeli-banner.png"
+    "banner": "assets/banners/papeli-banner.png",
+    "category": "editorial"
   },
   {
     "name": "paranormARTIr",
@@ -200,7 +210,8 @@
     "website": "https://github.com/lumenpink/paranormartir",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/paranormARTIr-banner.png"
+    "banner": "assets/banners/paranormARTIr-banner.png",
+    "category": "editorial"
   },
   {
     "name": "whostyles",
@@ -218,7 +229,8 @@
     "website": "https://whostyles.org",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/whostyles-banner.png"
+    "banner": "assets/banners/whostyles-banner.png",
+    "category": "indieweb"
   },
   {
     "name": "whostyles-wordpress",
@@ -236,7 +248,8 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/whostyles-wordpress-banner.png"
+    "banner": "assets/banners/whostyles-wordpress-banner.png",
+    "category": "indieweb"
   },
   {
     "name": "zoteroExtract",
@@ -255,7 +268,8 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/zoteroExtract-banner.png"
+    "banner": "assets/banners/zoteroExtract-banner.png",
+    "category": "pesquisa"
   },
   {
     "name": "kvant",
@@ -274,7 +288,8 @@
     "website": "https://kvant.2lp.in",
     "is_upstream": false,
     "group": "comrades",
-    "banner": "assets/banners/kvant-banner.png"
+    "banner": "assets/banners/kvant-banner.png",
+    "category": "terminal"
   },
   {
     "name": "gost",
@@ -293,7 +308,8 @@
     "website": "https://gost.2lp.in",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/gost-banner.png"
+    "banner": "assets/banners/gost-banner.png",
+    "category": "governance"
   },
   {
     "name": "svyaz",
@@ -313,7 +329,8 @@
     "website": "https://svyaz.2lp.in",
     "is_upstream": false,
     "group": "comrades",
-    "banner": "assets/banners/svyaz-banner.png"
+    "banner": "assets/banners/svyaz-banner.png",
+    "category": "terminal"
   },
   {
     "name": "mayak",
@@ -333,7 +350,8 @@
     "website": "https://mayak.2lp.in",
     "is_upstream": false,
     "group": "comrades",
-    "banner": "assets/banners/mayak-banner.png"
+    "banner": "assets/banners/mayak-banner.png",
+    "category": "terminal"
   },
   {
     "name": "banca",
@@ -352,7 +370,8 @@
     "website": "https://banca.2lp.in",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/banca-banner.png"
+    "banner": "assets/banners/banca-banner.png",
+    "category": "indieweb"
   },
   {
     "name": "joaju",
@@ -372,6 +391,148 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/joaju-banner.png"
+    "banner": "assets/banners/joaju-banner.png",
+    "category": "pesquisa"
+  },
+  {
+    "name": "lauda",
+    "forge": "codeberg",
+    "slug": "lumenpink/lauda",
+    "description": "Cliente de correio soberano ultraleve focado em leitura pura e redação rápida em Rust e Dioxus",
+    "topics": [
+      "email",
+      "rust",
+      "dioxus",
+      "sovereign",
+      "android",
+      "tui",
+      "maildir"
+    ],
+    "license": "GPL-3.0",
+    "website": "https://lauda.2lp.in",
+    "is_upstream": false,
+    "group": "comrades",
+    "category": "apps",
+    "banner": "assets/banners/lauda-banner.png"
+  },
+  {
+    "name": "ayvu",
+    "forge": "codeberg",
+    "slug": "lumenpink/ayvu",
+    "description": "Compilador declarativo de tirinhas em quadrinhos e fanzines em Rust com renderização SVG",
+    "topics": [
+      "comics",
+      "rust",
+      "svg",
+      "zines",
+      "art",
+      "typography"
+    ],
+    "license": "GPL-3.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "category": "editorial",
+    "banner": "assets/banners/ayvu-banner.png"
+  },
+  {
+    "name": "muiraquita",
+    "forge": "codeberg",
+    "slug": "lumenpink/muiraquita",
+    "description": "Suíte social soberana para a IndieWeb e cliente IndieInABox construída em Rust e Dioxus",
+    "topics": [
+      "indieweb",
+      "rust",
+      "dioxus",
+      "fediverse",
+      "social",
+      "micropub"
+    ],
+    "license": "GPL-3.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "comrades",
+    "category": "indieweb",
+    "banner": "assets/banners/muiraquita-banner.png"
+  },
+  {
+    "name": "tuitata",
+    "forge": "codeberg",
+    "slug": "lumenpink/tuitata",
+    "description": "Cliente TUI para Google Gemini em Rust com streaming, estética Boitatá e exportação para o Obsidian",
+    "topics": [
+      "tui",
+      "rust",
+      "gemini",
+      "obsidian",
+      "ai",
+      "terminal"
+    ],
+    "license": "CC-BY-SA-4.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "category": "terminal",
+    "banner": "assets/banners/tuitata-banner.png"
+  },
+  {
+    "name": "urupema",
+    "forge": "codeberg",
+    "slug": "lumenpink/urupema",
+    "description": "Utilitário post-queue em Rust para dissecação de MIME, conversão em Markdown e triagem de e-mails",
+    "topics": [
+      "email",
+      "rust",
+      "postfix",
+      "mime",
+      "markdown",
+      "milter"
+    ],
+    "license": "Apache-2.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "comrades",
+    "category": "terminal",
+    "banner": "assets/banners/urupema-banner.png"
+  },
+  {
+    "name": "tatupeba",
+    "forge": "codeberg",
+    "slug": "lumenpink/tatupeba",
+    "description": "Extrator e sincronizador contínuo do acervo Zotero para o cofre Obsidian e base de conhecimento",
+    "topics": [
+      "zotero",
+      "obsidian",
+      "knowledge",
+      "research",
+      "rust",
+      "markdown"
+    ],
+    "license": "Apache-2.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "comrades",
+    "category": "pesquisa",
+    "banner": "assets/banners/tatupeba-banner.png"
+  },
+  {
+    "name": "baquara-rs",
+    "forge": "codeberg",
+    "slug": "lumenpink/baquara-rs",
+    "description": "Motor nativo de IA local, RAG semântico híbrido e servidor MCP do ecossistema Baquara em Rust",
+    "topics": [
+      "ai",
+      "mcp",
+      "rag",
+      "rust",
+      "homelab",
+      "embeddings"
+    ],
+    "license": "CC0-1.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "category": "terminal",
+    "banner": "assets/banners/baquara-rs-banner.png"
   }
 ]

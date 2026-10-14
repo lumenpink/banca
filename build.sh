@@ -76,9 +76,10 @@ COMRADES_COUNT=$(jq '[.[] | select(.group == "comrades")] | length' "$DATA_FILE"
 # Renderiza os cards individuais
 PROJECTS_HTML=$(jq -r '
   .[] | 
-  "<article class=\"zine-card" + (if .group == "comrades" then " is-comrade" else "" end) + "\" data-name=\"" + (.name | ascii_downcase) + "\" data-group=\"" + .group + "\" data-topics=\"" + (.topics | join(" ") | ascii_downcase) + "\" data-has-banner=\"" + (if .banner != "" then "true" else "false" end) + "\">" +
+  "<article class=\"zine-card" + (if .group == "comrades" then " is-comrade" else "" end) + "\" data-name=\"" + (.name | ascii_downcase) + "\" data-group=\"" + .group + "\" data-category=\"" + .category + "\" data-topics=\"" + (.topics | join(" ") | ascii_downcase) + "\" data-has-banner=\"" + (if .banner != "" then "true" else "false" end) + "\">" +
   "  <div class=\"zine-header\">" +
   (if .group == "comrades" then "    <span class=\"badge comrade-badge\">★ CCCP COMRADE</span>" else "" end) +
+  "    <span class=\"badge category-badge category-" + .category + "\">" + (if .category == "apps" then "📱 APPS" elif .category == "terminal" then "⚡ TERMINAL" elif .category == "indieweb" then "🌐 INDIEWEB" elif .category == "editorial" then "✂ EDITORIAL" elif .category == "pesquisa" then "📚 PESQUISA" elif .category == "governance" then "☭ GOST" else .category end) + "</span>" +
   "    <span class=\"badge forge-badge\">" + .forge + "</span>" +
   "    <span class=\"badge license-badge\">" + .license + "</span>" +
   "  </div>" +
@@ -388,6 +389,17 @@ cat << 'EOF' > "$OUTPUT_HTML"
       box-shadow: 2px 2px 0 var(--ink);
     }
 
+    .category-badge {
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+    .category-apps { background: #e60050; color: #fff; }
+    .category-terminal { background: #111; color: #00f0ff; border-color: #00f0ff; }
+    .category-indieweb { background: #00ff66; color: #000; border-color: #000; }
+    .category-editorial { background: #ffd700; color: #000; border-color: #000; }
+    .category-pesquisa { background: #c28e46; color: #fff; border-color: #000; }
+    .category-governance { background: var(--yellow); color: #000; border-color: #000; }
+
     /* PÔSTER OU STANDBY */
     .zine-media {
       width: 100%;
@@ -630,8 +642,12 @@ cat << 'EOF' > "$OUTPUT_HTML"
     <section class="controls-panel">
       <div class="filter-buttons">
         <button class="filter-btn active" data-filter="all">★ Todos os Zines</button>
-        <button class="filter-btn" data-filter="comrades">⚡ CCCP Comrades</button>
-        <button class="filter-btn" data-filter="has-banner">✂ Com Cartaz</button>
+        <button class="filter-btn" data-filter="apps">📱 Apps &amp; Som</button>
+        <button class="filter-btn" data-filter="terminal">⚡ Terminal &amp; CLI</button>
+        <button class="filter-btn" data-filter="indieweb">🌐 IndieWeb</button>
+        <button class="filter-btn" data-filter="editorial">✂ Editorial &amp; Arte</button>
+        <button class="filter-btn" data-filter="pesquisa">📚 Pesquisa &amp; Ciência</button>
+        <button class="filter-btn" data-filter="governance">☭ Governança Gosplan</button>
       </div>
       <div class="search-box">
         <input type="text" id="search-input" class="search-input" placeholder="🔍 Filtrar projetos, tópicos, tags..." autocomplete="off">
@@ -677,15 +693,20 @@ cat << 'EOF' >> "$OUTPUT_HTML"
       cards.forEach(card => {
         const name = card.dataset.name || '';
         const group = card.dataset.group || '';
+        const category = card.dataset.category || '';
         const topics = card.dataset.topics || '';
         const hasBanner = card.dataset.hasBanner === 'true';
 
         // Filtro de Categoria
         let matchFilter = true;
-        if (activeFilter === 'comrades') {
+        if (activeFilter === 'all') {
+          matchFilter = true;
+        } else if (activeFilter === 'comrades') {
           matchFilter = (group === 'comrades');
         } else if (activeFilter === 'has-banner') {
           matchFilter = hasBanner;
+        } else {
+          matchFilter = (category === activeFilter);
         }
 
         // Filtro de Busca
