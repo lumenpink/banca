@@ -98,11 +98,20 @@ def import_external_apks():
             shutil.copy2(lauda_apk, dst)
             print("-> Importado do Lauda: lauda-latest.apk")
 
+def ensure_official_icons():
+    """Garante a existência e integridade dos ícones oficiais da Pratilera (Droid-ify / F-Droid)."""
+    pratilera_icon = ICONS_DIR / "icon.png"
+    if not pratilera_icon.exists() or pratilera_icon.stat().st_size < 1024:
+        gen_script = REPO_ROOT / "scripts" / "gerar-icone-oficial.py"
+        if gen_script.exists():
+            subprocess.run([sys.executable, str(gen_script)], check=True)
+
 def create_mock_icons():
-    """Gera ícones SVG/PNG para os apps caso não existam."""
+    """Gera ícones para os apps caso não existam."""
+    ensure_official_icons()
     for pkg_id, meta in APPS_METADATA.items():
         icon_path = ICONS_DIR / meta["icon"]
-        if not icon_path.exists():
+        if not icon_path.exists() or icon_path.stat().st_size == 0:
             # Cria um ícone PNG 1x1 ou cópia de favicon existente
             favicon = REPO_ROOT / "site" / "assets" / "favicon.svg"
             if favicon.exists():
@@ -111,6 +120,7 @@ def create_mock_icons():
             with open(icon_path, "wb") as f:
                 # 1x1 transparent PNG bytes
                 f.write(b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x06\x00\x00\x00\x1f\x15c4\x00\x00\x00\nIDATx\x9cc\x00\x01\x00\x00\x05\x00\x01\r\n-\xb4\x00\x00\x00\x00IEND\xaeB`\x82')
+
 
 def is_prerelease(version_name: str) -> bool:
     """Detecta se uma versão SemVer do CCCP é considerada pré-release/dev."""

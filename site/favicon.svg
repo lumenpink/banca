@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="6" dy="6" stdDeviation="0" flood-color="#000000" flood-opacity="0.9"/>
+    </filter>
+    <pattern id="awning-stripes" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="20" height="40" fill="#e60050"/>
+      <rect x="20" width="20" height="40" fill="#111215"/>
+    </pattern>
+    <pattern id="dot-grid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#2d3039"/>
+    </pattern>
+  </defs>
+
+  <!-- 1. BASE SHIELD / CHASSI BRUTALISTA -->
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="#141518" stroke="#333742" stroke-width="6"/>
+  <rect x="32" y="32" width="448" height="448" rx="80" fill="url(#dot-grid)"/>
+  <rect x="36" y="36" width="440" height="440" rx="76" fill="none" stroke="#e60050" stroke-width="2.5" stroke-dasharray="8,6"/>
+
+  <!-- 2. TOLDO DA BANCA / KIOSK AWNING -->
+  <g filter="url(#shadow)">
+    <!-- Armação superior -->
+    <path d="M 64 80 L 448 80 L 432 140 L 80 140 Z" fill="url(#awning-stripes)" stroke="#000000" stroke-width="4"/>
+    <!-- Franja do toldo -->
+    <path d="M 80 140 
+             L 100 152 L 120 140 
+             L 140 152 L 160 140 
+             L 180 152 L 200 140 
+             L 220 152 L 240 140 
+             L 260 152 L 280 140 
+             L 300 152 L 320 140 
+             L 340 152 L 360 140 
+             L 380 152 L 400 140 
+             L 416 152 L 432 140 Z" fill="#d4ff00" stroke="#000000" stroke-width="3"/>
+  </g>
+
+  <!-- 3. LETREIRO PRINCIPAL "BANCA 2LP" -->
+  <g filter="url(#shadow)">
+    <rect x="110" y="92" width="292" height="38" rx="6" fill="#000000" stroke="#d4ff00" stroke-width="2"/>
+    <text x="256" y="118" fill="#ffffff" font-family="'Courier New', monospace, monospace" font-weight="900" font-size="20" text-anchor="middle" letter-spacing="4">★ BANCA 2LP ★</text>
+  </g>
+
+  <!-- 4. A PRATILERA SUPERIOR (FANZINES EXPOSTOS) -->
+  <!-- Viga da prateleira 1 -->
+  <rect x="76" y="270" width="360" height="12" rx="3" fill="#252730" stroke="#000000" stroke-width="3"/>
+  <rect x="76" y="270" width="360" height="3" fill="#d4ff00"/>
+
+  <!-- Fanzine 1 (Esquerda - Magenta) -->
+  <g filter="url(#shadow)" transform="rotate(-6 130 220)">
+    <rect x="96" y="170" width="72" height="96" rx="4" fill="#e60050" stroke="#000000" stroke-width="3"/>
+    <rect x="104" y="178" width="56" height="42" fill="#ffffff"/>
+    <text x="132" y="205" fill="#000000" font-family="monospace" font-weight="900" font-size="16" text-anchor="middle">ZINE</text>
+    <line x1="104" y1="230" x2="160" y2="230" stroke="#000000" stroke-width="3"/>
+    <line x1="104" y1="240" x2="148" y2="240" stroke="#000000" stroke-width="2"/>
+    <line x1="104" y1="248" x2="154" y2="248" stroke="#000000" stroke-width="2"/>
+  </g>
+
+  <!-- Fanzine 2 (Centro - Amarelo Veneno / APK) -->
+  <g filter="url(#shadow)">
+    <rect x="216" y="160" width="80" height="106" rx="4" fill="#d4ff00" stroke="#000000" stroke-width="3"/>
+    <rect x="226" y="170" width="60" height="36" fill="#000000"/>
+    <text x="256" y="194" fill="#d4ff00" font-family="monospace" font-weight="900" font-size="14" text-anchor="middle">.APK</text>
+    <!-- Código de barras brutalista -->
+    <g stroke="#000000" stroke-width="2">
+      <line x1="228" y1="216" x2="228" y2="252"/>
+      <line x1="233" y1="216" x2="233" y2="252" stroke-width="4"/>
+      <line x1="241" y1="216" x2="241" y2="252"/>
+      <line x1="247" y1="216" x2="247" y2="252" stroke-width="3"/>
+      <line x1="254" y1="216" x2="254" y2="252"/>
+      <line x1="260" y1="216" x2="260" y2="252" stroke-width="4"/>
+      <line x1="268" y1="216" x2="268" y2="252"/>
+      <line x1="274" y1="216" x2="274" y2="252" stroke-width="2"/>
+      <line x1="280" y1="216" x2="280" y2="252" stroke-width="3"/>
+    </g>
+  </g>
+
+  <!-- Fanzine 3 (Direita - Branco Kraft) -->
+  <g filter="url(#shadow)" transform="rotate(7 380 220)">
+    <rect x="340" y="172" width="72" height="94" rx="4" fill="#f4ede2" stroke="#000000" stroke-width="3"/>
+    <circle cx="376" cy="205" r="18" fill="#e60050"/>
+    <text x="376" y="211" fill="#ffffff" font-family="monospace" font-weight="900" font-size="15" text-anchor="middle">2lp</text>
+    <line x1="348" y1="236" x2="404" y2="236" stroke="#000000" stroke-width="2.5"/>
+    <line x1="348" y1="244" x2="394" y2="244" stroke="#000000" stroke-width="2"/>
+    <line x1="348" y1="252" x2="400" y2="252" stroke="#000000" stroke-width="2"/>
+  </g>
+
+  <!-- 5. A PRATILERA INFERIOR (DISPOSITIVO / PAREDÃO AUDIO) -->
+  <!-- Viga da prateleira 2 -->
+  <rect x="64" y="380" width="384" height="14" rx="3" fill="#252730" stroke="#000000" stroke-width="3"/>
+  <rect x="64" y="380" width="384" height="3" fill="#e60050"/>
+
+  <!-- Dispositivo / HUD central da Pratilera -->
+  <g filter="url(#shadow)">
+    <rect x="146" y="295" width="220" height="80" rx="8" fill="#000000" stroke="#e60050" stroke-width="3"/>
+    <!-- Tela do console -->
+    <rect x="156" y="305" width="200" height="60" rx="4" fill="#0a0b0d" stroke="#333742" stroke-width="1.5"/>
+    <!-- Formas de onda e indicador -->
+    <g stroke="#d4ff00" stroke-width="3" stroke-linecap="round">
+      <line x1="172" y1="335" x2="172" y2="335"/>
+      <line x1="182" y1="325" x2="182" y2="345"/>
+      <line x1="192" y1="315" x2="192" y2="355"/>
+      <line x1="202" y1="322" x2="202" y2="348"/>
+      <line x1="212" y1="312" x2="212" y2="358"/>
+      <line x1="222" y1="328" x2="222" y2="342"/>
+      <line x1="232" y1="318" x2="232" y2="352"/>
+      <line x1="242" y1="330" x2="242" y2="340"/>
+    </g>
+    <!-- Status LED -->
+    <circle cx="334" cy="324" r="6" fill="#d4ff00"/>
+    <text x="334" y="352" fill="#ffffff" font-family="monospace" font-weight="900" font-size="12" text-anchor="middle">LIVE</text>
+  </g>
+
+  <!-- Parafusos / Rebites industriais nas vigas -->
+  <circle cx="82" cy="276" r="3.5" fill="#d4ff00" stroke="#000000" stroke-width="1.5"/>
+  <circle cx="430" cy="276" r="3.5" fill="#d4ff00" stroke="#000000" stroke-width="1.5"/>
+  <circle cx="72" cy="387" r="4" fill="#e60050" stroke="#000000" stroke-width="1.5"/>
+  <circle cx="440" cy="387" r="4" fill="#e60050" stroke="#000000" stroke-width="1.5"/>
+
+  <!-- 6. FAIXA INFERIOR "A PRATILERA" -->
+  <g filter="url(#shadow)">
+    <rect x="76" y="412" width="360" height="52" rx="10" fill="#e60050" stroke="#000000" stroke-width="4"/>
+    <rect x="82" y="418" width="348" height="40" rx="8" fill="none" stroke="#d4ff00" stroke-width="2"/>
+    <text x="256" y="445" fill="#ffffff" font-family="'Courier New', monospace, monospace" font-weight="900" font-size="24" text-anchor="middle" letter-spacing="3">A PRATILERA</text>
+  </g>
+</svg>

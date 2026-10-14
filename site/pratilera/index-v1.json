@@ -4,7 +4,7 @@
     "description": "Loja e Repositório Soberano de Aplicativos do Ecossistema 2lp. Fanzines, paredões, correio e ferramentas de calçada.",
     "address": "https://banca.2lp.in/pratilera",
     "icon": "pratilera.png",
-    "timestamp": 1791932658225,
+    "timestamp": 1791975497694,
     "version": 20
   },
   "requests": {
@@ -18,8 +18,8 @@
       "summary": "Cockpit Brutalista de Som & Jukebox",
       "description": "Paredão digital, jukebox e controlador de rádio comunitária autônoma para sistemas de som de alta potência.",
       "icon": "in.twolp.lacraia.app.png",
-      "added": 1791932658225,
-      "lastUpdated": 1791932658225,
+      "added": 1791975497694,
+      "lastUpdated": 1791975497694,
       "suggestedVersionCode": 1,
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
@@ -36,8 +36,8 @@
       "summary": "HUD de Letras Sincronizadas & Cifras",
       "description": "HUD flutuante que renderiza letras sincronizadas (LRC) sobre qualquer reprodutor de mídia sem roubar o foco da janela.",
       "icon": "in.twolp.lacraia.simbiotyka.png",
-      "added": 1791932658225,
-      "lastUpdated": 1791932658225,
+      "added": 1791975497694,
+      "lastUpdated": 1791975497694,
       "suggestedVersionCode": 1,
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
@@ -54,8 +54,8 @@
       "summary": "Cliente de Correio Soberano Minimalista",
       "description": "Cliente de e-mail em texto puro com suporte a Dioxus, Maildir e sincronização sem rastreamento.",
       "icon": "in.twolp.lauda.png",
-      "added": 1791932658225,
-      "lastUpdated": 1791932658225,
+      "added": 1791975497694,
+      "lastUpdated": 1791975497694,
       "suggestedVersionCode": 1,
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
@@ -70,7 +70,7 @@
   "packages": {
     "in.twolp.lacraia.app": [
       {
-        "added": 1791932658225,
+        "added": 1791975497694,
         "apkName": "lacraia-app.apk",
         "hash": "0000000000000000000000000000000000000000000000000000000000000000",
         "hashType": "sha256",
@@ -86,7 +86,7 @@
     ],
     "in.twolp.lacraia.simbiotyka": [
       {
-        "added": 1791932658225,
+        "added": 1791975497694,
         "apkName": "simbiotyka.apk",
         "hash": "0000000000000000000000000000000000000000000000000000000000000000",
         "hashType": "sha256",
@@ -102,7 +102,7 @@
     ],
     "in.twolp.lauda": [
       {
-        "added": 1791932658225,
+        "added": 1791975497694,
         "apkName": "lauda-latest.apk",
         "hash": "483ff0ae6f8c8fe9a79046299acb686fdf221735a4cc59edee7a8664c222609a",
         "hashType": "sha256",
