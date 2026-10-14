@@ -131,17 +131,17 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
-# 8. Validar curadoria de 20 projetos em data/projects.json e exclusão dos 7 descontinuados
-echo -n "-> 8. Verificando curadoria de 20 projetos e ishcondidim em data/projects.json... "
+# 8. Validar expansão para 27 projetos em data/projects.json e inclusão dos 7 projetos autorais
+echo -n "-> 8. Verificando expansão para 27 projetos e presença dos 7 novos em data/projects.json... "
 DATA_FILE="$REPO_ROOT/data/projects.json"
 if [ -f "$DATA_FILE" ]; then
     TOTAL_PROJ=$(jq 'length' "$DATA_FILE")
+    HAS_NEW=$(jq '[.[] | select(.name == "lauda" or .name == "ayvu" or .name == "muiraquita" or .name == "tuitata" or .name == "urupema" or .name == "tatupeba" or .name == "baquara-rs")] | length' "$DATA_FILE")
     HAS_ISH=$(jq '[.[] | select(.name == "ishcondidim")] | length' "$DATA_FILE")
-    HAS_REMOVED=$(jq '[.[] | select(.name == "aura" or .name == "ListaDeFármacos" or .name == "baquara-infra" or .name == "baquara-install" or .name == "install_i3" or .name == "garden_infra" or .name == "scripts")] | length' "$DATA_FILE")
-    if [ "$TOTAL_PROJ" -eq 20 ] && [ "$HAS_ISH" -eq 1 ] && [ "$HAS_REMOVED" -eq 0 ]; then
-        echo "✅ OK (20 projetos curados, ishcondidim presente, 7 removidos ausentes)"
+    if [ "$TOTAL_PROJ" -eq 27 ] && [ "$HAS_NEW" -eq 7 ] && [ "$HAS_ISH" -eq 1 ]; then
+        echo "✅ OK (27 projetos presentes, incluindo os 7 novos e ishcondidim)"
     else
-        echo "❌ FALHOU (Total: $TOTAL_PROJ [esperado 20], ishcondidim: $HAS_ISH, removidos: $HAS_REMOVED)"
+        echo "❌ FALHOU (Total: $TOTAL_PROJ [esperado 27], novos presentes: $HAS_NEW [esperado 7])"
         FAILURES=$((FAILURES + 1))
     fi
 else
@@ -172,6 +172,35 @@ if grep -q "aspect-ratio: 1200 / 630" "$BUILD_FILE" && \
     echo "✅ OK"
 else
     echo "❌ FALHOU (aspect-ratio 1200 / 630 em build.sh ou piada de erros para mais e para menos ausente)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 11. Validar campo category em todos os 27 projetos
+echo -n "-> 11. Verificando campo category válido em todos os 27 projetos... "
+if [ -f "$DATA_FILE" ]; then
+    INVALID_CATS=$(jq '[.[] | select(.category == null or (.category != "apps" and .category != "terminal" and .category != "indieweb" and .category != "editorial" and .category != "pesquisa" and .category != "governance"))] | length' "$DATA_FILE")
+    if [ "$INVALID_CATS" -eq 0 ]; then
+        echo "✅ OK (todos os 27 projetos possuem categoria canônica)"
+    else
+        echo "❌ FALHOU ($INVALID_CATS projeto(s) com category ausente ou inválida)"
+        FAILURES=$((FAILURES + 1))
+    fi
+else
+    echo "❌ FALHOU (data/projects.json ausente)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 12. Validar botões de filtro e badges de categoria no build.sh
+echo -n "-> 12. Verificando botões de filtro de categoria no build.sh... "
+if grep -q 'data-filter="apps"' "$BUILD_FILE" && \
+   grep -q 'data-filter="terminal"' "$BUILD_FILE" && \
+   grep -q 'data-filter="indieweb"' "$BUILD_FILE" && \
+   grep -q 'data-filter="editorial"' "$BUILD_FILE" && \
+   grep -q 'data-filter="pesquisa"' "$BUILD_FILE" && \
+   grep -q 'data-filter="governance"' "$BUILD_FILE"; then
+    echo "✅ OK"
+else
+    echo "❌ FALHOU (botões de filtro de categoria ausentes no build.sh)"
     FAILURES=$((FAILURES + 1))
 fi
 
