@@ -47,3 +47,18 @@ site/pratilera/
   - Builds contendo identificadores de pré-lançamento (`-dev`, `-alpha`, `-beta`, `-rc`) são disponibilizadas no catálogo sob o array de versões, mas não promovem o campo `suggestedVersionCode` da aplicação, assegurando que usuários gerais permaneçam na versão estável enquanto testadores podem instalar versões experimentais manualmente no Droid-ify.
 - **Interface e Aderência ao Formulário do Droid-ify**:
   - Como formulários de clientes F-Droid (notadamente Droid-ify) rejeitam esquemas não-HTTP com a mensagem "endereço inválido", a vitrine web prioriza a URL canônica `https://banca.2lp.in/pratilera` e botão de 1-toque com cópia para o clipboard, que é detectado automaticamente pelo aplicativo.
+
+## 4. Curadoria da Vitrine, Padronização PT-BR e Safe Zone 4:3 dos Cartazes
+
+- **Catálogo de Projetos Autorais (`data/projects.json`)**:
+  - Curadoria estrita de 20 projetos ativos mantidos pelo ecossistema Lumen Pink.
+  - Exclusão de componentes de infraestrutura pura ou rascunhos descontinuados (`aura`, `ListaDeFármacos`, `baquara-infra`, `baquara-install`, `install_i3`, `garden_infra`, `scripts`).
+  - Nomenclatura canônica e grafia corrigida de `ishcondidim` com `sh` (slug `lumenpink/ishcondidim`).
+- **Padronização Linguística em Português do Brasil (PT-BR)**:
+  - Eliminação de resíduos em inglês ou termos corporativos desnecessários em descrições de projetos (`lacraia`, `whostyles`, `whostyles-wordpress`, `svyaz`, `mayak`, `kvant`, `indieinabox`).
+  - Preservação da voz autoral, ácida e autônoma sem formatação quebrada.
+- **Safe Zone 4:3 e Integridade Visual das Margens**:
+  - Padrão KokoroSim: Área útil essencial contida em 720×500 px dentro de 1200×630 px com respiro lateral de 240 px.
+  - No CSS da vitrine, o container `.zine-media` adota `aspect-ratio: 1200 / 630; width: 100%; height: auto; object-fit: contain;` eliminando qualquer corte ou achatamento de imagens nas bordas.
+- **Aceite de Rotas & Dica da Calçada**:
+  - Acolhimento de rotas alternativas com humor e tolerância explícita a "erros para mais e para menos" (`/patilera`, `/prateleira`, `/repo`).
