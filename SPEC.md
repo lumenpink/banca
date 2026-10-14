@@ -101,3 +101,15 @@ site/pratilera/
 - **Ícones Reais dos Pacotes**:
   - Substituição dos mocks 1x1 por ícones em alta resolução para os aplicativos distribuídos (`in.twolp.lacraia.app.png`, `in.twolp.lacraia.simbiotyka.png`, `in.twolp.lauda.png`).
 
+## 7. Distribuição de Binários Reais e Integridade Criptográfica dos APKs
+
+- **Binários Nativos Soberanos**:
+  - `site/pratilera/lacraia-app.apk`: Binário de produção do Cockpit Brutalista de Som & Jukebox (~4,9 MB), compilado a partir do módulo `:app` sob o namespace canônico `in.twolp.lacraia.app`.
+  - `site/pratilera/simbiotyka.apk`: Binário de produção do HUD Flutuante de Letras Sincronizadas (~4,9 MB), compilado a partir do módulo `:simbiotyka` sob o namespace `in.twolp.lacraia.simbiotyka`.
+  - `site/pratilera/lauda-latest.apk`: Binário de produção do Cliente de Correio Soberano (~21,8 MB).
+- **Integridade Criptográfica e Manifestos F-Droid**:
+  - O gerador `scripts/gerar-pratilera.py` afere o tamanho exato em bytes e computa a hash SHA-256 de cada arquivo físico.
+  - O arquivo `site/pratilera/index-v1.jar` empacota o manifesto e é assinado via `jarsigner` com a chave `in_twolp`.
+  - Elimina quaisquer fallbacks nominais de 1024 bytes ou hashes nulas no catálogo da Pratilera.
+
+
