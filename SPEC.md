@@ -117,4 +117,15 @@ site/pratilera/
   - O arquivo `site/pratilera/index-v1.jar` empacota o manifesto e é assinado via `jarsigner` com a chave `in_twolp`.
   - Elimina quaisquer fallbacks nominais de 1024 bytes ou hashes nulas no catálogo da Pratilera.
 
+## 8. Metadados Fastlane Localized e Resolução Universal de Ícones (Droid-ify / F-Droid)
+
+- **Estrutura Localized no `index-v1.json`**:
+  - O cliente Droid-ify converte o modelo `AppV1` para Room DB via `localized?.localizedIcon(...)` (`IndexConverter.kt`). Se `app.localized` for nulo/ausente, a entidade `localized_app_icon` não é persistida no banco local, impedindo a exibição de ícones na lista de aplicativos.
+  - A Pratilera passa a emitir o dicionário `"localized"` contendo metadados completos (`name`, `summary`, `description`, `icon`) para os locales `pt-BR` e `en-US`.
+- **Estrutura Física de Diretórios Fastlane**:
+  - Replicação determinística dos ícones em `site/pratilera/<packageName>/<locale>/icon.png` para cada aplicativo do catálogo.
+- **Resolução de Ícones do Repositório e Redirecionamentos Transparentes**:
+  - Replicação de `icon.png` e `pratilera.png` tanto em `site/pratilera/icons/` quanto na raiz do domínio `site/icons/`.
+  - Configuração de regras no `site/_redirects` cobrindo `/icons/*` e `/in.twolp.*` para garantir que o cliente Android carregue os ativos independentemente de ter cadastrado a URL com ou sem o sufixo `/pratilera`.
+
 

@@ -4,3 +4,11 @@
 /prateleira/*  /pratilera/:splat  301
 /repo  /pratilera/  301
 /repo/*  /pratilera/:splat  301
+/icons/*  /pratilera/icons/:splat  301
+/icons-120/*  /pratilera/icons-120/:splat  301
+/icons-160/*  /pratilera/icons-160/:splat  301
+/icons-240/*  /pratilera/icons-240/:splat  301
+/icons-320/*  /pratilera/icons-320/:splat  301
+/icons-480/*  /pratilera/icons-480/:splat  301
+/icons-640/*  /pratilera/icons-640/:splat  301
+/in.twolp.*  /pratilera/:splat  301

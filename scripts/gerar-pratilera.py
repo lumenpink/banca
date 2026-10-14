@@ -73,13 +73,18 @@ def sha256_file(path: Path) -> str:
             h.update(chunk)
     return h.hexdigest()
 
+LOCALES = ["pt-BR", "en-US"]
 DENSITY_DPIS = [120, 160, 240, 320, 480, 640]
 
 def ensure_dirs():
     PRATILERA_DIR.mkdir(parents=True, exist_ok=True)
     ICONS_DIR.mkdir(parents=True, exist_ok=True)
+    (SITE_DIR / "icons").mkdir(parents=True, exist_ok=True)
     for dpi in DENSITY_DPIS:
         (PRATILERA_DIR / f"icons-{dpi}").mkdir(parents=True, exist_ok=True)
+    for pkg_id in APPS_METADATA.keys():
+        for loc in LOCALES:
+            (PRATILERA_DIR / pkg_id / loc).mkdir(parents=True, exist_ok=True)
 
 def import_external_apks():
     """Tenta puxar APKs recém-gerados nos diretórios irmãos dos projetos (lacraia, lauda)."""
@@ -131,7 +136,7 @@ def create_mock_icons():
                 f.write(b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x06\x00\x00\x00\x1f\x15c4\x00\x00\x00\nIDATx\x9cc\x00\x01\x00\x00\x05\x00\x01\r\n-\xb4\x00\x00\x00\x00IEND\xaeB`\x82')
 
 def sync_density_and_root_icons():
-    """Replica todos os ícones da Pratilera e dos apps em todas as densidades (icons-<dpi>) e na raiz."""
+    """Replica todos os ícones da Pratilera e dos apps em todas as densidades (icons-<dpi>), raiz e Fastlane."""
     ensure_official_icons()
     
     icon_filenames = [meta["icon"] for meta in APPS_METADATA.values()] + ["icon.png", "pratilera.png"]
@@ -149,7 +154,22 @@ def sync_density_and_root_icons():
         for dpi in DENSITY_DPIS:
             dst_dpi = PRATILERA_DIR / f"icons-{dpi}" / filename
             shutil.copy2(src, dst_dpi)
-    print("✅ Ícones sincronizados em todas as densidades (icons-120 a icons-640) e na raiz")
+
+        # 3. Replicar para raiz do domínio site/icons/ (fallback universal de repositório)
+        if filename in ["icon.png", "pratilera.png"]:
+            shutil.copy2(src, SITE_DIR / "icons" / filename)
+
+    # 4. Replicar ícones Fastlane para cada aplicativo (<pkg>/<locale>/icon.png)
+    for pkg_id, meta in APPS_METADATA.items():
+        src_icon = ICONS_DIR / meta["icon"]
+        if src_icon.exists() and src_icon.stat().st_size > 0:
+            for loc in LOCALES:
+                dst_fastlane = PRATILERA_DIR / pkg_id / loc / "icon.png"
+                shutil.copy2(src_icon, dst_fastlane)
+                if meta["icon"] != "icon.png":
+                    shutil.copy2(src_icon, PRATILERA_DIR / pkg_id / loc / meta["icon"])
+
+    print("✅ Ícones sincronizados em todas as densidades (icons-120 a icons-640), Fastlane e raiz")
 
 
 def is_prerelease(version_name: str) -> bool:
@@ -241,12 +261,23 @@ def build_index_v1():
         is_pre = is_prerelease(ver_name)
         suggested_code = meta.get("stable_version_code", 1) if is_pre else ver_code
 
+        # Metadados Fastlane localized exigidos pelo Droid-ify para mapear ícones
+        localized_map = {}
+        for loc in LOCALES:
+            localized_map[loc] = {
+                "name": meta["name"],
+                "summary": meta["summary"],
+                "description": meta["description"],
+                "icon": "icon.png"
+            }
+
         apps_list.append({
             "packageName": pkg_id,
             "name": meta["name"],
             "summary": meta["summary"],
             "description": meta["description"],
             "icon": meta["icon"],
+            "localized": localized_map,
             "added": now_ms,
             "lastUpdated": now_ms,
             "suggestedVersionCode": suggested_code,

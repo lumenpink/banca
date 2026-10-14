@@ -261,6 +261,9 @@ def main():
         targets.append(PRATILERA_DIR / f"icons-{dpi}" / "icon.png")
         targets.append(PRATILERA_DIR / f"icons-{dpi}" / "pratilera.png")
 
+    targets.append(SITE_DIR / "icons" / "icon.png")
+    targets.append(SITE_DIR / "icons" / "pratilera.png")
+
     for t in targets:
         t.parent.mkdir(parents=True, exist_ok=True)
         img.save(t, format="PNG")
