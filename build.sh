@@ -391,7 +391,8 @@ cat << 'EOF' > "$OUTPUT_HTML"
     /* PÔSTER OU STANDBY */
     .zine-media {
       width: 100%;
-      height: 240px;
+      aspect-ratio: 1200 / 630;
+      height: auto;
       overflow: hidden;
       border-bottom: var(--border);
       background: #000000;
@@ -404,7 +405,7 @@ cat << 'EOF' > "$OUTPUT_HTML"
     .zine-poster {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
       transition: transform 0.2s ease;
     }
@@ -621,7 +622,7 @@ cat << 'EOF' > "$OUTPUT_HTML"
           <code style="background: #eee; padding: 0.55rem 0.8rem; border: 1px dashed #000; font-size: 0.85rem; color: #000;">https://banca.2lp.in/pratilera</code>
         </div>
         <div style="background: #f9f9f9; border-left: 4px solid #e60050; padding: 0.6rem 0.8rem; font-size: 0.82rem; font-family: monospace; color: #333;">
-          💡 <strong>Dica da calçada:</strong> No Droid-ify / Neo Store / F-Droid, toque em <strong>+ (Adicionar Repositório)</strong> e cole o endereço <code>https://banca.2lp.in/pratilera</code>. Digitou <em>/patilera</em> na correria ou <em>/prateleira</em> no português fino? Relaxa que nossos redirecionamentos 301 cuidam de tudo pra você cair direto na Pratilera!
+          💡 <strong>Aceite de rotas &amp; Dica da calçada:</strong> A Pratilera aceita erros para mais e para menos! Digitou <em>/patilera</em> na correria (erro para menos) ou <em>/prateleira</em> no português fino (erro para mais) — ou até <em>/repo</em> —, relaxa que nossos redirecionamentos 301 levam tudo certinho pro mesmo lugar. Só lembre que no formulário do Droid-ify/F-Droid deve ser sempre o endereço canônico <code>https://banca.2lp.in/pratilera</code>.
         </div>
       </div>
     </header>

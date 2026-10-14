@@ -1,80 +1,5 @@
 [
   {
-    "name": "ListaDeFármacos",
-    "forge": "codeberg",
-    "slug": "lumenpink/ListaDeFarmacos",
-    "description": "Parser e estruturador de formas farmacêuticas e apresentações de medicamentos",
-    "topics": [
-      "pharmacy",
-      "drugs",
-      "anvisa",
-      "typescript",
-      "sqlite",
-      "healthcare"
-    ],
-    "license": "MIT",
-    "website": "",
-    "is_upstream": false,
-    "group": "",
-    "banner": "assets/banners/ListaDeFármacos-banner.png"
-  },
-  {
-    "name": "aura",
-    "forge": "github",
-    "slug": "Canimandra/aura",
-    "description": "Ecossistema médico e prontuário com receitas digitais criptografadas em ledger",
-    "topics": [
-      "healthcare",
-      "medical-records",
-      "electronic-prescriptions",
-      "cryptography",
-      "typescript"
-    ],
-    "license": "AGPL-3.0",
-    "website": "https://aura.lumen.pink",
-    "is_upstream": false,
-    "group": "",
-    "banner": "assets/banners/aura-banner.png"
-  },
-  {
-    "name": "baquara-infra",
-    "forge": "github",
-    "slug": "lumenpink/baquara",
-    "description": "Infraestrutura conteinerizada de homelab com SSO (Authelia), DNS local e dashboard",
-    "topics": [
-      "homelab",
-      "self-hosted",
-      "docker",
-      "authelia",
-      "caddy",
-      "dns",
-      "proxmox"
-    ],
-    "license": "MIT",
-    "website": "",
-    "is_upstream": false,
-    "group": "",
-    "banner": "assets/banners/baquara-infra-banner.png"
-  },
-  {
-    "name": "baquara-install",
-    "forge": "github",
-    "slug": "lumenpink/baquara",
-    "description": "Scripts automatizados de instalação e bootstrapping da arquitetura Baquara Homelab",
-    "topics": [
-      "homelab",
-      "installer",
-      "bootstrap",
-      "shell",
-      "automation"
-    ],
-    "license": "MIT",
-    "website": "",
-    "is_upstream": false,
-    "group": "",
-    "banner": "assets/banners/baquara-install-banner.png"
-  },
-  {
     "name": "cartoes",
     "forge": "tildegit",
     "slug": "lumen/cartoes",
@@ -97,7 +22,7 @@
     "name": "cccp",
     "forge": "codeberg",
     "slug": "lumenpink/cccp",
-    "description": "Utilitários e automações de shell para padronização e deploy contínuo em servidores Unix",
+    "description": "Guardião de Conventional Commits, SemVer preditivo 2.0.0 e governança de qualidade GOST",
     "topics": [
       "shell",
       "automation",
@@ -132,25 +57,6 @@
     "banner": "assets/banners/fuxico-banner.png"
   },
   {
-    "name": "garden_infra",
-    "forge": "codeberg",
-    "slug": "lumenpink/garden_infra",
-    "description": "Infraestrutura de serviços independentes do jardim digital lumen.pink (Caddy, Gemini, Gopher)",
-    "topics": [
-      "indieweb",
-      "digital-garden",
-      "caddy",
-      "gemini-protocol",
-      "gopher",
-      "docker"
-    ],
-    "license": "MIT",
-    "website": "https://lumen.pink",
-    "is_upstream": false,
-    "group": "",
-    "banner": "assets/banners/garden_infra-banner.png"
-  },
-  {
     "name": "guara",
     "forge": "codeberg",
     "slug": "lumenpink/guara",
@@ -172,7 +78,7 @@
     "name": "indieinabox",
     "forge": "codeberg",
     "slug": "indieinabox/indieinabox",
-    "description": "Social personal website swiss knife: static site generator modular em PHP para a IndieWeb",
+    "description": "Canivete suíço para a IndieWeb: gerador modular de sites estáticos em PHP com suporte a Webmentions",
     "topics": [
       "indieweb",
       "ssg",
@@ -189,28 +95,9 @@
     "banner": "assets/banners/indieinabox-banner.png"
   },
   {
-    "name": "install_i3",
-    "forge": "tildegit",
-    "slug": "lumen/install_i3",
-    "description": "Setup automatizado e resiliente para i3wm, terminal st e ecossistema de produtividade",
-    "topics": [
-      "i3wm",
-      "dotfiles",
-      "suckless",
-      "st-terminal",
-      "debian",
-      "termux"
-    ],
-    "license": "MIT",
-    "website": "",
-    "is_upstream": false,
-    "group": "",
-    "banner": "assets/banners/install_i3-banner.png"
-  },
-  {
-    "name": "ixcondidim",
+    "name": "ishcondidim",
     "forge": "codeberg",
-    "slug": "lumenpink/ixcondidim",
+    "slug": "lumenpink/ishcondidim",
     "description": "Filtro Milter Postfix em Rust para Autocrypt L1 server-side com gestão automática OpenPGP",
     "topics": [
       "rust",
@@ -225,7 +112,7 @@
     "website": "",
     "is_upstream": false,
     "group": "",
-    "banner": "assets/banners/ixcondidim-banner.png"
+    "banner": "assets/banners/ishcondidim-banner.png"
   },
   {
     "name": "kokorosim",
@@ -251,7 +138,7 @@
     "name": "lacraia",
     "forge": "codeberg",
     "slug": "lumenpink/lacraia",
-    "description": "Decentralized Automotive Audio & Heads-Up Display Ecosystem",
+    "description": "Paredão sonoro autônomo, rádio por afinidade acústica e ecossistema de letras sincronizadas HUD",
     "topics": [
       "automotive",
       "hud",
@@ -269,7 +156,7 @@
     "name": "navalha",
     "forge": "codeberg",
     "slug": "lumenpink/navalha",
-    "description": "> **Motor gráfico e ambiente de composição visual anti-design, fanzine punk e estética de alta fricção.**",
+    "description": "Motor gráfico e ambiente de composição visual anti-design, fanzine punk e estética de alta fricção",
     "topics": [],
     "license": "CC0-1.0",
     "website": "https://codeberg.org/lumenpink/navalha",
@@ -316,28 +203,10 @@
     "banner": "assets/banners/paranormARTIr-banner.png"
   },
   {
-    "name": "scripts",
-    "forge": "codeberg",
-    "slug": "lumenpink/scripts",
-    "description": "Coleção de scripts de administração e manutenção da estação de trabalho",
-    "topics": [
-      "shell",
-      "linux",
-      "sysadmin",
-      "productivity",
-      "bash"
-    ],
-    "license": "CC0-1.0",
-    "website": "",
-    "is_upstream": false,
-    "group": "",
-    "banner": "assets/banners/scripts-banner.png"
-  },
-  {
     "name": "whostyles",
     "forge": "codeberg",
     "slug": "whostyles/whostyles",
-    "description": "Structured, data-driven format for syndicating personal typographic and cosmetic styles (V1)",
+    "description": "Protocolo aberto em hash compacto para distribuição e sincronização de estilos tipográficos na IndieWeb",
     "topics": [
       "indieweb",
       "typography",
@@ -355,7 +224,7 @@
     "name": "whostyles-wordpress",
     "forge": "codeberg",
     "slug": "whostyles/whostyles-wordpress",
-    "description": "WordPress plugin adding native support for the Whostyles V1 (Hash Protocol) specification",
+    "description": "Plugin WordPress com suporte nativo ao protocolo de estilos visuais Whostyles V1",
     "topics": [
       "wordpress",
       "wordpress-plugin",
@@ -392,7 +261,7 @@
     "name": "kvant",
     "forge": "codeberg",
     "slug": "lumenpink/kvant",
-    "description": "Micro terminal text editor in pure Rust with full keyboard navigation",
+    "description": "Microeditor de texto puro para terminal em Rust com navegação por teclado e foco em escrita",
     "topics": [
       "editor",
       "terminal",
@@ -430,7 +299,7 @@
     "name": "svyaz",
     "forge": "codeberg",
     "slug": "lumenpink/svyaz",
-    "description": "Micro HTTP/HTTPS client in pure Rust (Gosplan Ministry of Communications)",
+    "description": "Microcliente HTTP/HTTPS minimalista em Rust puro (Ministério das Comunicações Gosplan)",
     "topics": [
       "http",
       "https",
@@ -450,7 +319,7 @@
     "name": "mayak",
     "forge": "codeberg",
     "slug": "lumenpink/mayak",
-    "description": "Micro static HTTP server in pure Rust (Gosplan Radio & Static Broadcasting)",
+    "description": "Microservidor HTTP estático multithread em Rust puro (Rádio & Difusão Estática Gosplan)",
     "topics": [
       "http",
       "server",
