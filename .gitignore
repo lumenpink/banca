@@ -2,6 +2,6 @@
 .cache
 dist/
 node_modules/
-*.old
 .wrangler/
 *.apk
+!site/pratilera/*.apk
