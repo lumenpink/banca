@@ -139,6 +139,55 @@ def get_project_version(project_name: str, fallback: str = "0.2.0") -> str:
             pass
     return fallback
 
+def extract_apk_signer(apk_path: Path) -> str:
+    """Extrai o fingerprint SHA-256 do certificado de assinatura do APK via apksigner ou keystore oficial."""
+    canonical_fallback = "7beec8b0a6c7946b04d538543d495a8210ad6cfc1859f42e7180bcfbd38fe582"
+    if not apk_path.exists():
+        return canonical_fallback
+
+    # 1. Tentar apksigner nativo
+    if shutil.which("apksigner"):
+        try:
+            res = subprocess.run(
+                ["apksigner", "verify", "--print-certs", str(apk_path)],
+                capture_output=True,
+                text=True,
+                check=True
+            )
+            import re
+            m = re.search(r"Signer #1 certificate SHA-256 digest:\s*([0-9a-fA-F]{64})", res.stdout)
+            if m:
+                return m.group(1).lower()
+        except Exception:
+            pass
+
+    # 2. Tentar extrair do keystore oficial caso apksigner não esteja no PATH
+    user_home = Path.home()
+    keystore = user_home / ".android" / "in_twolp_release.keystore"
+    props = user_home / ".android" / "in_twolp_release.properties"
+    if keystore.exists() and shutil.which("keytool"):
+        try:
+            store_pass = "android"
+            if props.exists():
+                with open(props) as f:
+                    for line in f:
+                        if line.startswith("storePassword="):
+                            store_pass = line.strip().split("=", 1)[1]
+            res = subprocess.run(
+                ["keytool", "-list", "-v", "-keystore", str(keystore), "-storepass", store_pass],
+                capture_output=True,
+                text=True,
+                check=True
+            )
+            import re
+            m = re.search(r"SHA256:\s*([0-9A-Fa-f:]{95})", res.stdout)
+            if m:
+                return m.group(1).replace(":", "").lower()
+        except Exception:
+            pass
+
+    return canonical_fallback
+
 def build_index_v1():
     now_ms = int(time.time() * 1000)
     
@@ -150,6 +199,7 @@ def build_index_v1():
         has_apk = apk_path.exists()
         apk_size = apk_path.stat().st_size if has_apk else 1024
         apk_hash = sha256_file(apk_path) if has_apk else "0" * 64
+        apk_signer = extract_apk_signer(apk_path)
 
         # Resolver versão via CCCP se disponível no projeto irmão
         project_slug = "lacraia" if "lacraia" in pkg_id else ("lauda" if "lauda" in pkg_id else "")
@@ -186,8 +236,8 @@ def build_index_v1():
                 "minSdkVersion": meta["min_sdk"],
                 "targetSdkVersion": meta["target_sdk"],
                 "packageName": pkg_id,
-                "sig": "d41d8cd98f00b204e9800998ecf8427e",
-                "signer": "in_twolp",
+                "sig": apk_signer[:32],
+                "signer": apk_signer,
                 "size": apk_size,
                 "versionCode": ver_code,
                 "versionName": ver_name
