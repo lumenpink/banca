@@ -273,6 +273,25 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 16. Validar signer SHA-256 canônico (64 hexadecimais) no index-v1.json (sem dummy in_twolp)
+echo -n "-> 16. Verificando signer SHA-256 canônico nos pacotes do index-v1.json... "
+SIGNER_FAIL=0
+if [ -f "$PRATILERA_DIR/index-v1.json" ]; then
+    INVALID_SIGNERS=$(jq '[.packages[][] | select(.signer == "in_twolp" or (.signer | test("^[0-9a-f]{64}$") | not))] | length' "$PRATILERA_DIR/index-v1.json")
+    if [ "$INVALID_SIGNERS" -gt 0 ]; then
+        SIGNER_FAIL=1
+    fi
+else
+    SIGNER_FAIL=1
+fi
+
+if [ "$SIGNER_FAIL" -eq 0 ]; then
+    echo "✅ OK (todos os signers possuem SHA-256 canônico de 64 caracteres hex)"
+else
+    echo "❌ FALHOU (signers contêm placeholder textual ou não possuem SHA-256 válido)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
