@@ -86,7 +86,7 @@ def import_external_apks():
         for apk in ["lacraia-app.apk", "simbiotyka.apk"]:
             src = lacraia_dist / apk
             dst = PRATILERA_DIR / apk
-            if src.exists() and not dst.exists():
+            if src.exists():
                 shutil.copy2(src, dst)
                 print(f"-> Importado do Lacraia: {apk}")
 
@@ -94,9 +94,8 @@ def import_external_apks():
     lauda_apk = src_dir / "lauda" / "site" / "lauda-latest.apk"
     if lauda_apk.exists():
         dst = PRATILERA_DIR / "lauda-latest.apk"
-        if not dst.exists():
-            shutil.copy2(lauda_apk, dst)
-            print("-> Importado do Lauda: lauda-latest.apk")
+        shutil.copy2(lauda_apk, dst)
+        print("-> Importado do Lauda: lauda-latest.apk")
 
 def ensure_official_icons():
     """Garante a existência e integridade dos ícones oficiais da Pratilera (Droid-ify / F-Droid)."""
