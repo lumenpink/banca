@@ -12,6 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: "Setup Java JDK (17)"
+        uses: https://github.com/actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "17"
       - name: "Verify Essential Files & Build"
         run: |
           test -f GOSTVER || { echo "GOSTVER missing"; exit 1; }

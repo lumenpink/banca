@@ -10,6 +10,7 @@ import time
 import hashlib
 import shutil
 import subprocess
+import zipfile
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -235,9 +236,13 @@ def package_and_sign_jar():
     index_json = PRATILERA_DIR / "index-v1.json"
     jar_path = PRATILERA_DIR / "index-v1.jar"
 
-    # Criar JAR contendo index-v1.json
-    cmd_jar = ["jar", "-cf", str(jar_path), "-C", str(PRATILERA_DIR), "index-v1.json"]
-    subprocess.run(cmd_jar, check=True)
+    # Criar JAR contendo index-v1.json (via comando jar ou zipfile como contingencia)
+    if shutil.which("jar"):
+        cmd_jar = ["jar", "-cf", str(jar_path), "-C", str(PRATILERA_DIR), "index-v1.json"]
+        subprocess.run(cmd_jar, check=True)
+    else:
+        with zipfile.ZipFile(jar_path, "w", zipfile.ZIP_DEFLATED) as zf:
+            zf.write(index_json, arcname="index-v1.json")
     print(f"✅ Empacotado {jar_path}")
 
     # Localizar chaves de assinatura
