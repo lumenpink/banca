@@ -292,6 +292,41 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 17. Validar diretórios de densidade icons-<dpi> (120, 160, 240, 320, 480, 640) para Droid-ify
+echo -n "-> 17. Verificando diretórios de densidade icons-<dpi> e ícones para Droid-ify... "
+DENSITY_FAIL=0
+DPIS=(120 160 240 320 480 640)
+REQUIRED_ICONS=("in.twolp.lacraia.app.png" "in.twolp.lacraia.simbiotyka.png" "in.twolp.lauda.png" "pratilera.png" "icon.png")
+
+for dpi in "${DPIS[@]}"; do
+    DPI_DIR="$PRATILERA_DIR/icons-$dpi"
+    if [ ! -d "$DPI_DIR" ]; then
+        DENSITY_FAIL=1
+        break
+    fi
+    for ic in "${REQUIRED_ICONS[@]}"; do
+        if [ ! -f "$DPI_DIR/$ic" ] || [ "$(wc -c < "$DPI_DIR/$ic" | tr -d ' ')" -lt 1024 ]; then
+            DENSITY_FAIL=1
+            break 2
+        fi
+    done
+done
+
+# Validar que ícones dos apps também estão presentes na raiz de site/pratilera/
+for ic in "${REQUIRED_ICONS[@]}"; do
+    if [ ! -f "$PRATILERA_DIR/$ic" ] || [ "$(wc -c < "$PRATILERA_DIR/$ic" | tr -d ' ')" -lt 1024 ]; then
+        DENSITY_FAIL=1
+        break
+    fi
+done
+
+if [ "$DENSITY_FAIL" -eq 0 ]; then
+    echo "✅ OK (todas as 6 pastas de densidade icons-<dpi> e raiz contêm ícones válidos > 1KB)"
+else
+    echo "❌ FALHOU (pastas icons-<dpi> ou ícones de apps/loja ausentes/inválidos)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
