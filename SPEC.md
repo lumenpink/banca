@@ -85,3 +85,19 @@ site/pratilera/
   - Badges visuais de categoria estampados nos cartazes de cada zine/projeto.
 - **Renderização e Pôsteres Exclusivos (Safe Zone 4:3)**:
   - Produção determinística via `navalha poster` com presets gráficos personalizados para os 7 novos projetos.
+
+## 6. Identidade Visual Unificada: Ícone Oficial da Pratilera & Banca (Droid-ify / F-Droid)
+
+- **Ícone Canônico 512×512 (A Pratilera & Banca)**:
+  - Estética brutalista de banca de calçada, zines e ecossistema 2lp.
+  - Paleta: Fundo preto de calçada (`#151618`), fúcsia/magenta (`#e60050` / `#ff0055`) e veneno/limão (`#d4ff00`).
+  - Geometria protegida com respiro interno de 10% (sem cortes em cantos arredondados ou máscaras circulares do Android).
+- **Matriz de Resolução de Caminhos (Droid-ify, Neo Store e F-Droid)**:
+  - `site/pratilera/icons/icon.png`: Endereço estrito utilizado pelo `RepositoriesAdapter` do Droid-ify (`${address}/icons/icon.png`).
+  - `site/pratilera/icons/pratilera.png`: Resolução relativa da conversão `RepoV1` para `RepoV2` via campo `"icon": "pratilera.png"` do índice v1.
+  - `site/pratilera/icon.png` e `site/pratilera/pratilera.png`: Fallbacks clássicos servidos na raiz do repositório.
+- **Unificação com a Vitrine da Banca**:
+  - `site/assets/icon.png` e `site/favicon.svg`: O mesmo ícone oficial é adotado como marca e favicon da Banca, unificando a experiência da vitrine web com a loja de aplicativos.
+- **Ícones Reais dos Pacotes**:
+  - Substituição dos mocks 1x1 por ícones em alta resolução para os aplicativos distribuídos (`in.twolp.lacraia.app.png`, `in.twolp.lacraia.simbiotyka.png`, `in.twolp.lauda.png`).
+
