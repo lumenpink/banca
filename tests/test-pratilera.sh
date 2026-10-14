@@ -131,9 +131,53 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 8. Validar curadoria de 20 projetos em data/projects.json e exclusão dos 7 descontinuados
+echo -n "-> 8. Verificando curadoria de 20 projetos e ishcondidim em data/projects.json... "
+DATA_FILE="$REPO_ROOT/data/projects.json"
+if [ -f "$DATA_FILE" ]; then
+    TOTAL_PROJ=$(jq 'length' "$DATA_FILE")
+    HAS_ISH=$(jq '[.[] | select(.name == "ishcondidim")] | length' "$DATA_FILE")
+    HAS_REMOVED=$(jq '[.[] | select(.name == "aura" or .name == "ListaDeFármacos" or .name == "baquara-infra" or .name == "baquara-install" or .name == "install_i3" or .name == "garden_infra" or .name == "scripts")] | length' "$DATA_FILE")
+    if [ "$TOTAL_PROJ" -eq 20 ] && [ "$HAS_ISH" -eq 1 ] && [ "$HAS_REMOVED" -eq 0 ]; then
+        echo "✅ OK (20 projetos curados, ishcondidim presente, 7 removidos ausentes)"
+    else
+        echo "❌ FALHOU (Total: $TOTAL_PROJ [esperado 20], ishcondidim: $HAS_ISH, removidos: $HAS_REMOVED)"
+        FAILURES=$((FAILURES + 1))
+    fi
+else
+    echo "❌ FALHOU (data/projects.json ausente)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 9. Validar padronização PT-BR das descrições (sem inglês residual)
+echo -n "-> 9. Verificando padronização em PT-BR das descrições dos projetos... "
+if [ -f "$DATA_FILE" ]; then
+    HAS_EN=$(jq '[.[] | select(.description | test("Decentralized Automotive|Micro terminal text|Micro HTTP/HTTPS|Micro static HTTP|personal typographic|WordPress plugin adding"; "i"))] | length' "$DATA_FILE")
+    if [ "$HAS_EN" -eq 0 ]; then
+        echo "✅ OK (descrições 100% em PT-BR)"
+    else
+        echo "❌ FALHOU (encontradas $HAS_EN descrições com resíduos em inglês)"
+        FAILURES=$((FAILURES + 1))
+    fi
+else
+    echo "❌ FALHOU (data/projects.json ausente)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 10. Validar Safe Zone 1200x630 no CSS (.zine-media aspect-ratio) e piada "erros para mais e para menos"
+echo -n "-> 10. Verificando Safe Zone 1200x630 e piada de erros para mais e para menos... "
+BUILD_FILE="$REPO_ROOT/build.sh"
+if grep -q "aspect-ratio: 1200 / 630" "$BUILD_FILE" && \
+   grep -q "erros para mais e para menos" "$SITE_DIR/index.html"; then
+    echo "✅ OK"
+else
+    echo "❌ FALHOU (aspect-ratio 1200 / 630 em build.sh ou piada de erros para mais e para menos ausente)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
-    echo "🎉 TODOS OS TESTES DA PRATILERA PASSARAM!"
+    echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
     exit 0
 else
     echo "💥 $FAILURES TESTE(S) FALHARAM."
