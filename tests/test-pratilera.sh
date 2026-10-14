@@ -204,6 +204,43 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 13. Validar arquivos de ícone oficial da Pratilera (Droid-ify / F-Droid)
+echo -n "-> 13. Verificando arquivos de ícone oficial da Pratilera (Droid-ify / F-Droid)... "
+ICON_FAIL=0
+for icon_path in "$PRATILERA_DIR/icons/icon.png" \
+                 "$PRATILERA_DIR/icons/pratilera.png" \
+                 "$PRATILERA_DIR/icon.png" \
+                 "$PRATILERA_DIR/pratilera.png"; do
+    if [ ! -f "$icon_path" ]; then
+        ICON_FAIL=1
+        break
+    fi
+    # Garantir tamanho > 1KB (não mock 1x1)
+    FILE_SIZE=$(wc -c < "$icon_path" | tr -d ' ')
+    if [ "$FILE_SIZE" -lt 1024 ]; then
+        ICON_FAIL=1
+        break
+    fi
+done
+
+if [ "$ICON_FAIL" -eq 0 ]; then
+    echo "✅ OK (todos os caminhos de ícone da Pratilera atendidos)"
+else
+    echo "❌ FALHOU (ícones da Pratilera ausentes ou são placeholders vazios)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 14. Validar ícone e favicon unificados na Banca (site/assets/icon.png e favicon)
+echo -n "-> 14. Verificando ícone unificado e favicon na Banca... "
+if [ -f "$SITE_DIR/assets/icon.png" ] && \
+   [ -f "$SITE_DIR/favicon.svg" ] && \
+   grep -qi 'rel="icon"' "$BUILD_FILE"; then
+    echo "✅ OK"
+else
+    echo "❌ FALHOU (site/assets/icon.png, site/favicon.svg ou rel=icon em build.sh ausentes)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
@@ -212,3 +249,4 @@ else
     echo "💥 $FAILURES TESTE(S) FALHARAM."
     exit 1
 fi
+
