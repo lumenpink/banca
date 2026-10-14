@@ -241,6 +241,38 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 15. Validar existência física e integridade dos APKs (> 1MB e hashes não-nulos)
+echo -n "-> 15. Verificando APKs físicos e metadados no index-v1.json (> 1MB)... "
+APK_FAIL=0
+for apk in "lacraia-app.apk" "simbiotyka.apk" "lauda-latest.apk"; do
+    if [ ! -f "$PRATILERA_DIR/$apk" ]; then
+        APK_FAIL=1
+        break
+    fi
+    SZ=$(stat -c%s "$PRATILERA_DIR/$apk")
+    if [ "$SZ" -lt 1048576 ]; then
+        APK_FAIL=1
+        break
+    fi
+done
+
+# Verificar se index-v1.json não contém tamanho 1024 nem hashes zerados
+if [ -f "$PRATILERA_DIR/index-v1.json" ]; then
+    HAS_DUMMY=$(jq '[.packages[][] | select(.size <= 1024 or (.hash | test("^0+$")))] | length' "$PRATILERA_DIR/index-v1.json")
+    if [ "$HAS_DUMMY" -gt 0 ]; then
+        APK_FAIL=1
+    fi
+else
+    APK_FAIL=1
+fi
+
+if [ "$APK_FAIL" -eq 0 ]; then
+    echo "✅ OK (APKs reais presentes e index-v1.json com tamanhos e hashes verídicos)"
+else
+    echo "❌ FALHOU (APKs ausentes, menores que 1MB ou index com valores dummy)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
@@ -249,4 +281,5 @@ else
     echo "💥 $FAILURES TESTE(S) FALHARAM."
     exit 1
 fi
+
 
