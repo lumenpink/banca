@@ -190,6 +190,87 @@ def render_pratilera_shelves_clean() -> Image.Image:
 
     return im.resize((512, 512), resample=Image.Resampling.LANCZOS)
 
+def render_lauda_c2_icon():
+    """Gera o ícone oficial do Lauda no padrão Trash Polka C2 (anel 10.5px, SMOL no branco, lacre maciço)."""
+    dim = 1024
+    content = Image.new("RGBA", (dim, dim), (0, 0, 0, 0))
+    cdraw = ImageDraw.Draw(content)
+    
+    # 1. Fundo papel envelhecido
+    cdraw.rectangle([0, 0, dim, dim], fill=(244, 239, 230, 255))
+    
+    # 2. Retícula halftone
+    step = 32
+    dot_r = 4
+    for x in range(0, dim + step, step):
+        for y in range(0, dim + step, step):
+            cdraw.ellipse([x + 8 - dot_r, y + 8 - dot_r, x + 8 + dot_r, y + 8 + dot_r], fill=(10, 10, 10, 38))
+            cdraw.ellipse([x + 24 - dot_r, y + 24 - dot_r, x + 24 + dot_r, y + 24 + dot_r], fill=(10, 10, 10, 38))
+            
+    # 3. Faixas Diagonais
+    red_crimson = (220, 20, 60, 255)
+    cdraw.polygon([(580, 0), (840, 0), (380, dim), (120, dim)], fill=red_crimson)
+    cdraw.polygon([(870, 0), (940, 0), (480, dim), (410, dim)], fill=(139, 0, 0, 217))
+    
+    # 4. Envelope Central
+    env_w = 640
+    env_h = 440
+    env_x = 192
+    env_y = 310
+    
+    cdraw.rounded_rectangle([env_x + 28, env_y + 28, env_x + env_w + 28, env_y + env_h + 28], radius=8, fill=(10, 10, 10, 255))
+    cdraw.rounded_rectangle([env_x, env_y, env_x + env_w, env_y + env_h], radius=8, fill=(255, 255, 255, 255), outline=(10, 10, 10, 255), width=20)
+    
+    mid_x = env_x + env_w // 2
+    flap_tip_y = env_y + 270
+    cdraw.line([(env_x, env_y), (mid_x, flap_tip_y), (env_x + env_w, env_y)], fill=(10, 10, 10, 255), width=20)
+    cdraw.line([(env_x, env_y + env_h), (env_x + 240, env_y + 220)], fill=(10, 10, 10, 255), width=16)
+    cdraw.line([(env_x + env_w, env_y + env_h), (env_x + env_w - 240, env_y + 220)], fill=(10, 10, 10, 255), width=16)
+    
+    seal_w = 104
+    seal_h = 112
+    seal_x = mid_x - seal_w // 2
+    seal_y = flap_tip_y - 70
+    cdraw.polygon([(mid_x, seal_y - 48), (seal_x + seal_w, seal_y), (seal_x, seal_y)], fill=red_crimson, outline=(10, 10, 10, 255), width=6)
+    cdraw.rectangle([seal_x, seal_y, seal_x + seal_w, seal_y + seal_h], fill=(10, 10, 10, 255))
+    
+    # 5. Carimbo Postal Cancelador C2
+    stamp_cx = 350
+    stamp_cy = 410
+    stamp_r = 120
+    
+    stamp_img = Image.new("RGBA", (stamp_r * 4, stamp_r * 4), (0, 0, 0, 0))
+    sdraw = ImageDraw.Draw(stamp_img)
+    scenter = stamp_r * 2
+    
+    sdraw.ellipse([scenter - stamp_r, scenter - stamp_r, scenter + stamp_r, scenter + stamp_r], outline=red_crimson, width=20)
+    sdraw.line([(scenter - 84, scenter - 36), (scenter + 84, scenter - 36)], fill=red_crimson, width=10)
+    sdraw.line([(scenter - 84, scenter + 36), (scenter + 84, scenter + 36)], fill=red_crimson, width=10)
+    
+    try:
+        from PIL import ImageFont
+        font_smol = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf", 42)
+    except:
+        font_smol = ImageFont.load_default()
+        
+    spaced_text = " S M O L "
+    tbbox = font_smol.getbbox(spaced_text)
+    tbw = tbbox[2] - tbbox[0]
+    tbh = tbbox[3] - tbbox[1]
+    sdraw.text((scenter - tbw // 2 - tbbox[0], scenter - tbh // 2 - tbbox[1]), spaced_text, font=font_smol, fill=red_crimson)
+    
+    rot_stamp = stamp_img.rotate(-6, resample=Image.Resampling.BICUBIC)
+    content.alpha_composite(rot_stamp, (stamp_cx - scenter, stamp_cy - scenter))
+    
+    # Corte com cantos arredondados
+    mask = Image.new("L", (dim, dim), 0)
+    ImageDraw.Draw(mask).rounded_rectangle([16, 16, dim - 16, dim - 16], radius=200, fill=255)
+    clipped = Image.new("RGBA", (dim, dim), (0, 0, 0, 0))
+    clipped.paste(content, (0, 0), mask=mask)
+    ImageDraw.Draw(clipped).rounded_rectangle([16, 16, dim - 16, dim - 16], radius=200, outline=(10, 10, 10, 255), width=24)
+    
+    return clipped.resize((512, 512), resample=Image.Resampling.LANCZOS)
+
 def main():
     print("✦ Gerando ícones oficiais em 8-bit RGBA (512x512)...")
     
@@ -228,6 +309,15 @@ def main():
     simbiotyka_target.parent.mkdir(parents=True, exist_ok=True)
     img_simbiotyka.save(simbiotyka_target, format="PNG")
     print(f"✅ Simbiótyka salva em: {simbiotyka_target}")
+
+    # 4. Lauda (Fallback hermético se repositório lauda não estiver presente no CI)
+    lauda_src = REPO_ROOT.parent / "lauda" / "site" / "lauda-logo.png"
+    lauda_target = ICONS_DIR / "in.twolp.lauda.png"
+    if not lauda_src.exists() or not lauda_target.exists():
+        img_lauda = render_lauda_c2_icon()
+        lauda_target.parent.mkdir(parents=True, exist_ok=True)
+        img_lauda.save(lauda_target, format="PNG")
+        print(f"✅ Lauda gerado via fallback canônico em: {lauda_target}")
 
 if __name__ == "__main__":
     main()
