@@ -85,8 +85,9 @@ def sanitize_icon_8bit(src_path: Path, dst_path: Path):
             dst_path.parent.mkdir(parents=True, exist_ok=True)
             im_rgba.save(dst_path, format="PNG")
     except Exception:
-        dst_path.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(src_path, dst_path)
+        if src_path.resolve() != dst_path.resolve():
+            dst_path.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src_path, dst_path)
 
 def ensure_dirs():
     PRATILERA_DIR.mkdir(parents=True, exist_ok=True)
