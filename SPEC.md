@@ -128,4 +128,18 @@ site/pratilera/
   - Replicação de `icon.png` e `pratilera.png` tanto em `site/pratilera/icons/` quanto na raiz do domínio `site/icons/`.
   - Configuração de regras no `site/_redirects` cobrindo `/icons/*` e `/in.twolp.*` para garantir que o cliente Android carregue os ativos independentemente de ter cadastrado a URL com ou sem o sufixo `/pratilera`.
 
+## 9. Conformidade Estrita com Decodificadores Android e Droid-ify (Ticket #22)
+
+- **Profundidade de Cor 8-bit RGBA Obrigatória**:
+  - Todos os ícones PNG para a Pratilera e Banca devem possuir profundidade estrita de 8 bits por canal (`Bit depth: 8, Color type: 6` no cabeçalho IHDR).
+  - O decodificador `BitmapFactory` / `SkCodec` do Android e a engine de imagens Coil 3 não suportam PNGs de 16 bits por canal (64-bit RGBA), falhando na alocação de memória e na decodificação. O script `scripts/gerar-pratilera.py` converte automaticamente qualquer imagem de entrada para 8-bit RGBA usando PIL.
+- **Tipagem de `suggestedVersionCode` como String no `index-v1.json`**:
+  - O parser de streaming Jackson do Droid-ify (`IndexV1Parser.kt`) valida o token `key.string("suggestedVersionCode")` (`JsonToken.VALUE_STRING`).
+  - O modelo serializável `AppV1.kt` declara `suggestedVersionCode: String?`.
+  - O gerador emite o valor explicitamente como string (ex: `"1"`), alinhado ao padrão de repositórios como IzzyOnDroid e F-Droid.
+- **Identidade do Repositório (`repo.icon = "icon.png"`) e Espelhamento Físico Sem Redirecionamentos**:
+  - Padronização de `repo.icon` como `"icon.png"`.
+  - Espelhamento físico direto das árvores de ícones (`icons/`, `icons-<dpi>/`, `<pkg>/`) em `site/` e `site/pratilera/`, eliminando a dependência de redirecionamentos 301 para requisições de imagens em clientes Android.
+
+
 
