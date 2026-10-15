@@ -441,6 +441,40 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 22. Validar fidelidade estrita dos metadados de versionCode e versionName contra os APKs reais (aapt)
+echo -n "-> 22. Verificando fidelidade de versionCode e versionName dos APKs contra index-v1.json... "
+AAPT_FAIL=0
+AAPT_MSG=""
+if [ -f "$PRATILERA_DIR/index-v1.json" ] && command -v aapt >/dev/null 2>&1; then
+    for apk_file in "$PRATILERA_DIR"/*.apk; do
+        [ -f "$apk_file" ] || continue
+        APK_BADGE=$(aapt dump badging "$apk_file" 2>/dev/null || true)
+        PKG=$(echo "$APK_BADGE" | grep -o "package: name='[^']*'" | cut -d"'" -f2 || true)
+        CODE=$(echo "$APK_BADGE" | grep -o "versionCode='[^']*'" | cut -d"'" -f2 || true)
+        NAME=$(echo "$APK_BADGE" | grep -o "versionName='[^']*'" | cut -d"'" -f2 || true)
+
+        if [ -n "$PKG" ] && [ -n "$CODE" ]; then
+            INDEX_CODE=$(jq -r --arg p "$PKG" '.packages[$p][0].versionCode // empty' "$PRATILERA_DIR/index-v1.json")
+            INDEX_NAME=$(jq -r --arg p "$PKG" '.packages[$p][0].versionName // empty' "$PRATILERA_DIR/index-v1.json")
+            if [ "$INDEX_CODE" != "$CODE" ] || [ "$INDEX_NAME" != "$NAME" ]; then
+                AAPT_FAIL=1
+                AAPT_MSG="Divergência em $PKG: APK ($CODE, $NAME) != Índice ($INDEX_CODE, $INDEX_NAME)"
+                break
+            fi
+        fi
+    done
+else
+    AAPT_FAIL=1
+    AAPT_MSG="aapt ou index-v1.json ausente"
+fi
+
+if [ "$AAPT_FAIL" -eq 0 ]; then
+    echo "✅ OK (versionCode e versionName 100% fiéis aos APKs reais)"
+else
+    echo "❌ FALHOU ($AAPT_MSG)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
