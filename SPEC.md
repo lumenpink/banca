@@ -202,3 +202,16 @@ site/pratilera/
   - `python3-pil` pré-instalado (conversão canônica de ícones para 8-bit RGBA).
   - `aapt` pré-instalado (inspeção e extração de metadados dos APKs).
   - Utilitários de base: `bash`, `git`, `file`, `curl`, `ca-certificates` e `jq`.
+
+## 16. Identidade Visual Vetorial de Alta Resolução da Pratilera, Lacraia e Simbiótyka (Ticket #26)
+
+- **Redesign do Ícone Oficial da Pratilera (`pratilera.png` / `icon.png`)**:
+  - Substitui o modelo legado baseado em compactação do card completo (toldo, placa, múltiplos zines e equalizador) por uma estante modular minimalista em 3 níveis industriais.
+  - Composição geométrica com caixas/encomendas maciças em blocos sólidos (fúcsia `#ff0055`, amarelo veneno `#d4ff00`, grafite e kraft) com fitas de embrulho em "X".
+  - Ausência total de micro-textos, garantindo silhueta e reconhecimento imediato mesmo quando reduzido a 32x32 e 48x48 nos cards de repositório do Droid-ify.
+- **Ícones Canônicos das Aplicações**:
+  - **Lacraia (`in.twolp.lacraia.app`)**: Chassi escuro grafite (`#151618`), antenas elétricas com respiro confortável (~75px) das bordas arredondadas, forcípulas peçonhentas em fúcsia e ocelos sensoriais fluorescentes.
+  - **Simbiótyka (`in.twolp.lacraia.simbiotyka`)**: Base da Lacraia customizada com os óculos do Kamina sem armação aparente em vermelho escarlate (`#f50f26`) e flash estelar de anime de 4 pontas na lente direita.
+- **Sincronização e Formato**:
+  - Renderização via supersampling 2x (1024x1024 -> 512x512) com antialiasing LANCZOS e gravação estrita em 8-bit RGBA.
+  - Sincronização em todas as densidades (`icons-120` até `icons-640`), na raiz física do site (`site/icons/`, `site/pratilera/icons/`) e nos metadados Fastlane (`site/pratilera/<pkg>/<locale>/icon.png`).
