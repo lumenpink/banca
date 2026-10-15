@@ -529,6 +529,16 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 25. Validar declaração do pacote aapt no workflow de CI (Ticket #27)
+echo -n "-> 25. Verificando declaração do pacote aapt em .forgejo/workflows/ci.yml... "
+CI_FILE="$REPO_ROOT/.forgejo/workflows/ci.yml"
+if [ -f "$CI_FILE" ] && grep -q "apt-get install.*aapt" "$CI_FILE"; then
+    echo "✅ OK (pacote aapt declarado no workflow de CI)"
+else
+    echo "❌ FALHOU (pacote aapt ausente no step de instalação em $CI_FILE)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
