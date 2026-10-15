@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Fixes
+  - (ci) instalar pacote aapt no runner para viabilizar extracao e deploy (closes #27)
   - (pratilera) remover redirecionamentos conflitantes de ícones e pacotes (closes #26)
   - (pratilera) restaurar versionName canônico do cccp e preservar versionCode do apk (closes #25)
   - (pratilera) extrair metadados reais dos apks via aapt (closes #24)
