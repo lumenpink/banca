@@ -654,6 +654,12 @@ with Image.open(lauda_icon) as im:
         print("Paleta Trash Polka ausente no icone do Lauda")
         sys.exit(1)
 
+    # Mutação sintética: simular rejeição se imagem for corrompida para RGB
+    mut = im.convert("RGB")
+    if mut.mode == "RGBA":
+        print("Falha na deteccao de modo RGB mutante")
+        sys.exit(1)
+
 print("OK")
 sys.exit(0)
 ' || true)
