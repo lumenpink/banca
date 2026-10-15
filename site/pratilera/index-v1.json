@@ -4,7 +4,7 @@
     "description": "Loja e Repositório Soberano de Aplicativos do Ecossistema 2lp. Fanzines, paredões, correio e ferramentas de calçada.",
     "address": "https://banca.2lp.in/pratilera",
     "icon": "icon.png",
-    "timestamp": 1792090844991,
+    "timestamp": 1792103210445,
     "version": 20
   },
   "requests": {
@@ -32,8 +32,8 @@
           "icon": "icon.png"
         }
       },
-      "added": 1792090844991,
-      "lastUpdated": 1792090844991,
+      "added": 1792103210445,
+      "lastUpdated": 1792103210445,
       "suggestedVersionCode": "1",
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
@@ -64,8 +64,8 @@
           "icon": "icon.png"
         }
       },
-      "added": 1792090844991,
-      "lastUpdated": 1792090844991,
+      "added": 1792103210445,
+      "lastUpdated": 1792103210445,
       "suggestedVersionCode": "1",
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
@@ -96,8 +96,8 @@
           "icon": "icon.png"
         }
       },
-      "added": 1792090844991,
-      "lastUpdated": 1792090844991,
+      "added": 1792103210445,
+      "lastUpdated": 1792103210445,
       "suggestedVersionCode": "26101510",
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
@@ -112,7 +112,7 @@
   "packages": {
     "in.twolp.lacraia.app": [
       {
-        "added": 1792090844991,
+        "added": 1792103210445,
         "apkName": "lacraia-app.apk",
         "hash": "63e375fe723df35d6cf590e1243532742bcbe78b4ad83ccb9df558c1d1da8855",
         "hashType": "sha256",
@@ -128,7 +128,7 @@
     ],
     "in.twolp.lacraia.simbiotyka": [
       {
-        "added": 1792090844991,
+        "added": 1792103210445,
         "apkName": "simbiotyka.apk",
         "hash": "62ccf7504fe3b20ee5d387b92a35a39646c30f8cdeda14bf828ffe20c6f9eba7",
         "hashType": "sha256",
@@ -144,7 +144,7 @@
     ],
     "in.twolp.lauda": [
       {
-        "added": 1792090844991,
+        "added": 1792103210445,
         "apkName": "lauda-latest.apk",
         "hash": "d2ccc449dfc44985b02e6f6f3a6367acc028c5817b69b66c6c54f16f6751d199",
         "hashType": "sha256",
@@ -155,7 +155,7 @@
         "signer": "7beec8b0a6c7946b04d538543d495a8210ad6cfc1859f42e7180bcfbd38fe582",
         "size": 24697144,
         "versionCode": 26101510,
-        "versionName": "0.5.0-dev.28+20261015.1ba781d"
+        "versionName": "0.5.0-dev.47+20261015.9fd1ff9"
       }
     ]
   }
