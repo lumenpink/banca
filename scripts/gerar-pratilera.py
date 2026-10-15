@@ -76,15 +76,29 @@ def sha256_file(path: Path) -> str:
 LOCALES = ["pt-BR", "en-US"]
 DENSITY_DPIS = [120, 160, 240, 320, 480, 640]
 
+def sanitize_icon_8bit(src_path: Path, dst_path: Path):
+    """Garante que a imagem PNG gravada tenha profundidade estrita de 8 bits por canal RGBA (Android Skia / Coil compliant)."""
+    try:
+        from PIL import Image
+        with Image.open(src_path) as im:
+            im_rgba = im.convert("RGBA")
+            dst_path.parent.mkdir(parents=True, exist_ok=True)
+            im_rgba.save(dst_path, format="PNG")
+    except Exception:
+        dst_path.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src_path, dst_path)
+
 def ensure_dirs():
     PRATILERA_DIR.mkdir(parents=True, exist_ok=True)
     ICONS_DIR.mkdir(parents=True, exist_ok=True)
     (SITE_DIR / "icons").mkdir(parents=True, exist_ok=True)
     for dpi in DENSITY_DPIS:
         (PRATILERA_DIR / f"icons-{dpi}").mkdir(parents=True, exist_ok=True)
+        (SITE_DIR / f"icons-{dpi}").mkdir(parents=True, exist_ok=True)
     for pkg_id in APPS_METADATA.keys():
         for loc in LOCALES:
             (PRATILERA_DIR / pkg_id / loc).mkdir(parents=True, exist_ok=True)
+            (SITE_DIR / pkg_id / loc).mkdir(parents=True, exist_ok=True)
 
 def import_external_apks():
     """Tenta puxar APKs recém-gerados nos diretórios irmãos dos projetos (lacraia, lauda)."""
@@ -109,7 +123,7 @@ def import_external_apks():
 
     lauda_icon = src_dir / "lauda" / "site" / "lauda-logo.png"
     if lauda_icon.exists():
-        shutil.copy2(lauda_icon, ICONS_DIR / "in.twolp.lauda.png")
+        sanitize_icon_8bit(lauda_icon, ICONS_DIR / "in.twolp.lauda.png")
         print("-> Importado ícone do Lauda: lauda-logo.png")
 
 def ensure_official_icons():
@@ -126,13 +140,10 @@ def create_mock_icons():
     for pkg_id, meta in APPS_METADATA.items():
         icon_path = ICONS_DIR / meta["icon"]
         if not icon_path.exists() or icon_path.stat().st_size == 0:
-            # Cria um ícone PNG 1x1 ou cópia de favicon existente
             favicon = REPO_ROOT / "site" / "assets" / "favicon.svg"
             if favicon.exists():
                 shutil.copy2(favicon, ICONS_DIR / f"{pkg_id}.svg")
-            # Mock placeholder PNG básico
             with open(icon_path, "wb") as f:
-                # 1x1 transparent PNG bytes
                 f.write(b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x06\x00\x00\x00\x1f\x15c4\x00\x00\x00\nIDATx\x9cc\x00\x01\x00\x00\x05\x00\x01\r\n-\xb4\x00\x00\x00\x00IEND\xaeB`\x82')
 
 def sync_density_and_root_icons():
@@ -141,35 +152,43 @@ def sync_density_and_root_icons():
     
     icon_filenames = [meta["icon"] for meta in APPS_METADATA.values()] + ["icon.png", "pratilera.png"]
     
+    # 0. Sanitizar todos os ícones na origem ICONS_DIR para 8-bit RGBA
+    for filename in icon_filenames:
+        src = ICONS_DIR / filename
+        if src.exists() and src.stat().st_size > 0:
+            sanitize_icon_8bit(src, src)
+    
     for filename in icon_filenames:
         src = ICONS_DIR / filename
         if not src.exists() or src.stat().st_size == 0:
             continue
         
-        # 1. Replicar para a raiz de site/pratilera/
-        dst_root = PRATILERA_DIR / filename
-        shutil.copy2(src, dst_root)
+        # 1. Replicar para a raiz de site/pratilera/ e site/
+        sanitize_icon_8bit(src, PRATILERA_DIR / filename)
+        sanitize_icon_8bit(src, SITE_DIR / filename)
         
-        # 2. Replicar para cada pasta de densidade icons-<dpi>/
+        # 2. Replicar para cada pasta de densidade icons-<dpi>/ em site/pratilera/ e site/
         for dpi in DENSITY_DPIS:
-            dst_dpi = PRATILERA_DIR / f"icons-{dpi}" / filename
-            shutil.copy2(src, dst_dpi)
+            sanitize_icon_8bit(src, PRATILERA_DIR / f"icons-{dpi}" / filename)
+            sanitize_icon_8bit(src, SITE_DIR / f"icons-{dpi}" / filename)
 
-        # 3. Replicar para raiz do domínio site/icons/ (fallback universal de repositório)
-        if filename in ["icon.png", "pratilera.png"]:
-            shutil.copy2(src, SITE_DIR / "icons" / filename)
+        # 3. Replicar para pasta icons/ em site/pratilera/ e site/
+        sanitize_icon_8bit(src, ICONS_DIR / filename)
+        sanitize_icon_8bit(src, SITE_DIR / "icons" / filename)
 
-    # 4. Replicar ícones Fastlane para cada aplicativo (<pkg>/<locale>/icon.png)
+    # 4. Replicar ícones Fastlane para cada aplicativo (<pkg>/<locale>/icon.png) em site/ e site/pratilera/
     for pkg_id, meta in APPS_METADATA.items():
         src_icon = ICONS_DIR / meta["icon"]
         if src_icon.exists() and src_icon.stat().st_size > 0:
             for loc in LOCALES:
-                dst_fastlane = PRATILERA_DIR / pkg_id / loc / "icon.png"
-                shutil.copy2(src_icon, dst_fastlane)
-                if meta["icon"] != "icon.png":
-                    shutil.copy2(src_icon, PRATILERA_DIR / pkg_id / loc / meta["icon"])
+                # No /pratilera
+                sanitize_icon_8bit(src_icon, PRATILERA_DIR / pkg_id / loc / "icon.png")
+                sanitize_icon_8bit(src_icon, PRATILERA_DIR / pkg_id / loc / meta["icon"])
+                # Na raiz do site
+                sanitize_icon_8bit(src_icon, SITE_DIR / pkg_id / loc / "icon.png")
+                sanitize_icon_8bit(src_icon, SITE_DIR / pkg_id / loc / meta["icon"])
 
-    print("✅ Ícones sincronizados em todas as densidades (icons-120 a icons-640), Fastlane e raiz")
+    print("✅ Ícones convertidos para 8-bit RGBA e sincronizados em todas as densidades (icons-120 a icons-640), Fastlane e raiz")
 
 
 def is_prerelease(version_name: str) -> bool:
@@ -280,7 +299,7 @@ def build_index_v1():
             "localized": localized_map,
             "added": now_ms,
             "lastUpdated": now_ms,
-            "suggestedVersionCode": suggested_code,
+            "suggestedVersionCode": str(suggested_code),
             "authorName": "Lumen Pink",
             "license": meta["license"],
             "categories": meta["categories"],
@@ -310,7 +329,7 @@ def build_index_v1():
             "name": "A Pratilera (Banca 2lp)",
             "description": "Loja e Repositório Soberano de Aplicativos do Ecossistema 2lp. Fanzines, paredões, correio e ferramentas de calçada.",
             "address": "https://banca.2lp.in/pratilera",
-            "icon": "pratilera.png",
+            "icon": "icon.png",
             "timestamp": now_ms,
             "version": 20
         },
@@ -325,7 +344,8 @@ def build_index_v1():
     index_v1_path = PRATILERA_DIR / "index-v1.json"
     with open(index_v1_path, "w", encoding="utf-8") as f:
         json.dump(index_v1, f, indent=2, ensure_ascii=False)
-    print(f"✅ Gerado {index_v1_path}")
+    shutil.copy2(index_v1_path, SITE_DIR / "index-v1.json")
+    print(f"✅ Gerado {index_v1_path} e espelhado em {SITE_DIR / 'index-v1.json'}")
 
     # Remove qualquer index-v2/entry.json residual para garantir conformidade estrita com Index V1
     (PRATILERA_DIR / "entry.json").unlink(missing_ok=True)
@@ -409,7 +429,8 @@ def package_and_sign_jar():
 
     # Verificar assinatura
     subprocess.run(["jarsigner", "-verify", str(jar_path)], check=True)
-    print(f"✅ Assinatura verificada com sucesso em {jar_path}")
+    shutil.copy2(jar_path, SITE_DIR / "index-v1.jar")
+    print(f"✅ Assinatura verificada com sucesso em {jar_path} e espelhado em {SITE_DIR / 'index-v1.jar'}")
 
 def main():
     print("=================================================================")

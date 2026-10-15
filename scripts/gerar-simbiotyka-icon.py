@@ -55,6 +55,6 @@ svg_content = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" w
 
 tmp_svg = REPO_ROOT / "temp_simbiotyka.svg"
 tmp_svg.write_text(svg_content, encoding="utf-8")
-subprocess.run(["convert", "-background", "none", "-size", "512x512", str(tmp_svg), str(TARGET)], check=True)
+subprocess.run(["convert", "-background", "none", "-depth", "8", "-size", "512x512", str(tmp_svg), str(TARGET)], check=True)
 tmp_svg.unlink(missing_ok=True)
 print(f"✅ Gerado ícone oficial do Simbiótyka em {TARGET}")
