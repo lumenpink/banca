@@ -621,6 +621,50 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 28. Validar novo ícone oficial do Lauda (in.twolp.lauda.png) no padrão C2
+echo -n "-> 28. Verificando novo ícone oficial do Lauda (Trash Polka C2)... "
+LAUDA_SPEC_TEST=$(python3 -c '
+import sys
+from pathlib import Path
+from PIL import Image
+
+lauda_icon = Path("site/pratilera/icons/in.twolp.lauda.png")
+if not lauda_icon.exists():
+    print("in.twolp.lauda.png ausente na Pratilera")
+    sys.exit(1)
+
+with Image.open(lauda_icon) as im:
+    if im.size != (512, 512) or im.mode != "RGBA":
+        print(f"in.twolp.lauda.png formato invalido: {im.size} {im.mode}")
+        sys.exit(1)
+    
+    # Cantos devem ter canal alfa transparente
+    corners = [im.getpixel((0,0)), im.getpixel((511,0)), im.getpixel((0,511)), im.getpixel((511,511))]
+    for c in corners:
+        if c[3] != 0:
+            print("Cantos do icone do Lauda nao sao transparentes")
+            sys.exit(1)
+            
+    # Paleta Trash Polka
+    pixels = list(im.getdata())
+    has_crimson = any(r > 200 and g < 40 and b < 80 and a > 200 for (r, g, b, a) in pixels)
+    has_paper = any(r > 230 and g > 225 and b > 215 and a > 200 for (r, g, b, a) in pixels)
+    has_black = any(r < 20 and g < 20 and b < 20 and a > 200 for (r, g, b, a) in pixels)
+    if not (has_crimson and has_paper and has_black):
+        print("Paleta Trash Polka ausente no icone do Lauda")
+        sys.exit(1)
+
+print("OK")
+sys.exit(0)
+' || true)
+
+if [ "$LAUDA_SPEC_TEST" = "OK" ]; then
+    echo "✅ OK (ícone do Lauda atende rigorosamente ao padrão C2 8-bit RGBA)"
+else
+    echo "❌ FALHOU ($LAUDA_SPEC_TEST)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
