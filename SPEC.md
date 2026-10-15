@@ -163,4 +163,14 @@ site/pratilera/
   - Declarar `versionCode` divergente do binário resulta no erro crítico `Metadado inválido` no cliente Android.
   - O campo `suggestedVersionCode` deve refletir como string (`"suggestedVersionCode": "<code_str>"`) o código de versão compatível para instalação direta.
 
+## 12. Soberania do SemVer Canônico CCCP em `versionName` (Ticket #25)
+
+- **Autoridade Estrita do Arquivo `VERSION` (CCCP)**:
+  - Conforme as diretrizes GOST e do ecossistema CCCP, a versão canônica exibida aos usuários no catálogo (`versionName`) provém estritamente do arquivo `VERSION` na raiz do projeto irmão (ex: `lauda/VERSION`, `lacraia/VERSION`), gerenciado via `cccp version` / `cccp tag`.
+  - O `versionName` NÃO deve ser sobrescrito por strings de build interno de empacotadores Android (ex: `*-nightly.*`), garantindo consistência com o restante do ecossistema Sovereign Software.
+- **Convivência Harmônica com o `versionCode` do Android**:
+  - O `versionCode` (inteiro) é extraído fielmente do APK via `aapt dump badging` para satisfazer a checagem de integridade do Android PackageManager e do Droid-ify.
+  - O `versionName` (string de exibição) reflete a versão SemVer canônica do CCCP.
+
+
 
