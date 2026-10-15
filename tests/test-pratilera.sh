@@ -441,8 +441,8 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
-# 22. Validar fidelidade estrita dos metadados de versionCode e versionName contra os APKs reais (aapt)
-echo -n "-> 22. Verificando fidelidade de versionCode e versionName dos APKs contra index-v1.json... "
+# 22. Validar fidelidade estrita dos metadados: versionCode do APK e versionName canônico do CCCP
+echo -n "-> 22. Verificando versionCode do APK e versionName canônico do CCCP contra index-v1.json... "
 AAPT_FAIL=0
 AAPT_MSG=""
 if [ -f "$PRATILERA_DIR/index-v1.json" ] && command -v aapt >/dev/null 2>&1; then
@@ -451,14 +451,33 @@ if [ -f "$PRATILERA_DIR/index-v1.json" ] && command -v aapt >/dev/null 2>&1; the
         APK_BADGE=$(aapt dump badging "$apk_file" 2>/dev/null || true)
         PKG=$(echo "$APK_BADGE" | grep -o "package: name='[^']*'" | cut -d"'" -f2 || true)
         CODE=$(echo "$APK_BADGE" | grep -o "versionCode='[^']*'" | cut -d"'" -f2 || true)
-        NAME=$(echo "$APK_BADGE" | grep -o "versionName='[^']*'" | cut -d"'" -f2 || true)
 
         if [ -n "$PKG" ] && [ -n "$CODE" ]; then
             INDEX_CODE=$(jq -r --arg p "$PKG" '.packages[$p][0].versionCode // empty' "$PRATILERA_DIR/index-v1.json")
             INDEX_NAME=$(jq -r --arg p "$PKG" '.packages[$p][0].versionName // empty' "$PRATILERA_DIR/index-v1.json")
-            if [ "$INDEX_CODE" != "$CODE" ] || [ "$INDEX_NAME" != "$NAME" ]; then
+
+            # Determinar a versão canônica esperada do CCCP
+            SLUG=""
+            if [[ "$PKG" == *"lauda"* ]]; then
+                SLUG="lauda"
+            elif [[ "$PKG" == *"lacraia"* ]]; then
+                SLUG="lacraia"
+            fi
+
+            EXPECTED_NAME=""
+            if [ -n "$SLUG" ] && [ -f "$REPO_ROOT/../$SLUG/VERSION" ]; then
+                EXPECTED_NAME=$(cat "$REPO_ROOT/../$SLUG/VERSION" | tr -d '\r\n ')
+            fi
+
+            if [ "$INDEX_CODE" != "$CODE" ]; then
                 AAPT_FAIL=1
-                AAPT_MSG="Divergência em $PKG: APK ($CODE, $NAME) != Índice ($INDEX_CODE, $INDEX_NAME)"
+                AAPT_MSG="Divergência de versionCode em $PKG: APK ($CODE) != Índice ($INDEX_CODE)"
+                break
+            fi
+
+            if [ -n "$EXPECTED_NAME" ] && [ "$INDEX_NAME" != "$EXPECTED_NAME" ]; then
+                AAPT_FAIL=1
+                AAPT_MSG="Divergência de versionName em $PKG: Esperado CCCP ($EXPECTED_NAME) != Índice ($INDEX_NAME)"
                 break
             fi
         fi
@@ -469,7 +488,7 @@ else
 fi
 
 if [ "$AAPT_FAIL" -eq 0 ]; then
-    echo "✅ OK (versionCode e versionName 100% fiéis aos APKs reais)"
+    echo "✅ OK (versionCode do APK e versionName canônico do CCCP validados)"
 else
     echo "❌ FALHOU ($AAPT_MSG)"
     FAILURES=$((FAILURES + 1))
