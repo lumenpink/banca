@@ -376,6 +376,46 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 19. Validar profundidade 8-bit RGBA em todos os ícones PNG (Android Skia / Coil compatibility)
+echo -n "-> 19. Verificando profundidade estrita de 8 bits por canal nos PNGs... "
+DEPTH_FAIL=0
+PNG_FILES=$(find "$PRATILERA_DIR" "$SITE_DIR/icons" -type f -name "*.png" 2>/dev/null)
+for png in $PNG_FILES; do
+    # Byte 24 do header PNG é a profundidade de bits (Bit depth)
+    BIT_DEPTH=$(python3 -c "import sys; f=open(sys.argv[1], 'rb'); f.seek(24); print(f.read(1)[0])" "$png" 2>/dev/null)
+    if [ "$BIT_DEPTH" -ne 8 ]; then
+        DEPTH_FAIL=1
+        break
+    fi
+done
+
+if [ "$DEPTH_FAIL" -eq 0 ]; then
+    echo "✅ OK (todos os ícones PNG possuem profundidade canônica de 8 bits por canal)"
+else
+    echo "❌ FALHOU (encontrado ícone PNG com profundidade diferente de 8-bit)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 20. Validar suggestedVersionCode como String e repo.icon canônico no index-v1.json
+echo -n "-> 20. Verificando tipagem de suggestedVersionCode (string) e repo.icon... "
+TYPE_FAIL=0
+if [ -f "$PRATILERA_DIR/index-v1.json" ]; then
+    NON_STRING_VER=$(jq '[.apps[] | select(.suggestedVersionCode | type != "string")] | length' "$PRATILERA_DIR/index-v1.json")
+    REPO_ICON=$(jq -r '.repo.icon // empty' "$PRATILERA_DIR/index-v1.json")
+    if [ "$NON_STRING_VER" -gt 0 ] || [ "$REPO_ICON" != "icon.png" ]; then
+        TYPE_FAIL=1
+    fi
+else
+    TYPE_FAIL=1
+fi
+
+if [ "$TYPE_FAIL" -eq 0 ]; then
+    echo "✅ OK (suggestedVersionCode é String e repo.icon é icon.png)"
+else
+    echo "❌ FALHOU (suggestedVersionCode não é string ou repo.icon não é icon.png)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
