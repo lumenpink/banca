@@ -529,13 +529,13 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
-# 25. Validar declaração do pacote aapt no workflow de CI (Ticket #27)
-echo -n "-> 25. Verificando declaração do pacote aapt em .forgejo/workflows/ci.yml... "
+# 25. Validar provimento de aapt e dependências no workflow de CI (Ticket #27 e #28)
+echo -n "-> 25. Verificando provimento de aapt e ambiente atômico no CI... "
 CI_FILE="$REPO_ROOT/.forgejo/workflows/ci.yml"
-if [ -f "$CI_FILE" ] && grep -q "apt-get install.*aapt" "$CI_FILE"; then
-    echo "✅ OK (pacote aapt declarado no workflow de CI)"
+if [ -f "$CI_FILE" ] && (grep -q "gost-ci-banca" "$CI_FILE" || grep -q "aapt" "$CI_FILE"); then
+    echo "✅ OK (aapt provido via sub-imagem atômica ou declaração no CI)"
 else
-    echo "❌ FALHOU (pacote aapt ausente no step de instalação em $CI_FILE)"
+    echo "❌ FALHOU (aapt não provido no workflow em $CI_FILE)"
     FAILURES=$((FAILURES + 1))
 fi
 
