@@ -548,6 +548,79 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 27. Validar especificações visuais de alta definição para Pratilera, Lacraia e Simbiótyka (Ticket #26)
+echo -n "-> 27. Verificando novos ícones oficiais (Pratilera estante, Lacraia respiro, Simbiótyka Kamina)... "
+ICON_SPEC_TEST=$(python3 -c '
+import sys
+from PIL import Image
+from pathlib import Path
+
+repo_root = Path("'"$REPO_ROOT"'")
+prat_dir = repo_root / "site" / "pratilera"
+icons_dir = prat_dir / "icons"
+
+errors = []
+
+# 1. Validar Pratilera (pratilera.png)
+prat_icon = icons_dir / "pratilera.png"
+if not prat_icon.exists():
+    errors.append("pratilera.png ausente em site/pratilera/icons/")
+else:
+    with Image.open(prat_icon) as im:
+        if im.size != (512, 512) or im.mode != "RGBA":
+            errors.append(f"pratilera.png com formato invalido: {im.size} {im.mode}")
+        pixels = list(im.getdata())
+        # Verificar presença de caixas maciças com amarelo veneno e fúcsia
+        has_veneno = any(r > 190 and g > 230 and b < 40 and a > 200 for (r, g, b, a) in pixels)
+        has_fucsia = any(r > 230 and g < 30 and b > 70 and a > 200 for (r, g, b, a) in pixels)
+        # Verificar que NÃO contém o texto antigo do zine ("2LP" com fundo preto específico de card)
+        if not (has_veneno and has_fucsia):
+            errors.append("pratilera.png nao contem paleta modular fucsia/veneno")
+
+# 2. Validar Lacraia (in.twolp.lacraia.app.png)
+lac_icon = icons_dir / "in.twolp.lacraia.app.png"
+if not lac_icon.exists():
+    errors.append("in.twolp.lacraia.app.png ausente")
+else:
+    with Image.open(lac_icon) as im:
+        if im.size != (512, 512) or im.mode != "RGBA":
+            errors.append(f"in.twolp.lacraia.app.png formato invalido: {im.size} {im.mode}")
+        # Verificar respiro das antenas: pixel (64, 64) no canto deve ser transparente ou fundo, nao ponta amarela
+        p = im.getpixel((64, 64))
+        if p[3] > 0 and (p[0] > 180 and p[1] > 200): # ponta amarela colada no canto
+            errors.append("Lacraia app com ponta de antena colada no canto (sem respiro)")
+
+# 3. Validar Simbiótyka com Kamina (in.twolp.lacraia.simbiotyka.png)
+sim_icon = icons_dir / "in.twolp.lacraia.simbiotyka.png"
+if not sim_icon.exists():
+    errors.append("in.twolp.lacraia.simbiotyka.png ausente")
+else:
+    with Image.open(sim_icon) as im:
+        if im.size != (512, 512) or im.mode != "RGBA":
+            errors.append(f"in.twolp.lacraia.simbiotyka.png formato invalido: {im.size} {im.mode}")
+        pixels = list(im.getdata())
+        has_kamina_red = any(r > 220 and g < 40 and b < 50 and a > 200 for (r, g, b, a) in pixels)
+        has_white_gleam = any(r > 250 and g > 250 and b > 250 and a > 250 for (r, g, b, a) in pixels)
+        if not has_kamina_red:
+            errors.append("Simbiotyka icon nao possui lentes vermelhas do Kamina")
+        if not has_white_gleam:
+            errors.append("Simbiotyka icon nao possui brilho estelar anime")
+
+if errors:
+    print("; ".join(errors[:3]))
+    sys.exit(1)
+else:
+    print("OK")
+    sys.exit(0)
+' || true)
+
+if [ "$ICON_SPEC_TEST" = "OK" ]; then
+    echo "✅ OK (todos os ícones atendem os novos padrões de alta definição)"
+else
+    echo "❌ FALHOU ($ICON_SPEC_TEST)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
@@ -556,5 +629,6 @@ else
     echo "💥 $FAILURES TESTE(S) FALHARAM."
     exit 1
 fi
+
 
 
