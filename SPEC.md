@@ -182,3 +182,11 @@ site/pratilera/
 - **Escopo Estrito de `site/_redirects`**:
   - O arquivo `site/_redirects` deve conter única e exclusivamente apelidos e aliases de rotas sem representação física em disco (`/patilera`, `/prateleira`, `/repo`).
   - Caminhos que possuem espelhamento físico em disco (`site/icons/`, `site/icons-<dpi>/`, `site/in.twolp.*/`) NUNCA devem figurar no arquivo de redirecionamentos, assegurando entrega direta com `HTTP 200 OK` e `Cache-Control` padrão da Cloudflare.
+
+## 14. Instalação Obrigatória de `aapt` no Runner de CI (Ticket #27)
+
+- **Completude de Ferramentas no Pipeline de CI**:
+  - O step de provisionamento de dependências em `.forgejo/workflows/ci.yml` deve instalar explicitamente o pacote `aapt` (Android Asset Packaging Tool), juntamente com `openjdk-17-jdk-headless` e `python3-pil`.
+  - A ferramenta `aapt` é indispensável para extrair dinamicamente `versionCode`, `versionName` e SDK targets dos APKs físicos da Pratilera. Sua ausência no runner causa falha no teste de integridade 22 e impede a execução do job dependente `Deploy Documentation Site` (Cloudflare Pages).
+- **Validação de Conformidade do CI**:
+  - A suíte de testes deve auditar que `.forgejo/workflows/ci.yml` declara a instalação obrigatória do pacote `aapt`.
