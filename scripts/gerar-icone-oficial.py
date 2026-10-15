@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """
-Gera o ícone oficial unificado da Pratilera & Banca diretamente em PIL (512x512).
-Garante controle milimétrico de tipografia, sombras e proporções sem cortes.
+Gera os ícones oficiais de alta resolução da Pratilera, Lacraia e Simbiótyka (512x512, 8-bit RGBA).
+Utiliza supersampling 2x (1024x1024 -> 512x512) com antialiasing LANCZOS:
+1. Pratilera: Estante modular industrial com caixas maciças em X (zero texto).
+2. Lacraia: Avatar vetorial com chassi escuro, ocelos veneno e antenas com respiro.
+3. Simbiótyka: Avatar com os óculos do Kamina sem armação e brilho estelar anime de 4 pontas.
 """
-import math
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SITE_DIR = REPO_ROOT / "site"
@@ -13,261 +15,219 @@ PRATILERA_DIR = SITE_DIR / "pratilera"
 ICONS_DIR = PRATILERA_DIR / "icons"
 ASSETS_DIR = SITE_DIR / "assets"
 
-FONT_MONO_BOLD = "/usr/share/fonts/truetype/firacode/FiraCode-Bold.ttf"
-FONT_SANS_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-
-def get_font(path, size):
-    try:
-        return ImageFont.truetype(path, size)
-    except Exception:
-        return ImageFont.load_default()
-
-def draw_dashed_rounded_rect(draw, bbox, radius, color, width=2, dash_len=8, gap_len=6):
-    x0, y0, x1, y1 = bbox
-    # Gerar pontos ao longo do retângulo arredondado
+def draw_bezier_curve(draw, p0, p1, p2, p3, color, width, steps=100):
     points = []
-    # Top edge
-    for x in range(int(x0 + radius), int(x1 - radius), 2):
-        points.append((x, y0))
-    # Top-right arc
-    for deg in range(270, 360, 4):
-        rad = math.radians(deg)
-        points.append((x1 - radius + radius * math.cos(rad), y0 + radius + radius * math.sin(rad)))
-    # Right edge
-    for y in range(int(y0 + radius), int(y1 - radius), 2):
-        points.append((x1, y))
-    # Bottom-right arc
-    for deg in range(0, 90, 4):
-        rad = math.radians(deg)
-        points.append((x1 - radius + radius * math.cos(rad), y1 - radius + radius * math.sin(rad)))
-    # Bottom edge
-    for x in range(int(x1 - radius), int(x0 + radius), -2):
-        points.append((x, y1))
-    # Bottom-left arc
-    for deg in range(90, 180, 4):
-        rad = math.radians(deg)
-        points.append((x0 + radius + radius * math.cos(rad), y1 - radius + radius * math.sin(rad)))
-    # Left edge
-    for y in range(int(y1 - radius), int(y0 + radius), -2):
-        points.append((x0, y))
-    # Top-left arc
-    for deg in range(180, 270, 4):
-        rad = math.radians(deg)
-        points.append((x0 + radius + radius * math.cos(rad), y0 + radius + radius * math.sin(rad)))
-
-    # Desenha em traços pontilhados
-    is_dash = True
-    dist_accum = 0.0
+    for i in range(steps + 1):
+        t = i / steps
+        u = 1 - t
+        tt = t * t
+        uu = u * u
+        uuu = uu * u
+        ttt = tt * t
+        x = uuu * p0[0] + 3 * uu * t * p1[0] + 3 * u * tt * p2[0] + ttt * p3[0]
+        y = uuu * p0[1] + 3 * uu * t * p1[1] + 3 * u * tt * p2[1] + ttt * p3[1]
+        points.append((x, y))
     for i in range(len(points) - 1):
-        p1 = points[i]
-        p2 = points[i+1]
-        seg_dist = math.hypot(p2[0] - p1[0], p2[1] - p1[1])
-        if is_dash:
-            draw.line([p1, p2], fill=color, width=width)
-        dist_accum += seg_dist
-        if is_dash and dist_accum >= dash_len:
-            is_dash = False
-            dist_accum = 0.0
-        elif not is_dash and dist_accum >= gap_len:
-            is_dash = True
-            dist_accum = 0.0
+        draw.line([points[i], points[i + 1]], fill=color, width=width)
+        draw.ellipse([points[i][0] - width/2, points[i][1] - width/2,
+                      points[i][0] + width/2, points[i][1] + width/2], fill=color)
 
-def generate_icon():
-    im = Image.new("RGBA", (512, 512), (0, 0, 0, 0))
+def draw_chassis(draw, size=1024):
+    pad = 48
+    rad = 192
+    draw.rounded_rectangle([pad, pad, size - pad, size - pad], radius=rad, fill=(21, 22, 24, 255), outline=(66, 70, 78, 255), width=18)
+    dash_pad = 84
+    dash_rad = 160
+    draw.rounded_rectangle([dash_pad, dash_pad, size - dash_pad, size - dash_pad], radius=dash_rad, outline=(43, 29, 20, 255), width=6)
+
+def draw_anime_star_gleam(draw, cx, cy, radius=110):
+    rx = radius * 1.3
+    ry = radius * 0.9
+    draw.polygon([
+        (cx - rx, cy),
+        (cx - rx * 0.1, cy - 8),
+        (cx, cy - 8),
+        (cx + rx, cy),
+        (cx + rx * 0.1, cy + 8),
+        (cx, cy + 8)
+    ], fill=(255, 255, 255, 255))
+    draw.polygon([
+        (cx, cy - ry),
+        (cx + 8, cy - ry * 0.1),
+        (cx + 8, cy),
+        (cx, cy + ry),
+        (cx - 8, cy + ry * 0.1),
+        (cx - 8, cy)
+    ], fill=(255, 255, 255, 255))
+    d_len = radius * 0.4
+    draw.polygon([(cx - d_len, cy - d_len), (cx, cy), (cx + d_len, cy + d_len)], fill=(255, 255, 255, 220))
+    draw.polygon([(cx + d_len, cy - d_len), (cx, cy), (cx - d_len, cy + d_len)], fill=(255, 255, 255, 220))
+    draw.ellipse([cx - 18, cy - 18, cx + 18, cy + 18], fill=(255, 255, 255, 255))
+
+def render_lacraia(with_kamina=False) -> Image.Image:
+    size = 1024
+    im = Image.new("RGBA", (size, size), (0, 0, 0, 0))
     draw = ImageDraw.Draw(im)
 
-    # 1. Base Shield (Chassi grafite escuro com cantos arredondados)
-    draw.rounded_rectangle([16, 16, 496, 496], radius=88, fill=(20, 21, 24, 255), outline=(50, 54, 64, 255), width=5)
-    
-    # Textura sutil de grade
-    for x in range(32, 480, 24):
-        draw.line([(x, 32), (x, 480)], fill=(28, 30, 36, 255), width=1)
-    for y in range(32, 480, 24):
-        draw.line([(32, y), (480, y)], fill=(28, 30, 36, 255), width=1)
+    draw_chassis(draw, size)
 
-    # Borda tracejada fúcsia interna (respiro de segurança)
-    draw_dashed_rounded_rect(draw, [34, 34, 478, 478], radius=72, color=(230, 0, 80, 255), width=3, dash_len=10, gap_len=6)
+    # Antenas com respiro
+    draw_bezier_curve(draw, (448, 512), (390, 360), (280, 260), (180, 185), color=(212, 255, 0, 255), width=32)
+    draw.ellipse([180 - 28, 185 - 28, 180 + 28, 185 + 28], fill=(212, 255, 0, 255))
+    draw.ellipse([180 - 14, 185 - 14, 180 + 14, 185 + 14], fill=(255, 255, 255, 255))
 
-    # 2. Toldo da Banca (Kiosk Awning) com listras diagonais
-    # Máscara trapezoidal para as listras
-    awning_mask = Image.new("L", (512, 512), 0)
-    draw_mask = ImageDraw.Draw(awning_mask)
-    awning_poly = [(72, 68), (440, 68), (454, 126), (58, 126)]
-    draw_mask.polygon(awning_poly, fill=255)
+    draw_bezier_curve(draw, (576, 512), (634, 360), (744, 260), (844, 185), color=(212, 255, 0, 255), width=32)
+    draw.ellipse([844 - 28, 185 - 28, 844 + 28, 185 + 28], fill=(212, 255, 0, 255))
+    draw.ellipse([844 - 14, 185 - 14, 844 + 14, 185 + 14], fill=(255, 255, 255, 255))
 
-    awning_layer = Image.new("RGBA", (512, 512), (0, 0, 0, 0))
-    draw_awning = ImageDraw.Draw(awning_layer)
-    # Desenhar listras fúcsia e pretas
-    stripe_w = 26
-    for x in range(-512, 1024, stripe_w * 2):
-        draw_awning.polygon([(x, 0), (x + stripe_w, 0), (x + stripe_w - 180, 512), (x - 180, 512)], fill=(230, 0, 80, 255))
-        draw_awning.polygon([(x + stripe_w, 0), (x + stripe_w * 2, 0), (x + stripe_w * 2 - 180, 512), (x + stripe_w - 180, 512)], fill=(16, 17, 20, 255))
+    # Forcípulas
+    draw_bezier_curve(draw, (352, 736), (288, 832), (352, 912), (432, 880), color=(255, 0, 85, 255), width=28)
+    draw.ellipse([432 - 14, 880 - 14, 432 + 14, 880 + 14], fill=(255, 0, 85, 255))
 
-    im.paste(awning_layer, (0, 0), awning_mask)
+    draw_bezier_curve(draw, (672, 736), (736, 832), (672, 912), (592, 880), color=(255, 0, 85, 255), width=28)
+    draw.ellipse([592 - 14, 880 - 14, 592 + 14, 880 + 14], fill=(255, 0, 85, 255))
 
-    # Contorno do toldo
-    draw.polygon(awning_poly, outline=(0, 0, 0, 255), width=4)
+    # Placa Cefálica
+    head_box = [320, 448, 704, 768]
+    draw.rounded_rectangle([head_box[0] + 10, head_box[1] + 10, head_box[2] + 10, head_box[3] + 10], radius=96, fill=(10, 11, 13, 200))
+    draw.rounded_rectangle(head_box, radius=96, fill=(31, 33, 38, 255), outline=(255, 0, 85, 255), width=24)
 
-    # Franja amarela dente-de-serra (Scallop fringe)
-    fringe_pts = [(58, 126)]
-    step = 22
-    cur_x = 58
-    down = True
-    while cur_x < 454:
-        next_x = min(cur_x + step, 454)
-        mid_x = (cur_x + next_x) // 2
-        fringe_pts.append((mid_x, 138))
-        fringe_pts.append((next_x, 126))
-        cur_x = next_x
-    draw.polygon(fringe_pts, fill=(212, 255, 0, 255), outline=(0, 0, 0, 255), width=3)
+    # Fenestra Central
+    for y in range(head_box[1] + 48, head_box[3] - 48, 36):
+        draw.line([(512, y), (512, y + 20)], fill=(66, 70, 78, 255), width=16)
 
-    # 3. Placa do Letreiro "BANCA 2LP"
-    f_sign = get_font(FONT_SANS_BOLD, 18)
-    sign_text = "★ BANCA 2LP ★"
-    bbox_s = f_sign.getbbox(sign_text)
-    tw_s = bbox_s[2] - bbox_s[0]
-    th_s = bbox_s[3] - bbox_s[1]
-    
-    pad_x, pad_y = 24, 10
-    sign_w = tw_s + pad_x * 2
-    sign_h = th_s + pad_y * 2
-    sign_x = (512 - sign_w) // 2
-    sign_y = 148
+    # Ocelos
+    eye_y = 576
+    eye_l_x = 416
+    eye_r_x = 608
+    eye_r = 38
 
-    # Sombra da placa
-    draw.rectangle([sign_x + 4, sign_y + 4, sign_x + sign_w + 4, sign_y + sign_h + 4], fill=(0, 0, 0, 220))
-    # Placa
-    draw.rectangle([sign_x, sign_y, sign_x + sign_w, sign_y + sign_h], fill=(0, 0, 0, 255), outline=(212, 255, 0, 255), width=2)
-    draw.text((sign_x + pad_x, sign_y + pad_y - 2), sign_text, fill=(255, 255, 255, 255), font=f_sign)
+    draw.ellipse([eye_l_x - eye_r - 8, eye_y - eye_r - 8, eye_l_x + eye_r + 8, eye_y + eye_r + 8], fill=(212, 255, 0, 120))
+    draw.ellipse([eye_l_x - eye_r, eye_y - eye_r, eye_l_x + eye_r, eye_y + eye_r], fill=(212, 255, 0, 255))
+    draw.ellipse([eye_l_x - 14, eye_y - 14, eye_l_x + 14, eye_y + 14], fill=(255, 255, 255, 255))
 
-    # 4. Prateleira 1 (Superior)
-    # Viga de aço
-    p1_y = 282
-    draw.rectangle([64, p1_y, 448, p1_y + 12], fill=(36, 40, 50, 255), outline=(0, 0, 0, 255), width=3)
-    draw.line([(64, p1_y + 1), (448, p1_y + 1)], fill=(212, 255, 0, 255), width=2)
-    # Rebites
-    draw.ellipse([72, p1_y + 3, 78, p1_y + 9], fill=(212, 255, 0, 255), outline=(0, 0, 0, 255))
-    draw.ellipse([434, p1_y + 3, 440, p1_y + 9], fill=(212, 255, 0, 255), outline=(0, 0, 0, 255))
+    draw.ellipse([eye_r_x - eye_r - 8, eye_y - eye_r - 8, eye_r_x + eye_r + 8, eye_y + eye_r + 8], fill=(212, 255, 0, 120))
+    draw.ellipse([eye_r_x - eye_r, eye_y - eye_r, eye_r_x + eye_r, eye_y + eye_r], fill=(212, 255, 0, 255))
+    draw.ellipse([eye_r_x - 14, eye_y - 14, eye_r_x + 14, eye_y + 14], fill=(255, 255, 255, 255))
 
-    # FANZINES NA PRATELEIRA 1
-    # Zine 1 (Esquerda - Magenta inclinado)
-    z1 = Image.new("RGBA", (72, 94), (0, 0, 0, 0))
-    dz1 = ImageDraw.Draw(z1)
-    dz1.rectangle([0, 0, 71, 93], fill=(230, 0, 80, 255), outline=(0, 0, 0, 255), width=3)
-    dz1.rectangle([8, 8, 63, 44], fill=(255, 255, 255, 255), outline=(0, 0, 0, 255), width=2)
-    f_z1 = get_font(FONT_MONO_BOLD, 15)
-    dz1.text((14, 16), "ZINE", fill=(0, 0, 0, 255), font=f_z1)
-    dz1.line([(8, 56), (63, 56)], fill=(0, 0, 0, 255), width=3)
-    dz1.line([(8, 66), (52, 66)], fill=(0, 0, 0, 255), width=2)
-    dz1.line([(8, 74), (58, 74)], fill=(0, 0, 0, 255), width=2)
-    z1_rot = z1.rotate(6, expand=True, resample=Image.BICUBIC)
-    im.paste(z1_rot, (94, 184), z1_rot)
+    # Kamina Shades
+    if with_kamina:
+        left_lens = [(512, 530), (160, 430), (320, 680)]
+        right_lens = [(512, 530), (864, 430), (704, 680)]
 
-    # Zine 2 (Centro - Amarelo Veneno / APK vertical)
-    z2 = Image.new("RGBA", (84, 106), (0, 0, 0, 0))
-    dz2 = ImageDraw.Draw(z2)
-    # Sombra
-    dz2.rectangle([4, 4, 83, 105], fill=(0, 0, 0, 180))
-    dz2.rectangle([0, 0, 79, 101], fill=(212, 255, 0, 255), outline=(0, 0, 0, 255), width=3)
-    dz2.rectangle([8, 8, 71, 40], fill=(0, 0, 0, 255))
-    f_apk = get_font(FONT_MONO_BOLD, 17)
-    dz2.text((18, 14), ".APK", fill=(212, 255, 0, 255), font=f_apk)
-    # Código de barras
-    for bar_x, bar_w in [(12, 2), (18, 4), (26, 2), (32, 5), (41, 2), (47, 4), (55, 2), (61, 3)]:
-        dz2.line([(bar_x, 52), (bar_x, 88)], fill=(0, 0, 0, 255), width=bar_w)
-    im.paste(z2, (214, 174), z2)
+        shades_shadow = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+        d_sh = ImageDraw.Draw(shades_shadow)
+        d_sh.polygon([(p[0], p[1] + 14) for p in left_lens], fill=(0, 0, 0, 200))
+        d_sh.polygon([(p[0], p[1] + 14) for p in right_lens], fill=(0, 0, 0, 200))
+        im = Image.alpha_composite(im, shades_shadow)
 
-    # Zine 3 (Direita - Branco Kraft inclinado)
-    z3 = Image.new("RGBA", (72, 94), (0, 0, 0, 0))
-    dz3 = ImageDraw.Draw(z3)
-    dz3.rectangle([0, 0, 71, 93], fill=(244, 237, 226, 255), outline=(0, 0, 0, 255), width=3)
-    dz3.ellipse([18, 12, 54, 48], fill=(230, 0, 80, 255))
-    f_2lp = get_font(FONT_MONO_BOLD, 14)
-    dz3.text((23, 21), "2lp", fill=(255, 255, 255, 255), font=f_2lp)
-    dz3.line([(8, 58), (63, 58)], fill=(0, 0, 0, 255), width=3)
-    dz3.line([(8, 68), (50, 68)], fill=(0, 0, 0, 255), width=2)
-    dz3.line([(8, 76), (56, 76)], fill=(0, 0, 0, 255), width=2)
-    z3_rot = z3.rotate(-7, expand=True, resample=Image.BICUBIC)
-    im.paste(z3_rot, (342, 184), z3_rot)
+        shades_layer = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+        d_sl = ImageDraw.Draw(shades_layer)
 
-    # 5. Prateleira 2 (Inferior)
-    p2_y = 390
-    draw.rectangle([64, p2_y, 448, p2_y + 14], fill=(36, 40, 50, 255), outline=(0, 0, 0, 255), width=3)
-    draw.line([(64, p2_y + 1), (448, p2_y + 1)], fill=(230, 0, 80, 255), width=2)
-    # Rebites
-    draw.ellipse([72, p2_y + 4, 78, p2_y + 10], fill=(230, 0, 80, 255), outline=(0, 0, 0, 255))
-    draw.ellipse([434, p2_y + 4, 440, p2_y + 10], fill=(230, 0, 80, 255), outline=(0, 0, 0, 255))
+        d_sl.polygon(left_lens, fill=(245, 15, 38, 255))
+        d_sl.polygon(right_lens, fill=(245, 15, 38, 255))
 
-    # Console / HUD de Som & Apps no meio das prateleiras
-    hud_x0, hud_y0, hud_x1, hud_y1 = 136, 302, 376, 380
-    draw.rectangle([hud_x0 + 4, hud_y0 + 4, hud_x1 + 4, hud_y1 + 4], fill=(0, 0, 0, 180))
-    draw.rectangle([hud_x0, hud_y0, hud_x1, hud_y1], fill=(12, 13, 16, 255), outline=(230, 0, 80, 255), width=3)
-    # Tela interna
-    draw.rectangle([hud_x0 + 10, hud_y0 + 10, hud_x1 - 10, hud_y1 - 10], fill=(6, 7, 9, 255), outline=(45, 48, 60, 255), width=1)
-    
-    # Equalizador / Ondas sonoras
-    eq_bars = [18, 36, 48, 28, 52, 38, 24, 44, 20]
-    for idx, h in enumerate(eq_bars):
-        bx = hud_x0 + 26 + idx * 16
-        by = hud_y0 + 45
-        draw.line([(bx, by - h // 2), (bx, by + h // 2)], fill=(212, 255, 0, 255), width=4)
+        draw_anime_star_gleam(d_sl, cx=740, cy=475, radius=110)
 
-    # Indicador de Status / LIVE LED
-    draw.ellipse([hud_x1 - 54, hud_y0 + 24, hud_x1 - 42, hud_y0 + 36], fill=(212, 255, 0, 255))
-    f_live = get_font(FONT_MONO_BOLD, 12)
-    draw.text((hud_x1 - 58, hud_y0 + 42), "LIVE", fill=(255, 255, 255, 255), font=f_live)
+        im = Image.alpha_composite(im, shades_layer)
 
-    # 6. Faixa Inferior de Destaque "A PRATILERA"
-    f_bot = get_font(FONT_MONO_BOLD, 25)
-    bot_text = "A PRATILERA"
-    bbox_b = f_bot.getbbox(bot_text)
-    tw_b = bbox_b[2] - bbox_b[0]
-    th_b = bbox_b[3] - bbox_b[1]
+    return im.resize((512, 512), resample=Image.Resampling.LANCZOS)
 
-    bot_w = 340
-    bot_h = 56
-    bot_x = (512 - bot_w) // 2
-    bot_y = 418
+def draw_parcel_box(draw, bbox, fill_color, tape_color, with_x=True):
+    x0, y0, x1, y1 = bbox
+    draw.rounded_rectangle([x0 + 8, y0 + 8, x1 + 8, y1 + 8], radius=14, fill=(10, 11, 14, 200))
+    draw.rounded_rectangle(bbox, radius=14, fill=fill_color, outline=(15, 16, 20, 255), width=8)
 
-    # Sombra
-    draw.rounded_rectangle([bot_x + 5, bot_y + 5, bot_x + bot_w + 5, bot_y + bot_h + 5], radius=12, fill=(0, 0, 0, 220))
-    # Caixa magenta
-    draw.rounded_rectangle([bot_x, bot_y, bot_x + bot_w, bot_y + bot_h], radius=12, fill=(230, 0, 80, 255), outline=(0, 0, 0, 255), width=4)
-    # Borda interna amarela neon
-    draw.rounded_rectangle([bot_x + 5, bot_y + 5, bot_x + bot_w - 5, bot_y + bot_h - 5], radius=8, outline=(212, 255, 0, 255), width=2)
-    # Texto
-    tx = bot_x + (bot_w - tw_b) // 2
-    ty = bot_y + (bot_h - th_b) // 2 - 2
-    draw.text((tx, ty), bot_text, fill=(255, 255, 255, 255), font=f_bot)
+    if with_x:
+        tape_w = 12
+        draw.line([(x0 + 12, y0 + 12), (x1 - 12, y1 - 12)], fill=tape_color, width=tape_w)
+        draw.line([(x0 + 12, y1 - 12), (x1 - 12, y0 + 12)], fill=tape_color, width=tape_w)
+        mid_x = (x0 + x1) // 2
+        mid_y = (y0 + y1) // 2
+        draw.ellipse([mid_x - 10, mid_y - 10, mid_x + 10, mid_y + 10], fill=tape_color)
 
-    return im
+def render_pratilera_shelves_clean() -> Image.Image:
+    """
+    A Pratilera - Design Minimalista Oficial:
+    Estante com 3 prateleiras industriais e caixas/encomendas maciças com fita em X.
+    Totalmente sem texto, com legibilidade máxima a qualquer tamanho.
+    """
+    size = 1024
+    im = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(im)
+
+    draw_chassis(draw, size)
+
+    # Topo da estante
+    draw.rounded_rectangle([120, 140, 904, 176], radius=10, fill=(34, 38, 48, 255), outline=(10, 10, 14, 255), width=8)
+    draw.line([(130, 143), (894, 143)], fill=(212, 255, 0, 255), width=6)
+
+    # ── PRATELEIRA 1 (Superior) ──
+    draw_parcel_box(draw, [180, 220, 370, 370], fill_color=(255, 0, 85, 255), tape_color=(212, 255, 0, 255), with_x=True)
+    draw_parcel_box(draw, [420, 200, 604, 370], fill_color=(212, 255, 0, 255), tape_color=(255, 0, 85, 255), with_x=True)
+    draw_parcel_box(draw, [654, 235, 844, 370], fill_color=(38, 42, 54, 255), tape_color=(255, 0, 85, 255), with_x=True)
+
+    draw.rounded_rectangle([120, 370, 904, 406], radius=10, fill=(34, 38, 48, 255), outline=(10, 10, 14, 255), width=8)
+    draw.line([(130, 373), (894, 373)], fill=(255, 0, 85, 255), width=6)
+
+    # ── PRATELEIRA 2 (Média) ──
+    draw_parcel_box(draw, [170, 450, 480, 600], fill_color=(240, 232, 220, 255), tape_color=(255, 0, 85, 255), with_x=True)
+    draw_parcel_box(draw, [544, 450, 854, 600], fill_color=(255, 0, 85, 255), tape_color=(212, 255, 0, 255), with_x=True)
+
+    draw.rounded_rectangle([120, 600, 904, 636], radius=10, fill=(34, 38, 48, 255), outline=(10, 10, 14, 255), width=8)
+    draw.line([(130, 603), (894, 603)], fill=(212, 255, 0, 255), width=6)
+
+    # ── PRATELEIRA 3 (Inferior) ──
+    draw_parcel_box(draw, [180, 690, 330, 830], fill_color=(212, 255, 0, 255), tape_color=(20, 21, 26, 255), with_x=True)
+    draw_parcel_box(draw, [380, 670, 644, 830], fill_color=(26, 28, 36, 255), tape_color=(212, 255, 0, 255), with_x=True)
+    draw_parcel_box(draw, [694, 690, 844, 830], fill_color=(255, 0, 85, 255), tape_color=(212, 255, 0, 255), with_x=True)
+
+    draw.rounded_rectangle([120, 830, 904, 874], radius=12, fill=(34, 38, 48, 255), outline=(10, 10, 14, 255), width=8)
+    draw.line([(130, 834), (894, 834)], fill=(255, 0, 85, 255), width=6)
+
+    for rx in [160, 260, 512, 764, 864]:
+        draw.ellipse([rx - 12, 852 - 12, rx + 12, 852 + 12], fill=(212, 255, 0, 255), outline=(10, 10, 14, 255), width=3)
+
+    return im.resize((512, 512), resample=Image.Resampling.LANCZOS)
 
 def main():
-    print("✦ Gerando ícone oficial com PIL...")
-    img = generate_icon()
-
-    # Copiar para todos os alvos
-    targets = [
+    print("✦ Gerando ícones oficiais em 8-bit RGBA (512x512)...")
+    
+    # 1. Pratilera
+    img_pratilera = render_pratilera_shelves_clean()
+    targets_pratilera = [
         ASSETS_DIR / "icon.png",
         PRATILERA_DIR / "icons" / "icon.png",
         PRATILERA_DIR / "icons" / "pratilera.png",
         PRATILERA_DIR / "icon.png",
         PRATILERA_DIR / "pratilera.png",
-        Path("/home/lumen/.gemini/antigravity-cli/brain/000d8ca9-03ae-4b21-8834-3953b1772a3d/pratilera_icon.png")
+        SITE_DIR / "icons" / "icon.png",
+        SITE_DIR / "icons" / "pratilera.png",
     ]
+    for dpi in [120, 160, 240, 320, 480, 640]:
+        targets_pratilera.append(PRATILERA_DIR / f"icons-{dpi}" / "icon.png")
+        targets_pratilera.append(PRATILERA_DIR / f"icons-{dpi}" / "pratilera.png")
+        targets_pratilera.append(SITE_DIR / f"icons-{dpi}" / "icon.png")
+        targets_pratilera.append(SITE_DIR / f"icons-{dpi}" / "pratilera.png")
 
-    density_dpis = [120, 160, 240, 320, 480, 640]
-    for dpi in density_dpis:
-        targets.append(PRATILERA_DIR / f"icons-{dpi}" / "icon.png")
-        targets.append(PRATILERA_DIR / f"icons-{dpi}" / "pratilera.png")
-
-    targets.append(SITE_DIR / "icons" / "icon.png")
-    targets.append(SITE_DIR / "icons" / "pratilera.png")
-
-    for t in targets:
+    for t in targets_pratilera:
         t.parent.mkdir(parents=True, exist_ok=True)
-        img.save(t, format="PNG")
-        print(f"✅ Salvo: {t}")
+        img_pratilera.save(t, format="PNG")
+        print(f"✅ Pratilera salva em: {t}")
+
+    # 2. Lacraia
+    img_lacraia = render_lacraia(with_kamina=False)
+    lacraia_target = ICONS_DIR / "in.twolp.lacraia.app.png"
+    lacraia_target.parent.mkdir(parents=True, exist_ok=True)
+    img_lacraia.save(lacraia_target, format="PNG")
+    print(f"✅ Lacraia salva em: {lacraia_target}")
+
+    # 3. Simbiótyka
+    img_simbiotyka = render_lacraia(with_kamina=True)
+    simbiotyka_target = ICONS_DIR / "in.twolp.lacraia.simbiotyka.png"
+    simbiotyka_target.parent.mkdir(parents=True, exist_ok=True)
+    img_simbiotyka.save(simbiotyka_target, format="PNG")
+    print(f"✅ Simbiótyka salva em: {simbiotyka_target}")
 
 if __name__ == "__main__":
     main()

@@ -106,8 +106,9 @@ def import_external_apks():
     """Tenta puxar APKs recém-gerados nos diretórios irmãos dos projetos (lacraia, lauda)."""
     src_dir = REPO_ROOT.parent
     
-    # 1. Lacraia APKs
-    lacraia_dist = src_dir / "lacraia" / "dist"
+    # 1. Lacraia APKs e Ícones Oficiais
+    lacraia_dir = src_dir / "lacraia"
+    lacraia_dist = lacraia_dir / "dist"
     if lacraia_dist.exists():
         for apk in ["lacraia-app.apk", "simbiotyka.apk"]:
             src = lacraia_dist / apk
@@ -115,6 +116,15 @@ def import_external_apks():
             if src.exists():
                 shutil.copy2(src, dst)
                 print(f"-> Importado do Lacraia: {apk}")
+
+    # Importar ícones oficiais do repositório lacraia se presentes
+    lacraia_assets = lacraia_dir / "site" / "assets"
+    if (lacraia_assets / "icon.png").exists():
+        sanitize_icon_8bit(lacraia_assets / "icon.png", ICONS_DIR / "in.twolp.lacraia.app.png")
+        print("-> Importado ícone oficial da Lacraia: site/assets/icon.png")
+    if (lacraia_assets / "simbiotyka.png").exists():
+        sanitize_icon_8bit(lacraia_assets / "simbiotyka.png", ICONS_DIR / "in.twolp.lacraia.simbiotyka.png")
+        print("-> Importado ícone oficial da Simbiótyka: site/assets/simbiotyka.png")
 
     # 2. Lauda APK e Ícone
     lauda_apk = src_dir / "lauda" / "site" / "lauda-latest.apk"
@@ -129,12 +139,11 @@ def import_external_apks():
         print("-> Importado ícone do Lauda: lauda-logo.png")
 
 def ensure_official_icons():
-    """Garante a existência e integridade dos ícones oficiais da Pratilera (Droid-ify / F-Droid)."""
-    pratilera_icon = ICONS_DIR / "icon.png"
-    if not pratilera_icon.exists() or pratilera_icon.stat().st_size < 1024:
-        gen_script = REPO_ROOT / "scripts" / "gerar-icone-oficial.py"
-        if gen_script.exists():
-            subprocess.run([sys.executable, str(gen_script)], check=True)
+    """Garante a existência e integridade dos ícones oficiais da Pratilera, Lacraia e Simbiótyka."""
+    gen_script = REPO_ROOT / "scripts" / "gerar-icone-oficial.py"
+    if gen_script.exists():
+        subprocess.run([sys.executable, str(gen_script)], check=True)
+
 
 def create_mock_icons():
     """Gera ícones para os apps caso não existam."""
