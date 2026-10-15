@@ -539,6 +539,15 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 26. Validar containerização atômica do job de teste em .forgejo/workflows/ci.yml (Ticket #28)
+echo -n "-> 26. Verificando uso de sub-imagem atômica gost-ci-banca no CI... "
+if [ -f "$CI_FILE" ] && grep -q "image: codeberg.org/lumenpink/gost-ci-banca:latest" "$CI_FILE"; then
+    echo "✅ OK (sub-imagem atômica gost-ci-banca declarada)"
+else
+    echo "❌ FALHOU (container gost-ci-banca não declarado no job de teste em $CI_FILE)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
