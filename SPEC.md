@@ -140,6 +140,11 @@ site/pratilera/
 - **Identidade do Repositório (`repo.icon = "icon.png"`) e Espelhamento Físico Sem Redirecionamentos**:
   - Padronização de `repo.icon` como `"icon.png"`.
   - Espelhamento físico direto das árvores de ícones (`icons/`, `icons-<dpi>/`, `<pkg>/`) em `site/` e `site/pratilera/`, eliminando a dependência de redirecionamentos 301 para requisições de imagens em clientes Android.
+## 10. Resiliência de Build no CI e Sanitização Idempotente de Ícones (Ticket #23)
 
-
+- **Dependência do Ambiente de CI**:
+  - O container do runner de CI deve prover o pacote `python3-pil` no job de testes e validação da vitrine estática para garantir a normalização de imagens para 8 bits RGBA.
+- **Idempotência e Segurança em `sanitize_icon_8bit`**:
+  - Na função de sanitização de ícones, caso a importação de `PIL` falhe ou ocorra qualquer exceção na conversão, a rotina de fallback de cópia só deve invocar `shutil.copy2(src, dst)` quando `src_path.resolve() != dst_path.resolve()`.
+  - Se a origem e o destino coincidirem no sistema de arquivos, a operação é um no-op seguro, prevenindo exceções do tipo `shutil.SameFileError`.
 
