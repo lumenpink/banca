@@ -308,13 +308,12 @@ def build_index_v1():
         # Extrair metadados reais do APK via aapt quando disponível
         apk_meta = extract_apk_metadata(apk_path) if has_apk else {}
 
-        if apk_meta.get("version_name") and apk_meta.get("version_code") is not None:
-            ver_name = apk_meta["version_name"]
-            ver_code = apk_meta["version_code"]
-        else:
-            project_slug = "lacraia" if "lacraia" in pkg_id else ("lauda" if "lauda" in pkg_id else "")
-            ver_name = get_project_version(project_slug, meta["version_name"]) if project_slug else meta["version_name"]
-            ver_code = meta.get("version_code", 1)
+        # Metadados do aplicativo:
+        # - versionCode DEVE vir do APK real para evitar 'Metadado inválido' no Android/Droid-ify.
+        # - versionName DEVE vir canonicamente do CCCP (arquivo VERSION do repositório irmão).
+        project_slug = "lacraia" if "lacraia" in pkg_id else ("lauda" if "lauda" in pkg_id else "")
+        ver_name = get_project_version(project_slug, meta["version_name"]) if project_slug else meta["version_name"]
+        ver_code = apk_meta.get("version_code", meta.get("version_code", 1))
 
         min_sdk = apk_meta.get("min_sdk", meta["min_sdk"])
         target_sdk = apk_meta.get("target_sdk", meta["target_sdk"])
