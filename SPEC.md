@@ -148,3 +148,19 @@ site/pratilera/
   - Na função de sanitização de ícones, caso a importação de `PIL` falhe ou ocorra qualquer exceção na conversão, a rotina de fallback de cópia só deve invocar `shutil.copy2(src, dst)` quando `src_path.resolve() != dst_path.resolve()`.
   - Se a origem e o destino coincidirem no sistema de arquivos, a operação é um no-op seguro, prevenindo exceções do tipo `shutil.SameFileError`.
 
+## 11. Extração Dinâmica de Metadados de APKs e Integridade do Droid-ify (Ticket #24)
+
+- **Extração Dinâmica via `aapt dump badging`**:
+  - O gerador da Pratilera (`scripts/gerar-pratilera.py`) não deve depender de metadados estáticos ou hardcoded de `version_code` e `version_name`.
+  - Para cada APK existente em `site/pratilera/`, o gerador executa `aapt dump badging` para extrair os valores reais de:
+    - `versionCode` (inteiro positivo).
+    - `versionName` (string semântica do build Android).
+    - `minSdkVersion` (inteiro de API level).
+    - `targetSdkVersion` (inteiro de API level).
+  - Caso `aapt` não esteja disponível ou ocorra falha de leitura, o gerador utiliza os valores de contingência declarados em `APPS_METADATA`.
+- **Integridade do Catálogo F-Droid e Verificação de Pacotes no Droid-ify**:
+  - O Droid-ify valida a igualdade estrita entre o `versionCode` presente no cabeçalho do APK baixado e o `versionCode` declarado no array de pacotes em `index-v1.json` (`IndexV1Parser.kt` e `PackageInstaller.kt`).
+  - Declarar `versionCode` divergente do binário resulta no erro crítico `Metadado inválido` no cliente Android.
+  - O campo `suggestedVersionCode` deve refletir como string (`"suggestedVersionCode": "<code_str>"`) o código de versão compatível para instalação direta.
+
+
