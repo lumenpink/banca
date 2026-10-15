@@ -11,6 +11,7 @@ import hashlib
 import shutil
 import subprocess
 import zipfile
+import re
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -258,6 +259,39 @@ def extract_apk_signer(apk_path: Path) -> str:
 
     return canonical_fallback
 
+def extract_apk_metadata(apk_path: Path) -> dict:
+    """Extrai versionCode, versionName, minSdkVersion e targetSdkVersion diretamente do APK via aapt dump badging."""
+    info = {}
+    if not apk_path.exists() or not shutil.which("aapt"):
+        return info
+
+    try:
+        res = subprocess.run(
+            ["aapt", "dump", "badging", str(apk_path)],
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        out = res.stdout
+        m_pkg = re.search(r"package:\s+name='(?P<pkg>[^']+)'\s+versionCode='(?P<code>\d+)'\s+versionName='(?P<name>[^']*)'", out)
+        if m_pkg:
+            info["package_name"] = m_pkg.group("pkg")
+            info["version_code"] = int(m_pkg.group("code"))
+            info["version_name"] = m_pkg.group("name")
+
+        m_min = re.search(r"sdkVersion:'(\d+)'", out)
+        if m_min:
+            info["min_sdk"] = int(m_min.group(1))
+
+        m_tgt = re.search(r"targetSdkVersion:'(\d+)'", out)
+        if m_tgt:
+            info["target_sdk"] = int(m_tgt.group(1))
+
+    except Exception:
+        pass
+
+    return info
+
 def build_index_v1():
     now_ms = int(time.time() * 1000)
     
@@ -271,15 +305,24 @@ def build_index_v1():
         apk_hash = sha256_file(apk_path) if has_apk else "0" * 64
         apk_signer = extract_apk_signer(apk_path)
 
-        # Resolver versão via CCCP se disponível no projeto irmão
-        project_slug = "lacraia" if "lacraia" in pkg_id else ("lauda" if "lauda" in pkg_id else "")
-        ver_name = get_project_version(project_slug, meta["version_name"]) if project_slug else meta["version_name"]
-        ver_code = meta.get("version_code", 1)
+        # Extrair metadados reais do APK via aapt quando disponível
+        apk_meta = extract_apk_metadata(apk_path) if has_apk else {}
+
+        if apk_meta.get("version_name") and apk_meta.get("version_code") is not None:
+            ver_name = apk_meta["version_name"]
+            ver_code = apk_meta["version_code"]
+        else:
+            project_slug = "lacraia" if "lacraia" in pkg_id else ("lauda" if "lauda" in pkg_id else "")
+            ver_name = get_project_version(project_slug, meta["version_name"]) if project_slug else meta["version_name"]
+            ver_code = meta.get("version_code", 1)
+
+        min_sdk = apk_meta.get("min_sdk", meta["min_sdk"])
+        target_sdk = apk_meta.get("target_sdk", meta["target_sdk"])
 
         # Gestão soberana de pré-releases F-Droid
         # suggestedVersionCode define a versão estável; pré-releases não forçam atualização
         is_pre = is_prerelease(ver_name)
-        suggested_code = meta.get("stable_version_code", 1) if is_pre else ver_code
+        suggested_code = meta.get("stable_version_code", ver_code) if is_pre else ver_code
 
         # Metadados Fastlane localized exigidos pelo Droid-ify para mapear ícones
         localized_map = {}
@@ -314,8 +357,8 @@ def build_index_v1():
                 "apkName": meta["apk_filename"],
                 "hash": apk_hash,
                 "hashType": "sha256",
-                "minSdkVersion": meta["min_sdk"],
-                "targetSdkVersion": meta["target_sdk"],
+                "minSdkVersion": min_sdk,
+                "targetSdkVersion": target_sdk,
                 "packageName": pkg_id,
                 "sig": apk_signer[:32],
                 "signer": apk_signer,
