@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: "Install Java OpenJDK 17 & Python PIL"
+      - name: "Install Java OpenJDK 17, Python PIL & AAPT"
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends openjdk-17-jdk-headless python3-pil
+          sudo apt-get install -y --no-install-recommends openjdk-17-jdk-headless python3-pil aapt
       - name: "Verify Essential Files & Build"
         run: |
           test -f GOSTVER || { echo "GOSTVER missing"; exit 1; }
