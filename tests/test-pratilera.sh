@@ -416,6 +416,31 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 21. Validar resiliência e idempotência de sanitize_icon_8bit para mesma origem e sem PIL
+echo -n "-> 21. Verificando resiliência de sanitize_icon_8bit para mesma origem e sem PIL... "
+MOCK_RES=$(python3 -c "
+import importlib.util, sys
+from pathlib import Path
+sys.modules['PIL'] = None
+sys.modules['PIL.Image'] = None
+spec = importlib.util.spec_from_file_location('gp', '$REPO_ROOT/scripts/gerar-pratilera.py')
+gp = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(gp)
+test_file = Path('$SITE_DIR/icons/icon.png')
+try:
+    gp.sanitize_icon_8bit(test_file, test_file)
+    print('PASS')
+except Exception as e:
+    print('FAIL:', type(e).__name__, e)
+" 2>&1)
+
+if [ "$MOCK_RES" = "PASS" ]; then
+    echo "✅ OK (sanitize_icon_8bit é resiliente e idempotente)"
+else
+    echo "❌ FALHOU ($MOCK_RES)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
