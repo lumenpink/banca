@@ -215,3 +215,15 @@ site/pratilera/
 - **Sincronização e Formato**:
   - Renderização via supersampling 2x (1024x1024 -> 512x512) com antialiasing LANCZOS e gravação estrita em 8-bit RGBA.
   - Sincronização em todas as densidades (`icons-120` até `icons-640`), na raiz física do site (`site/icons/`, `site/pratilera/icons/`) e nos metadados Fastlane (`site/pratilera/<pkg>/<locale>/icon.png`).
+
+## 17. Sincronização dos Ícones Oficiais do Lauda em 8-Bit RGBA na Pratilera (Ticket #27)
+
+- **Identidade Visual Canônica do Lauda (`in.twolp.lauda`)**:
+  - Padrão Trash Polka Postal (Proposta C2): envelope brutalista branco com vincos pretos expressivos e sombra dura vetorial.
+  - Carimbo postal cancelador reforçado (anel externo ultra-pesado de 10.5px e barras de 5px em carmim `#dc143c`) com a tipografia `" S M O L "` posicionada 100% sobre a área branca do envelope para máxima legibilidade.
+  - Lacre central em bloco maciço preto puro sem letras e ausência de tarja inferior de texto.
+- **Distribuição Multi-Densidade no Catálogo F-Droid / Droid-ify**:
+  - O script `scripts/gerar-pratilera.py` importa `site/lauda-logo.png` do repositório irmão `lauda` e aplica sanitização vetorial estrita em 8-bit RGBA.
+  - Espelhamento em todas as 6 pastas de densidade da Pratilera: `icons-120`, `icons-160`, `icons-240`, `icons-320`, `icons-480` e `icons-640`.
+  - Atualização dos metadados Fastlane estruturados: `site/pratilera/in.twolp.lauda/pt-BR/icon.png` e `en-US/icon.png`.
+  - Re-assinatura do índice oficial `index-v1.jar` com a chave release soberana `in_twolp`.
