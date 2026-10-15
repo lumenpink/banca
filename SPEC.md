@@ -172,5 +172,13 @@ site/pratilera/
   - O `versionCode` (inteiro) é extraído fielmente do APK via `aapt dump badging` para satisfazer a checagem de integridade do Android PackageManager e do Droid-ify.
   - O `versionName` (string de exibição) reflete a versão SemVer canônica do CCCP.
 
+## 13. Eliminação de Regras Conflitantes de Redirecionamento de Ícones (Ticket #26)
 
-
+- **Serviço Estático Direto (HTTP 200) Sem Interceptação de `_redirects`**:
+  - No Cloudflare Pages, regras definidas em `_redirects` são avaliadas antes da resolução de arquivos estáticos no disco.
+  - Regras genéricas para pastas físicas (como `/icons/*`, `/icons-120/*` até `/icons-640/*`) interceptavam arquivos estáticos reais espelhados na raiz, retornando `HTTP 301 Moved Permanently` para o cliente Android.
+  - O decodificador de imagens Coil 3 e o cliente OkHttp no Android falham ou descartam respostas quando recebem redirecionamentos durante o carregamento de ícones de repositório e de produtos.
+  - A regra corrompida `/in.twolp.*  /pratilera/:splat  301` cortava o prefixo `in.twolp.` de requisições de metadados Fastlane (ex: `/in.twolp.lacraia.app/pt-BR/icon.png`), gerando redirecionamento para caminhos inexistentes e resultando em `HTTP 404 Not Found`.
+- **Escopo Estrito de `site/_redirects`**:
+  - O arquivo `site/_redirects` deve conter única e exclusivamente apelidos e aliases de rotas sem representação física em disco (`/patilera`, `/prateleira`, `/repo`).
+  - Caminhos que possuem espelhamento físico em disco (`site/icons/`, `site/icons-<dpi>/`, `site/in.twolp.*/`) NUNCA devem figurar no arquivo de redirecionamentos, assegurando entrega direta com `HTTP 200 OK` e `Cache-Control` padrão da Cloudflare.
