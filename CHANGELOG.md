@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixes
+  - (pratilera) restaurar versionName canônico do cccp e preservar versionCode do apk (closes #25)
+  - (pratilera) extrair metadados reais dos apks via aapt (closes #24)
+
 ### Features
   - (showcase) vincular banners oficiais dos 16 projetos restantes e atingir 100% de cobertura (closes #7)
   - (showcase) vincular banner oficial do gost e atualizar placeholder para termo neutro (closes #6)
