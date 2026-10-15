@@ -494,6 +494,23 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 23. Verificando resiliência de get_project_version quando VERSION ausente
+echo -n "-> 23. Verificando resiliência de get_project_version quando VERSION ausente... "
+FB_RES=$(python3 -c "
+import importlib.util
+spec = importlib.util.spec_from_file_location('gp', '$REPO_ROOT/scripts/gerar-pratilera.py')
+gp = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(gp)
+assert gp.get_project_version('projeto_fantasma_xyz', '9.9.9') == '9.9.9'
+print('PASS')
+" 2>&1)
+if [ "$FB_RES" = "PASS" ]; then
+    echo "✅ OK (fallback resiliente de get_project_version)"
+else
+    echo "❌ FALHOU ($FB_RES)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
