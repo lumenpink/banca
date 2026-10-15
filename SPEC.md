@@ -190,3 +190,15 @@ site/pratilera/
   - A ferramenta `aapt` é indispensável para extrair dinamicamente `versionCode`, `versionName` e SDK targets dos APKs físicos da Pratilera. Sua ausência no runner causa falha no teste de integridade 22 e impede a execução do job dependente `Deploy Documentation Site` (Cloudflare Pages).
 - **Validação de Conformidade do CI**:
   - A suíte de testes deve auditar que `.forgejo/workflows/ci.yml` declara a instalação obrigatória do pacote `aapt`.
+
+## 15. Hermeticidade e Execução em Sub-Imagem Atômica `gost-ci-banca` (Ticket #28)
+
+- **Conformidade Estrita com a Seção 13.6 do GOST (Zero Volatilidade de Rede)**:
+  - O pipeline de CI da Banca não deve realizar downloads ou instalações em tempo de execução via gerenciadores de pacotes (`apt-get install`), prevenindo falhas intermitentes por instabilidade de espelhos do sistema operacional hospedeiro.
+  - O job de teste e validação `test` roda encapsulado na sub-imagem atômica oficial `codeberg.org/lumenpink/gost-ci-banca:latest`, hospedada no registry de containers da Codeberg e mantida no repositório irmão `gost-ci`.
+- **Composição da Sub-Imagem `gost-ci-banca`**:
+  - Base Debian Bookworm com Node 24 (`node:24-bookworm-slim`).
+  - `openjdk-17-jdk-headless` pré-instalado (jarsigner para assinatura de pacotes e repositório).
+  - `python3-pil` pré-instalado (conversão canônica de ícones para 8-bit RGBA).
+  - `aapt` pré-instalado (inspeção e extração de metadados dos APKs).
+  - Utilitários de base: `bash`, `git`, `file`, `curl`, `ca-certificates` e `jq`.
