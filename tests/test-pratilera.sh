@@ -360,19 +360,19 @@ for pkg in "${PACKAGES[@]}"; do
     done
 done
 
-# 3. Verificar fallback na raiz do domínio (site/icons/icon.png) e _redirects
+# 3. Verificar fallback na raiz do domínio (site/icons/icon.png e site/icons-480/)
 if [ ! -f "$SITE_DIR/icons/icon.png" ] || [ "$(wc -c < "$SITE_DIR/icons/icon.png" | tr -d ' ')" -lt 1024 ]; then
     FASTLANE_FAIL=1
 fi
 
-if ! grep -q "/icons/\*" "$SITE_DIR/_redirects" 2>/dev/null; then
+if [ ! -f "$SITE_DIR/icons-480/in.twolp.lacraia.app.png" ] || [ "$(wc -c < "$SITE_DIR/icons-480/in.twolp.lacraia.app.png" | tr -d ' ')" -lt 1024 ]; then
     FASTLANE_FAIL=1
 fi
 
 if [ "$FASTLANE_FAIL" -eq 0 ]; then
     echo "✅ OK (metadados Fastlane e localized configurados para todos os apps)"
 else
-    echo "❌ FALHOU (metadados Fastlane, localized, site/icons ou _redirects ausentes)"
+    echo "❌ FALHOU (metadados Fastlane, localized ou arquivos de ícones ausentes)"
     FAILURES=$((FAILURES + 1))
 fi
 
@@ -508,6 +508,24 @@ if [ "$FB_RES" = "PASS" ]; then
     echo "✅ OK (fallback resiliente de get_project_version)"
 else
     echo "❌ FALHOU ($FB_RES)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 24. Validar ausência de regras conflitantes para assets estáticos em _redirects (Ticket #26)
+echo -n "-> 24. Validando ausência de regras conflitantes em _redirects... "
+REDIRECT_FAIL=0
+if grep -qE '^/icons' "$SITE_DIR/_redirects" 2>/dev/null; then
+    REDIRECT_FAIL=1
+    REDIRECT_MSG="Regra conflitante /icons encontrada em _redirects"
+elif grep -qE '^/in\.twolp' "$SITE_DIR/_redirects" 2>/dev/null; then
+    REDIRECT_FAIL=1
+    REDIRECT_MSG="Regra conflitante /in.twolp encontrada em _redirects"
+fi
+
+if [ "$REDIRECT_FAIL" -eq 0 ]; then
+    echo "✅ OK (nenhuma regra interceptando arquivos estáticos físicos)"
+else
+    echo "❌ FALHOU ($REDIRECT_MSG)"
     FAILURES=$((FAILURES + 1))
 fi
 
