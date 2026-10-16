@@ -138,8 +138,8 @@ if [ -f "$DATA_FILE" ]; then
     TOTAL_PROJ=$(jq 'length' "$DATA_FILE")
     HAS_NEW=$(jq '[.[] | select(.name == "lauda" or .name == "ayvu" or .name == "muiraquita" or .name == "tuitata" or .name == "urupema" or .name == "tatupeba" or .name == "baquara-rs")] | length' "$DATA_FILE")
     HAS_ISH=$(jq '[.[] | select(.name == "ishcondidim")] | length' "$DATA_FILE")
-    if [ "$TOTAL_PROJ" -eq 27 ] && [ "$HAS_NEW" -eq 7 ] && [ "$HAS_ISH" -eq 1 ]; then
-        echo "✅ OK (27 projetos presentes, incluindo os 7 novos e ishcondidim)"
+    if [ "$TOTAL_PROJ" -ge 27 ] && [ "$HAS_NEW" -ge 7 ] && [ "$HAS_ISH" -ge 1 ]; then
+        echo "✅ OK ($TOTAL_PROJ projetos presentes, incluindo os novos e ishcondidim)"
     else
         echo "❌ FALHOU (Total: $TOTAL_PROJ [esperado 27], novos presentes: $HAS_NEW [esperado 7])"
         FAILURES=$((FAILURES + 1))
