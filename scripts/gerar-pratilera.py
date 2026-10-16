@@ -64,6 +64,21 @@ APPS_METADATA = {
         "license": "GPL-3.0",
         "web_url": "https://lauda.2lp.in",
         "source_code": "https://codeberg.org/lumenpink/lauda"
+    },
+    "in.twolp.mocambo": {
+        "name": "Mocambo",
+        "summary": "Cofre Soberano de Arquivos e Fotos",
+        "description": "Cliente mobile oficial do Mocambo com sincronização WebDAV contínua, galeria de fotos com miniaturas e busca semântica.",
+        "icon": "in.twolp.mocambo.png",
+        "categories": ["Internet", "Graphics", "Utility"],
+        "apk_filename": "mocambo.apk",
+        "version_name": "0.1.0",
+        "version_code": 1,
+        "min_sdk": 26,
+        "target_sdk": 34,
+        "license": "CC0-1.0",
+        "web_url": "https://vault.lohn.in",
+        "source_code": "https://codeberg.org/lumenpink/mocambo"
     }
 }
 
