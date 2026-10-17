@@ -733,6 +733,58 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 30. Validar resiliência de metadados da Pratilera e gatilho workflow_dispatch no CI
+echo -n "-> 30. Verificando resiliência de metadados sem APKs no disco e workflow_dispatch no CI... "
+WORKFLOW_FILE="$REPO_ROOT/.forgejo/workflows/ci.yml"
+METADATA_RESILIENCE_TEST=$(python3 -c '
+import sys, json
+from pathlib import Path
+
+# 1. Validar workflow_dispatch no CI
+wf_path = Path(".forgejo/workflows/ci.yml")
+if not wf_path.exists():
+    print(".forgejo/workflows/ci.yml ausente")
+    sys.exit(1)
+wf_text = wf_path.read_text(encoding="utf-8")
+if "workflow_dispatch:" not in wf_text and "workflow_dispatch" not in wf_text:
+    print("workflow_dispatch ausente em .forgejo/workflows/ci.yml")
+    sys.exit(1)
+
+# 2. Validar que nenhum APK pesado (> 25MB) reside em site/ (limite Workers)
+for apk_file in Path("site").rglob("*.apk"):
+    if apk_file.stat().st_size > 26214400: # 25 MB
+        print(f"APK pesado encontrado em site: {apk_file} ({apk_file.stat().st_size} bytes)")
+        sys.exit(1)
+
+# 3. Validar integridade estrita de todos os 4 pacotes em index-v1.json
+idx_path = Path("site/pratilera/index-v1.json")
+with open(idx_path, encoding="utf-8") as f:
+    data = json.load(f)
+
+for pkg in ["in.twolp.lacraia.app", "in.twolp.lacraia.simbiotyka", "in.twolp.lauda", "in.twolp.mocambo"]:
+    entries = data.get("packages", {}).get(pkg, [])
+    if not entries:
+        print("Pacote " + pkg + " sem entrada de versao")
+        sys.exit(1)
+    e = entries[0]
+    if e.get("size", 0) <= 1024:
+        print("Pacote " + pkg + " com tamanho dummy: " + str(e.get("size")))
+        sys.exit(1)
+    if not e.get("hash") or e.get("hash").startswith("000000"):
+        print("Pacote " + pkg + " com hash nula: " + str(e.get("hash")))
+        sys.exit(1)
+
+print("OK")
+sys.exit(0)
+' || true)
+
+if [ "$METADATA_RESILIENCE_TEST" = "OK" ]; then
+    echo "✅ OK (metadados íntegros, sem APKs > 25MB em site/ e workflow_dispatch ativo)"
+else
+    echo "❌ FALHOU ($METADATA_RESILIENCE_TEST)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
