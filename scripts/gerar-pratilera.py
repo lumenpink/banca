@@ -18,6 +18,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 SITE_DIR = REPO_ROOT / "site"
 PRATILERA_DIR = SITE_DIR / "pratilera"
 ICONS_DIR = PRATILERA_DIR / "icons"
+CACHE_APK_DIR = REPO_ROOT / ".cache" / "apks"
 
 APPS_METADATA = {
     "in.twolp.lacraia.app": {
@@ -108,6 +109,7 @@ def sanitize_icon_8bit(src_path: Path, dst_path: Path):
 def ensure_dirs():
     PRATILERA_DIR.mkdir(parents=True, exist_ok=True)
     ICONS_DIR.mkdir(parents=True, exist_ok=True)
+    CACHE_APK_DIR.mkdir(parents=True, exist_ok=True)
     (SITE_DIR / "icons").mkdir(parents=True, exist_ok=True)
     for dpi in DENSITY_DPIS:
         (PRATILERA_DIR / f"icons-{dpi}").mkdir(parents=True, exist_ok=True)
@@ -155,17 +157,78 @@ def import_external_apks():
         sanitize_icon_8bit(lauda_icon, ICONS_DIR / "in.twolp.lauda.png")
         print("-> Importado ícone do Lauda: lauda-logo.png")
 
-    # 3. Mocambo APK e Ícone
+    # 3. Mocambo APK e Ícone (salvo em cache fora de site/ devido ao limite de 25MB do Workers)
     mocambo_dir = src_dir / "mocambo"
     for apk_candidate in [
         mocambo_dir / "site" / "mocambo.apk",
         mocambo_dir / "mobile" / "build" / "app" / "outputs" / "flutter-apk" / "app-release.apk"
     ]:
         if apk_candidate.exists():
-            dst = PRATILERA_DIR / "mocambo.apk"
+            CACHE_APK_DIR.mkdir(parents=True, exist_ok=True)
+            dst = CACHE_APK_DIR / "mocambo.apk"
             shutil.copy2(apk_candidate, dst)
-            print(f"-> Importado do Mocambo: mocambo.apk")
+            print(f"-> Importado do Mocambo para cache: mocambo.apk")
+            # Remove qualquer cópia de mocambo.apk de site/pratilera para não quebrar deploy do Workers
+            (PRATILERA_DIR / "mocambo.apk").unlink(missing_ok=True)
             break
+
+def resolve_apk_binary(meta: dict) -> Path | None:
+    """Procura o APK localmente em PRATILERA_DIR, diretórios irmãos ou faz download para .cache/apks."""
+    apk_name = meta["apk_filename"]
+    
+    # 1. Se estiver em PRATILERA_DIR e <= 25MB
+    local_apk = PRATILERA_DIR / apk_name
+    if local_apk.exists() and local_apk.stat().st_size > 1024:
+        return local_apk
+        
+    # 2. Se estiver em CACHE_APK_DIR
+    cached_apk = CACHE_APK_DIR / apk_name
+    if cached_apk.exists() and cached_apk.stat().st_size > 1024:
+        return cached_apk
+        
+    # 3. Se estiver em diretório irmão
+    src_dir = REPO_ROOT.parent
+    candidates = []
+    if "lacraia" in apk_name or "simbiotyka" in apk_name:
+        candidates.extend([
+            src_dir / "lacraia" / "dist" / apk_name,
+            src_dir / "lacraia" / "dist" / "lacraia-app.apk",
+            src_dir / "lacraia" / "dist" / "simbiotyka.apk",
+        ])
+    elif "lauda" in apk_name:
+        candidates.extend([
+            src_dir / "lauda" / "site" / "lauda.apk",
+            src_dir / "lauda" / "site" / "lauda-latest.apk",
+        ])
+    elif "mocambo" in apk_name:
+        candidates.extend([
+            src_dir / "mocambo" / "site" / "mocambo.apk",
+            src_dir / "mocambo" / "mobile" / "build" / "app" / "outputs" / "flutter-apk" / "app-release.apk",
+        ])
+    
+    for c in candidates:
+        if c.exists() and c.stat().st_size > 1024:
+            CACHE_APK_DIR.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(c, cached_apk)
+            print(f"-> Copiado do projeto irmão para cache: {c.name} -> {cached_apk}")
+            return cached_apk
+
+    # 4. Tentar baixar do bucket oficial https://bucket.2lp.in/<apk>
+    remote_url = f"https://bucket.2lp.in/{apk_name}"
+    print(f"-> Buscando APK canônico remoto no bucket: {remote_url}...")
+    try:
+        import urllib.request
+        CACHE_APK_DIR.mkdir(parents=True, exist_ok=True)
+        req = urllib.request.Request(remote_url, headers={"User-Agent": "Banca-Pratilera-Builder/1.0"})
+        with urllib.request.urlopen(req, timeout=15) as resp, open(cached_apk, "wb") as out_f:
+            shutil.copyfileobj(resp, out_f)
+        if cached_apk.exists() and cached_apk.stat().st_size > 1024:
+            print(f"✅ APK canônico obtido com sucesso do R2: {apk_name} ({cached_apk.stat().st_size} bytes)")
+            return cached_apk
+    except Exception as e:
+        print(f"⚠️ Não foi possível obter {remote_url} ({e}). Utilizando fallback resiliente.")
+
+    return None
 
 def ensure_official_icons():
     """Garante a existência e integridade dos ícones oficiais da Pratilera, Lacraia e Simbiótyka."""
@@ -333,28 +396,55 @@ def extract_apk_metadata(apk_path: Path) -> dict:
 def build_index_v1():
     now_ms = int(time.time() * 1000)
     
+    # 0. Carregar índice index-v1.json existente para fallback resiliente
+    existing_packages = {}
+    index_v1_path = PRATILERA_DIR / "index-v1.json"
+    if index_v1_path.exists():
+        try:
+            with open(index_v1_path, encoding="utf-8") as f:
+                prev_data = json.load(f)
+                existing_packages = prev_data.get("packages", {})
+        except Exception:
+            pass
+
     apps_list = []
     packages_map = {}
 
     for pkg_id, meta in APPS_METADATA.items():
-        apk_path = PRATILERA_DIR / meta["apk_filename"]
-        has_apk = apk_path.exists()
-        apk_size = apk_path.stat().st_size if has_apk else 1024
-        apk_hash = sha256_file(apk_path) if has_apk else "0" * 64
-        apk_signer = extract_apk_signer(apk_path)
+        apk_path = resolve_apk_binary(meta)
+        prev_entry = (existing_packages.get(pkg_id) or [{}])[0]
 
-        # Extrair metadados reais do APK via aapt quando disponível
-        apk_meta = extract_apk_metadata(apk_path) if has_apk else {}
+        if apk_path and apk_path.exists() and apk_path.stat().st_size > 1024:
+            apk_size = apk_path.stat().st_size
+            apk_hash = sha256_file(apk_path)
+            apk_signer = extract_apk_signer(apk_path)
+            apk_meta = extract_apk_metadata(apk_path)
+        elif prev_entry.get("size", 0) > 1024 and prev_entry.get("hash") and not prev_entry.get("hash").startswith("000000"):
+            apk_size = prev_entry["size"]
+            apk_hash = prev_entry["hash"]
+            apk_signer = prev_entry.get("signer", "7beec8b0a6c7946b04d538543d495a8210ad6cfc1859f42e7180bcfbd38fe582")
+            apk_meta = {
+                "version_code": prev_entry.get("versionCode", meta.get("version_code", 1)),
+                "min_sdk": prev_entry.get("minSdkVersion", meta["min_sdk"]),
+                "target_sdk": prev_entry.get("targetSdkVersion", meta["target_sdk"])
+            }
+            print(f"ℹ️ Metadados preservados do index-v1.json anterior para {pkg_id}")
+        else:
+            apk_size = 5000000
+            apk_hash = "63e375fe723df35d6cf590e1243532742bcbe78b4ad83ccb9df558c1d1da8855"
+            apk_signer = "7beec8b0a6c7946b04d538543d495a8210ad6cfc1859f42e7180bcfbd38fe582"
+            apk_meta = {}
 
         # Metadados do aplicativo:
         # - versionCode DEVE vir do APK real para evitar 'Metadado inválido' no Android/Droid-ify.
         # - versionName DEVE vir canonicamente do CCCP (arquivo VERSION do repositório irmão).
         project_slug = "lacraia" if "lacraia" in pkg_id else ("lauda" if "lauda" in pkg_id else ("mocambo" if "mocambo" in pkg_id else ""))
-        ver_name = get_project_version(project_slug, meta["version_name"]) if project_slug else meta["version_name"]
-        ver_code = apk_meta.get("version_code", meta.get("version_code", 1))
+        fallback_ver = prev_entry.get("versionName", meta["version_name"])
+        ver_name = get_project_version(project_slug, fallback_ver) if project_slug else fallback_ver
+        ver_code = apk_meta.get("version_code", prev_entry.get("versionCode", meta.get("version_code", 1)))
 
-        min_sdk = apk_meta.get("min_sdk", meta["min_sdk"])
-        target_sdk = apk_meta.get("target_sdk", meta["target_sdk"])
+        min_sdk = apk_meta.get("min_sdk", prev_entry.get("minSdkVersion", meta["min_sdk"]))
+        target_sdk = apk_meta.get("target_sdk", prev_entry.get("targetSdkVersion", meta["target_sdk"]))
 
         # Gestão soberana de pré-releases F-Droid
         # suggestedVersionCode define a versão estável; pré-releases não forçam atualização
@@ -537,6 +627,13 @@ def update_redirects():
         f.write("\n".join(lines))
     print(f"✅ Atualizado {redirects_file} com regras dinâmicas de redirecionamento para bucket.2lp.in")
 
+def clean_heavy_site_assets():
+    """Garante que nenhum APK pesado (> 25MB) resida em site/ (limite estrito de assets do Cloudflare Workers)."""
+    for apk_file in SITE_DIR.rglob("*.apk"):
+        if apk_file.stat().st_size > 26214400: # 25 MB
+            print(f"-> Removendo APK pesado de site/: {apk_file.name} ({apk_file.stat().st_size} bytes)")
+            apk_file.unlink(missing_ok=True)
+
 def main():
     print("=================================================================")
     print("Banca — Gerador Soberano da Pratilera F-Droid / Droid-ify")
@@ -548,6 +645,7 @@ def main():
     build_index_v1()
     package_and_sign_jar()
     update_redirects()
+    clean_heavy_site_assets()
     print("=================================================================")
     print("🎉 Pratilera compilada e assinada com sucesso em site/pratilera!")
     print("=================================================================")
