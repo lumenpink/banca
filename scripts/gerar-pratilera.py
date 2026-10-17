@@ -26,7 +26,7 @@ APPS_METADATA = {
         "description": "Paredão digital, jukebox e controlador de rádio comunitária autônoma para sistemas de som de alta potência.",
         "icon": "in.twolp.lacraia.app.png",
         "categories": ["Multimedia", "Audio"],
-        "apk_filename": "lacraia-app.apk",
+        "apk_filename": "lacraia.apk",
         "version_name": "0.2.0",
         "version_code": 1,
         "min_sdk": 26,
@@ -56,7 +56,7 @@ APPS_METADATA = {
         "description": "Cliente de e-mail em texto puro com suporte a Dioxus, Maildir e sincronização sem rastreamento.",
         "icon": "in.twolp.lauda.png",
         "categories": ["Internet", "Email"],
-        "apk_filename": "lauda-latest.apk",
+        "apk_filename": "lauda.apk",
         "version_name": "0.2.0",
         "version_code": 1,
         "min_sdk": 26,
@@ -118,19 +118,19 @@ def ensure_dirs():
             (SITE_DIR / pkg_id / loc).mkdir(parents=True, exist_ok=True)
 
 def import_external_apks():
-    """Tenta puxar APKs recém-gerados nos diretórios irmãos dos projetos (lacraia, lauda)."""
+    """Tenta puxar APKs recém-gerados nos diretórios irmãos dos projetos (lacraia, lauda, mocambo)."""
     src_dir = REPO_ROOT.parent
     
     # 1. Lacraia APKs e Ícones Oficiais
     lacraia_dir = src_dir / "lacraia"
     lacraia_dist = lacraia_dir / "dist"
     if lacraia_dist.exists():
-        for apk in ["lacraia-app.apk", "simbiotyka.apk"]:
-            src = lacraia_dist / apk
-            dst = PRATILERA_DIR / apk
+        for apk_src_candidate, canonical_name in [("lacraia.apk", "lacraia.apk"), ("lacraia-app.apk", "lacraia.apk"), ("simbiotyka.apk", "simbiotyka.apk")]:
+            src = lacraia_dist / apk_src_candidate
             if src.exists():
+                dst = PRATILERA_DIR / canonical_name
                 shutil.copy2(src, dst)
-                print(f"-> Importado do Lacraia: {apk}")
+                print(f"-> Importado do Lacraia: {canonical_name}")
 
     # Importar ícones oficiais do repositório lacraia se presentes
     lacraia_assets = lacraia_dir / "site" / "assets"
@@ -142,16 +142,30 @@ def import_external_apks():
         print("-> Importado ícone oficial da Simbiótyka: site/assets/simbiotyka.png")
 
     # 2. Lauda APK e Ícone
-    lauda_apk = src_dir / "lauda" / "site" / "lauda-latest.apk"
-    if lauda_apk.exists():
-        dst = PRATILERA_DIR / "lauda-latest.apk"
-        shutil.copy2(lauda_apk, dst)
-        print("-> Importado do Lauda: lauda-latest.apk")
+    lauda_dir = src_dir / "lauda"
+    for apk_candidate in [lauda_dir / "site" / "lauda.apk", lauda_dir / "site" / "lauda-latest.apk"]:
+        if apk_candidate.exists():
+            dst = PRATILERA_DIR / "lauda.apk"
+            shutil.copy2(apk_candidate, dst)
+            print(f"-> Importado do Lauda: lauda.apk (de {apk_candidate.name})")
+            break
 
-    lauda_icon = src_dir / "lauda" / "site" / "lauda-logo.png"
+    lauda_icon = lauda_dir / "site" / "lauda-logo.png"
     if lauda_icon.exists():
         sanitize_icon_8bit(lauda_icon, ICONS_DIR / "in.twolp.lauda.png")
         print("-> Importado ícone do Lauda: lauda-logo.png")
+
+    # 3. Mocambo APK e Ícone
+    mocambo_dir = src_dir / "mocambo"
+    for apk_candidate in [
+        mocambo_dir / "site" / "mocambo.apk",
+        mocambo_dir / "mobile" / "build" / "app" / "outputs" / "flutter-apk" / "app-release.apk"
+    ]:
+        if apk_candidate.exists():
+            dst = PRATILERA_DIR / "mocambo.apk"
+            shutil.copy2(apk_candidate, dst)
+            print(f"-> Importado do Mocambo: mocambo.apk")
+            break
 
 def ensure_official_icons():
     """Garante a existência e integridade dos ícones oficiais da Pratilera, Lacraia e Simbiótyka."""
@@ -395,7 +409,7 @@ def build_index_v1():
         "repo": {
             "name": "A Pratilera (Banca 2lp)",
             "description": "Loja e Repositório Soberano de Aplicativos do Ecossistema 2lp. Fanzines, paredões, correio e ferramentas de calçada.",
-            "address": "https://banca.2lp.in/pratilera",
+            "address": "https://bucket.2lp.in",
             "icon": "icon.png",
             "timestamp": now_ms,
             "version": 20
@@ -499,6 +513,30 @@ def package_and_sign_jar():
     shutil.copy2(jar_path, SITE_DIR / "index-v1.jar")
     print(f"✅ Assinatura verificada com sucesso em {jar_path} e espelhado em {SITE_DIR / 'index-v1.jar'}")
 
+def update_redirects():
+    redirects_file = SITE_DIR / "_redirects"
+    lines = [
+        "/patilera  /pratilera/  301",
+        "/patilera/*  /pratilera/:splat  301",
+        "/prateleira  /pratilera/  301",
+        "/prateleira/*  /pratilera/:splat  301",
+        "/repo  /pratilera/  301",
+        "/repo/*  /pratilera/:splat  301",
+        "",
+        "# Redirecionamentos de compatibilidade e acesso direto para Cloudflare R2",
+        "/pratilera/lacraia-app.apk https://bucket.2lp.in/lacraia.apk 302!",
+        "/pratilera/lacraia.apk     https://bucket.2lp.in/lacraia.apk 302!",
+        "/pratilera/simbiotyka.apk  https://bucket.2lp.in/simbiotyka.apk 302!",
+        "/pratilera/lauda-latest.apk https://bucket.2lp.in/lauda.apk 302!",
+        "/pratilera/lauda.apk       https://bucket.2lp.in/lauda.apk 302!",
+        "/pratilera/mocambo.apk     https://bucket.2lp.in/mocambo.apk 302!",
+        "/pratilera/:apk            https://bucket.2lp.in/:apk 302!",
+        ""
+    ]
+    with open(redirects_file, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+    print(f"✅ Atualizado {redirects_file} com regras dinâmicas de redirecionamento para bucket.2lp.in")
+
 def main():
     print("=================================================================")
     print("Banca — Gerador Soberano da Pratilera F-Droid / Droid-ify")
@@ -509,6 +547,7 @@ def main():
     sync_density_and_root_icons()
     build_index_v1()
     package_and_sign_jar()
+    update_redirects()
     print("=================================================================")
     print("🎉 Pratilera compilada e assinada com sucesso em site/pratilera!")
     print("=================================================================")

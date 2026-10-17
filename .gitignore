@@ -4,6 +4,5 @@ dist/
 node_modules/
 .wrangler/
 *.apk
-!site/pratilera/*.apk
 __pycache__/
 *.pyc

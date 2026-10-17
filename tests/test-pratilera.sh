@@ -241,22 +241,22 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
-# 15. Validar existência física e integridade dos APKs (> 1MB e hashes não-nulos)
-echo -n "-> 15. Verificando APKs físicos e metadados no index-v1.json (> 1MB)... "
+# 15. Validar integridade dos metadados dos APKs (> 1MB e hashes não-nulos) e binários locais se presentes
+echo -n "-> 15. Verificando metadados de APKs no index-v1.json (> 1MB)... "
 APK_FAIL=0
-for apk in "lacraia-app.apk" "simbiotyka.apk" "lauda-latest.apk"; do
-    if [ ! -f "$PRATILERA_DIR/$apk" ]; then
-        APK_FAIL=1
-        break
-    fi
-    SZ=$(stat -c%s "$PRATILERA_DIR/$apk")
-    if [ "$SZ" -lt 1048576 ]; then
-        APK_FAIL=1
-        break
+
+# Se houver APKs físicos locais, validar tamanho mínimo
+for apk in "lacraia.apk" "simbiotyka.apk" "lauda.apk"; do
+    if [ -f "$PRATILERA_DIR/$apk" ]; then
+        SZ=$(stat -c%s "$PRATILERA_DIR/$apk")
+        if [ "$SZ" -lt 1048576 ]; then
+            APK_FAIL=1
+            break
+        fi
     fi
 done
 
-# Verificar se index-v1.json não contém tamanho 1024 nem hashes zerados
+# Verificar se index-v1.json não contém tamanho <= 1024 nem hashes zerados
 if [ -f "$PRATILERA_DIR/index-v1.json" ]; then
     HAS_DUMMY=$(jq '[.packages[][] | select(.size <= 1024 or (.hash | test("^0+$")))] | length' "$PRATILERA_DIR/index-v1.json")
     if [ "$HAS_DUMMY" -gt 0 ]; then
@@ -267,9 +267,9 @@ else
 fi
 
 if [ "$APK_FAIL" -eq 0 ]; then
-    echo "✅ OK (APKs reais presentes e index-v1.json com tamanhos e hashes verídicos)"
+    echo "✅ OK (metadados verídicos no index-v1.json e APKs locais conformes)"
 else
-    echo "❌ FALHOU (APKs ausentes, menores que 1MB ou index com valores dummy)"
+    echo "❌ FALHOU (APKs menores que 1MB ou index com valores dummy)"
     FAILURES=$((FAILURES + 1))
 fi
 
@@ -670,6 +670,66 @@ if [ "$LAUDA_SPEC_TEST" = "OK" ]; then
     echo "✅ OK (ícone do Lauda atende rigorosamente ao padrão C2 8-bit RGBA)"
 else
     echo "❌ FALHOU ($LAUDA_SPEC_TEST)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 29. Validar repositório direto bucket.2lp.in e nomes canônicos de APK
+echo -n "-> 29. Verificando repo.address em bucket.2lp.in e nomes limpos de APK... "
+BUCKET_SPEC_TEST=$(python3 -c '
+import sys, json
+from pathlib import Path
+
+index_path = Path("site/pratilera/index-v1.json")
+if not index_path.exists():
+    print("index-v1.json ausente")
+    sys.exit(1)
+
+with open(index_path, encoding="utf-8") as f:
+    data = json.load(f)
+
+repo = data.get("repo", {})
+addr = repo.get("address")
+if addr != "https://bucket.2lp.in":
+    print("repo.address incorreto: " + str(addr) + ", esperado: https://bucket.2lp.in")
+    sys.exit(1)
+
+packages = data.get("packages", {})
+expected_apks = {
+    "in.twolp.lacraia.app": "lacraia.apk",
+    "in.twolp.lacraia.simbiotyka": "simbiotyka.apk",
+    "in.twolp.lauda": "lauda.apk",
+    "in.twolp.mocambo": "mocambo.apk"
+}
+
+for pkg_id, expected_apk in expected_apks.items():
+    pkg_list = packages.get(pkg_id, [])
+    if not pkg_list:
+        print("Pacote " + pkg_id + " ausente em packages")
+        sys.exit(1)
+    apk_name = pkg_list[0].get("apkName")
+    if apk_name != expected_apk:
+        print(pkg_id + " apkName incorreto: " + str(apk_name) + ", esperado: " + expected_apk)
+        sys.exit(1)
+
+redirects_path = Path("site/_redirects")
+if not redirects_path.exists():
+    print("site/_redirects ausente")
+    sys.exit(1)
+
+red_text = redirects_path.read_text(encoding="utf-8")
+for exp_apk in expected_apks.values():
+    if "https://bucket.2lp.in/" + exp_apk not in red_text:
+        print("Regra de redirect para " + exp_apk + " ausente em site/_redirects")
+        sys.exit(1)
+
+print("OK")
+sys.exit(0)
+' || true)
+
+if [ "$BUCKET_SPEC_TEST" = "OK" ]; then
+    echo "✅ OK (repo.address em bucket.2lp.in e APKs canônicos configurados)"
+else
+    echo "❌ FALHOU ($BUCKET_SPEC_TEST)"
     FAILURES=$((FAILURES + 1))
 fi
 
