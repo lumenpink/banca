@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Fixes
+  - (pratilera) sincronizar versao canonica cccp e apk assinado do mocambo (closes #29)
   - (ci) adotar sub-imagem atômica gost-ci-banca para execução hermética (closes #28)
   - (ci) instalar pacote aapt no runner para viabilizar extracao e deploy (closes #27)
   - (pratilera) remover redirecionamentos conflitantes de ícones e pacotes (closes #26)

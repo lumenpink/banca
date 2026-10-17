@@ -462,6 +462,8 @@ if [ -f "$PRATILERA_DIR/index-v1.json" ] && command -v aapt >/dev/null 2>&1; the
                 SLUG="lauda"
             elif [[ "$PKG" == *"lacraia"* ]]; then
                 SLUG="lacraia"
+            elif [[ "$PKG" == *"mocambo"* ]]; then
+                SLUG="mocambo"
             fi
 
             EXPECTED_NAME=""

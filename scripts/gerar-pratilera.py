@@ -72,7 +72,7 @@ APPS_METADATA = {
         "icon": "in.twolp.mocambo.png",
         "categories": ["Internet", "Graphics", "Utility"],
         "apk_filename": "mocambo.apk",
-        "version_name": "0.1.0",
+        "version_name": "0.2.0",
         "version_code": 1,
         "min_sdk": 26,
         "target_sdk": 34,
@@ -335,7 +335,7 @@ def build_index_v1():
         # Metadados do aplicativo:
         # - versionCode DEVE vir do APK real para evitar 'Metadado inválido' no Android/Droid-ify.
         # - versionName DEVE vir canonicamente do CCCP (arquivo VERSION do repositório irmão).
-        project_slug = "lacraia" if "lacraia" in pkg_id else ("lauda" if "lauda" in pkg_id else "")
+        project_slug = "lacraia" if "lacraia" in pkg_id else ("lauda" if "lauda" in pkg_id else ("mocambo" if "mocambo" in pkg_id else ""))
         ver_name = get_project_version(project_slug, meta["version_name"]) if project_slug else meta["version_name"]
         ver_code = apk_meta.get("version_code", meta.get("version_code", 1))
 
