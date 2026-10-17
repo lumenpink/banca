@@ -227,3 +227,17 @@ site/pratilera/
   - Espelhamento em todas as 6 pastas de densidade da Pratilera: `icons-120`, `icons-160`, `icons-240`, `icons-320`, `icons-480` e `icons-640`.
   - Atualização dos metadados Fastlane estruturados: `site/pratilera/in.twolp.lauda/pt-BR/icon.png` e `en-US/icon.png`.
   - Re-assinatura do índice oficial `index-v1.jar` com a chave release soberana `in_twolp`.
+
+## 18. Distribuição Externa via Cloudflare R2 e Resiliência de Metadados da Pratilera (Ticket #31)
+
+- **Distribuição Canônica no Bucket R2 (`https://bucket.2lp.in`)**:
+  - O catálogo da Pratilera declara `repo.address = "https://bucket.2lp.in"`.
+  - Os clientes Android (Droid-ify / F-Droid) resolvem o download dos binários diretamente contra a URL do bucket R2 soberano (`https://bucket.2lp.in/<app>.apk`), desonerando os Workers de streaming pesado.
+- **Proteção Contra Limite de Assets do Cloudflare Workers (25 MB)**:
+  - O diretório `site/` publicado via Cloudflare Workers Static Assets não deve conter arquivos `.apk` pesados (evitando rejeição de deploy por limite de 25 MB por asset).
+  - O script gerador e o workflow de deploy garantem a limpeza de quaisquer APKs temporários em `site/pratilera/` antes da publicação.
+- **Resiliência de Metadados e Inspeção Hermética**:
+  - Na ausência do arquivo APK no disco do runner de CI, `scripts/gerar-pratilera.py` faz download temporário em diretório cache fora de `site/` a partir de `https://bucket.2lp.in/<apk>` para aferir hash SHA-256 real, tamanho em bytes e metadados via `aapt dump badging`.
+  - Em modo offline ou falha de conectividade, o gerador preserva os metadados verídicos já consolidados no `index-v1.json` versionado no git, proibindo estritamente a emissão de valores dummy (tamanho <= 1024 ou hashes zeradas).
+- **Gatilho Remoto de Atualização Automática via CI**:
+  - O arquivo `.forgejo/workflows/ci.yml` habilita o evento `workflow_dispatch`, permitindo que pipelines de CI dos projetos de aplicativos disparem a re-geração do índice e deploy na produção assim que um novo APK for publicado no R2.
