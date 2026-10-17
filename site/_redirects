@@ -6,10 +6,9 @@
 /repo/*  /pratilera/:splat  301
 
 # Redirecionamentos de compatibilidade e acesso direto para Cloudflare R2
-/pratilera/lacraia-app.apk https://bucket.2lp.in/lacraia.apk 302!
-/pratilera/lacraia.apk     https://bucket.2lp.in/lacraia.apk 302!
-/pratilera/simbiotyka.apk  https://bucket.2lp.in/simbiotyka.apk 302!
-/pratilera/lauda-latest.apk https://bucket.2lp.in/lauda.apk 302!
-/pratilera/lauda.apk       https://bucket.2lp.in/lauda.apk 302!
-/pratilera/mocambo.apk     https://bucket.2lp.in/mocambo.apk 302!
-/pratilera/:apk            https://bucket.2lp.in/:apk 302!
+/pratilera/lacraia-app.apk https://bucket.2lp.in/lacraia.apk 302
+/pratilera/lacraia.apk     https://bucket.2lp.in/lacraia.apk 302
+/pratilera/simbiotyka.apk  https://bucket.2lp.in/simbiotyka.apk 302
+/pratilera/lauda-latest.apk https://bucket.2lp.in/lauda.apk 302
+/pratilera/lauda.apk       https://bucket.2lp.in/lauda.apk 302
+/pratilera/mocambo.apk     https://bucket.2lp.in/mocambo.apk 302
