@@ -28,8 +28,7 @@ fi
 # 2. Validar ausência de frameworks externos e presença de Vanilla JS
 echo -n "-> 2. Verificando uso estrito de Vanilla JS sem frameworks... "
 if [ -f "$DOWNLOADS_DIR/index.html" ]; then
-    HTML_CONTENT=$(cat "$DOWNLOADS_DIR/index.html")
-    if echo "$HTML_CONTENT" | grep -qiE "react|vue|angular|jquery|cdn\.jsdelivr|unpkg\.com"; then
+    if grep -qiE "react|vue|angular|jquery|cdn\.jsdelivr|unpkg\.com" "$DOWNLOADS_DIR/index.html"; then
         echo "❌ FALHOU (detectado framework externo ou dependência de CDN)"
         FAILURES=$((FAILURES + 1))
     else
@@ -43,10 +42,9 @@ fi
 # 3. Validar Dropdown / Seletor de software
 echo -n "-> 3. Verificando dropdown de seleção de aplicações... "
 if [ -f "$DOWNLOADS_DIR/index.html" ]; then
-    HTML_CONTENT=$(cat "$DOWNLOADS_DIR/index.html")
-    if echo "$HTML_CONTENT" | grep -q "id=\"app-selector\"" && \
-       echo "$HTML_CONTENT" | grep -q "value=\"cccp\"" && \
-       echo "$HTML_CONTENT" | grep -q "value=\"navalha\""; then
+    if grep -q "id=\"app-selector\"" "$DOWNLOADS_DIR/index.html" && \
+       grep -q "value=\"cccp\"" "$DOWNLOADS_DIR/index.html" && \
+       grep -q "value=\"navalha\"" "$DOWNLOADS_DIR/index.html"; then
         echo "✅ OK (seletor presente com apps canônicos)"
     else
         echo "❌ FALHOU (seletor #app-selector ou opções ausentes)"
@@ -60,9 +58,8 @@ fi
 # 4. Validar lógica de Deep Linking (URL path e hash)
 echo -n "-> 4. Verificando suporte a Deep Linking (path e #hash)... "
 if [ -f "$DOWNLOADS_DIR/index.html" ]; then
-    HTML_CONTENT=$(cat "$DOWNLOADS_DIR/index.html")
-    if echo "$HTML_CONTENT" | grep -q "window.location.hash" && \
-       echo "$HTML_CONTENT" | grep -q "history.pushState"; then
+    if grep -q "window.location.hash" "$DOWNLOADS_DIR/index.html" && \
+       grep -q "history.pushState" "$DOWNLOADS_DIR/index.html"; then
         echo "✅ OK (deep linking funcional implementado)"
     else
         echo "❌ FALHOU (lógica de hash ou pushState ausente)"
@@ -76,10 +73,9 @@ fi
 # 5. Validar Estética Anti-Design e Paleta Oficial
 echo -n "-> 5. Verificando variáveis e estética Anti-Design... "
 if [ -f "$DOWNLOADS_DIR/index.html" ]; then
-    HTML_CONTENT=$(cat "$DOWNLOADS_DIR/index.html")
-    if echo "$HTML_CONTENT" | grep -q -- "--pink:" && \
-       echo "$HTML_CONTENT" | grep -q -- "--bg:" && \
-       echo "$HTML_CONTENT" | grep -q -- "--font-mono:"; then
+    if grep -q -- "--pink:" "$DOWNLOADS_DIR/index.html" && \
+       grep -q -- "--bg:" "$DOWNLOADS_DIR/index.html" && \
+       grep -q -- "--font-mono:" "$DOWNLOADS_DIR/index.html"; then
         echo "✅ OK (estética anti-design preservada)"
     else
         echo "❌ FALHOU (variáveis CSS canônicas ausentes)"
@@ -155,6 +151,48 @@ EOF
     fi
 else
     echo "❌ FALHOU (rotate-downloads.py ausente)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 9. Testar inserção atômica e promoção a latest
+echo -n "-> 9. Testando inserção atômica e promoção a latest... "
+if [ -f "$ROTATE_SCRIPT" ]; then
+    TMP_JSON=$(mktemp --suffix=.json)
+    python3 "$ROTATE_SCRIPT" --manifest "$TMP_JSON" --channel stable --version-str "2.0.0" --url "https://banca.2lp.in/test" --sha256 "abcd" >/dev/null 2>&1
+    python3 "$ROTATE_SCRIPT" --manifest "$TMP_JSON" --channel nightly --version-str "2.1.0-dev.1" --url "https://banca.2lp.in/nightly" >/dev/null 2>&1
+
+    STABLE_LATEST=$(python3 -c "import json; d=json.load(open('$TMP_JSON')); print(d.get('stable_latest'))")
+    NIGHTLY_LATEST=$(python3 -c "import json; d=json.load(open('$TMP_JSON')); print(d.get('nightly_latest'))")
+    rm -f "$TMP_JSON"
+
+    if [ "$STABLE_LATEST" = "2.0.0" ] && [ "$NIGHTLY_LATEST" = "2.1.0-dev.1" ]; then
+        echo "✅ OK (promovido stable-latest e nightly-latest corretamente)"
+    else
+        echo "❌ FALHOU (esperado 2.0.0 e 2.1.0-dev.1, obtido $STABLE_LATEST e $NIGHTLY_LATEST)"
+        FAILURES=$((FAILURES + 1))
+    fi
+else
+    echo "❌ FALHOU (rotate-downloads.py ausente)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 10. Validar resiliência a fallback de hash e integridade de todos os 15 apps
+echo -n "-> 10. Verificando cadastro de todos os 15 apps na vitrine... "
+if [ -f "$DOWNLOADS_DIR/index.html" ]; then
+    MISSING_APPS=0
+    for app in cccp navalha lauda lacraia joaju svyaz mayak kvant ayvu tuitata baquara mocambo hendu mandu tatupeba; do
+        if ! grep -q "\"$app\"" "$DOWNLOADS_DIR/index.html"; then
+            MISSING_APPS=$((MISSING_APPS + 1))
+        fi
+    done
+    if [ "$MISSING_APPS" -eq 0 ]; then
+        echo "✅ OK (todos os 15 apps registrados)"
+    else
+        echo "❌ FALHOU ($MISSING_APPS app(s) ausentes do registro)"
+        FAILURES=$((FAILURES + 1))
+    fi
+else
+    echo "❌ FALHOU (arquivo ausente)"
     FAILURES=$((FAILURES + 1))
 fi
 
