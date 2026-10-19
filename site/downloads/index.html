@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOWNLOADS // Banca Soberana 2lp.in</title>
+  <meta name="description" content="Vitrine e distribuição soberana de binários compilados das ferramentas e CLIs do ecossistema 2lp.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="/assets/icon.png">
+  <link rel="apple-touch-icon" href="/assets/icon.png">
+
+  <style>
+    /* =========================================================================
+       BANCA // DOWNLOADS // ESTÉTICA ANTI-DESIGN PUNK TROPICAL / ALTA FRICÇÃO
+       ========================================================================= */
+    :root {
+      --bg: #f3efe6;
+      --paper: #ffffff;
+      --ink: #111111;
+      --pink: #ff007f;
+      --pink-neon: #ff1493;
+      --yellow: #ffee00;
+      --cyan: #00e5ff;
+      --green: #00cc66;
+      --tape: #e8d8b8;
+      --border: 3px solid var(--ink);
+      --shadow: 5px 5px 0px var(--ink);
+      --shadow-hover: 8px 8px 0px var(--pink);
+      --font-mono: "Courier New", Courier, monospace, "DejaVu Sans Mono";
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(#111111 0.75px, transparent 0.75px),
+        linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px);
+      background-size: 16px 16px, 40px 40px;
+      color: var(--ink);
+      font-family: var(--font-mono);
+      line-height: 1.5;
+      padding: 1.5rem 1rem 4rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* HEADER & MANIFESTO */
+    header {
+      background: var(--paper);
+      border: var(--border);
+      box-shadow: 8px 8px 0px var(--ink);
+      padding: 2rem 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      transform: rotate(-0.2deg);
+    }
+
+    .tape-top {
+      position: absolute;
+      top: -14px;
+      left: 30px;
+      background: var(--tape);
+      border: 1px dashed rgba(0,0,0,0.4);
+      padding: 4px 20px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      transform: rotate(-2deg);
+      box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+
+    .masthead {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: var(--border);
+      padding-bottom: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .brand {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+      background: var(--pink);
+      color: var(--paper);
+      padding: 0.2rem 0.8rem;
+      display: inline-block;
+      border: 2px solid var(--ink);
+      box-shadow: 4px 4px 0px var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links a {
+      color: var(--ink);
+      font-weight: bold;
+      text-decoration: underline;
+      margin-left: 1rem;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      background: var(--yellow);
+    }
+
+    .manifesto-box {
+      font-size: 0.95rem;
+      background: #faf8f5;
+      padding: 1rem;
+      border: 1px solid var(--ink);
+    }
+
+    /* SELETOR DROPDOWN */
+    .selector-section {
+      background: var(--yellow);
+      border: var(--border);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .selector-label {
+      display: block;
+      font-weight: 900;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .punk-select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: bold;
+      background: var(--paper);
+      border: var(--border);
+      box-shadow: 4px 4px 0px var(--ink);
+      cursor: pointer;
+      outline: none;
+    }
+
+    .punk-select:focus {
+      border-color: var(--pink);
+      box-shadow: 4px 4px 0px var(--pink);
+    }
+
+    /* APP CARD */
+    .app-card {
+      background: var(--paper);
+      border: var(--border);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .app-title-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 2px dashed var(--ink);
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .app-title {
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .app-tag {
+      font-size: 0.8rem;
+      background: var(--cyan);
+      border: 1px solid var(--ink);
+      padding: 0.2rem 0.5rem;
+      font-weight: bold;
+    }
+
+    .app-desc {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    /* GRID DE CANAIS */
+    .channels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .channel-box {
+      background: var(--paper);
+      border: var(--border);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .channel-box.stable {
+      border-top: 8px solid var(--green);
+    }
+
+    .channel-box.nightly {
+      border-top: 8px solid var(--pink);
+    }
+
+    .channel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 0.5rem;
+    }
+
+    .channel-badge {
+      font-size: 0.85rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border: 1px solid var(--ink);
+    }
+
+    .channel-box.stable .channel-badge {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .channel-box.nightly .channel-badge {
+      background: var(--pink);
+      color: #fff;
+    }
+
+    .latest-card {
+      background: #faf8f5;
+      border: 2px solid var(--ink);
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .version-display {
+      font-size: 1.25rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+      word-break: break-all;
+    }
+
+    .download-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.9rem;
+      font-family: var(--font-mono);
+      font-size: 1.05rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--ink);
+      border: var(--border);
+      box-shadow: 4px 4px 0px var(--ink);
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: all 0.1s;
+    }
+
+    .download-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px var(--ink);
+    }
+
+    .download-btn.btn-stable {
+      background: var(--yellow);
+    }
+
+    .download-btn.btn-nightly {
+      background: var(--cyan);
+    }
+
+    .curl-box {
+      background: var(--ink);
+      color: #00ff66;
+      padding: 0.8rem;
+      border: 2px solid var(--ink);
+      font-size: 0.85rem;
+      position: relative;
+      margin-bottom: 1.25rem;
+      word-break: break-all;
+      line-height: 1.4;
+    }
+
+    .copy-btn {
+      margin-top: 0.5rem;
+      background: var(--paper);
+      color: var(--ink);
+      border: 1px solid #00ff66;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .copy-btn:hover {
+      background: var(--yellow);
+    }
+
+    .history-title {
+      font-size: 0.9rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      border-bottom: 1px dashed var(--ink);
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .history-list {
+      list-style: none;
+      font-size: 0.85rem;
+      max-height: 240px;
+      overflow-y: auto;
+    }
+
+    .history-item {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid #e0d8c8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .history-item a {
+      color: var(--ink);
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .history-item a:hover {
+      background: var(--yellow);
+    }
+
+    .history-meta {
+      font-size: 0.75rem;
+      color: #555;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--paper);
+      border: var(--border);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .brand { font-size: 1.6rem; }
+      .masthead { flex-direction: column; }
+      .nav-links a { margin-left: 0; margin-right: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="tape-top">DISTRIBUIÇÃO SOBERANA // 2LP.IN</div>
+      <div class="masthead">
+        <a href="/" class="brand">BANCA // 2LP.IN</a>
+        <div class="nav-links">
+          <a href="/">← Vitrine Principal</a>
+          <a href="/pratilera">Pratilera (F-Droid)</a>
+          <a href="https://codeberg.org/lumenpink" target="_blank" rel="noopener">Código</a>
+        </div>
+      </div>
+      <div class="manifesto-box">
+        <strong>★ DIRETIVA DE COMPILAÇÃO E ENTREGA:</strong> Todos os binários são gerados de forma sequencial na esteira CI (Forgejo Runner com capacidade 1). Retenção estrita das <strong>5 versões estáveis</strong> mais recentes e <strong>10 compilações de desenvolvimento (nightly)</strong>.
+      </div>
+    </header>
+
+    <!-- SELETOR DROPDOWN -->
+    <section class="selector-section">
+      <label for="app-selector" class="selector-label">ESCOLHA O SOFTWARE // CLI:</label>
+      <select id="app-selector" class="punk-select">
+        <option value="cccp">cccp — Governança Gosplan &amp; Esteira DD-TDD</option>
+        <option value="navalha">navalha — Fatiador &amp; Diagramador de Zines</option>
+        <option value="lauda">lauda — Processador de Texto &amp; Editor Distro</option>
+        <option value="lacraia">lacraia — Ambiente &amp; Fanzine P2P</option>
+        <option value="joaju">joaju — Rede Mesh &amp; Roteamento Local</option>
+        <option value="svyaz">svyaz — Mensageria Assíncrona &amp; P2P Sync</option>
+        <option value="mayak">mayak — Farol de Descoberta &amp; Rendezvous</option>
+        <option value="kvant">kvant — Motor de Criptografia &amp; Chaves Gosplan</option>
+        <option value="ayvu">ayvu — Voz, Rádio &amp; Paredão Streaming</option>
+        <option value="tuitata">tuitata — Registro Auditável &amp; Notário</option>
+        <option value="baquara">baquara — Ferramental Rústico &amp; Utilitários</option>
+        <option value="mocambo">mocambo — Refúgio &amp; Backup Descentralizado</option>
+        <option value="hendu">hendu — Monitoramento, Telemetria &amp; Sentinela</option>
+        <option value="mandu">mandu — Gerenciador de Pacotes &amp; Repositório</option>
+        <option value="tatupeba">tatupeba — Blindagem &amp; Firewall Local</option>
+      </select>
+    </section>
+
+    <!-- DETALHES DO APP ATUAL -->
+    <section class="app-card">
+      <div class="app-title-row">
+        <div class="app-title">
+          <span id="app-name">cccp</span>
+          <span class="app-tag" id="app-category">CLI / Ferramental</span>
+        </div>
+        <div id="app-links">
+          <a id="app-repo-link" href="https://codeberg.org/lumenpink/cccp" target="_blank" rel="noopener" style="font-weight:bold; color:var(--ink);">Repositório ↗</a>
+        </div>
+      </div>
+      <p class="app-desc" id="app-desc">Ferramenta central de governança, conformidade e esteira DD-TDD do ecossistema Gosplan.</p>
+    </section>
+
+    <!-- GRID DE CANAIS STABLE & NIGHTLY -->
+    <div class="channels-grid">
+      <!-- CANAL ESTÁVEL -->
+      <div class="channel-box stable">
+        <div class="channel-header">
+          <h3>CANAL ESTÁVEL</h3>
+          <span class="channel-badge">Produção</span>
+        </div>
+
+        <div class="latest-card">
+          <div style="font-size:0.8rem; font-weight:bold; color:#444;">VERSÃO RECOMENDADA (LATEST)</div>
+          <div class="version-display" id="stable-ver-text">v3.1.0</div>
+          <a id="stable-download-btn" href="https://banca.2lp.in/downloads/cccp/stable-latest/cccp" class="download-btn btn-stable">
+            ↓ BAIXAR EXECUTÁVEL (STABLE)
+          </a>
+        </div>
+
+        <div class="curl-box">
+          <div id="stable-curl-code">curl -sSL https://banca.2lp.in/downloads/cccp/stable-latest/cccp -o /usr/local/bin/cccp && chmod +x /usr/local/bin/cccp</div>
+          <button class="copy-btn" onclick="copyCommand('stable-curl-code', this)">COPIAR COMANDO</button>
+        </div>
+
+        <div class="history-title">HISTÓRICO ESTÁVEL (ATÉ 5 VERSÕES)</div>
+        <ul class="history-list" id="stable-history-list">
+          <li class="history-item">
+            <a href="https://banca.2lp.in/downloads/cccp/stable-latest/cccp">stable-latest (binário nativo)</a>
+            <span class="history-meta">recomendado</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CANAL NIGHTLY -->
+      <div class="channel-box nightly">
+        <div class="channel-header">
+          <h3>CANAL NIGHTLY</h3>
+          <span class="channel-badge">Desenvolvimento</span>
+        </div>
+
+        <div class="latest-card">
+          <div style="font-size:0.8rem; font-weight:bold; color:#444;">ÚLTIMA COMPILAÇÃO DA ESTEIRA</div>
+          <div class="version-display" id="nightly-ver-text">dev-latest</div>
+          <a id="nightly-download-btn" href="https://banca.2lp.in/downloads/cccp/nightly-latest/cccp" class="download-btn btn-nightly">
+            ⚡ BAIXAR EXECUTÁVEL (NIGHTLY)
+          </a>
+        </div>
+
+        <div class="curl-box">
+          <div id="nightly-curl-code">curl -sSL https://banca.2lp.in/downloads/cccp/nightly-latest/cccp -o /usr/local/bin/cccp && chmod +x /usr/local/bin/cccp</div>
+          <button class="copy-btn" onclick="copyCommand('nightly-curl-code', this)">COPIAR COMANDO</button>
+        </div>
+
+        <div class="history-title">HISTÓRICO NIGHTLY (ATÉ 10 COMPILAÇÕES)</div>
+        <ul class="history-list" id="nightly-history-list">
+          <li class="history-item">
+            <a href="https://banca.2lp.in/downloads/cccp/nightly-latest/cccp">nightly-latest (esteira sequencial)</a>
+            <span class="history-meta">automático</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <p>BANCA // Distribuição Autônoma e Soberana de Software Independente // 2LP.IN</p>
+      <p style="margin-top:0.4rem; color:#666;">Todos os binários passam pelo Quality Gate Gosplan e compilação isolada em container na esteira.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Metadados estáticos padrão de todas as ferramentas
+    const APP_REGISTRY = {
+      "cccp": {
+        name: "cccp",
+        title: "CCCP CLI",
+        category: "Governança & DD-TDD",
+        desc: "Ferramenta central de governança, conformidade e esteira DD-TDD do ecossistema Gosplan.",
+        repo: "https://codeberg.org/lumenpink/cccp"
+      },
+      "navalha": {
+        name: "navalha",
+        title: "Navalha",
+        category: "Editoração & Zines",
+        desc: "Fatiador e diagramador de alta fricção para zines, cartazes e fanzines de código.",
+        repo: "https://codeberg.org/lumenpink/navalha"
+      },
+      "lauda": {
+        name: "lauda",
+        title: "Lauda",
+        category: "Processador de Texto",
+        desc: "Processador de texto minimalista e editor de terminal com suporte a tipografia Gosplan.",
+        repo: "https://codeberg.org/lumenpink/lauda"
+      },
+      "lacraia": {
+        name: "lacraia",
+        title: "Lacraia",
+        category: "Ambiente P2P",
+        desc: "Ambiente fanzine e rede distribuída com troca local de publicações.",
+        repo: "https://codeberg.org/lumenpink/lacraia"
+      },
+      "joaju": {
+        name: "joaju",
+        title: "Joaju",
+        category: "Rede Mesh",
+        desc: "Roteador e nó para redes em malha (mesh) e conectividade resiliente comunitária.",
+        repo: "https://codeberg.org/lumenpink/joaju"
+      },
+      "svyaz": {
+        name: "svyaz",
+        title: "Svyaz",
+        category: "Mensageria P2P",
+        desc: "Protocolo e ferramenta de mensageria assíncrona tolerante a desconexões.",
+        repo: "https://codeberg.org/lumenpink/svyaz"
+      },
+      "mayak": {
+        name: "mayak",
+        title: "Mayak",
+        category: "Farol & Descoberta",
+        desc: "Farol de descoberta mDNS e rendezvous para emparelhamento local sem internet.",
+        repo: "https://codeberg.org/lumenpink/mayak"
+      },
+      "kvant": {
+        name: "kvant",
+        title: "Kvant",
+        category: "Criptografia",
+        desc: "Motor e cofre criptográfico para chaves e assinaturas de integridade Gosplan.",
+        repo: "https://codeberg.org/lumenpink/kvant"
+      },
+      "ayvu": {
+        name: "ayvu",
+        title: "Ayvu",
+        category: "Áudio & Paredão",
+        desc: "Servidor e cliente de streaming de áudio comunitário e transmissões ao vivo.",
+        repo: "https://codeberg.org/lumenpink/ayvu"
+      },
+      "tuitata": {
+        name: "tuitata",
+        title: "Tuitata",
+        category: "Cartório Digital",
+        desc: "Registro de transações e notário distribuído com carimbo de tempo seguro.",
+        repo: "https://codeberg.org/lumenpink/tuitata"
+      },
+      "baquara": {
+        name: "baquara",
+        title: "Baquara",
+        category: "Utilitários Rust",
+        desc: "Coleção de utilitários de sistema e biblioteca de baixo nível para automação.",
+        repo: "https://codeberg.org/lumenpink/baquara-rs"
+      },
+      "mocambo": {
+        name: "mocambo",
+        title: "Mocambo",
+        category: "Refúgio & Backup",
+        desc: "Ferramenta de sincronização segura e backup distribuído entre nós autorizados.",
+        repo: "https://codeberg.org/lumenpink/mocambo"
+      },
+      "hendu": {
+        name: "hendu",
+        title: "Hendu",
+        category: "Telemetria & Sentinela",
+        desc: "Monitor de integridade de serviços locais com alertas e diagnósticos rápidos.",
+        repo: "https://codeberg.org/lumenpink/hendu"
+      },
+      "mandu": {
+        name: "mandu",
+        title: "Mandu",
+        category: "Gerenciador de Pacotes",
+        desc: "Distribuidor e empacotador de módulos e ferramentas da calçada.",
+        repo: "https://codeberg.org/lumenpink/mandu"
+      },
+      "tatupeba": {
+        name: "tatupeba",
+        title: "Tatupeba",
+        category: "Blindagem & Firewall",
+        desc: "Camada de segurança e filtragem de tráfego com regras atômicas.",
+        repo: "https://codeberg.org/lumenpink/tatupeba"
+      }
+    };
+
+    // Deep linking: resolução do app ativo a partir da URL
+    function resolveCurrentApp() {
+      // 1. Tentar ler do hash (#cccp)
+      if (window.location.hash) {
+        const hashTarget = window.location.hash.replace(/^#/, "").trim().toLowerCase();
+        if (APP_REGISTRY[hashTarget]) {
+          return hashTarget;
+        }
+      }
+      // 2. Tentar ler do path (/downloads/cccp)
+      const pathParts = window.location.pathname.split("/").filter(Boolean);
+      if (pathParts.length >= 2 && pathParts[0] === "downloads") {
+        const pathTarget = pathParts[1].toLowerCase();
+        if (APP_REGISTRY[pathTarget]) {
+          return pathTarget;
+        }
+      }
+      return "cccp";
+    }
+
+    // Renderização do app selecionado
+    function renderApp(appKey) {
+      const app = APP_REGISTRY[appKey] || APP_REGISTRY["cccp"];
+      
+      document.getElementById("app-selector").value = appKey;
+      document.getElementById("app-name").textContent = app.name;
+      document.getElementById("app-category").textContent = app.category;
+      document.getElementById("app-desc").textContent = app.desc;
+      document.getElementById("app-repo-link").href = app.repo;
+
+      // URLs padrão canônicas
+      const stableUrl = `https://banca.2lp.in/downloads/${app.name}/stable-latest/${app.name}`;
+      const nightlyUrl = `https://banca.2lp.in/downloads/${app.name}/nightly-latest/${app.name}`;
+
+      document.getElementById("stable-download-btn").href = stableUrl;
+      document.getElementById("nightly-download-btn").href = nightlyUrl;
+
+      document.getElementById("stable-curl-code").textContent =
+        `curl -sSL ${stableUrl} -o /usr/local/bin/${app.name} && chmod +x /usr/local/bin/${app.name}`;
+      document.getElementById("nightly-curl-code").textContent =
+        `curl -sSL ${nightlyUrl} -o /usr/local/bin/${app.name} && chmod +x /usr/local/bin/${app.name}`;
+
+      // Reset temporário de listas antes de fetch
+      document.getElementById("stable-ver-text").textContent = "stable-latest";
+      document.getElementById("nightly-ver-text").textContent = "nightly-latest";
+
+      // Tentar carregar index.json dinâmico da aplicação
+      fetch(`/downloads/${app.name}/index.json`)
+        .then(res => {
+          if (!res.ok) throw new Error("Index não encontrado");
+          return res.json();
+        })
+        .then(manifest => {
+          if (manifest.stable_latest) {
+            document.getElementById("stable-ver-text").textContent = "v" + manifest.stable_latest;
+          }
+          if (manifest.nightly_latest) {
+            document.getElementById("nightly-ver-text").textContent = manifest.nightly_latest;
+          }
+
+          // Renderizar histórico estável (até 5)
+          const stableList = document.getElementById("stable-history-list");
+          stableList.innerHTML = "";
+          const stables = (manifest.stables || []).slice(0, 5);
+          if (stables.length > 0) {
+            stables.forEach(item => {
+              const li = document.createElement("li");
+              li.className = "history-item";
+              li.innerHTML = `
+                <a href="${item.url || stableUrl}">v${item.version}</a>
+                <span class="history-meta">${item.date || ""} ${item.sha256 ? item.sha256.substring(0, 8) : ""}</span>
+              `;
+              stableList.appendChild(li);
+            });
+          } else {
+            stableList.innerHTML = `
+              <li class="history-item">
+                <a href="${stableUrl}">stable-latest</a>
+                <span class="history-meta">canal principal</span>
+              </li>
+            `;
+          }
+
+          // Renderizar histórico nightly (até 10)
+          const nightlyList = document.getElementById("nightly-history-list");
+          nightlyList.innerHTML = "";
+          const nightlies = (manifest.nightlies || []).slice(0, 10);
+          if (nightlies.length > 0) {
+            nightlies.forEach(item => {
+              const li = document.createElement("li");
+              li.className = "history-item";
+              li.innerHTML = `
+                <a href="${item.url || nightlyUrl}">${item.version}</a>
+                <span class="history-meta">${item.date || ""}</span>
+              `;
+              nightlyList.appendChild(li);
+            });
+          } else {
+            nightlyList.innerHTML = `
+              <li class="history-item">
+                <a href="${nightlyUrl}">nightly-latest</a>
+                <span class="history-meta">compilação de esteira</span>
+              </li>
+            `;
+          }
+        })
+        .catch(_err => {
+          // Fallback gracioso mantendo links diretos
+          const stableList = document.getElementById("stable-history-list");
+          stableList.innerHTML = `
+            <li class="history-item">
+              <a href="${stableUrl}">stable-latest</a>
+              <span class="history-meta">recomendado</span>
+            </li>
+          `;
+          const nightlyList = document.getElementById("nightly-history-list");
+          nightlyList.innerHTML = `
+            <li class="history-item">
+              <a href="${nightlyUrl}">nightly-latest</a>
+              <span class="history-meta">automático</span>
+            </li>
+          `;
+        });
+    }
+
+    // Manipulador de troca no dropdown
+    document.getElementById("app-selector").addEventListener("change", function(e) {
+      const selected = e.target.value;
+      if (history.pushState) {
+        history.pushState(null, "", "#" + selected);
+      } else {
+        window.location.hash = selected;
+      }
+      renderApp(selected);
+    });
+
+    // Manipulador de navegação no histórico do browser
+    window.addEventListener("hashchange", function() {
+      const app = resolveCurrentApp();
+      renderApp(app);
+    });
+
+    // Função de cópia rápida
+    function copyCommand(elementId, btn) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.textContent;
+        btn.textContent = "COPIADO! ✔";
+        setTimeout(() => {
+          btn.textContent = originalText;
+        }, 2000);
+      });
+    }
+
+    // Inicialização ao carregar a página
+    document.addEventListener("DOMContentLoaded", function() {
+      const initialApp = resolveCurrentApp();
+      renderApp(initialApp);
+    });
+  </script>
+</body>
+</html>
