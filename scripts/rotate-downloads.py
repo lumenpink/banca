@@ -70,6 +70,10 @@ def prune_manifest_file(file_path):
     return True
 
 def add_entry(manifest_path, channel, version, url, sha256="", tarball="", arch="linux-amd64", app_name=""):
+    """
+    Adiciona ou mescla uma versão no manifesto atômico index.json, preservando
+    e agregando os artefatos por arquitetura (linux-amd64, linux-arm64, windows-amd64).
+    """
     data = {
         "app": app_name or Path(manifest_path).parent.name or "app",
         "stables": [],
