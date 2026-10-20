@@ -330,7 +330,7 @@ fi
 # 18. Validar metadados Fastlane (bloco localized no index-v1 e pastas <pkg>/<locale>/icon.png)
 echo -n "-> 18. Verificando metadados Fastlane (localized e pastas <pkg>/<locale>/icon.png)... "
 FASTLANE_FAIL=0
-PACKAGES=("in.twolp.lacraia.app" "in.twolp.lacraia.simbiotyka" "in.twolp.lauda")
+PACKAGES=("in.twolp.lacraia.app" "in.twolp.lacraia.simbiotyka" "in.twolp.lauda" "in.twolp.mandu")
 LOCALES=("pt-BR" "en-US")
 
 # 1. Verificar index-v1.json para localized
@@ -464,6 +464,8 @@ if [ -f "$PRATILERA_DIR/index-v1.json" ] && command -v aapt >/dev/null 2>&1; the
                 SLUG="lacraia"
             elif [[ "$PKG" == *"mocambo"* ]]; then
                 SLUG="mocambo"
+            elif [[ "$PKG" == *"mandu"* ]]; then
+                SLUG="mandu"
             fi
 
             EXPECTED_NAME=""

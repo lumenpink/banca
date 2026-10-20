@@ -435,6 +435,28 @@
     "banner": "assets/banners/lauda-banner.png"
   },
   {
+    "name": "mandu",
+    "forge": "codeberg",
+    "slug": "lumenpink/mandu",
+    "description": "Editor brutalista de notas e conhecimento em texto puro com wikilinks, diagramas Joaju e Typst em Rust",
+    "topics": [
+      "rust",
+      "dioxus",
+      "markdown",
+      "editor",
+      "typst",
+      "android",
+      "joaju",
+      "pkm"
+    ],
+    "license": "GPL-3.0",
+    "website": "https://mandu.2lp.in",
+    "is_upstream": false,
+    "group": "comrades",
+    "category": "apps",
+    "banner": "assets/banners/mandu-banner.png"
+  },
+  {
     "name": "ayvu",
     "forge": "codeberg",
     "slug": "lumenpink/ayvu",

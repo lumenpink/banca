@@ -80,6 +80,21 @@ APPS_METADATA = {
         "license": "CC0-1.0",
         "web_url": "https://vault.lohn.in",
         "source_code": "https://codeberg.org/lumenpink/mocambo"
+    },
+    "in.twolp.mandu": {
+        "name": "Mandu",
+        "summary": "Editor Brutalista de Notas & Conhecimento",
+        "description": "Editor brutalista de notas em texto puro com suporte a wikilinks, diagramas Joaju, compilação Typst e digitação touch ergonômica em Rust.",
+        "icon": "in.twolp.mandu.png",
+        "categories": ["Writing", "Office", "Utility"],
+        "apk_filename": "mandu.apk",
+        "version_name": "0.1.0",
+        "version_code": 1,
+        "min_sdk": 26,
+        "target_sdk": 34,
+        "license": "GPL-3.0",
+        "web_url": "https://mandu.2lp.in",
+        "source_code": "https://codeberg.org/lumenpink/mandu"
     }
 }
 
@@ -172,6 +187,29 @@ def import_external_apks():
             (PRATILERA_DIR / "mocambo.apk").unlink(missing_ok=True)
             break
 
+    # 4. Mandu APK e Ícone
+    mandu_dir = src_dir / "mandu"
+    for apk_candidate in [
+        mandu_dir / "dist" / "android" / "mandu.apk",
+        mandu_dir / "dist" / "mandu.apk",
+        mandu_dir / "site" / "mandu.apk"
+    ]:
+        if apk_candidate.exists():
+            dst = PRATILERA_DIR / "mandu.apk"
+            shutil.copy2(apk_candidate, dst)
+            print(f"-> Importado do Mandu: mandu.apk (de {apk_candidate.name})")
+            break
+
+    for icon_candidate in [
+        mandu_dir / "fastlane" / "metadata" / "android" / "in.twolp.mandu" / "icon.png",
+        mandu_dir / "crates" / "mandu-mobile" / "assets" / "icon.png",
+        mandu_dir / "site" / "assets" / "icon.png"
+    ]:
+        if icon_candidate.exists():
+            sanitize_icon_8bit(icon_candidate, ICONS_DIR / "in.twolp.mandu.png")
+            print(f"-> Importado ícone do Mandu: {icon_candidate.name}")
+            break
+
 def resolve_apk_binary(meta: dict) -> Path | None:
     """Procura o APK localmente em PRATILERA_DIR, diretórios irmãos ou faz download para .cache/apks."""
     apk_name = meta["apk_filename"]
@@ -204,6 +242,12 @@ def resolve_apk_binary(meta: dict) -> Path | None:
         candidates.extend([
             src_dir / "mocambo" / "site" / "mocambo.apk",
             src_dir / "mocambo" / "mobile" / "build" / "app" / "outputs" / "flutter-apk" / "app-release.apk",
+        ])
+    elif "mandu" in apk_name:
+        candidates.extend([
+            src_dir / "mandu" / "dist" / "android" / "mandu.apk",
+            src_dir / "mandu" / "dist" / "mandu.apk",
+            src_dir / "mandu" / "site" / "mandu.apk",
         ])
     
     for c in candidates:
@@ -438,7 +482,7 @@ def build_index_v1():
         # Metadados do aplicativo:
         # - versionCode DEVE vir do APK real para evitar 'Metadado inválido' no Android/Droid-ify.
         # - versionName DEVE vir canonicamente do CCCP (arquivo VERSION do repositório irmão).
-        project_slug = "lacraia" if "lacraia" in pkg_id else ("lauda" if "lauda" in pkg_id else ("mocambo" if "mocambo" in pkg_id else ""))
+        project_slug = "lacraia" if "lacraia" in pkg_id else ("lauda" if "lauda" in pkg_id else ("mocambo" if "mocambo" in pkg_id else ("mandu" if "mandu" in pkg_id else "")))
         fallback_ver = prev_entry.get("versionName", meta["version_name"])
         ver_name = get_project_version(project_slug, fallback_ver) if project_slug else fallback_ver
         ver_code = apk_meta.get("version_code", prev_entry.get("versionCode", meta.get("version_code", 1)))
@@ -454,10 +498,28 @@ def build_index_v1():
         # Metadados Fastlane localized exigidos pelo Droid-ify para mapear ícones
         localized_map = {}
         for loc in LOCALES:
+            loc_title = meta["name"]
+            loc_summary = meta["summary"]
+            loc_desc = meta["description"]
+
+            # Importar descrições e títulos Fastlane oficiais se disponíveis
+            src_dir = REPO_ROOT.parent
+            if "mandu" in pkg_id:
+                loc_dir = src_dir / "mandu" / "fastlane" / "metadata" / "android" / "in.twolp.mandu" / loc
+                title_file = loc_dir / "title.txt"
+                short_file = loc_dir / "short_description.txt"
+                full_file = loc_dir / "full_description.txt"
+                if title_file.exists():
+                    loc_title = title_file.read_text(encoding="utf-8").strip()
+                if short_file.exists():
+                    loc_summary = short_file.read_text(encoding="utf-8").strip()
+                if full_file.exists():
+                    loc_desc = full_file.read_text(encoding="utf-8").strip()
+
             localized_map[loc] = {
-                "name": meta["name"],
-                "summary": meta["summary"],
-                "description": meta["description"],
+                "name": loc_title,
+                "summary": loc_summary,
+                "description": loc_desc,
                 "icon": "icon.png"
             }
 
