@@ -11,6 +11,7 @@
   - (pratilera) extrair metadados reais dos apks via aapt (closes #24)
 
 ### Features
+  - (downloads) gerar instaladores dinamicos dedicados sem root por app e canal (closes #38)
   - (catalog) adicionar 6 modulos satelites do joaju com banners e metadados ao catalogo (closes #37)
   - (catalog) adicionar resenha com banner safe zone e metadados oficiais ao catalogo (closes #36)
   - (pratilera) integrar aplicativo mandu, metadados fastlane e banner ao catalogo (closes #34)
