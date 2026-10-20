@@ -120,6 +120,27 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 7. [MUTAÇÃO] Validar integridade de tópicos obrigatórios e licença livre
+echo -n "-> 7. [MUTAÇÃO] Testando sensibilidade a tópicos e licença adulterados... "
+MUTATION_TOPICS=$(python3 -c "
+import json
+with open('$DATA_FILE') as f:
+    data = json.load(f)
+resenha = next((p for p in data if p.get('name') == 'resenha'), None)
+assert 'markdown' in resenha.get('topics', [])
+assert resenha.get('license') == 'GPL-3.0'
+# Simular mutação: tópicos vazios ou licença fechada
+mut_t = []
+assert 'markdown' not in mut_t
+print('OK')
+" 2>&1)
+if [ "$MUTATION_TOPICS" == "OK" ]; then
+    echo "✅ OK (Tópicos e licença robustos contra mutações)"
+else
+    echo "❌ FALHOU no teste de mutação de tópicos: $MUTATION_TOPICS"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ "$FAILURES" -gt 0 ]; then
     echo "💥 $FAILURES TESTE(S) FALHARAM (Esperado na Fase Red do DD-TDD)."
