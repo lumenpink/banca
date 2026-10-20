@@ -1,0 +1,96 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# tests/test-installers.sh — Validação dos Instaladores Dinâmicos sem Root (#38)
+# ==============================================================================
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SITE_DIR="$REPO_ROOT/site"
+INSTALL_DIR="$SITE_DIR/install"
+FAILURES=0
+
+echo "================================================================="
+echo "🧪 [TESTE] Validação dos Instaladores Dinâmicos da Banca (#38)"
+echo "================================================================="
+
+# 1. Verificar existência do diretório site/install e instalador genérico
+echo -n "-> 1. Verificando existência de site/install.sh e site/install/... "
+if [ -f "$SITE_DIR/install.sh" ] && [ -d "$INSTALL_DIR" ]; then
+    echo "✅ OK"
+else
+    echo "❌ FALHOU (site/install.sh ou site/install/ ausente)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 2. Verificar instaladores dedicados para apps principais (cccp, mandu, navalha)
+echo -n "-> 2. Verificando instaladores dedicados estável e nightly... "
+MISSING_APPS=0
+for app in cccp mandu navalha lauda lacraia svyaz hendu; do
+    if [ ! -f "$INSTALL_DIR/$app" ]; then
+        MISSING_APPS=$((MISSING_APPS + 1))
+    fi
+    if [ ! -f "$INSTALL_DIR/${app}-nightly" ]; then
+        MISSING_APPS=$((MISSING_APPS + 1))
+    fi
+done
+if [ "$MISSING_APPS" -eq 0 ]; then
+    echo "✅ OK (todos os instaladores dedicados presentes)"
+else
+    echo "❌ FALHOU ($MISSING_APPS instaladores dedicados ausentes)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 3. Testar rejeição de Darwin/Apple com mensagem espirituosa
+echo -n "-> 3. Testando rejeição do SO Darwin (Apple) com repúdio ao mau gosto... "
+if [ -f "$SITE_DIR/install.sh" ]; then
+    TMP_BINDIR=$(mktemp -d)
+    OUTPUT=$(UNAME_OVERRIDE="Darwin" sh "$SITE_DIR/install.sh" cccp 2>&1 || true)
+    rm -rf "$TMP_BINDIR"
+    if echo "$OUTPUT" | grep -qi "mau gosto" && echo "$OUTPUT" | grep -qi "próxima vida"; then
+        echo "✅ OK (Darwin devidamente repudiado com elegância)"
+    else
+        echo "❌ FALHOU (mensagem de repúdio ao Darwin ausente ou incorreta: '$OUTPUT')"
+        FAILURES=$((FAILURES + 1))
+    fi
+else
+    echo "❌ FALHOU (site/install.sh ausente para teste)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 4. Testar destino padrão ~/.local/bin sem root
+echo -n "-> 4. Verificando se o destino padrão é ~/.local/bin (sem root)... "
+if [ -f "$INSTALL_DIR/cccp" ]; then
+    if grep -q '\$HOME/\.local/bin' "$INSTALL_DIR/cccp" || grep -q '\${HOME}/\.local/bin' "$INSTALL_DIR/cccp"; then
+        echo "✅ OK (instalação sem root em ~/.local/bin)"
+    else
+        echo "❌ FALHOU (referência a ~/.local/bin ausente no script do cccp)"
+        FAILURES=$((FAILURES + 1))
+    fi
+else
+    echo "❌ FALHOU (site/install/cccp ausente)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 5. Verificar atualização do site/downloads/index.html para os novos comandos
+echo -n "-> 5. Verificando comandos da vitrine em site/downloads/index.html... "
+if [ -f "$SITE_DIR/downloads/index.html" ]; then
+    DOWNLOADS_HTML=$(cat "$SITE_DIR/downloads/index.html")
+    if echo "$DOWNLOADS_HTML" | grep -q "https://banca.2lp.in/install/"; then
+        echo "✅ OK (vitrine web atualizada com instaladores dinâmicos)"
+    else
+        echo "❌ FALHOU (links para banca.2lp.in/install/ ausentes em downloads/index.html)"
+        FAILURES=$((FAILURES + 1))
+    fi
+else
+    echo "❌ FALHOU (site/downloads/index.html ausente)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+echo "================================================================="
+if [ "$FAILURES" -eq 0 ]; then
+    echo "🎉 TODOS OS TESTES DOS INSTALADORES PASSARAM COM SUCESSO!"
+    exit 0
+else
+    echo "💥 $FAILURES TESTE(S) FALHARAM."
+    exit 1
+fi
