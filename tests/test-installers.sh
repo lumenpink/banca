@@ -86,6 +86,39 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 6. [MUTAÇÃO] Testar canal nightly dedicado (site/install/cccp-nightly)
+echo -n "-> 6. [MUTAÇÃO] Testando canal nightly no script dedicado... "
+if [ -f "$INSTALL_DIR/cccp-nightly" ]; then
+    if grep -q 'CHANNEL="nightly"' "$INSTALL_DIR/cccp-nightly" && grep -q 'nightly-latest' "$INSTALL_DIR/cccp-nightly"; then
+        echo "✅ OK (script dedicado nightly configurado corretamente)"
+    else
+        echo "❌ FALHOU (canal nightly não configurado em cccp-nightly)"
+        FAILURES=$((FAILURES + 1))
+    fi
+else
+    echo "❌ FALHOU (site/install/cccp-nightly ausente)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 7. [MUTAÇÃO] Testar rejeição de arquitetura não suportada (sparc64)
+echo -n "-> 7. [MUTAÇÃO] Testando rejeição de arquitetura desconhecida... "
+OUTPUT_ARCH=$(ARCH_OVERRIDE="sparc64" sh "$SITE_DIR/install.sh" cccp 2>&1 || true)
+if echo "$OUTPUT_ARCH" | grep -qi "Arquitetura 'sparc64' não suportada"; then
+    echo "✅ OK (arquitetura desconhecida rejeitada com sucesso)"
+else
+    echo "❌ FALHOU (rejeição de arquitetura falhou: '$OUTPUT_ARCH')"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 8. [MUTAÇÃO] Testar respeito a $BINDIR customizado
+echo -n "-> 8. [MUTAÇÃO] Testando variável BINDIR customizada... "
+if grep -q 'if \[ -n "\$BINDIR" \]; then' "$INSTALL_DIR/cccp"; then
+    echo "✅ OK (variável BINDIR respeitada com precedência)"
+else
+    echo "❌ FALHOU (lógica de override BINDIR ausente)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ "$FAILURES" -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DOS INSTALADORES PASSARAM COM SUCESSO!"
