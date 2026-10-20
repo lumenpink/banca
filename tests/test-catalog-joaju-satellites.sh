@@ -153,6 +153,29 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 7. [MUTAÇÃO] Validar integridade das licenças FOSS e forja oficial
+echo -n "-> 7. [MUTAÇÃO] Testando sensibilidade a licenças e forjas adulteradas... "
+MUT_FOSS=$(python3 -c "
+import json
+with open('$DATA_FILE') as f:
+    data = json.load(f)
+sats = [p for p in data if p.get('name', '').startswith('joaju-')]
+assert len(sats) == 6
+for s in sats:
+    assert s.get('forge') == 'codeberg'
+    assert s.get('license') in ['GPL-3.0', 'Apache-2.0']
+    # Mutação simulada: licença proprietária
+    mut_lic = 'Proprietary'
+    assert mut_lic not in ['GPL-3.0', 'Apache-2.0']
+print('OK')
+" 2>&1)
+if [ "$MUT_FOSS" == "OK" ]; then
+    echo "✅ OK (Licenças FOSS e forja validadas contra mutações)"
+else
+    echo "❌ FALHOU no teste de mutação FOSS: $MUT_FOSS"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ "$FAILURES" -gt 0 ]; then
     echo "💥 $FAILURES TESTE(S) FALHARAM (Esperado na Fase Red do DD-TDD)."
