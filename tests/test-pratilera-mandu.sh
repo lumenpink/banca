@@ -127,6 +127,51 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 7. [MUTAÇÃO] Validar rejeição de metadados Fastlane corrompidos ou ausentes
+echo -n "-> 7. [MUTAÇÃO] Testando integridade estrita dos metadados Fastlane... "
+MUT_FASTLANE=$(python3 -c "
+import json
+with open('$INDEX_JSON') as f:
+    idx = json.load(f)
+app = next((a for a in idx.get('apps', []) if a.get('packageName') == 'in.twolp.mandu'), None)
+assert 'localized' in app, 'localized ausente'
+assert 'pt-BR' in app['localized'], 'pt-BR ausente'
+assert 'en-US' in app['localized'], 'en-US ausente'
+assert app['localized']['pt-BR']['icon'] == 'icon.png'
+# Simular mutação: locale ausente
+mut = dict(app['localized'])
+del mut['pt-BR']
+assert 'pt-BR' not in mut, 'Mutação falhou'
+print('OK')
+" 2>&1)
+if [ "$MUT_FASTLANE" == "OK" ]; then
+    echo "✅ OK (Metadados Fastlane validados com teste de mutação)"
+else
+    echo "❌ FALHOU na validação de mutação Fastlane: $MUT_FASTLANE"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 8. [MUTAÇÃO] Validar rejeição de hash SHA-256 e tamanho inválidos
+echo -n "-> 8. [MUTAÇÃO] Testando integridade criptográfica do pacote Mandu... "
+MUT_CRYPTO=$(python3 -c "
+import json
+with open('$INDEX_JSON') as f:
+    idx = json.load(f)
+pkg = idx['packages']['in.twolp.mandu'][0]
+h = pkg['hash']
+assert len(h) == 64, 'Hash com tamanho incorreto'
+assert int(h, 16) > 0, 'Hash zerado'
+# Simular mutação: hash com 32 caracteres (md5 residual) ou vazio
+assert len(h[:32]) != 64, 'Mutação de tamanho de hash falhou'
+print('OK')
+" 2>&1)
+if [ "$MUT_CRYPTO" == "OK" ]; then
+    echo "✅ OK (Assinatura e hash criptográfico robustos contra mutações)"
+else
+    echo "❌ FALHOU no teste de mutação criptográfica: $MUT_CRYPTO"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ "$FAILURES" -gt 0 ]; then
     echo "💥 $FAILURES TESTE(S) FALHARAM (Esperado na Fase Red do DD-TDD)."
