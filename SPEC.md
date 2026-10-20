@@ -241,3 +241,20 @@ site/pratilera/
   - Em modo offline ou falha de conectividade, o gerador preserva os metadados verídicos já consolidados no `index-v1.json` versionado no git, proibindo estritamente a emissão de valores dummy (tamanho <= 1024 ou hashes zeradas).
 - **Gatilho Remoto de Atualização Automática via CI**:
   - O arquivo `.forgejo/workflows/ci.yml` habilita o evento `workflow_dispatch`, permitindo que pipelines de CI dos projetos de aplicativos disparem a re-geração do índice e deploy na produção assim que um novo APK for publicado no R2.
+
+## 19. Infraestrutura de Downloads Multi-Arquitetura e Canais do Updater (Tickets #35 & #32)
+
+- **Distribuição Multi-Arquitetura Hermética**:
+  - A Banca consolida a vitrine web e endpoints de entrega direta em `https://banca.2lp.in/downloads/` com suporte a `linux-amd64` (x86_64), `linux-arm64` (AArch64) e `windows-amd64` (x86_64).
+  - Aliases canônicos atômicos apontando para as versões mais recentes (`stable-latest` e `nightly-latest`) tanto com sufixo de arquitetura quanto com fallback padrão para `linux-amd64`.
+- **Manifestos Atômicos `index.json` por Aplicação**:
+  - Cada software catalogado disponibiliza `https://banca.2lp.in/downloads/<app>/index.json`, servindo de fonte canônica para updaters de terminal (como `mandu update`, `cccp`, `lauda`, etc.).
+  - Os manifestos declaram artefatos segregados por arquitetura (`linux-amd64`, `linux-arm64`, `windows-amd64`) contendo `url`, `binary_url` e `sha256`.
+  - Retenção estrita de até 5 versões estáveis e até 10 nightlies via `scripts/rotate-downloads.py`.
+- **Resolução de Rotas em `site/_redirects`**:
+  - Regra específica `/downloads/:app  /downloads/index.html  200` que previne interceptação indevida de arquivos estáticos, manifestos `.json`, tarballs e executáveis binários.
+- **Vitrine Web com Detecção e PowerShell**:
+  - Seletor tátil de arquiteturas na interface com detecção inteligente no navegador (`navigator.userAgentData` / `navigator.userAgent`).
+  - Emissão de comando PowerShell nativo (`Invoke-WebRequest`) para usuários Windows e `curl -sSL` para usuários Linux.
+  - Atualização do Mandu como editor soberano brutalista de notas em texto puro, Markdown e Joaju.
+

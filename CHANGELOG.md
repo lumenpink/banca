@@ -11,6 +11,7 @@
   - (pratilera) extrair metadados reais dos apks via aapt (closes #24)
 
 ### Features
+  - (downloads) integrar distribuicao multi-arquitetura (linux-amd64, linux-arm64, windows-amd64), manifestos index.json e canais de atualizacao do updater (closes #35) (closes #32)
   - (downloads) implementar vitrine de downloads e retencao soberana de 5 estaveis e 10 nightlies (closes #31)
   - (pratilera) catalogar o mocambo e publicar apk oficial na pratilera (closes #28)
   - (showcase) vincular banners oficiais dos 16 projetos restantes e atingir 100% de cobertura (closes #7)
