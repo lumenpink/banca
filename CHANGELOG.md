@@ -11,6 +11,7 @@
   - (pratilera) extrair metadados reais dos apks via aapt (closes #24)
 
 ### Features
+  - (catalog) adicionar resenha com banner safe zone e metadados oficiais ao catalogo (closes #36)
   - (pratilera) integrar aplicativo mandu, metadados fastlane e banner ao catalogo (closes #34)
   - (catalog) adicionar hendu com banner safe zone e metadados oficiais ao catalogo da banca (closes #33)
   - (downloads) integrar distribuicao multi-arquitetura (linux-amd64, linux-arm64, windows-amd64), manifestos index.json e canais de atualizacao do updater (closes #35) (closes #32)
