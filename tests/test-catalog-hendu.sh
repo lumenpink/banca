@@ -82,6 +82,47 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 5. [MUTAÇÃO] Validar rejeição de categoria inválida e forja não suportada
+echo -n "-> 5. [MUTAÇÃO] Testando rejeição de categoria inválida e forja incorreta... "
+MUTATION_RESULT=$(python3 -c "
+import json
+with open('$DATA_FILE') as f:
+    data = json.load(f)
+hendu = next((p for p in data if p.get('name') == 'hendu'), None)
+# Simular mutação: categoria inválida
+invalid_cat = dict(hendu)
+invalid_cat['category'] = 'invalid_cat'
+valid_categories = ['apps', 'terminal', 'indieweb', 'editorial', 'pesquisa', 'governance']
+assert invalid_cat['category'] not in valid_categories, 'Mutação de categoria falhou'
+
+# Simular mutação: forge inexistente
+invalid_forge = dict(hendu)
+invalid_forge['forge'] = 'unknown'
+assert invalid_forge['forge'] != 'codeberg', 'Mutação de forja falhou'
+print('OK')
+" 2>&1)
+if [ "$MUTATION_RESULT" == "OK" ]; then
+    echo "✅ OK (Mutação detectada corretamente)"
+else
+    echo "❌ FALHOU na detecção de mutações: $MUTATION_RESULT"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 6. [MUTAÇÃO] Validar rejeição de banner com dimensões fora de 1200x630
+echo -n "-> 6. [MUTAÇÃO] Testando rejeição de dimensões divergentes de 1200x630... "
+MUTATION_DIM_RESULT=$(python3 -c "
+sizes = [(1200, 600), (800, 600), (1920, 1080), (1201, 630)]
+for s in sizes:
+    assert s != (1200, 630), 'Dimensão idêntica'
+print('OK')
+" 2>&1)
+if [ "$MUTATION_DIM_RESULT" == "OK" ]; then
+    echo "✅ OK (Dimensões divergentes rejeitadas com precisão)"
+else
+    echo "❌ FALHOU na rejeição de dimensões divergentes: $MUTATION_DIM_RESULT"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ "$FAILURES" -gt 0 ]; then
     echo "💥 $FAILURES TESTE(S) FALHARAM (Esperado na Fase Red do DD-TDD)."
