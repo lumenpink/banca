@@ -434,6 +434,122 @@
     "category": "pesquisa"
   },
   {
+    "name": "joaju-obsidian",
+    "forge": "codeberg",
+    "slug": "lumenpink/joaju-obsidian",
+    "description": "Plugin oficial do Obsidian para renderização instantânea (Live Preview) de diagramas, heredogramas e cartões tipográficos",
+    "topics": [
+      "obsidian",
+      "plugin",
+      "academic",
+      "typst",
+      "healthcare",
+      "pedigree"
+    ],
+    "license": "GPL-3.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": "assets/banners/joaju-obsidian-banner.png",
+    "category": "apps"
+  },
+  {
+    "name": "joaju-pedigree",
+    "forge": "codeberg",
+    "slug": "lumenpink/joaju-pedigree",
+    "description": "Modelagem genealógica e renderização vetorial de heredogramas clínicos canônicos (NSGC / ACMG) em Rust",
+    "topics": [
+      "rust",
+      "genetics",
+      "pedigree",
+      "healthcare",
+      "acmg",
+      "typst"
+    ],
+    "license": "Apache-2.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": "assets/banners/joaju-pedigree-banner.png",
+    "category": "pesquisa"
+  },
+  {
+    "name": "joaju-table",
+    "forge": "codeberg",
+    "slug": "lumenpink/joaju-table",
+    "description": "Renderização de tabelas acadêmicas formais de 3 linhas (ABNT NBR 14724 / IBGE / APA) em Typst via Rust",
+    "topics": [
+      "rust",
+      "typst",
+      "tables",
+      "abnt",
+      "academic"
+    ],
+    "license": "Apache-2.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": "assets/banners/joaju-table-banner.png",
+    "category": "editorial"
+  },
+  {
+    "name": "joaju-csv",
+    "forge": "codeberg",
+    "slug": "lumenpink/joaju-csv",
+    "description": "Manipulação determinística, projeções relacionais e canônicas de dados tabulares CSV integrados ao Joaju",
+    "topics": [
+      "rust",
+      "csv",
+      "data",
+      "parser",
+      "typst"
+    ],
+    "license": "Apache-2.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": "assets/banners/joaju-csv-banner.png",
+    "category": "pesquisa"
+  },
+  {
+    "name": "joaju-unfurl",
+    "forge": "codeberg",
+    "slug": "lumenpink/joaju-unfurl",
+    "description": "Extração segura de metadados OpenGraph com proteção anti-SSRF e renderização de cartões visuais para Typst e Web",
+    "topics": [
+      "rust",
+      "opengraph",
+      "ssrf-defense",
+      "metadata",
+      "typst"
+    ],
+    "license": "Apache-2.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": "assets/banners/joaju-unfurl-banner.png",
+    "category": "editorial"
+  },
+  {
+    "name": "joaju-web",
+    "forge": "codeberg",
+    "slug": "lumenpink/joaju-web",
+    "description": "Microsserviço HTTP, daemon Axum e playground web para o compilador acadêmico Joaju",
+    "topics": [
+      "rust",
+      "axum",
+      "http",
+      "compiler",
+      "playground"
+    ],
+    "license": "Apache-2.0",
+    "website": "",
+    "is_upstream": false,
+    "group": "",
+    "banner": "assets/banners/joaju-web-banner.png",
+    "category": "pesquisa"
+  },
+  {
     "name": "lauda",
     "forge": "codeberg",
     "slug": "lumenpink/lauda",
