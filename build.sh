@@ -759,4 +759,9 @@ if [ -f "scripts/rotate-downloads.py" ]; then
   python3 scripts/rotate-downloads.py --generate-defaults site/downloads
 fi
 
+# Geração de instaladores dinâmicos dedicados em site/install/ e site/install.sh (#38)
+if [ -f "scripts/gerar-instaladores.sh" ]; then
+  bash scripts/gerar-instaladores.sh
+fi
+
 echo "✔ [BANCA] Site estático gerado com sucesso em '$OUTPUT_HTML' ($COUNT projetos)!"

@@ -504,7 +504,7 @@
         </div>
 
         <div class="curl-box">
-          <div id="stable-curl-code">curl -sSL https://banca.2lp.in/downloads/cccp/stable-latest/cccp -o /usr/local/bin/cccp && chmod +x /usr/local/bin/cccp</div>
+          <div id="stable-curl-code">curl -fsSL https://banca.2lp.in/install/cccp | sh</div>
           <button class="copy-btn" onclick="copyCommand('stable-curl-code', this)">COPIAR COMANDO</button>
         </div>
 
@@ -533,7 +533,7 @@
         </div>
 
         <div class="curl-box">
-          <div id="nightly-curl-code">curl -sSL https://banca.2lp.in/downloads/cccp/nightly-latest/cccp -o /usr/local/bin/cccp && chmod +x /usr/local/bin/cccp</div>
+          <div id="nightly-curl-code">curl -fsSL https://banca.2lp.in/install/cccp-nightly | sh</div>
           <button class="copy-btn" onclick="copyCommand('nightly-curl-code', this)">COPIAR COMANDO</button>
         </div>
 
@@ -711,14 +711,14 @@
       // Resolução de URLs e comandos conforme currentArch
       let stableUrl = `https://banca.2lp.in/downloads/${app.name}/stable-latest/${app.name}`;
       let nightlyUrl = `https://banca.2lp.in/downloads/${app.name}/nightly-latest/${app.name}`;
-      let stableCmd = `curl -sSL ${stableUrl} -o /usr/local/bin/${app.name} && chmod +x /usr/local/bin/${app.name}`;
-      let nightlyCmd = `curl -sSL ${nightlyUrl} -o /usr/local/bin/${app.name} && chmod +x /usr/local/bin/${app.name}`;
+      let stableCmd = `curl -fsSL https://banca.2lp.in/install/${app.name} | sh`;
+      let nightlyCmd = `curl -fsSL https://banca.2lp.in/install/${app.name}-nightly | sh`;
 
       if (currentArch === "linux-arm64") {
         stableUrl = `https://banca.2lp.in/downloads/${app.name}/stable-latest/${app.name}-linux-arm64`;
         nightlyUrl = `https://banca.2lp.in/downloads/${app.name}/nightly-latest/${app.name}-linux-arm64`;
-        stableCmd = `curl -sSL ${stableUrl} -o /usr/local/bin/${app.name} && chmod +x /usr/local/bin/${app.name}`;
-        nightlyCmd = `curl -sSL ${nightlyUrl} -o /usr/local/bin/${app.name} && chmod +x /usr/local/bin/${app.name}`;
+        stableCmd = `curl -fsSL https://banca.2lp.in/install/${app.name} | sh`;
+        nightlyCmd = `curl -fsSL https://banca.2lp.in/install/${app.name}-nightly | sh`;
       } else if (currentArch === "windows-amd64") {
         stableUrl = `https://banca.2lp.in/downloads/${app.name}/stable-latest/${app.name}-windows-amd64.zip`;
         nightlyUrl = `https://banca.2lp.in/downloads/${app.name}/nightly-latest/${app.name}-windows-amd64.zip`;
