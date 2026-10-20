@@ -754,4 +754,9 @@ EOF
 
 sed -i "s/__TOTAL_COUNT__/$COUNT/g; s/__COMRADES_COUNT__/$COMRADES_COUNT/g" "$OUTPUT_HTML"
 
+# Geração e sincronização de manifestos multi-arquitetura em site/downloads/
+if [ -f "scripts/rotate-downloads.py" ]; then
+  python3 scripts/rotate-downloads.py --generate-defaults site/downloads
+fi
+
 echo "✔ [BANCA] Site estático gerado com sucesso em '$OUTPUT_HTML' ($COUNT projetos)!"

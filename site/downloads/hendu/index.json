@@ -1,0 +1,49 @@
+{
+  "app": "hendu",
+  "name": "Hendu",
+  "category": "accessibility",
+  "description": "Bot de acessibilidade e audiodescrição comunitária",
+  "repo": "https://codeberg.org/lumenpink/hendu",
+  "stable_latest": "0.1.0",
+  "nightly_latest": "0.1.0-dev",
+  "stables": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-20",
+      "url": "https://banca.2lp.in/downloads/hendu/stable-latest/hendu",
+      "sha256": "",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://banca.2lp.in/downloads/hendu/stable/hendu-0.1.0-linux-amd64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/hendu/stable-latest/hendu-linux-amd64",
+          "sha256": ""
+        },
+        "linux-arm64": {
+          "url": "https://banca.2lp.in/downloads/hendu/stable/hendu-0.1.0-linux-arm64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/hendu/stable-latest/hendu-linux-arm64",
+          "sha256": ""
+        },
+        "windows-amd64": {
+          "url": "https://banca.2lp.in/downloads/hendu/stable/hendu-0.1.0-windows-amd64.zip",
+          "binary_url": "https://banca.2lp.in/downloads/hendu/stable-latest/hendu.exe",
+          "sha256": ""
+        }
+      }
+    }
+  ],
+  "nightlies": [
+    {
+      "version": "0.1.0-dev",
+      "date": "2026-10-20",
+      "url": "https://banca.2lp.in/downloads/hendu/nightly-latest/hendu",
+      "sha256": "",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://banca.2lp.in/downloads/hendu/nightly/hendu-nightly-linux-amd64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/hendu/nightly-latest/hendu-linux-amd64",
+          "sha256": ""
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "app": "mandu",
+  "name": "Mandu",
+  "category": "editorial",
+  "description": "Editor brutalista de notas em texto puro, Markdown e Joaju",
+  "repo": "https://codeberg.org/lumenpink/mandu",
+  "stable_latest": "0.1.0",
+  "nightly_latest": "0.1.0-dev",
+  "stables": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-20",
+      "url": "https://banca.2lp.in/downloads/mandu/stable-latest/mandu",
+      "sha256": "",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://banca.2lp.in/downloads/mandu/stable/mandu-0.1.0-linux-amd64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/mandu/stable-latest/mandu-linux-amd64",
+          "sha256": ""
+        },
+        "linux-arm64": {
+          "url": "https://banca.2lp.in/downloads/mandu/stable/mandu-0.1.0-linux-arm64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/mandu/stable-latest/mandu-linux-arm64",
+          "sha256": ""
+        },
+        "windows-amd64": {
+          "url": "https://banca.2lp.in/downloads/mandu/stable/mandu-0.1.0-windows-amd64.zip",
+          "binary_url": "https://banca.2lp.in/downloads/mandu/stable-latest/mandu.exe",
+          "sha256": ""
+        }
+      }
+    }
+  ],
+  "nightlies": [
+    {
+      "version": "0.1.0-dev",
+      "date": "2026-10-20",
+      "url": "https://banca.2lp.in/downloads/mandu/nightly-latest/mandu",
+      "sha256": "",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://banca.2lp.in/downloads/mandu/nightly/mandu-nightly-linux-amd64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/mandu/nightly-latest/mandu-linux-amd64",
+          "sha256": ""
+        }
+      }
+    }
+  ]
+}

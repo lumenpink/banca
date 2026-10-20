@@ -12,7 +12,3 @@
 /pratilera/lauda-latest.apk https://bucket.2lp.in/lauda.apk 302
 /pratilera/lauda.apk       https://bucket.2lp.in/lauda.apk 302
 /pratilera/mocambo.apk     https://bucket.2lp.in/mocambo.apk 302
-
-# Vitrine e Deep Linking de Downloads
-/downloads    /downloads/  301
-/downloads/*  /downloads/index.html  200

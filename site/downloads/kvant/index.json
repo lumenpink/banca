@@ -1,0 +1,49 @@
+{
+  "app": "kvant",
+  "name": "Kvant",
+  "category": "analytics",
+  "description": "Motor analítico de dados e processamento vetorial",
+  "repo": "https://codeberg.org/lumenpink/kvant",
+  "stable_latest": "0.1.0",
+  "nightly_latest": "0.1.0-dev",
+  "stables": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-20",
+      "url": "https://banca.2lp.in/downloads/kvant/stable-latest/kvant",
+      "sha256": "",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://banca.2lp.in/downloads/kvant/stable/kvant-0.1.0-linux-amd64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/kvant/stable-latest/kvant-linux-amd64",
+          "sha256": ""
+        },
+        "linux-arm64": {
+          "url": "https://banca.2lp.in/downloads/kvant/stable/kvant-0.1.0-linux-arm64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/kvant/stable-latest/kvant-linux-arm64",
+          "sha256": ""
+        },
+        "windows-amd64": {
+          "url": "https://banca.2lp.in/downloads/kvant/stable/kvant-0.1.0-windows-amd64.zip",
+          "binary_url": "https://banca.2lp.in/downloads/kvant/stable-latest/kvant.exe",
+          "sha256": ""
+        }
+      }
+    }
+  ],
+  "nightlies": [
+    {
+      "version": "0.1.0-dev",
+      "date": "2026-10-20",
+      "url": "https://banca.2lp.in/downloads/kvant/nightly-latest/kvant",
+      "sha256": "",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://banca.2lp.in/downloads/kvant/nightly/kvant-nightly-linux-amd64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/kvant/nightly-latest/kvant-linux-amd64",
+          "sha256": ""
+        }
+      }
+    }
+  ]
+}

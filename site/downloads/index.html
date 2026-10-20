@@ -131,6 +131,47 @@
       margin-bottom: 2rem;
     }
 
+    /* SELETOR DE ARQUITETURA */
+    .arch-section {
+      background: var(--paper);
+      border: var(--border);
+      box-shadow: var(--shadow);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .arch-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .arch-btn {
+      background: var(--paper);
+      border: 2px solid var(--ink);
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      font-weight: 900;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      box-shadow: 3px 3px 0 var(--ink);
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .arch-btn:hover {
+      background: var(--yellow);
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    .arch-btn.active {
+      background: var(--pink);
+      color: #fff;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
     .selector-label {
       display: block;
       font-weight: 900;
@@ -416,9 +457,19 @@
         <option value="baquara">baquara — Ferramental Rústico &amp; Utilitários</option>
         <option value="mocambo">mocambo — Refúgio &amp; Backup Descentralizado</option>
         <option value="hendu">hendu — Monitoramento, Telemetria &amp; Sentinela</option>
-        <option value="mandu">mandu — Gerenciador de Pacotes &amp; Repositório</option>
+        <option value="mandu">mandu — Editor Brutalista de Notas &amp; Joaju</option>
         <option value="tatupeba">tatupeba — Blindagem &amp; Firewall Local</option>
       </select>
+    </section>
+
+    <!-- SELETOR DE ARQUITETURA / PLATAFORMA -->
+    <section class="arch-section">
+      <label class="selector-label">PLATAFORMA &amp; ARQUITETURA ALVO:</label>
+      <div class="arch-buttons" id="arch-buttons">
+        <button type="button" class="arch-btn active" data-arch="linux-amd64">Linux (x86_64)</button>
+        <button type="button" class="arch-btn" data-arch="linux-arm64">Linux (ARM64)</button>
+        <button type="button" class="arch-btn" data-arch="windows-amd64">Windows (x86_64)</button>
+      </div>
     </section>
 
     <!-- DETALHES DO APP ATUAL -->
@@ -599,10 +650,11 @@
       "mandu": {
         name: "mandu",
         title: "Mandu",
-        category: "Gerenciador de Pacotes",
-        desc: "Distribuidor e empacotador de módulos e ferramentas da calçada.",
+        category: "Editor de Notas & Joaju",
+        desc: "Editor soberano brutalista de notas em texto puro com suporte a links wiki, grafos, diagramas Joaju e cofre local.",
         repo: "https://codeberg.org/lumenpink/mandu"
       },
+
       "tatupeba": {
         name: "tatupeba",
         title: "Tatupeba",
@@ -632,6 +684,20 @@
       return "cccp";
     }
 
+    let currentArch = "linux-amd64";
+
+    function detectInitialArch() {
+      const ua = (navigator.userAgent || "").toLowerCase();
+      const platform = (navigator.userAgentData?.platform || navigator.platform || "").toLowerCase();
+      if (platform.includes("win") || ua.includes("windows")) {
+        return "windows-amd64";
+      }
+      if (ua.includes("aarch64") || ua.includes("arm64")) {
+        return "linux-arm64";
+      }
+      return "linux-amd64";
+    }
+
     // Renderização do app selecionado
     function renderApp(appKey) {
       const app = APP_REGISTRY[appKey] || APP_REGISTRY["cccp"];
@@ -642,17 +708,31 @@
       document.getElementById("app-desc").textContent = app.desc;
       document.getElementById("app-repo-link").href = app.repo;
 
-      // URLs padrão canônicas
-      const stableUrl = `https://banca.2lp.in/downloads/${app.name}/stable-latest/${app.name}`;
-      const nightlyUrl = `https://banca.2lp.in/downloads/${app.name}/nightly-latest/${app.name}`;
+      // Resolução de URLs e comandos conforme currentArch
+      let stableUrl = `https://banca.2lp.in/downloads/${app.name}/stable-latest/${app.name}`;
+      let nightlyUrl = `https://banca.2lp.in/downloads/${app.name}/nightly-latest/${app.name}`;
+      let stableCmd = `curl -sSL ${stableUrl} -o /usr/local/bin/${app.name} && chmod +x /usr/local/bin/${app.name}`;
+      let nightlyCmd = `curl -sSL ${nightlyUrl} -o /usr/local/bin/${app.name} && chmod +x /usr/local/bin/${app.name}`;
+
+      if (currentArch === "linux-arm64") {
+        stableUrl = `https://banca.2lp.in/downloads/${app.name}/stable-latest/${app.name}-linux-arm64`;
+        nightlyUrl = `https://banca.2lp.in/downloads/${app.name}/nightly-latest/${app.name}-linux-arm64`;
+        stableCmd = `curl -sSL ${stableUrl} -o /usr/local/bin/${app.name} && chmod +x /usr/local/bin/${app.name}`;
+        nightlyCmd = `curl -sSL ${nightlyUrl} -o /usr/local/bin/${app.name} && chmod +x /usr/local/bin/${app.name}`;
+      } else if (currentArch === "windows-amd64") {
+        stableUrl = `https://banca.2lp.in/downloads/${app.name}/stable-latest/${app.name}-windows-amd64.zip`;
+        nightlyUrl = `https://banca.2lp.in/downloads/${app.name}/nightly-latest/${app.name}-windows-amd64.zip`;
+        stableCmd = `Invoke-WebRequest -Uri "${stableUrl}" -OutFile "$HOME\\Downloads\\${app.name}.zip"`;
+        nightlyCmd = `Invoke-WebRequest -Uri "${nightlyUrl}" -OutFile "$HOME\\Downloads\\${app.name}-nightly.zip"`;
+      }
 
       document.getElementById("stable-download-btn").href = stableUrl;
       document.getElementById("nightly-download-btn").href = nightlyUrl;
+      document.getElementById("stable-download-btn").textContent = currentArch === "windows-amd64" ? "↓ BAIXAR ZIP (WINDOWS x86_64)" : `↓ BAIXAR EXECUTÁVEL (${currentArch})`;
+      document.getElementById("nightly-download-btn").textContent = currentArch === "windows-amd64" ? "⚡ BAIXAR ZIP (NIGHTLY)" : `⚡ BAIXAR EXECUTÁVEL (${currentArch})`;
 
-      document.getElementById("stable-curl-code").textContent =
-        `curl -sSL ${stableUrl} -o /usr/local/bin/${app.name} && chmod +x /usr/local/bin/${app.name}`;
-      document.getElementById("nightly-curl-code").textContent =
-        `curl -sSL ${nightlyUrl} -o /usr/local/bin/${app.name} && chmod +x /usr/local/bin/${app.name}`;
+      document.getElementById("stable-curl-code").textContent = stableCmd;
+      document.getElementById("nightly-curl-code").textContent = nightlyCmd;
 
       // Reset temporário de listas antes de fetch
       document.getElementById("stable-ver-text").textContent = "stable-latest";
@@ -678,18 +758,21 @@
           const stables = (manifest.stables || []).slice(0, 5);
           if (stables.length > 0) {
             stables.forEach(item => {
+              const art = item.artifacts?.[currentArch] || {};
+              const targetUrl = art.url || art.binary_url || item.url || stableUrl;
+              const targetSha = art.sha256 || item.sha256 || "";
               const li = document.createElement("li");
               li.className = "history-item";
               li.innerHTML = `
-                <a href="${item.url || stableUrl}">v${item.version}</a>
-                <span class="history-meta">${item.date || ""} ${item.sha256 ? item.sha256.substring(0, 8) : ""}</span>
+                <a href="${targetUrl}">v${item.version} (${currentArch})</a>
+                <span class="history-meta">${item.date || ""} ${targetSha ? targetSha.substring(0, 8) : ""}</span>
               `;
               stableList.appendChild(li);
             });
           } else {
             stableList.innerHTML = `
               <li class="history-item">
-                <a href="${stableUrl}">stable-latest</a>
+                <a href="${stableUrl}">stable-latest (${currentArch})</a>
                 <span class="history-meta">canal principal</span>
               </li>
             `;
@@ -701,10 +784,12 @@
           const nightlies = (manifest.nightlies || []).slice(0, 10);
           if (nightlies.length > 0) {
             nightlies.forEach(item => {
+              const art = item.artifacts?.[currentArch] || {};
+              const targetUrl = art.url || art.binary_url || item.url || nightlyUrl;
               const li = document.createElement("li");
               li.className = "history-item";
               li.innerHTML = `
-                <a href="${item.url || nightlyUrl}">${item.version}</a>
+                <a href="${targetUrl}">${item.version} (${currentArch})</a>
                 <span class="history-meta">${item.date || ""}</span>
               `;
               nightlyList.appendChild(li);
@@ -712,7 +797,7 @@
           } else {
             nightlyList.innerHTML = `
               <li class="history-item">
-                <a href="${nightlyUrl}">nightly-latest</a>
+                <a href="${nightlyUrl}">nightly-latest (${currentArch})</a>
                 <span class="history-meta">compilação de esteira</span>
               </li>
             `;
@@ -723,14 +808,14 @@
           const stableList = document.getElementById("stable-history-list");
           stableList.innerHTML = `
             <li class="history-item">
-              <a href="${stableUrl}">stable-latest</a>
+              <a href="${stableUrl}">stable-latest (${currentArch})</a>
               <span class="history-meta">recomendado</span>
             </li>
           `;
           const nightlyList = document.getElementById("nightly-history-list");
           nightlyList.innerHTML = `
             <li class="history-item">
-              <a href="${nightlyUrl}">nightly-latest</a>
+              <a href="${nightlyUrl}">nightly-latest (${currentArch})</a>
               <span class="history-meta">automático</span>
             </li>
           `;
@@ -746,6 +831,17 @@
         window.location.hash = selected;
       }
       renderApp(selected);
+    });
+
+    // Manipulador de troca de arquitetura
+    document.querySelectorAll(".arch-btn").forEach(btn => {
+      btn.addEventListener("click", function() {
+        document.querySelectorAll(".arch-btn").forEach(b => b.classList.remove("active"));
+        this.classList.add("active");
+        currentArch = this.dataset.arch;
+        const currentApp = resolveCurrentApp();
+        renderApp(currentApp);
+      });
     });
 
     // Manipulador de navegação no histórico do browser
@@ -768,6 +864,10 @@
 
     // Inicialização ao carregar a página
     document.addEventListener("DOMContentLoaded", function() {
+      currentArch = detectInitialArch();
+      document.querySelectorAll(".arch-btn").forEach(b => {
+        b.classList.toggle("active", b.dataset.arch === currentArch);
+      });
       const initialApp = resolveCurrentApp();
       renderApp(initialApp);
     });
