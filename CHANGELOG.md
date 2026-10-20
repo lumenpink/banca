@@ -11,6 +11,7 @@
   - (pratilera) extrair metadados reais dos apks via aapt (closes #24)
 
 ### Features
+  - (catalog) adicionar 6 modulos satelites do joaju com banners e metadados ao catalogo (closes #37)
   - (catalog) adicionar resenha com banner safe zone e metadados oficiais ao catalogo (closes #36)
   - (pratilera) integrar aplicativo mandu, metadados fastlane e banner ao catalogo (closes #34)
   - (catalog) adicionar hendu com banner safe zone e metadados oficiais ao catalogo da banca (closes #33)
