@@ -20,6 +20,26 @@
     "category": "editorial"
   },
   {
+    "name": "resenha",
+    "forge": "codeberg",
+    "slug": "lumenpink/resenha",
+    "description": "Subsistema de extração de miolo textual e sanitização tipográfica na borda em Markdown estrito para o Fuxico e terminal",
+    "topics": [
+      "rust",
+      "cli",
+      "markdown",
+      "readability",
+      "editorial",
+      "indieweb"
+    ],
+    "license": "GPL-3.0",
+    "website": "https://fuxico.lumen.pink",
+    "is_upstream": false,
+    "group": "",
+    "banner": "assets/banners/resenha-banner.png",
+    "category": "editorial"
+  },
+  {
     "name": "cccp",
     "forge": "codeberg",
     "slug": "lumenpink/cccp",
