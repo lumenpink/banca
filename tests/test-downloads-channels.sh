@@ -94,6 +94,77 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 6. [MUTAÇÃO] Teste de Retenção Estrita (Expurgo de 6ª estável e 11ª nightly)
+echo -n "-> 6. [MUTAÇÃO] Testando retenção máxima de 5 stables e 10 nightlies... "
+TMP_MUTATION_DIR="$(mktemp -d)"
+trap 'rm -rf "$TMP_MUTATION_DIR"' EXIT
+TMP_MANIFEST="$TMP_MUTATION_DIR/index.json"
+
+for i in $(seq 1 7); do
+    python3 "$ROTATE_SCRIPT" --manifest "$TMP_MANIFEST" --app "testapp" --channel "stable" --version-str "1.0.$i" --url "https://banca.2lp.in/downloads/testapp/stable/1.0.$i/testapp" >/dev/null 2>&1
+done
+for j in $(seq 1 12); do
+    python3 "$ROTATE_SCRIPT" --manifest "$TMP_MANIFEST" --app "testapp" --channel "nightly" --version-str "1.1.0-dev.$j" --url "https://banca.2lp.in/downloads/testapp/nightly/1.1.0-dev.$j/testapp" >/dev/null 2>&1
+done
+
+if python3 -c "
+import json
+with open('$TMP_MANIFEST') as f:
+    d = json.load(f)
+assert len(d['stables']) == 5, f'stables length {len(d[\"stables\"])} != 5'
+assert len(d['nightlies']) == 10, f'nightlies length {len(d[\"nightlies\"])} != 10'
+assert d['stable_latest'] == '1.0.7', f'stable_latest {d[\"stable_latest\"]} != 1.0.7'
+assert d['nightly_latest'] == '1.1.0-dev.12', f'nightly_latest {d[\"nightly_latest\"]} != 1.1.0-dev.12'
+" 2>/dev/null; then
+    echo "✅ OK (Retenção 5 stables / 10 nightlies comprovada)"
+else
+    echo "❌ FALHOU (Mutação de retenção violou teto de 5 stables ou 10 nightlies)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 7. [MUTAÇÃO] Teste de Mesclagem Multi-Arquitetura sem Duplicação
+echo -n "-> 7. [MUTAÇÃO] Testando agregação de artefatos multi-arch na mesma versão... "
+python3 "$ROTATE_SCRIPT" --manifest "$TMP_MANIFEST" --app "testapp" --channel "stable" --version-str "2.0.0" --arch "linux-amd64" --url "https://banca.2lp.in/downloads/testapp/stable/testapp-linux-amd64" >/dev/null 2>&1
+python3 "$ROTATE_SCRIPT" --manifest "$TMP_MANIFEST" --app "testapp" --channel "stable" --version-str "2.0.0" --arch "linux-arm64" --url "https://banca.2lp.in/downloads/testapp/stable/testapp-linux-arm64" >/dev/null 2>&1
+python3 "$ROTATE_SCRIPT" --manifest "$TMP_MANIFEST" --app "testapp" --channel "stable" --version-str "2.0.0" --arch "windows-amd64" --url "https://banca.2lp.in/downloads/testapp/stable/testapp.exe" --tarball "https://banca.2lp.in/downloads/testapp/stable/testapp-windows-amd64.zip" >/dev/null 2>&1
+
+if python3 -c "
+import json
+with open('$TMP_MANIFEST') as f:
+    d = json.load(f)
+v2_entries = [e for e in d['stables'] if e.get('version') == '2.0.0']
+assert len(v2_entries) == 1, f'Duplicação de versão detectada: {len(v2_entries)} entradas'
+art = v2_entries[0].get('artifacts', {})
+assert 'linux-amd64' in art, 'linux-amd64 ausente'
+assert 'linux-arm64' in art, 'linux-arm64 ausente'
+assert 'windows-amd64' in art, 'windows-amd64 ausente'
+assert 'testapp-windows-amd64.zip' in art['windows-amd64']['url'], 'zip windows incorreto'
+" 2>/dev/null; then
+    echo "✅ OK (Agregação de 3 arquiteturas em versão única comprovada)"
+else
+    echo "❌ FALHOU (Mutação multi-arch causou duplicação ou perda de artefato)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 8. [MUTAÇÃO] Teste de Resiliência com Arquivo Corrompido
+echo -n "-> 8. [MUTAÇÃO] Testando recuperação automática de JSON corrompido... "
+echo "CORRUPTED_JSON_DATA_!@#$%" > "$TMP_MANIFEST"
+python3 "$ROTATE_SCRIPT" --manifest "$TMP_MANIFEST" --app "testapp" --channel "stable" --version-str "3.0.0" --url "https://banca.2lp.in/downloads/testapp/stable/testapp" >/dev/null 2>&1
+
+if python3 -c "
+import json
+with open('$TMP_MANIFEST') as f:
+    d = json.load(f)
+assert d.get('app') == 'testapp'
+assert d.get('stable_latest') == '3.0.0'
+assert len(d['stables']) == 1
+" 2>/dev/null; then
+    echo "✅ OK (Recuperação limpa de arquivo corrompido comprovada)"
+else
+    echo "❌ FALHOU (Falha na recuperação de JSON corrompido)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ "$FAILURES" -gt 0 ]; then
     echo "💥 $FAILURES TESTE(S) FALHARAM (Esperado na Fase Red do DD-TDD)."
