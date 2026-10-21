@@ -40,16 +40,16 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
-# 3. Testar rejeição de Darwin/Apple com mensagem espirituosa
-echo -n "-> 3. Testando rejeição do SO Darwin (Apple) com repúdio ao mau gosto... "
+# 3. Testar rejeição de Darwin/Apple
+echo -n "-> 3. Testando rejeição do SO Darwin (Apple)... "
 if [ -f "$SITE_DIR/install.sh" ]; then
     TMP_BINDIR=$(mktemp -d)
     OUTPUT=$(UNAME_OVERRIDE="Darwin" sh "$SITE_DIR/install.sh" cccp 2>&1 || true)
     rm -rf "$TMP_BINDIR"
-    if echo "$OUTPUT" | grep -qi "mau gosto" && echo "$OUTPUT" | grep -qi "próxima vida"; then
-        echo "✅ OK (Darwin devidamente repudiado com elegância)"
+    if echo "$OUTPUT" | grep -qi "macOS/Darwin não é suportado pelo ecossistema soberano da Banca"; then
+        echo "✅ OK (Darwin devidamente rejeitado com mensagem clara)"
     else
-        echo "❌ FALHOU (mensagem de repúdio ao Darwin ausente ou incorreta: '$OUTPUT')"
+        echo "❌ FALHOU (mensagem de rejeição ao Darwin ausente ou incorreta: '$OUTPUT')"
         FAILURES=$((FAILURES + 1))
     fi
 else

@@ -33,8 +33,7 @@ BANCA_URL="https://banca.2lp.in"
 OS_NAME="${UNAME_OVERRIDE:-$(uname -s)}"
 case "$OS_NAME" in
     Darwin*)
-        printf "\n\033[1;31m[ERRO BANCA]\033[0m Não há nada que a Banca possa fazer pelo seu mau gosto.\n" >&2
-        printf "Tente novamente na próxima vida (ou instale um Linux soberano).\n\n" >&2
+        printf "\n\033[1;31m[ERRO BANCA]\033[0m macOS/Darwin não é suportado pelo ecossistema soberano da Banca.\n\n" >&2
         exit 1
         ;;
     Linux*)

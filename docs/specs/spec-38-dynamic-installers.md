@@ -24,9 +24,9 @@ A Banca disponibilizará os seguintes endpoints estáticos para execução diret
      - Se o usuário atual for root (`id -u == 0`), instalar em `/usr/local/bin`.
      - Se for usuário normal (`id -u != 0`), instalar em `$HOME/.local/bin`.
    - Criar o diretório de destino caso não exista (`mkdir -p "$TARGET_DIR"`).
-2. **Rejeição Estrita de Sistemas Apple / Darwin:**
+2. **Rejeição de Sistemas Apple / Darwin:**
    - Detectar via `uname -s`. Se for `Darwin`, abortar com código de saída 1 e a mensagem:
-     `"Erro: Não há nada que a Banca possa fazer pelo seu mau gosto. Tente novamente na próxima vida (ou instale um Linux soberano)."`
+     `"macOS/Darwin não é suportado pelo ecossistema soberano da Banca."`
 3. **Detecção de Arquitetura Linux:**
    - `x86_64` $\to$ `linux-amd64`
    - `aarch64` ou `arm64` $\to$ `linux-arm64`
