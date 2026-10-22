@@ -5,7 +5,7 @@
   "description": "Compilador vetorial de diagramas, tabelas e heredogramas",
   "repo": "https://codeberg.org/lumenpink/joaju",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev",
+  "nightly_latest": "0.2.0-dev.69+20261022.61bacde+20261022.e46558e",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.2.0-dev.69+20261022.61bacde+20261022.e46558e",
+      "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.69+20261022.61bacde+20261022.e46558e-linux-amd64.tar.gz",
+      "date": "2026-10-22",
+      "sha256": "28c77d67a048bff52eb3349aa8291e7a96afd795d489dac6cceb099ba9a66fef",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.69+20261022.61bacde+20261022.e46558e-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.69+20261022.61bacde+20261022.e46558e-linux-amd64.tar.gz",
+          "sha256": "28c77d67a048bff52eb3349aa8291e7a96afd795d489dac6cceb099ba9a66fef"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.69+20261022.61bacde+20261022.e46558e-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.69+20261022.61bacde+20261022.e46558e-linux-arm64.tar.gz",
+          "sha256": "af2fbc8bd93839f86a07072e5cf9a8cfdb9e0358c9de158c743cebfc8abed2ea"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.69+20261022.61bacde+20261022.e46558e-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.69+20261022.61bacde+20261022.e46558e-windows-amd64.zip",
+          "sha256": "b3aa56358bad00a79ee5cbd7d6c98b53204e5179bbd75f119fbdbd78a4ae45f0"
+        }
+      },
+      "tarball": "joaju-0.2.0-dev.69+20261022.61bacde+20261022.e46558e-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev",
       "date": "2026-10-20",
