@@ -685,7 +685,6 @@ def update_redirects():
         "",
         "# Redirecionamento da vitrine de downloads",
         "/downloads  /downloads/  301",
-        "/downloads/  /downloads/index.html  200",
         ""
     ]
     with open(redirects_file, "w", encoding="utf-8") as f:

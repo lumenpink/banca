@@ -87,11 +87,14 @@ else
 fi
 
 # 6. Validar regras de roteamento em site/_redirects
-echo -n "-> 6. Verificando redirecionamento /downloads/* em _redirects... "
+echo -n "-> 6. Verificando redirecionamento /downloads em _redirects... "
 if [ -f "$SITE_DIR/_redirects" ]; then
     REDIRECTS_CONTENT=$(cat "$SITE_DIR/_redirects")
-    if echo "$REDIRECTS_CONTENT" | grep -q "/downloads/\*" || echo "$REDIRECTS_CONTENT" | grep -q "/downloads "; then
-        echo "✅ OK (regras de roteamento presentes)"
+    if echo "$REDIRECTS_CONTENT" | grep -qE "^/downloads/\s+/downloads/index\.html"; then
+        echo "❌ FALHOU (detectada regra com loop infinito em _redirects: /downloads/ -> index.html 200)"
+        FAILURES=$((FAILURES + 1))
+    elif echo "$REDIRECTS_CONTENT" | grep -q "/downloads/\*" || echo "$REDIRECTS_CONTENT" | grep -q "/downloads "; then
+        echo "✅ OK (regras de roteamento presentes e sem loop)"
     else
         echo "❌ FALHOU (regras para /downloads ausentes em _redirects)"
         FAILURES=$((FAILURES + 1))

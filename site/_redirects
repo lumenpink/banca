@@ -15,4 +15,3 @@
 
 # Redirecionamento da vitrine de downloads
 /downloads  /downloads/  301
-/downloads/  /downloads/index.html  200
