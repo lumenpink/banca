@@ -199,6 +199,49 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 11. Validar URLs absolutas no manifesto do Mandu (prevenção de links relativos quebrados)
+echo -n "-> 11. Verificando URLs absolutas no manifesto do Mandu... "
+MANDU_JSON="$DOWNLOADS_DIR/mandu/index.json"
+if [ -f "$MANDU_JSON" ]; then
+    # Checar se existe alguma URL de artefato relativa que não inicie com http:// ou https://
+    RELATIVE_URLS=$(python3 -c "
+import json
+data = json.load(open('$MANDU_JSON'))
+relatives = []
+for sec in ['stables', 'nightlies']:
+    for item in data.get(sec, []):
+        for arch, art in item.get('artifacts', {}).items():
+            u = art.get('url', '')
+            if u and not u.startswith('http://') and not u.startswith('https://'):
+                relatives.append(f'{arch}: {u}')
+print(', '.join(relatives))
+")
+    if [ -n "$RELATIVE_URLS" ]; then
+        echo "❌ FALHOU (detectadas URLs relativas quebradas: $RELATIVE_URLS)"
+        FAILURES=$((FAILURES + 1))
+    else
+        echo "✅ OK (todas as URLs de artefatos são absolutas)"
+    fi
+else
+    echo "❌ FALHOU (manifesto do Mandu ausente)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 12. Validar atualização dinâmica dos botões de download na vitrine web
+echo -n "-> 12. Verificando atualização dinâmica dos botões principais de download... "
+if [ -f "$DOWNLOADS_DIR/index.html" ]; then
+    if grep -q "stable-download-btn.*href" "$DOWNLOADS_DIR/index.html" && \
+       grep -q "nightly-download-btn.*href" "$DOWNLOADS_DIR/index.html"; then
+        echo "✅ OK (botões principais atualizados dinamicamente pelo manifesto)"
+    else
+        echo "❌ FALHOU (botões principais não atualizam href via manifesto)"
+        FAILURES=$((FAILURES + 1))
+    fi
+else
+    echo "❌ FALHOU (site/downloads/index.html ausente)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ "$FAILURES" -gt 0 ]; then
     echo "💥 $FAILURES TESTE(S) FALHARAM."

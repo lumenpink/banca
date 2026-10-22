@@ -101,28 +101,33 @@ def add_entry(manifest_path, channel, version, url, sha256="", tarball="", arch=
             existing_entry = item
             break
 
+    # Garantir que a URL do artefato seja sempre absoluta (http/https)
+    artifact_download_url = url
+    if tarball and (tarball.startswith("http://") or tarball.startswith("https://")):
+        artifact_download_url = tarball
+
     if existing_entry is not None:
         if "artifacts" not in existing_entry or not isinstance(existing_entry["artifacts"], dict):
             existing_entry["artifacts"] = {}
         existing_entry["artifacts"][arch] = {
-            "url": tarball or url,
+            "url": artifact_download_url,
             "binary_url": url,
             "sha256": sha256
         }
         if arch == "linux-amd64" or not existing_entry.get("url"):
-            existing_entry["url"] = url
+            existing_entry["url"] = artifact_download_url
             existing_entry["sha256"] = sha256
             if tarball:
                 existing_entry["tarball"] = tarball
     else:
         new_entry = {
             "version": version,
-            "url": url,
+            "url": artifact_download_url,
             "date": today,
             "sha256": sha256,
             "artifacts": {
                 arch: {
-                    "url": tarball or url,
+                    "url": artifact_download_url,
                     "binary_url": url,
                     "sha256": sha256
                 }

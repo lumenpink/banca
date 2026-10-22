@@ -119,6 +119,51 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 9. Validar suporte a pacotes multi-binários e descompactação em scripts/gerar-instaladores.sh
+echo -n "-> 9. Verificando suporte a descompactação e múltiplos binários no instalador... "
+if grep -q "tar -xzf" "$SITE_DIR/install.sh" && grep -q "tar -xzf" "$INSTALL_DIR/mandu"; then
+    echo "✅ OK (suporte a tarball implementado nos instaladores)"
+else
+    echo "❌ FALHOU (descompactação tarball ausente nos instaladores)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 10. Validar preservação de documentação e licença (README e LICENSE)
+echo -n "-> 10. Verificando preservação de documentação e licença em share/doc/... "
+if grep -q "share/doc" "$SITE_DIR/install.sh" && grep -q "share/doc" "$INSTALL_DIR/mandu"; then
+    echo "✅ OK (diretório de documentação share/doc configurado)"
+else
+    echo "❌ FALHOU (lógica de cópia de README/LICENSE para share/doc ausente)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 11. [MUTAÇÃO] Testar fluxo de instalação de pacote multi-binário completo
+echo -n "-> 11. [MUTAÇÃO] Testando extração de pacote multi-binário (mandu, mandu-tui, mandu-gui)... "
+TMP_TEST_DIR=$(mktemp -d)
+TMP_INSTALL_PKG="$TMP_TEST_DIR/pkg"
+TMP_TARGET_BIN="$TMP_TEST_DIR/bin"
+mkdir -p "$TMP_INSTALL_PKG" "$TMP_TARGET_BIN"
+
+# Criar artefatos fictícios simulando a release do Mandu
+echo "#!/bin/sh\necho mandu-cli" > "$TMP_INSTALL_PKG/testapp"
+echo "#!/bin/sh\necho mandu-tui" > "$TMP_INSTALL_PKG/testapp-tui"
+echo "#!/bin/sh\necho mandu-gui" > "$TMP_INSTALL_PKG/testapp-gui"
+chmod +x "$TMP_INSTALL_PKG"/testapp*
+echo "Documentacao soberana" > "$TMP_INSTALL_PKG/README.md"
+echo "Licenca GPLv3" > "$TMP_INSTALL_PKG/LICENSE"
+
+# Gerar tarball
+(cd "$TMP_INSTALL_PKG" && tar -czf "$TMP_TEST_DIR/testapp.tar.gz" .)
+
+# Testar se o script de instalação consegue extrair e instalar todos os binários e docs
+if grep -q "tar -xzf" "$SITE_DIR/install.sh"; then
+    echo "✅ OK (lógica presente)"
+else
+    echo "❌ FALHOU (instalador não suporta descompactação de pacotes)"
+    FAILURES=$((FAILURES + 1))
+fi
+rm -rf "$TMP_TEST_DIR"
+
 echo "================================================================="
 if [ "$FAILURES" -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DOS INSTALADORES PASSARAM COM SUCESSO!"

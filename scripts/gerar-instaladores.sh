@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# scripts/gerar-instaladores.sh — Gerador de Instaladores Dinâmicos da Banca (#38)
+# scripts/gerar-instaladores.sh — Gerador de Instaladores Dinâmicos da Banca (#38 & #40)
+# Suporta binários diretos e pacotes compostos (.tar.gz/.zip) com múltiplos executáveis
+# e preservação de documentação (README.md e LICENSE) em ~/.local/share/doc/<app>/.
 # ==============================================================================
 set -euo pipefail
 
@@ -92,18 +94,58 @@ fi
 
 mkdir -p "$TARGET_DIR"
 
-# 4. Resolução da URL de download
-if [ "$CHANNEL" = "nightly" ]; then
-    DOWNLOAD_URL="${BANCA_URL}/downloads/${APP}/nightly-latest/${APP}-${ARCH}"
-    FALLBACK_URL="${BANCA_URL}/downloads/${APP}/nightly-latest/${APP}"
+# 4. Resolução da URL de download a partir do manifesto da Banca
+MANIFEST_URL="${BANCA_URL}/downloads/${APP}/index.json"
+RESOLVED_URL=""
+
+if command -v curl >/dev/null 2>&1; then
+    MANIFEST_CONTENT=$(curl -fsSL "$MANIFEST_URL" 2>/dev/null || true)
+elif command -v wget >/dev/null 2>&1; then
+    MANIFEST_CONTENT=$(wget -qO- "$MANIFEST_URL" 2>/dev/null || true)
 else
-    DOWNLOAD_URL="${BANCA_URL}/downloads/${APP}/stable-latest/${APP}-${ARCH}"
-    FALLBACK_URL="${BANCA_URL}/downloads/${APP}/stable-latest/${APP}"
+    MANIFEST_CONTENT=""
+fi
+
+if [ -n "$MANIFEST_CONTENT" ]; then
+    if command -v python3 >/dev/null 2>&1; then
+        RESOLVED_URL=$(printf '%s' "$MANIFEST_CONTENT" | python3 -c "
+import sys, json
+try:
+    d = json.load(sys.stdin)
+    sec = 'stables' if '$CHANNEL' == 'stable' else 'nightlies'
+    entries = d.get(sec, [])
+    if entries:
+        art = entries[0].get('artifacts', {}).get('$ARCH', {})
+        u = art.get('binary_url') or art.get('url') or entries[0].get('url', '')
+        if u and (u.startswith('http://') or u.startswith('https://')):
+            print(u)
+except Exception:
+    pass
+" 2>/dev/null || true)
+    fi
+    if [ -z "$RESOLVED_URL" ]; then
+        RESOLVED_URL=$(printf '%s' "$MANIFEST_CONTENT" | grep -o 'https://bucket.2lp.in/[^"]*' | grep "/${CHANNEL}/" | grep "$ARCH" | head -n 1 || true)
+    fi
+fi
+
+if [ -z "$RESOLVED_URL" ]; then
+    if [ "$CHANNEL" = "nightly" ]; then
+        DOWNLOAD_URL="${BANCA_URL}/downloads/${APP}/nightly-latest/${APP}-${ARCH}"
+        FALLBACK_URL="${BANCA_URL}/downloads/${APP}/nightly-latest/${APP}"
+    else
+        DOWNLOAD_URL="${BANCA_URL}/downloads/${APP}/stable-latest/${APP}-${ARCH}"
+        FALLBACK_URL="${BANCA_URL}/downloads/${APP}/stable-latest/${APP}"
+    fi
+else
+    DOWNLOAD_URL="$RESOLVED_URL"
+    FALLBACK_URL="${BANCA_URL}/downloads/${APP}/${CHANNEL}-latest/${APP}-${ARCH}"
 fi
 
 printf "\033[1;33m★ [BANCA]\033[0m Instalando \033[1m%s\033[0m (%s) em \033[1m%s\033[0m...\n" "$APP" "$CHANNEL" "$TARGET_DIR"
 
-TMP_FILE="${TARGET_DIR}/.${APP}.tmp.$$"
+TMP_WORK_DIR=$(mktemp -d 2>/dev/null || mktemp -d -t 'banca-install')
+trap 'rm -rf "$TMP_WORK_DIR"' EXIT INT TERM
+TMP_FILE="${TMP_WORK_DIR}/package.download"
 
 download_file() {
     url="$1"
@@ -121,13 +163,58 @@ download_file() {
 if ! download_file "$DOWNLOAD_URL" "$TMP_FILE"; then
     if ! download_file "$FALLBACK_URL" "$TMP_FILE"; then
         printf "\033[1;31m[ERRO BANCA]\033[0m Falha ao baixar %s a partir de %s\n" "$APP" "$DOWNLOAD_URL" >&2
-        rm -f "$TMP_FILE"
         exit 1
     fi
 fi
 
-chmod 755 "$TMP_FILE"
-mv -f "$TMP_FILE" "${TARGET_DIR}/${APP}"
+# Detectar se o arquivo baixado é um arquivo compactado (tarball ou zip)
+EXTRACT_DIR="${TMP_WORK_DIR}/extracted"
+mkdir -p "$EXTRACT_DIR"
+IS_ARCHIVE=0
+
+if gzip -t "$TMP_FILE" >/dev/null 2>&1 || tar -tzf "$TMP_FILE" >/dev/null 2>&1; then
+    tar -xzf "$TMP_FILE" -C "$EXTRACT_DIR" 2>/dev/null && IS_ARCHIVE=1
+elif unzip -tq "$TMP_FILE" >/dev/null 2>&1; then
+    unzip -q "$TMP_FILE" -d "$EXTRACT_DIR" 2>/dev/null && IS_ARCHIVE=1
+fi
+
+DOC_DIR="${TARGET_DIR}/../share/doc/${APP}"
+
+if [ "$IS_ARCHIVE" -eq 1 ]; then
+    # Instalar todos os binários executáveis encontrados no pacote descompactado
+    INSTALLED_COUNT=0
+    for exec_path in "$EXTRACT_DIR"/*; do
+        [ -f "$exec_path" ] || continue
+        bname=$(basename "$exec_path")
+        case "$bname" in
+            *.md|*.txt|*.json|*.sh|*.png|*.svg|*.apk|*.zip|*.tar.gz)
+                continue
+                ;;
+        esac
+        if [ -x "$exec_path" ] || [ "$bname" = "$APP" ] || [ "$bname" = "${APP}-tui" ] || [ "$bname" = "${APP}-gui" ]; then
+            mv -f "$exec_path" "${TARGET_DIR}/${bname}"
+            chmod 755 "${TARGET_DIR}/${bname}"
+            printf "  ✓ Instalado executável: \033[1m%s/%s\033[0m\n" "$TARGET_DIR" "$bname"
+            INSTALLED_COUNT=$((INSTALLED_COUNT + 1))
+        fi
+    done
+
+    # Preservar documentação e licença
+    mkdir -p "$DOC_DIR" 2>/dev/null || true
+    for doc_path in "$EXTRACT_DIR"/README* "$EXTRACT_DIR"/LICENSE* "$EXTRACT_DIR"/COPYING*; do
+        [ -f "$doc_path" ] || continue
+        dname=$(basename "$doc_path")
+        cp -f "$doc_path" "${DOC_DIR}/${dname}" 2>/dev/null || true
+    done
+
+    if [ -d "$DOC_DIR" ] && [ "$(ls -A "$DOC_DIR" 2>/dev/null)" ]; then
+        printf "  ★ Documentação e licença salvas em: \033[1m%s\033[0m\n" "$DOC_DIR"
+    fi
+else
+    chmod 755 "$TMP_FILE"
+    mv -f "$TMP_FILE" "${TARGET_DIR}/${APP}"
+    printf "  ✓ Instalado executável: \033[1m%s/%s\033[0m\n" "$TARGET_DIR" "$APP"
+fi
 
 printf "\033[1;32m✓ [SUCESSO]\033[0m %s instalado com sucesso em %s/%s!\n" "$APP" "$TARGET_DIR" "$APP"
 
@@ -226,18 +313,58 @@ fi
 
 mkdir -p "$TARGET_DIR"
 
-# 4. Resolução da URL de download
-if [ "$CHANNEL" = "nightly" ]; then
-    DOWNLOAD_URL="${BANCA_URL}/downloads/${APP}/nightly-latest/${APP}-${ARCH}"
-    FALLBACK_URL="${BANCA_URL}/downloads/${APP}/nightly-latest/${APP}"
+# 4. Resolução da URL de download a partir do manifesto da Banca
+MANIFEST_URL="${BANCA_URL}/downloads/${APP}/index.json"
+RESOLVED_URL=""
+
+if command -v curl >/dev/null 2>&1; then
+    MANIFEST_CONTENT=$(curl -fsSL "$MANIFEST_URL" 2>/dev/null || true)
+elif command -v wget >/dev/null 2>&1; then
+    MANIFEST_CONTENT=$(wget -qO- "$MANIFEST_URL" 2>/dev/null || true)
 else
-    DOWNLOAD_URL="${BANCA_URL}/downloads/${APP}/stable-latest/${APP}-${ARCH}"
-    FALLBACK_URL="${BANCA_URL}/downloads/${APP}/stable-latest/${APP}"
+    MANIFEST_CONTENT=""
+fi
+
+if [ -n "$MANIFEST_CONTENT" ]; then
+    if command -v python3 >/dev/null 2>&1; then
+        RESOLVED_URL=$(printf '%s' "$MANIFEST_CONTENT" | python3 -c "
+import sys, json
+try:
+    d = json.load(sys.stdin)
+    sec = 'stables' if '$CHANNEL' == 'stable' else 'nightlies'
+    entries = d.get(sec, [])
+    if entries:
+        art = entries[0].get('artifacts', {}).get('$ARCH', {})
+        u = art.get('binary_url') or art.get('url') or entries[0].get('url', '')
+        if u and (u.startswith('http://') or u.startswith('https://')):
+            print(u)
+except Exception:
+    pass
+" 2>/dev/null || true)
+    fi
+    if [ -z "$RESOLVED_URL" ]; then
+        RESOLVED_URL=$(printf '%s' "$MANIFEST_CONTENT" | grep -o 'https://bucket.2lp.in/[^"]*' | grep "/${CHANNEL}/" | grep "$ARCH" | head -n 1 || true)
+    fi
+fi
+
+if [ -z "$RESOLVED_URL" ]; then
+    if [ "$CHANNEL" = "nightly" ]; then
+        DOWNLOAD_URL="${BANCA_URL}/downloads/${APP}/nightly-latest/${APP}-${ARCH}"
+        FALLBACK_URL="${BANCA_URL}/downloads/${APP}/nightly-latest/${APP}"
+    else
+        DOWNLOAD_URL="${BANCA_URL}/downloads/${APP}/stable-latest/${APP}-${ARCH}"
+        FALLBACK_URL="${BANCA_URL}/downloads/${APP}/stable-latest/${APP}"
+    fi
+else
+    DOWNLOAD_URL="$RESOLVED_URL"
+    FALLBACK_URL="${BANCA_URL}/downloads/${APP}/${CHANNEL}-latest/${APP}-${ARCH}"
 fi
 
 printf "\033[1;33m★ [BANCA]\033[0m Instalando \033[1m%s\033[0m (%s) em \033[1m%s\033[0m...\n" "$APP" "$CHANNEL" "$TARGET_DIR"
 
-TMP_FILE="${TARGET_DIR}/.${APP}.tmp.$$"
+TMP_WORK_DIR=$(mktemp -d 2>/dev/null || mktemp -d -t 'banca-install')
+trap 'rm -rf "$TMP_WORK_DIR"' EXIT INT TERM
+TMP_FILE="${TMP_WORK_DIR}/package.download"
 
 download_file() {
     url="$1"
@@ -255,13 +382,56 @@ download_file() {
 if ! download_file "$DOWNLOAD_URL" "$TMP_FILE"; then
     if ! download_file "$FALLBACK_URL" "$TMP_FILE"; then
         printf "\033[1;31m[ERRO BANCA]\033[0m Falha ao baixar %s a partir de %s\n" "$APP" "$DOWNLOAD_URL" >&2
-        rm -f "$TMP_FILE"
         exit 1
     fi
 fi
 
-chmod 755 "$TMP_FILE"
-mv -f "$TMP_FILE" "${TARGET_DIR}/${APP}"
+# Detectar se o arquivo baixado é um arquivo compactado (tarball ou zip)
+EXTRACT_DIR="${TMP_WORK_DIR}/extracted"
+mkdir -p "$EXTRACT_DIR"
+IS_ARCHIVE=0
+
+if gzip -t "$TMP_FILE" >/dev/null 2>&1 || tar -tzf "$TMP_FILE" >/dev/null 2>&1; then
+    tar -xzf "$TMP_FILE" -C "$EXTRACT_DIR" 2>/dev/null && IS_ARCHIVE=1
+elif unzip -tq "$TMP_FILE" >/dev/null 2>&1; then
+    unzip -q "$TMP_FILE" -d "$EXTRACT_DIR" 2>/dev/null && IS_ARCHIVE=1
+fi
+
+DOC_DIR="${TARGET_DIR}/../share/doc/${APP}"
+
+if [ "$IS_ARCHIVE" -eq 1 ]; then
+    # Instalar todos os binários executáveis encontrados no pacote descompactado
+    for exec_path in "$EXTRACT_DIR"/*; do
+        [ -f "$exec_path" ] || continue
+        bname=$(basename "$exec_path")
+        case "$bname" in
+            *.md|*.txt|*.json|*.sh|*.png|*.svg|*.apk|*.zip|*.tar.gz)
+                continue
+                ;;
+        esac
+        if [ -x "$exec_path" ] || [ "$bname" = "$APP" ] || [ "$bname" = "${APP}-tui" ] || [ "$bname" = "${APP}-gui" ]; then
+            mv -f "$exec_path" "${TARGET_DIR}/${bname}"
+            chmod 755 "${TARGET_DIR}/${bname}"
+            printf "  ✓ Instalado executável: \033[1m%s/%s\033[0m\n" "$TARGET_DIR" "$bname"
+        fi
+    done
+
+    # Preservar documentação e licença
+    mkdir -p "$DOC_DIR" 2>/dev/null || true
+    for doc_path in "$EXTRACT_DIR"/README* "$EXTRACT_DIR"/LICENSE* "$EXTRACT_DIR"/COPYING*; do
+        [ -f "$doc_path" ] || continue
+        dname=$(basename "$doc_path")
+        cp -f "$doc_path" "${DOC_DIR}/${dname}" 2>/dev/null || true
+    done
+
+    if [ -d "$DOC_DIR" ] && [ "$(ls -A "$DOC_DIR" 2>/dev/null)" ]; then
+        printf "  ★ Documentação e licença salvas em: \033[1m%s\033[0m\n" "$DOC_DIR"
+    fi
+else
+    chmod 755 "$TMP_FILE"
+    mv -f "$TMP_FILE" "${TARGET_DIR}/${APP}"
+    printf "  ✓ Instalado executável: \033[1m%s/%s\033[0m\n" "$TARGET_DIR" "$APP"
+fi
 
 printf "\033[1;32m✓ [SUCESSO]\033[0m %s instalado com sucesso em %s/%s!\n" "$APP" "$TARGET_DIR" "$APP"
 

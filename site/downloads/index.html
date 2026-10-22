@@ -752,6 +752,28 @@
             document.getElementById("nightly-ver-text").textContent = manifest.nightly_latest;
           }
 
+          // Atualizar links dos botões principais de download com URLs resolvidas do manifesto
+          const latestStable = (manifest.stables || [])[0];
+          if (latestStable) {
+            const art = latestStable.artifacts?.[currentArch] || {};
+            let realStableUrl = art.binary_url || art.url || latestStable.url;
+            if (realStableUrl && (realStableUrl.startsWith("http://") || realStableUrl.startsWith("https://"))) {
+              document.getElementById("stable-download-btn").href = realStableUrl;
+            }
+          }
+
+          const latestNightly = (manifest.nightlies || [])[0];
+          if (latestNightly) {
+            const art = latestNightly.artifacts?.[currentArch] || {};
+            let realNightlyUrl = art.binary_url || art.url || latestNightly.url;
+            if (realNightlyUrl) {
+              if (!realNightlyUrl.startsWith("http://") && !realNightlyUrl.startsWith("https://")) {
+                realNightlyUrl = `https://bucket.2lp.in/downloads/${app.name}/nightly/${realNightlyUrl}`;
+              }
+              document.getElementById("nightly-download-btn").href = realNightlyUrl;
+            }
+          }
+
           // Renderizar histórico estável (até 5)
           const stableList = document.getElementById("stable-history-list");
           stableList.innerHTML = "";
@@ -759,7 +781,10 @@
           if (stables.length > 0) {
             stables.forEach(item => {
               const art = item.artifacts?.[currentArch] || {};
-              const targetUrl = art.url || art.binary_url || item.url || stableUrl;
+              let targetUrl = art.binary_url || art.url || item.url || stableUrl;
+              if (targetUrl && !targetUrl.startsWith("http://") && !targetUrl.startsWith("https://")) {
+                targetUrl = `https://bucket.2lp.in/downloads/${app.name}/stable/${targetUrl}`;
+              }
               const targetSha = art.sha256 || item.sha256 || "";
               const li = document.createElement("li");
               li.className = "history-item";
@@ -785,7 +810,10 @@
           if (nightlies.length > 0) {
             nightlies.forEach(item => {
               const art = item.artifacts?.[currentArch] || {};
-              const targetUrl = art.url || art.binary_url || item.url || nightlyUrl;
+              let targetUrl = art.binary_url || art.url || item.url || nightlyUrl;
+              if (targetUrl && !targetUrl.startsWith("http://") && !targetUrl.startsWith("https://")) {
+                targetUrl = `https://bucket.2lp.in/downloads/${app.name}/nightly/${targetUrl}`;
+              }
               const li = document.createElement("li");
               li.className = "history-item";
               li.innerHTML = `
