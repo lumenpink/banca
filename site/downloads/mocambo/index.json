@@ -10,22 +10,22 @@
     {
       "version": "0.1.0",
       "date": "2026-10-20",
-      "url": "https://banca.2lp.in/downloads/mocambo/stable-latest/mocambo",
+      "url": "https://bucket.2lp.in/downloads/mocambo/stable-latest/mocambo",
       "sha256": "",
       "artifacts": {
         "linux-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/stable/mocambo-0.1.0-linux-amd64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/stable-latest/mocambo-linux-amd64",
+          "url": "https://bucket.2lp.in/downloads/mocambo/stable/mocambo-0.1.0-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/stable-latest/mocambo-linux-amd64",
           "sha256": ""
         },
         "linux-arm64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/stable/mocambo-0.1.0-linux-arm64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/stable-latest/mocambo-linux-arm64",
+          "url": "https://bucket.2lp.in/downloads/mocambo/stable/mocambo-0.1.0-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/stable-latest/mocambo-linux-arm64",
           "sha256": ""
         },
         "windows-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/stable/mocambo-0.1.0-windows-amd64.zip",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/stable-latest/mocambo.exe",
+          "url": "https://bucket.2lp.in/downloads/mocambo/stable/mocambo-0.1.0-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/stable-latest/mocambo.exe",
           "sha256": ""
         }
       }
@@ -35,12 +35,12 @@
     {
       "version": "0.1.0-dev",
       "date": "2026-10-20",
-      "url": "https://banca.2lp.in/downloads/mocambo/nightly-latest/mocambo",
+      "url": "https://bucket.2lp.in/downloads/mocambo/nightly-latest/mocambo",
       "sha256": "",
       "artifacts": {
         "linux-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-nightly-linux-amd64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly-latest/mocambo-linux-amd64",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-nightly-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly-latest/mocambo-linux-amd64",
           "sha256": ""
         }
       }

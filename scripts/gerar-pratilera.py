@@ -685,6 +685,12 @@ def update_redirects():
         "",
         "# Redirecionamento da vitrine de downloads",
         "/downloads  /downloads/  301",
+        "",
+        "# Redirecionamento de binários da Banca para Cloudflare R2 (Ticket #43)",
+        "/downloads/:app/stable-latest/* https://bucket.2lp.in/downloads/:app/stable-latest/:splat 302",
+        "/downloads/:app/nightly-latest/* https://bucket.2lp.in/downloads/:app/nightly-latest/:splat 302",
+        "/downloads/:app/stable/* https://bucket.2lp.in/downloads/:app/stable/:splat 302",
+        "/downloads/:app/nightly/* https://bucket.2lp.in/downloads/:app/nightly/:splat 302",
         ""
     ]
     with open(redirects_file, "w", encoding="utf-8") as f:

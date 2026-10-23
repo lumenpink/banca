@@ -10,22 +10,22 @@
     {
       "version": "0.1.0",
       "date": "2026-10-20",
-      "url": "https://banca.2lp.in/downloads/tatupeba/stable-latest/tatupeba",
+      "url": "https://bucket.2lp.in/downloads/tatupeba/stable-latest/tatupeba",
       "sha256": "",
       "artifacts": {
         "linux-amd64": {
-          "url": "https://banca.2lp.in/downloads/tatupeba/stable/tatupeba-0.1.0-linux-amd64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/tatupeba/stable-latest/tatupeba-linux-amd64",
+          "url": "https://bucket.2lp.in/downloads/tatupeba/stable/tatupeba-0.1.0-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/tatupeba/stable-latest/tatupeba-linux-amd64",
           "sha256": ""
         },
         "linux-arm64": {
-          "url": "https://banca.2lp.in/downloads/tatupeba/stable/tatupeba-0.1.0-linux-arm64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/tatupeba/stable-latest/tatupeba-linux-arm64",
+          "url": "https://bucket.2lp.in/downloads/tatupeba/stable/tatupeba-0.1.0-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/tatupeba/stable-latest/tatupeba-linux-arm64",
           "sha256": ""
         },
         "windows-amd64": {
-          "url": "https://banca.2lp.in/downloads/tatupeba/stable/tatupeba-0.1.0-windows-amd64.zip",
-          "binary_url": "https://banca.2lp.in/downloads/tatupeba/stable-latest/tatupeba.exe",
+          "url": "https://bucket.2lp.in/downloads/tatupeba/stable/tatupeba-0.1.0-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/tatupeba/stable-latest/tatupeba.exe",
           "sha256": ""
         }
       }
@@ -35,12 +35,12 @@
     {
       "version": "0.1.0-dev",
       "date": "2026-10-20",
-      "url": "https://banca.2lp.in/downloads/tatupeba/nightly-latest/tatupeba",
+      "url": "https://bucket.2lp.in/downloads/tatupeba/nightly-latest/tatupeba",
       "sha256": "",
       "artifacts": {
         "linux-amd64": {
-          "url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-nightly-linux-amd64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/tatupeba/nightly-latest/tatupeba-linux-amd64",
+          "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-nightly-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/tatupeba/nightly-latest/tatupeba-linux-amd64",
           "sha256": ""
         }
       }

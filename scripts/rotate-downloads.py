@@ -167,7 +167,7 @@ def generate_default_manifests(downloads_dir):
         if manifest_file.exists():
             continue
 
-        base_url = f"https://banca.2lp.in/downloads/{app_slug}"
+        base_url = f"https://bucket.2lp.in/downloads/{app_slug}"
         manifest_data = {
             "app": app_slug,
             "name": app_title,

@@ -498,7 +498,7 @@
         <div class="latest-card">
           <div style="font-size:0.8rem; font-weight:bold; color:#444;">VERSÃO RECOMENDADA (LATEST)</div>
           <div class="version-display" id="stable-ver-text">v3.1.0</div>
-          <a id="stable-download-btn" href="https://banca.2lp.in/downloads/cccp/stable-latest/cccp" class="download-btn btn-stable">
+          <a id="stable-download-btn" href="https://bucket.2lp.in/downloads/cccp/stable-latest/cccp" class="download-btn btn-stable">
             ↓ BAIXAR EXECUTÁVEL (STABLE)
           </a>
         </div>
@@ -511,7 +511,7 @@
         <div class="history-title">HISTÓRICO ESTÁVEL (ATÉ 5 VERSÕES)</div>
         <ul class="history-list" id="stable-history-list">
           <li class="history-item">
-            <a href="https://banca.2lp.in/downloads/cccp/stable-latest/cccp">stable-latest (binário nativo)</a>
+            <a href="https://bucket.2lp.in/downloads/cccp/stable-latest/cccp">stable-latest (binário nativo)</a>
             <span class="history-meta">recomendado</span>
           </li>
         </ul>
@@ -527,7 +527,7 @@
         <div class="latest-card">
           <div style="font-size:0.8rem; font-weight:bold; color:#444;">ÚLTIMA COMPILAÇÃO DA ESTEIRA</div>
           <div class="version-display" id="nightly-ver-text">dev-latest</div>
-          <a id="nightly-download-btn" href="https://banca.2lp.in/downloads/cccp/nightly-latest/cccp" class="download-btn btn-nightly">
+          <a id="nightly-download-btn" href="https://bucket.2lp.in/downloads/cccp/nightly-latest/cccp" class="download-btn btn-nightly">
             ⚡ BAIXAR EXECUTÁVEL (NIGHTLY)
           </a>
         </div>
@@ -540,7 +540,7 @@
         <div class="history-title">HISTÓRICO NIGHTLY (ATÉ 10 COMPILAÇÕES)</div>
         <ul class="history-list" id="nightly-history-list">
           <li class="history-item">
-            <a href="https://banca.2lp.in/downloads/cccp/nightly-latest/cccp">nightly-latest (esteira sequencial)</a>
+            <a href="https://bucket.2lp.in/downloads/cccp/nightly-latest/cccp">nightly-latest (esteira sequencial)</a>
             <span class="history-meta">automático</span>
           </li>
         </ul>
@@ -709,19 +709,19 @@
       document.getElementById("app-repo-link").href = app.repo;
 
       // Resolução de URLs e comandos conforme currentArch
-      let stableUrl = `https://banca.2lp.in/downloads/${app.name}/stable-latest/${app.name}`;
-      let nightlyUrl = `https://banca.2lp.in/downloads/${app.name}/nightly-latest/${app.name}`;
+      let stableUrl = `https://bucket.2lp.in/downloads/${app.name}/stable-latest/${app.name}`;
+      let nightlyUrl = `https://bucket.2lp.in/downloads/${app.name}/nightly-latest/${app.name}`;
       let stableCmd = `curl -fsSL https://banca.2lp.in/install/${app.name} | sh`;
       let nightlyCmd = `curl -fsSL https://banca.2lp.in/install/${app.name}-nightly | sh`;
 
       if (currentArch === "linux-arm64") {
-        stableUrl = `https://banca.2lp.in/downloads/${app.name}/stable-latest/${app.name}-linux-arm64`;
-        nightlyUrl = `https://banca.2lp.in/downloads/${app.name}/nightly-latest/${app.name}-linux-arm64`;
+        stableUrl = `https://bucket.2lp.in/downloads/${app.name}/stable-latest/${app.name}-linux-arm64`;
+        nightlyUrl = `https://bucket.2lp.in/downloads/${app.name}/nightly-latest/${app.name}-linux-arm64`;
         stableCmd = `curl -fsSL https://banca.2lp.in/install/${app.name} | sh`;
         nightlyCmd = `curl -fsSL https://banca.2lp.in/install/${app.name}-nightly | sh`;
       } else if (currentArch === "windows-amd64") {
-        stableUrl = `https://banca.2lp.in/downloads/${app.name}/stable-latest/${app.name}-windows-amd64.zip`;
-        nightlyUrl = `https://banca.2lp.in/downloads/${app.name}/nightly-latest/${app.name}-windows-amd64.zip`;
+        stableUrl = `https://bucket.2lp.in/downloads/${app.name}/stable-latest/${app.name}-windows-amd64.zip`;
+        nightlyUrl = `https://bucket.2lp.in/downloads/${app.name}/nightly-latest/${app.name}-windows-amd64.zip`;
         stableCmd = `Invoke-WebRequest -Uri "${stableUrl}" -OutFile "$HOME\\Downloads\\${app.name}.zip"`;
         nightlyCmd = `Invoke-WebRequest -Uri "${nightlyUrl}" -OutFile "$HOME\\Downloads\\${app.name}-nightly.zip"`;
       }
