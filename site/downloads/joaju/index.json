@@ -5,7 +5,7 @@
   "description": "Compilador vetorial de diagramas, tabelas e heredogramas",
   "repo": "https://git.2lp.in/lumen/joaju",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.2.0-dev.69+20261022.61bacde+20261022.e46558e",
+  "nightly_latest": "0.2.0-dev.72+20261023.9672441+20261023.ec3330b",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.2.0-dev.72+20261023.9672441+20261023.ec3330b",
+      "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.72+20261023.9672441+20261023.ec3330b-linux-amd64.tar.gz",
+      "date": "2026-10-23",
+      "sha256": "b2a793908d9bbfd1eb76c2157b7eef05fc87cb011ee4d00545276f09f5a732d4",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.72+20261023.9672441+20261023.ec3330b-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.72+20261023.9672441+20261023.ec3330b-linux-amd64.tar.gz",
+          "sha256": "b2a793908d9bbfd1eb76c2157b7eef05fc87cb011ee4d00545276f09f5a732d4"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.72+20261023.9672441+20261023.ec3330b-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.72+20261023.9672441+20261023.ec3330b-linux-arm64.tar.gz",
+          "sha256": "c3fd4c2bad06b3bcf8fbdd95a38bab5aabea1a5d28e8e5d25c93ced1ff3e7e6c"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.72+20261023.9672441+20261023.ec3330b-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.72+20261023.9672441+20261023.ec3330b-windows-amd64.zip",
+          "sha256": "a142a62752f0d6b5c1e180cee63a8a8418bf0f38f536ffef4fac5b5aa5f898aa"
+        }
+      },
+      "tarball": "joaju-0.2.0-dev.72+20261023.9672441+20261023.ec3330b-linux-amd64.tar.gz"
+    },
     {
       "version": "0.2.0-dev.69+20261022.61bacde+20261022.e46558e",
       "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.69+20261022.61bacde+20261022.e46558e-linux-amd64.tar.gz",
