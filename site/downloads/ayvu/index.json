@@ -5,7 +5,7 @@
   "description": "Tradutor e motor de síntese de voz soberano",
   "repo": "https://codeberg.org/lumenpink/ayvu",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev",
+  "nightly_latest": "0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610",
+      "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610-linux-amd64.tar.gz",
+      "date": "2026-10-23",
+      "sha256": "1fdff0e0f61a7a6411c58edbdb40d9b6ace5c6329cddf6e1d55d21e120f520ed",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610-linux-amd64.tar.gz",
+          "sha256": "1fdff0e0f61a7a6411c58edbdb40d9b6ace5c6329cddf6e1d55d21e120f520ed"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610-linux-arm64.tar.gz",
+          "sha256": "52cff912da6e798aa8ddd37f8fd8584b70e202b20e146900c3e2ad2eec5fbf65"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610-windows-amd64.zip",
+          "sha256": "98a27e2ddc4c7323ef929b1d0c1969337e47ddc103d887c0662e2352efa2569e"
+        }
+      },
+      "tarball": "ayvu-0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev",
       "date": "2026-10-20",
