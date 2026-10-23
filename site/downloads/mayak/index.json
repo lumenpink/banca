@@ -5,7 +5,7 @@
   "description": "Farol de telemetria e observabilidade sem rastreamento",
   "repo": "https://git.2lp.in/lumen/mayak",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev.18+20261019.318cb42+20261023.080042d",
+  "nightly_latest": "0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638",
+      "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638-linux-amd64.tar.gz",
+      "date": "2026-10-23",
+      "sha256": "e03e708a2ceb714c6e6c16bb89bc9d16dad12abf17ebdfbcf8c5b26993ebcc40",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638-linux-amd64.tar.gz",
+          "sha256": "e03e708a2ceb714c6e6c16bb89bc9d16dad12abf17ebdfbcf8c5b26993ebcc40"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638-linux-arm64.tar.gz",
+          "sha256": "52ea602387d69a5d6e4258e19a6a58050207a862230a874d1ff372146ef3159e"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638-windows-amd64.zip",
+          "sha256": "3bf9f4a7e7af01200ce4b666d85dd553301a2030412c895c6c18a6c2ef45ea4f"
+        }
+      },
+      "tarball": "mayak-0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev.18+20261019.318cb42+20261023.080042d",
       "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-linux-amd64.tar.gz",
