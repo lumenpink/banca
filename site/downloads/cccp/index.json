@@ -5,7 +5,7 @@
   "description": "Guardião de Conventional Commits e governança GOST",
   "repo": "https://codeberg.org/lumenpink/cccp",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev",
+  "nightly_latest": "3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b-linux-amd64.tar.gz",
+      "date": "2026-10-23",
+      "sha256": "67634fcd1a3cc3c710f6233ff163f0f33e3b9268aa2e133edd69de3d1a20e514",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b-linux-amd64.tar.gz",
+          "sha256": "67634fcd1a3cc3c710f6233ff163f0f33e3b9268aa2e133edd69de3d1a20e514"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b-linux-arm64.tar.gz",
+          "sha256": "4ad052d666d1707075b79cee07959753f6ac5250a2ac61229b12e2d783426638"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b-windows-amd64.zip",
+          "sha256": "9b1176b896298ffb77e8acff8815993b3d39ea644ecfc192ed62f46e67b6b1ba"
+        }
+      },
+      "tarball": "cccp-3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev",
       "date": "2026-10-20",
