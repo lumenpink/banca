@@ -5,7 +5,7 @@
   "description": "Farol de telemetria e observabilidade sem rastreamento",
   "repo": "https://git.2lp.in/lumen/mayak",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev",
+  "nightly_latest": "0.1.0-dev.18+20261019.318cb42+20261023.080042d",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.18+20261019.318cb42+20261023.080042d",
+      "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-linux-amd64.tar.gz",
+      "date": "2026-10-23",
+      "sha256": "8258eba591a5601229e360133891efade9295038bc0caee90821d77f41157778",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-linux-amd64.tar.gz",
+          "sha256": "8258eba591a5601229e360133891efade9295038bc0caee90821d77f41157778"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-linux-arm64.tar.gz",
+          "sha256": "74d4ddfae68b0c73deb1a548faf884631c8ba5f259d96c18f992bebc574d8742"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-windows-amd64.zip",
+          "sha256": "866c3b6afe82951ed6f10d7f8b52a0d0fdba4e62db2f597b70deebea69421cc9"
+        }
+      },
+      "tarball": "mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev",
       "date": "2026-10-20",
