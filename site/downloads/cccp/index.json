@@ -3,7 +3,7 @@
   "name": "CCCP CLI",
   "category": "governance",
   "description": "Guardião de Conventional Commits e governança GOST",
-  "repo": "https://codeberg.org/lumenpink/cccp",
+  "repo": "https://git.2lp.in/lumen/cccp",
   "stable_latest": "0.1.0",
   "nightly_latest": "3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b",
   "stables": [

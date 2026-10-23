@@ -3,7 +3,7 @@
   "name": "Kvant",
   "category": "analytics",
   "description": "Motor analítico de dados e processamento vetorial",
-  "repo": "https://codeberg.org/lumenpink/kvant",
+  "repo": "https://git.2lp.in/lumen/kvant",
   "stable_latest": "0.1.0",
   "nightly_latest": "0.1.0-dev",
   "stables": [

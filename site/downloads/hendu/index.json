@@ -3,7 +3,7 @@
   "name": "Hendu",
   "category": "accessibility",
   "description": "Bot de acessibilidade e audiodescrição comunitária",
-  "repo": "https://codeberg.org/lumenpink/hendu",
+  "repo": "https://git.2lp.in/lumen/hendu",
   "stable_latest": "0.1.0",
   "nightly_latest": "0.1.0-dev",
   "stables": [

@@ -3,7 +3,7 @@
   "name": "Svyaz",
   "category": "network",
   "description": "Camada de conectividade e mensageria P2P distribuída",
-  "repo": "https://codeberg.org/lumenpink/svyaz",
+  "repo": "https://git.2lp.in/lumen/svyaz",
   "stable_latest": "0.1.0",
   "nightly_latest": "0.1.0-dev",
   "stables": [

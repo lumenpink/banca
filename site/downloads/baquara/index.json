@@ -3,7 +3,7 @@
   "name": "Baquara",
   "category": "knowledge",
   "description": "Plataforma de gestão de conhecimento e biblioteca",
-  "repo": "https://codeberg.org/lumenpink/baquara",
+  "repo": "https://git.2lp.in/lumen/baquara",
   "stable_latest": "0.1.0",
   "nightly_latest": "0.1.0-dev",
   "stables": [

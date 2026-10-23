@@ -3,7 +3,7 @@
   "name": "Mayak",
   "category": "monitoring",
   "description": "Farol de telemetria e observabilidade sem rastreamento",
-  "repo": "https://codeberg.org/lumenpink/mayak",
+  "repo": "https://git.2lp.in/lumen/mayak",
   "stable_latest": "0.1.0",
   "nightly_latest": "0.1.0-dev",
   "stables": [

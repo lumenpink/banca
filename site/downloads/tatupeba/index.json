@@ -3,7 +3,7 @@
   "name": "Tatupeba",
   "category": "security",
   "description": "Blindagem e firewall de borda com regras atômicas",
-  "repo": "https://codeberg.org/lumenpink/tatupeba",
+  "repo": "https://git.2lp.in/lumen/tatupeba",
   "stable_latest": "0.1.0",
   "nightly_latest": "0.1.0-dev",
   "stables": [
