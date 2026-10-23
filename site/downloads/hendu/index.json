@@ -5,7 +5,7 @@
   "description": "Bot de acessibilidade e audiodescrição comunitária",
   "repo": "https://git.2lp.in/lumen/hendu",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev",
+  "nightly_latest": "0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f",
+      "url": "https://bucket.2lp.in/downloads/hendu/nightly/hendu-0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f-linux-amd64.tar.gz",
+      "date": "2026-10-23",
+      "sha256": "a628208e3b8688088041010f99a46e3d6b69cba620d62dd9f3ffc6289262d984",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/hendu/nightly/hendu-0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/hendu/nightly/hendu-0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f-linux-amd64.tar.gz",
+          "sha256": "a628208e3b8688088041010f99a46e3d6b69cba620d62dd9f3ffc6289262d984"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/hendu/nightly/hendu-0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/hendu/nightly/hendu-0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f-linux-arm64.tar.gz",
+          "sha256": "157450f4187d3eb98c2fd2c549e122f1707581cd181dee54353f89397c050922"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/hendu/nightly/hendu-0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/hendu/nightly/hendu-0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f-windows-amd64.zip",
+          "sha256": "178386e26045ef81b3ea08f93ca5908fc78a59d7906bd83c78edf53a6168852b"
+        }
+      },
+      "tarball": "hendu-0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev",
       "date": "2026-10-20",
