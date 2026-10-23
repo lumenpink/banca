@@ -607,7 +607,7 @@ cat << 'EOF' > "$OUTPUT_HTML"
         </div>
       </div>
       <p class="manifesto">
-        Vitrine de código aberto, ferramentas de terminal, utilitários de fricção, publicações e experimentações criadas e mantidas por <strong>Lumen Pink</strong>. Arquitetura soberana, anti-design e autonomia técnica na borda.
+        Vitrine de zines, ferramentas, aplicativos e experimentações digitais mantidas por <strong>Lumen Pink</strong>. Feito com anti-design, sem enrolação, direto na calçada e sem intermediários corporativos.
       </p>
       <div class="meta-bar">
         <span class="stat-pill" id="stat-total">__TOTAL_COUNT__ PROJETOS AUTORAIS</span>
@@ -625,7 +625,7 @@ cat << 'EOF' > "$OUTPUT_HTML"
           <span style="background: #000; color: #fff; font-size: 0.75rem; padding: 0.3rem 0.6rem; font-family: monospace; font-weight: bold;">ECOSSISTEMA 2LP</span>
         </div>
         <p style="margin: 0 0 0.8rem 0; font-size: 0.92rem; line-height: 1.5; color: #222;">
-          A loja soberana de aplicativos Android de todos os projetos da Banca (La Craia, Simbiótyka, Lauda, Mocambo...). Sem intermediário corporativo, sem vigilância e com atualizações automáticas direto no seu aparelho via <strong>Droid-ify</strong>, <strong>Neo Store</strong> ou <strong>F-Droid</strong>.
+          A prateleira de aplicativos Android dos projetos da Banca (La Craia, Simbiótyka, Lauda, Mocambo...). Direto no seu celular, sem rastreamento nem loja de big tech, com atualizações automáticas via <strong>Droid-ify</strong>, <strong>Neo Store</strong> ou <strong>F-Droid</strong>.
         </p>
         <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center; margin-bottom: 0.8rem;">
           <button type="button" onclick="navigator.clipboard.writeText('https://banca.2lp.in/pratilera'); const b=this; const orig=b.innerHTML; b.innerHTML='✓ COPIADO!'; setTimeout(()=>b.innerHTML=orig, 2000);" style="background: #e60050; color: #fff; border: 2px solid #000; padding: 0.6rem 1.2rem; font-weight: bold; font-family: monospace; font-size: 0.9rem; box-shadow: 2px 2px 0 #000; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem;">

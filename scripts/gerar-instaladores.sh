@@ -38,7 +38,7 @@ gerar_script_app() {
   cat << 'EOF_HEADER' > "$outfile"
 #!/bin/sh
 # ==============================================================================
-# BANCA - Instalador Oficial de Aplicativos Soberanos (banca.2lp.in)
+# BANCA - Instalador Rápido de Aplicativos e Ferramentas (banca.2lp.in)
 EOF_HEADER
 
   cat << EOF_CONFIG >> "$outfile"
@@ -57,7 +57,7 @@ EOF_CONFIG
 OS_NAME="${UNAME_OVERRIDE:-$(uname -s)}"
 case "$OS_NAME" in
     Darwin*)
-        printf "\n\033[1;31m[ERRO BANCA]\033[0m macOS/Darwin não é suportado pelo ecossistema soberano da Banca.\n\n" >&2
+        printf "\n\033[1;31m[AVISO BANCA]\033[0m macOS/Darwin não é suportado pelos programas da Banca. Disponível para Linux e Android.\n\n" >&2
         exit 1
         ;;
     Linux*)
@@ -243,7 +243,7 @@ done
 cat << 'EOF_GENERIC' > "$SITE_DIR/install.sh"
 #!/bin/sh
 # ==============================================================================
-# BANCA - Instalador Oficial de Aplicativos Soberanos (banca.2lp.in)
+# BANCA - Instalador Rápido de Aplicativos e Ferramentas (banca.2lp.in)
 # Instalador Dinâmico Genérico
 # Uso: curl -fsSL https://banca.2lp.in/install.sh | sh -s -- <app> [--nightly]
 # ==============================================================================
@@ -276,7 +276,7 @@ BANCA_URL="https://banca.2lp.in"
 OS_NAME="${UNAME_OVERRIDE:-$(uname -s)}"
 case "$OS_NAME" in
     Darwin*)
-        printf "\n\033[1;31m[ERRO BANCA]\033[0m macOS/Darwin não é suportado pelo ecossistema soberano da Banca.\n\n" >&2
+        printf "\n\033[1;31m[AVISO BANCA]\033[0m macOS/Darwin não é suportado pelos programas da Banca. Disponível para Linux e Android.\n\n" >&2
         exit 1
         ;;
     Linux*)

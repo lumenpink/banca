@@ -23,7 +23,7 @@
     "name": "resenha",
     "forge": "codeberg",
     "slug": "lumenpink/resenha",
-    "description": "Subsistema de extração de miolo textual e sanitização tipográfica na borda em Markdown estrito para o Fuxico e terminal",
+    "description": "Leitor e organizador de textos da web: limpa a bagunça dos sites e entrega só a matéria bonita em Markdown puro",
     "topics": [
       "rust",
       "cli",
@@ -63,7 +63,7 @@
     "name": "fuxico",
     "forge": "codeberg",
     "slug": "lumenpink/fuxico",
-    "description": "Compartilhamento de arquivos na borda e encurtador de URLs compatível com 0x0 e rustypaste",
+    "description": "Compartilhamento rápido de arquivos e encurtador de links sem burocracia nem complicação",
     "topics": [
       "file-sharing",
       "url-shortener",
@@ -123,7 +123,7 @@
     "name": "hendu",
     "forge": "codeberg",
     "slug": "lumenpink/hendu",
-    "description": "Bot de WhatsApp em Rust para acessibilidade comunitária, transcrição de áudio e audiodescrição",
+    "description": "Assistente no WhatsApp para acessibilidade comunitária: transcreve áudios e descreve imagens e figurinhas com clareza e acolhimento",
     "topics": [
       "rust",
       "whatsapp",
@@ -142,7 +142,7 @@
     "name": "ishcondidim",
     "forge": "codeberg",
     "slug": "lumenpink/ishcondidim",
-    "description": "Filtro Milter Postfix em Rust para Autocrypt L1 server-side com gestão automática OpenPGP",
+    "description": "Criptografia automática para seus e-mails sem dor de cabeça com configuração de chaves",
     "topics": [
       "rust",
       "milter",
@@ -163,7 +163,7 @@
     "name": "kokorosim",
     "forge": "github",
     "slug": "KokoroSim/KokoroSim",
-    "description": "Simulador cardíaco open source de eletrofisiologia, dromotropismo e hemodinâmica com Rust e Wasm",
+    "description": "Simulador interativo dos batimentos, ritmos e funcionamento do coração para estudo clínico",
     "topics": [
       "cardiology",
       "electrophysiology",
@@ -203,7 +203,7 @@
     "name": "navalha",
     "forge": "codeberg",
     "slug": "lumenpink/navalha",
-    "description": "Motor gráfico e ambiente de composição visual anti-design, fanzine punk e estética de alta fricção",
+    "description": "Motor gráfico e ambiente de composição visual anti-design, zine punk e colagem visual",
     "topics": [],
     "license": "CC0-1.0",
     "website": "https://codeberg.org/lumenpink/navalha",
@@ -216,7 +216,7 @@
     "name": "papeli",
     "forge": "codeberg",
     "slug": "lumenpink/papeli",
-    "description": "Filtro Milter Postfix em Rust para envelopar e-mails em papel de carta responsivo MJML",
+    "description": "Transforma e-mails comuns em papel de carta elegante e adaptado para a tela do celular",
     "topics": [
       "rust",
       "milter",
@@ -314,7 +314,7 @@
     "name": "kvant",
     "forge": "codeberg",
     "slug": "lumenpink/kvant",
-    "description": "Microeditor de texto puro para terminal em Rust com navegação por teclado e foco em escrita",
+    "description": "Editor de texto direto e sem firula no terminal, focado na escrita com as mãos no teclado",
     "topics": [
       "editor",
       "terminal",
@@ -354,7 +354,7 @@
     "name": "svyaz",
     "forge": "codeberg",
     "slug": "lumenpink/svyaz",
-    "description": "Microcliente HTTP/HTTPS minimalista em Rust puro (Ministério das Comunicações Gosplan)",
+    "description": "Mensageiro leve e utilitário para envio e recepção de dados pela internet",
     "topics": [
       "http",
       "https",
@@ -375,7 +375,7 @@
     "name": "mayak",
     "forge": "codeberg",
     "slug": "lumenpink/mayak",
-    "description": "Microservidor HTTP estático multithread em Rust puro (Rádio & Difusão Estática Gosplan)",
+    "description": "Servidorzinho leve para colocar páginas na web em segundos sem complicação",
     "topics": [
       "http",
       "server",
@@ -457,7 +457,7 @@
     "name": "joaju-pedigree",
     "forge": "codeberg",
     "slug": "lumenpink/joaju-pedigree",
-    "description": "Modelagem genealógica e renderização vetorial de heredogramas clínicos canônicos (NSGC / ACMG) em Rust",
+    "description": "Desenho de árvores genealógicas e heredogramas clínicos alinhados às diretrizes médicas",
     "topics": [
       "rust",
       "genetics",
@@ -477,7 +477,7 @@
     "name": "joaju-table",
     "forge": "codeberg",
     "slug": "lumenpink/joaju-table",
-    "description": "Renderização de tabelas acadêmicas formais de 3 linhas (ABNT NBR 14724 / IBGE / APA) em Typst via Rust",
+    "description": "Formatação de tabelas formais bonitas e organizadas para relatórios e pesquisas",
     "topics": [
       "rust",
       "typst",
@@ -553,7 +553,7 @@
     "name": "lauda",
     "forge": "codeberg",
     "slug": "lumenpink/lauda",
-    "description": "Cliente de correio soberano ultraleve focado em leitura pura e redação rápida em Rust e Dioxus",
+    "description": "Correio eletrônico leve e acolhedor para leitura sem distração e escrita rápida",
     "topics": [
       "email",
       "rust",
@@ -574,7 +574,7 @@
     "name": "mandu",
     "forge": "codeberg",
     "slug": "lumenpink/mandu",
-    "description": "Editor brutalista de notas e conhecimento em texto puro com wikilinks, diagramas Joaju e Typst em Rust",
+    "description": "Caderno de escrita e anotações para colocar as ideias no papel e organizar seus estudos",
     "topics": [
       "rust",
       "dioxus",
@@ -596,7 +596,7 @@
     "name": "ayvu",
     "forge": "codeberg",
     "slug": "lumenpink/ayvu",
-    "description": "Compilador declarativo de tirinhas em quadrinhos e fanzines em Rust com renderização SVG",
+    "description": "Criador de tirinhas em quadrinhos e fanzines ilustrados para soltar a imaginação",
     "topics": [
       "comics",
       "rust",
@@ -616,7 +616,7 @@
     "name": "muiraquita",
     "forge": "codeberg",
     "slug": "lumenpink/muiraquita",
-    "description": "Suíte social soberana para a IndieWeb e cliente IndieInABox construída em Rust e Dioxus",
+    "description": "Rede social independente e espaço de conversa comunitária na web livre",
     "topics": [
       "indieweb",
       "rust",
@@ -636,7 +636,7 @@
     "name": "tuitata",
     "forge": "codeberg",
     "slug": "lumenpink/tuitata",
-    "description": "Cliente TUI para Google Gemini em Rust com streaming, estética Boitatá e exportação para o Obsidian",
+    "description": "Conversador no terminal com inteligência artificial, visual marcante e salvamento de notas",
     "topics": [
       "tui",
       "rust",
@@ -656,7 +656,7 @@
     "name": "urupema",
     "forge": "codeberg",
     "slug": "lumenpink/urupema",
-    "description": "Utilitário post-queue em Rust para dissecação de MIME, conversão em Markdown e triagem de e-mails",
+    "description": "Organizador de caixa de correio que limpa e separa mensagens e anexos recebidos",
     "topics": [
       "email",
       "rust",
@@ -696,7 +696,7 @@
     "name": "baquara-rs",
     "forge": "codeberg",
     "slug": "lumenpink/baquara-rs",
-    "description": "Motor nativo de IA local, RAG semântico híbrido e servidor MCP do ecossistema Baquara em Rust",
+    "description": "Assistente de inteligência artificial local que responde sobre seus documentos com privacidade",
     "topics": [
       "ai",
       "mcp",
@@ -716,7 +716,7 @@
     "name": "mocambo",
     "forge": "codeberg",
     "slug": "lumenpink/mocambo",
-    "description": "Armazenamento soberano de arquivos com WebDAV, ingestão inteligente e busca semântica",
+    "description": "Baú digital para guardar seus arquivos com segurança, busca fácil e acesso onde estiver",
     "topics": [
       "storage",
       "webdav",

@@ -46,7 +46,7 @@ if [ -f "$SITE_DIR/install.sh" ]; then
     TMP_BINDIR=$(mktemp -d)
     OUTPUT=$(UNAME_OVERRIDE="Darwin" sh "$SITE_DIR/install.sh" cccp 2>&1 || true)
     rm -rf "$TMP_BINDIR"
-    if echo "$OUTPUT" | grep -qi "macOS/Darwin não é suportado pelo ecossistema soberano da Banca"; then
+    if echo "$OUTPUT" | grep -qi "macOS/Darwin não é suportado pelos programas da Banca"; then
         echo "✅ OK (Darwin devidamente rejeitado com mensagem clara)"
     else
         echo "❌ FALHOU (mensagem de rejeição ao Darwin ausente ou incorreta: '$OUTPUT')"
