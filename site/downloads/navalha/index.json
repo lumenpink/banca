@@ -5,7 +5,7 @@
   "description": "Despachante e canivete suíço para deploy e automação",
   "repo": "https://codeberg.org/lumenpink/navalha",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev",
+  "nightly_latest": "0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2",
+      "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-linux-amd64.tar.gz",
+      "date": "2026-10-23",
+      "sha256": "8ac219d4131f605c7dfc5ef78504dfa0d2f0ec0a9270328e9ba170cc2c5a8d39",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-linux-amd64.tar.gz",
+          "sha256": "8ac219d4131f605c7dfc5ef78504dfa0d2f0ec0a9270328e9ba170cc2c5a8d39"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-linux-arm64.tar.gz",
+          "sha256": "296c455daf99723c05d32ea6f277f4a3b9b152a57760e948bbfed7efce4b9919"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-windows-amd64.zip",
+          "sha256": "dce13fb1c7820d08d91fdc02fd027235d14134fa1e54a8c77f30da2b9c444092"
+        }
+      },
+      "tarball": "navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev",
       "date": "2026-10-20",
