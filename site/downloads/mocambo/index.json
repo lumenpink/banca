@@ -5,7 +5,7 @@
   "description": "Cofre soberano de arquivos, documentos e fotos",
   "repo": "https://git.2lp.in/lumen/mocambo",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev",
+  "nightly_latest": "0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238",
+      "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-amd64.tar.gz",
+      "date": "2026-10-23",
+      "sha256": "961cd169e87f414b36c28a4c01843f1fd0f78951320d528126b31c16dbb8045d",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-amd64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-amd64.tar.gz",
+          "sha256": "961cd169e87f414b36c28a4c01843f1fd0f78951320d528126b31c16dbb8045d"
+        },
+        "linux-arm64": {
+          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-arm64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-arm64.tar.gz",
+          "sha256": "c5674a6416ccf34ac9450ee19c0811f34259eb5523dc2a442ed1d5ce98d2e9e8"
+        },
+        "windows-amd64": {
+          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-windows-amd64.zip",
+          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-windows-amd64.zip",
+          "sha256": "701fb85606049b56cc11ddb594ef66c807b1aa883cb47845a6d1ebfc83acc4e3"
+        }
+      },
+      "tarball": "mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev",
       "date": "2026-10-20",
