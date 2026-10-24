@@ -12,7 +12,7 @@ jobs:
     name: "Validate Banca Site & Build"
     runs-on: ubuntu-latest
     container:
-      image: gambi.2lp.in/lumen/gost-ci-cross:latest
+      image: gambi.2lp.in/lumen/gost-ci-banca:latest
     steps:
       - uses: actions/checkout@v4
       - name: "Verify Essential Files & Build"
@@ -33,7 +33,7 @@ jobs:
     name: "Deploy Documentation Site"
     runs-on: ubuntu-latest
     container:
-      image: gambi.2lp.in/lumen/gost-ci-cross:latest
+      image: gambi.2lp.in/lumen/gost-ci-banca:latest
     needs: [test]
     if: github.ref == 'refs/heads/main'
     steps:
@@ -44,7 +44,22 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
-            npx wrangler deploy
+            attempt=1
+            max_attempts=4
+            delay=5
+            while [ "$attempt" -le "$max_attempts" ]; do
+              echo "  -> Deploying to Cloudflare (tentativa $attempt/$max_attempts)..."
+              if npx wrangler deploy; then
+                echo "  ✓ Deploy do site da Banca concluído com sucesso."
+                exit 0
+              fi
+              echo "  ⚠️ Falha transitória ao fazer deploy. Aguardando ${delay}s..."
+              sleep "$delay"
+              attempt=$((attempt + 1))
+              delay=$((delay * 2))
+            done
+            echo "❌ ERRO CRÍTICO: Falha permanente após $max_attempts tentativas no deploy do site da Banca."
+            exit 1
           else
             echo "CLOUDFLARE_API_TOKEN not set, skipping Cloudflare deploy."
           fi
