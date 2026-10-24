@@ -5,7 +5,7 @@
   "description": "Cockpit de som brutalista e jukebox comunitária",
   "repo": "https://gambi.2lp.in/lumen/lacraia",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev",
+  "nightly_latest": "0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7",
+      "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7-linux-amd64.tar.gz",
+      "date": "2026-10-24",
+      "sha256": "085e02e9baa0ea7869e8689fbc44b9d976b8530ead183a7d2d39a765a9ffdc1a",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7-linux-amd64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7-linux-amd64.tar.gz",
+          "sha256": "085e02e9baa0ea7869e8689fbc44b9d976b8530ead183a7d2d39a765a9ffdc1a"
+        },
+        "linux-arm64": {
+          "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7-linux-arm64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7-linux-arm64.tar.gz",
+          "sha256": "beef69da87316dc5b1894dd3d2a169fe30676577d780bcb4aa5001334be3b965"
+        },
+        "windows-amd64": {
+          "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7-windows-amd64.zip",
+          "binary_url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7-windows-amd64.zip",
+          "sha256": "4c68924e5814b1b52203718710a85f1920ee4c6f6f739fbd42fc962602f85ef1"
+        }
+      },
+      "tarball": "lacraia-0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev",
       "date": "2026-10-20",
