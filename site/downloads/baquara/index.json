@@ -5,7 +5,7 @@
   "description": "Plataforma de gestão de conhecimento e biblioteca",
   "repo": "https://gambi.2lp.in/lumen/baquara",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev",
+  "nightly_latest": "0.1.0-dev.21+20261024.4f708b3",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.21+20261024.4f708b3",
+      "url": "https://bucket.2lp.in/downloads/baquara/nightly/baquara-0.1.0-dev.21+20261024.4f708b3-linux-amd64.tar.gz",
+      "date": "2026-10-24",
+      "sha256": "62d19cde6e53be39ae1864f24c4f24dd02b2cba04da4ffba07e717c6948b52f9",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/baquara/nightly/baquara-0.1.0-dev.21+20261024.4f708b3-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/baquara/nightly/baquara-0.1.0-dev.21+20261024.4f708b3-linux-amd64.tar.gz",
+          "sha256": "62d19cde6e53be39ae1864f24c4f24dd02b2cba04da4ffba07e717c6948b52f9"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/baquara/nightly/baquara-0.1.0-dev.21+20261024.4f708b3-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/baquara/nightly/baquara-0.1.0-dev.21+20261024.4f708b3-linux-arm64.tar.gz",
+          "sha256": "9dd15da80f09b9d02edcbc7d3ee39b87fafbdbc288060a0ce999c9f9a881e4b2"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/baquara/nightly/baquara-0.1.0-dev.21+20261024.4f708b3-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/baquara/nightly/baquara-0.1.0-dev.21+20261024.4f708b3-windows-amd64.zip",
+          "sha256": "b76c85bc11c10eb559e60786406e7088d9b72803a5065bc4ffec1f061788f4f4"
+        }
+      },
+      "tarball": "baquara-0.1.0-dev.21+20261024.4f708b3-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev",
       "date": "2026-10-20",
