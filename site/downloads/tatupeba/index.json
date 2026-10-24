@@ -5,7 +5,7 @@
   "description": "Blindagem e firewall de borda com regras atômicas",
   "repo": "https://gambi.2lp.in/lumen/tatupeba",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev",
+  "nightly_latest": "0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43",
+      "url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-amd64.tar.gz",
+      "date": "2026-10-24",
+      "sha256": "27902976e1e70e320c5a1745f8dfc92f3ebab53f41dc3abcb6097627354e9faf",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-amd64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-amd64.tar.gz",
+          "sha256": "27902976e1e70e320c5a1745f8dfc92f3ebab53f41dc3abcb6097627354e9faf"
+        },
+        "linux-arm64": {
+          "url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-arm64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-arm64.tar.gz",
+          "sha256": "3d3131e6d5db0d5d62f5e6978234b67a02964ac3a17c5a302db32ad79d39b810"
+        },
+        "windows-amd64": {
+          "url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-windows-amd64.zip",
+          "binary_url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-windows-amd64.zip",
+          "sha256": "c248d3d37f8fa26b226c8f44aeb6034c6b0c646b528c171f8c146ebe01dd764f"
+        }
+      },
+      "tarball": "tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev",
       "date": "2026-10-20",
