@@ -3,7 +3,7 @@
   "name": "Hendu",
   "category": "accessibility",
   "description": "Bot de acessibilidade e audiodescrição comunitária",
-  "repo": "https://git.2lp.in/lumen/hendu",
+  "repo": "https://gambi.2lp.in/lumen/hendu",
   "stable_latest": "0.1.0",
   "nightly_latest": "0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f",
   "stables": [

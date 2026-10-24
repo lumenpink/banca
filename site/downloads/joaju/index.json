@@ -3,7 +3,7 @@
   "name": "Joaju",
   "category": "editorial",
   "description": "Compilador vetorial de diagramas, tabelas e heredogramas",
-  "repo": "https://git.2lp.in/lumen/joaju",
+  "repo": "https://gambi.2lp.in/lumen/joaju",
   "stable_latest": "0.1.0",
   "nightly_latest": "0.2.0-dev.72+20261023.9672441+20261023.ec3330b",
   "stables": [

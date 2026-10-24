@@ -151,6 +151,9 @@ def add_entry(manifest_path, channel, version, url, sha256="", tarball="", arch=
         f.write("\n")
 
     print(f"✔ Adicionada versão {version} ({arch}) ao canal {channel} em {manifest_path}.")
+    parent_downloads = Path(manifest_path).resolve().parent.parent
+    if parent_downloads.name == "downloads":
+        generate_catalog_json(parent_downloads)
     return True
 
 def generate_default_manifests(downloads_dir):
@@ -224,6 +227,54 @@ def generate_default_manifests(downloads_dir):
         print(f"✔ Manifesto inicial gerado: {manifest_file}")
 
     print("✔ Todos os manifestos padrão gerados com sucesso.")
+    generate_catalog_json(downloads_dir)
+
+def generate_catalog_json(downloads_dir):
+    """Gera o arquivo catalog.json consolidado para a Jornaleira e consumidores dinâmicos (#41)."""
+    downloads_path = Path(downloads_dir)
+    downloads_path.mkdir(parents=True, exist_ok=True)
+    catalog_file = downloads_path / "catalog.json"
+
+    apps_list = []
+    seen_slugs = set()
+    # Itera sobre todas as pastas que possuem index.json (ignorando symlinks e duplicatas)
+    for item in sorted(downloads_path.iterdir()):
+        if item.is_dir() and not item.is_symlink():
+            manifest_file = item / "index.json"
+            if manifest_file.exists():
+                try:
+                    with open(manifest_file, "r", encoding="utf-8") as f:
+                        data = json.load(f)
+                    app_slug = data.get("app", item.name)
+                    if app_slug in seen_slugs:
+                        continue
+                    seen_slugs.add(app_slug)
+                    apps_list.append({
+                        "app": app_slug,
+                        "name": data.get("name", app_slug),
+                        "category": data.get("category", "general"),
+                        "description": data.get("description", ""),
+                        "repo": data.get("repo", ""),
+                        "stable_latest": data.get("stable_latest", ""),
+                        "nightly_latest": data.get("nightly_latest", ""),
+                        "manifest_url": f"https://banca.2lp.in/downloads/{app_slug}/index.json"
+                    })
+                except Exception as e:
+                    print(f"⚠ Erro ao ler {manifest_file}: {e}")
+
+    catalog_data = {
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "banca_url": "https://banca.2lp.in",
+        "total_apps": len(apps_list),
+        "apps": apps_list
+    }
+
+    with open(catalog_file, "w", encoding="utf-8") as f:
+        json.dump(catalog_data, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
+    print(f"✔ Catálogo consolidado gerado: {catalog_file} ({len(apps_list)} apps)")
+    return True
 
 def main():
     parser = argparse.ArgumentParser(
@@ -231,6 +282,7 @@ def main():
     )
     parser.add_argument("--prune-manifest", help="Caminho do arquivo index.json para podar")
     parser.add_argument("--generate-defaults", help="Diretório alvo para gerar manifestos iniciais de todas as apps")
+    parser.add_argument("--generate-catalog", help="Diretório alvo para gerar catalog.json consolidado")
     parser.add_argument("--manifest", help="Caminho do index.json alvo para adicionar versão")
     parser.add_argument("--app", default="", help="Slug da aplicação")
     parser.add_argument("--channel", choices=["stable", "nightly"], help="Canal da release")
@@ -249,6 +301,10 @@ def main():
 
     if args.generate_defaults:
         generate_default_manifests(args.generate_defaults)
+        return
+
+    if args.generate_catalog:
+        generate_catalog_json(args.generate_catalog)
         return
 
     if args.manifest and args.channel and args.version_str and args.url:

@@ -3,7 +3,7 @@
   "name": "Lauda",
   "category": "editorial",
   "description": "Cliente de correio soberano e interface editorial",
-  "repo": "https://git.2lp.in/lumen/lauda",
+  "repo": "https://gambi.2lp.in/lumen/lauda",
   "stable_latest": "0.1.0",
   "nightly_latest": "0.5.0-dev.244+20261024.16e927f-dev.20261024.d46202f",
   "stables": [

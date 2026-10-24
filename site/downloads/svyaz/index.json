@@ -3,7 +3,7 @@
   "name": "Svyaz",
   "category": "network",
   "description": "Camada de conectividade e mensageria P2P distribuída",
-  "repo": "https://git.2lp.in/lumen/svyaz",
+  "repo": "https://gambi.2lp.in/lumen/svyaz",
   "stable_latest": "0.1.0",
   "nightly_latest": "0.1.0-dev.20+20261022.614bef2+20261023.cf2c8e9",
   "stables": [

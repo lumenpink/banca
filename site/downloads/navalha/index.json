@@ -3,7 +3,7 @@
   "name": "Navalha",
   "category": "devops",
   "description": "Despachante e canivete suíço para deploy e automação",
-  "repo": "https://git.2lp.in/lumen/navalha",
+  "repo": "https://gambi.2lp.in/lumen/navalha",
   "stable_latest": "0.1.0",
   "nightly_latest": "0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2",
   "stables": [

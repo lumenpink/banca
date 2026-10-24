@@ -3,7 +3,7 @@
   "name": "Ayvu",
   "category": "ai",
   "description": "Tradutor e motor de síntese de voz soberano",
-  "repo": "https://git.2lp.in/lumen/ayvu",
+  "repo": "https://gambi.2lp.in/lumen/ayvu",
   "stable_latest": "0.1.0",
   "nightly_latest": "0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610",
   "stables": [

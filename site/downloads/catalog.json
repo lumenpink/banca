@@ -1,0 +1,157 @@
+{
+  "updated_at": "2026-10-24T01:14:25.712129+00:00",
+  "banca_url": "https://banca.2lp.in",
+  "total_apps": 15,
+  "apps": [
+    {
+      "app": "ayvu",
+      "name": "Ayvu",
+      "category": "ai",
+      "description": "Tradutor e motor de síntese de voz soberano",
+      "repo": "https://gambi.2lp.in/lumen/ayvu",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610",
+      "manifest_url": "https://banca.2lp.in/downloads/ayvu/index.json"
+    },
+    {
+      "app": "baquara",
+      "name": "Baquara",
+      "category": "knowledge",
+      "description": "Plataforma de gestão de conhecimento e biblioteca",
+      "repo": "https://gambi.2lp.in/lumen/baquara",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "0.1.0-dev",
+      "manifest_url": "https://banca.2lp.in/downloads/baquara/index.json"
+    },
+    {
+      "app": "cccp",
+      "name": "CCCP CLI",
+      "category": "governance",
+      "description": "Guardião de Conventional Commits e governança GOST",
+      "repo": "https://gambi.2lp.in/lumen/cccp",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b",
+      "manifest_url": "https://banca.2lp.in/downloads/cccp/index.json"
+    },
+    {
+      "app": "hendu",
+      "name": "Hendu",
+      "category": "accessibility",
+      "description": "Bot de acessibilidade e audiodescrição comunitária",
+      "repo": "https://gambi.2lp.in/lumen/hendu",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f",
+      "manifest_url": "https://banca.2lp.in/downloads/hendu/index.json"
+    },
+    {
+      "app": "joaju",
+      "name": "Joaju",
+      "category": "editorial",
+      "description": "Compilador vetorial de diagramas, tabelas e heredogramas",
+      "repo": "https://gambi.2lp.in/lumen/joaju",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "0.2.0-dev.72+20261023.9672441+20261023.ec3330b",
+      "manifest_url": "https://banca.2lp.in/downloads/joaju/index.json"
+    },
+    {
+      "app": "kvant",
+      "name": "Kvant",
+      "category": "analytics",
+      "description": "Motor analítico de dados e processamento vetorial",
+      "repo": "https://gambi.2lp.in/lumen/kvant",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "0.1.0-dev.21+20261022.e87d416+20261023.10a8605",
+      "manifest_url": "https://banca.2lp.in/downloads/kvant/index.json"
+    },
+    {
+      "app": "lacraia",
+      "name": "La Craia",
+      "category": "multimedia",
+      "description": "Cockpit de som brutalista e jukebox comunitária",
+      "repo": "https://gambi.2lp.in/lumen/lacraia",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "0.1.0-dev",
+      "manifest_url": "https://banca.2lp.in/downloads/lacraia/index.json"
+    },
+    {
+      "app": "lauda",
+      "name": "Lauda",
+      "category": "editorial",
+      "description": "Cliente de correio soberano e interface editorial",
+      "repo": "https://gambi.2lp.in/lumen/lauda",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "0.1.0-dev",
+      "manifest_url": "https://banca.2lp.in/downloads/lauda/index.json"
+    },
+    {
+      "app": "mandu",
+      "name": "Mandu",
+      "category": "editorial",
+      "description": "Editor brutalista de notas em texto puro, Markdown e Joaju",
+      "repo": "https://gambi.2lp.in/lumen/mandu",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "0.1.0-dev.220+20261021.8bcb4bb+20261022.6dadf72",
+      "manifest_url": "https://banca.2lp.in/downloads/mandu/index.json"
+    },
+    {
+      "app": "mayak",
+      "name": "Mayak",
+      "category": "monitoring",
+      "description": "Farol de telemetria e observabilidade sem rastreamento",
+      "repo": "https://gambi.2lp.in/lumen/mayak",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638",
+      "manifest_url": "https://banca.2lp.in/downloads/mayak/index.json"
+    },
+    {
+      "app": "mocambo",
+      "name": "Mocambo",
+      "category": "storage",
+      "description": "Cofre soberano de arquivos, documentos e fotos",
+      "repo": "https://gambi.2lp.in/lumen/mocambo",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238",
+      "manifest_url": "https://banca.2lp.in/downloads/mocambo/index.json"
+    },
+    {
+      "app": "navalha",
+      "name": "Navalha",
+      "category": "devops",
+      "description": "Despachante e canivete suíço para deploy e automação",
+      "repo": "https://gambi.2lp.in/lumen/navalha",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2",
+      "manifest_url": "https://banca.2lp.in/downloads/navalha/index.json"
+    },
+    {
+      "app": "svyaz",
+      "name": "Svyaz",
+      "category": "network",
+      "description": "Camada de conectividade e mensageria P2P distribuída",
+      "repo": "https://gambi.2lp.in/lumen/svyaz",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "0.1.0-dev.20+20261022.614bef2+20261023.cf2c8e9",
+      "manifest_url": "https://banca.2lp.in/downloads/svyaz/index.json"
+    },
+    {
+      "app": "tatupeba",
+      "name": "Tatupeba",
+      "category": "security",
+      "description": "Blindagem e firewall de borda com regras atômicas",
+      "repo": "https://gambi.2lp.in/lumen/tatupeba",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "0.1.0-dev",
+      "manifest_url": "https://banca.2lp.in/downloads/tatupeba/index.json"
+    },
+    {
+      "app": "tuitata",
+      "name": "Tuitatá",
+      "category": "reader",
+      "description": "Agregador e leitor de feeds RSS/Atom minimalista",
+      "repo": "https://gambi.2lp.in/lumen/tuitata",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "0.1.0-dev.37+20261023.d83358f+20261023.51cd01d",
+      "manifest_url": "https://banca.2lp.in/downloads/tuitata/index.json"
+    }
+  ]
+}
