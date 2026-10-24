@@ -4,7 +4,7 @@
     "description": "Loja e Repositório Soberano de Aplicativos do Ecossistema 2lp. Fanzines, paredões, correio e ferramentas de calçada.",
     "address": "https://bucket.2lp.in",
     "icon": "icon.png",
-    "timestamp": 1792766869309,
+    "timestamp": 1792852048161,
     "version": 20
   },
   "requests": {
@@ -32,8 +32,8 @@
           "icon": "icon.png"
         }
       },
-      "added": 1792766869309,
-      "lastUpdated": 1792766869309,
+      "added": 1792852048161,
+      "lastUpdated": 1792852048161,
       "suggestedVersionCode": "1",
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
@@ -64,8 +64,8 @@
           "icon": "icon.png"
         }
       },
-      "added": 1792766869309,
-      "lastUpdated": 1792766869309,
+      "added": 1792852048161,
+      "lastUpdated": 1792852048161,
       "suggestedVersionCode": "1",
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
@@ -96,8 +96,8 @@
           "icon": "icon.png"
         }
       },
-      "added": 1792766869309,
-      "lastUpdated": 1792766869309,
+      "added": 1792852048161,
+      "lastUpdated": 1792852048161,
       "suggestedVersionCode": "26101811",
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
@@ -128,8 +128,8 @@
           "icon": "icon.png"
         }
       },
-      "added": 1792766869309,
-      "lastUpdated": 1792766869309,
+      "added": 1792852048161,
+      "lastUpdated": 1792852048161,
       "suggestedVersionCode": "1",
       "authorName": "Lumen Pink",
       "license": "CC0-1.0",
@@ -161,8 +161,8 @@
           "icon": "icon.png"
         }
       },
-      "added": 1792766869309,
-      "lastUpdated": 1792766869309,
+      "added": 1792852048161,
+      "lastUpdated": 1792852048161,
       "suggestedVersionCode": "1",
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
@@ -178,7 +178,7 @@
   "packages": {
     "in.twolp.lacraia.app": [
       {
-        "added": 1792766869309,
+        "added": 1792852048161,
         "apkName": "lacraia.apk",
         "hash": "63e375fe723df35d6cf590e1243532742bcbe78b4ad83ccb9df558c1d1da8855",
         "hashType": "sha256",
@@ -194,7 +194,7 @@
     ],
     "in.twolp.lacraia.simbiotyka": [
       {
-        "added": 1792766869309,
+        "added": 1792852048161,
         "apkName": "simbiotyka.apk",
         "hash": "62ccf7504fe3b20ee5d387b92a35a39646c30f8cdeda14bf828ffe20c6f9eba7",
         "hashType": "sha256",
@@ -210,7 +210,7 @@
     ],
     "in.twolp.lauda": [
       {
-        "added": 1792766869309,
+        "added": 1792852048161,
         "apkName": "lauda.apk",
         "hash": "8927bcacb0a10ee95b768ab38cff98c982570abc1fb7e55ec771feaa1ec633db",
         "hashType": "sha256",
@@ -221,12 +221,12 @@
         "signer": "7beec8b0a6c7946b04d538543d495a8210ad6cfc1859f42e7180bcfbd38fe582",
         "size": 24316655,
         "versionCode": 26101811,
-        "versionName": "0.5.0-dev.225+20261023.6fc6e10"
+        "versionName": "0.5.0-dev.244+20261024.16e927f"
       }
     ],
     "in.twolp.mocambo": [
       {
-        "added": 1792766869309,
+        "added": 1792852048161,
         "apkName": "mocambo.apk",
         "hash": "ab28c40e049a04680c0583fa634b2ad8fe5d83c6dfea809780b3f8890253547c",
         "hashType": "sha256",
@@ -242,7 +242,7 @@
     ],
     "in.twolp.mandu": [
       {
-        "added": 1792766869309,
+        "added": 1792852048161,
         "apkName": "mandu.apk",
         "hash": "460b78149452c7eec058f95465bb80a1c4116fa0b0182dc294f64af3d207b490",
         "hashType": "sha256",
@@ -253,7 +253,7 @@
         "signer": "7beec8b0a6c7946b04d538543d495a8210ad6cfc1859f42e7180bcfbd38fe582",
         "size": 16797,
         "versionCode": 1,
-        "versionName": "0.1.0-dev.230+20261023.47d6a56"
+        "versionName": "0.1.0-dev.234+20261023.28cf22a"
       }
     ]
   }
