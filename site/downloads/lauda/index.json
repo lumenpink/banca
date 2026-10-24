@@ -36,22 +36,22 @@
       "version": "0.5.0-dev.244+20261024.16e927f-dev.20261024.d46202f",
       "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.d46202f-linux-amd64.tar.gz",
       "date": "2026-10-24",
-      "sha256": "06b31e419f6a88a8dec6b026cf265589221da9ac48b64c734995b3a32f409d20",
+      "sha256": "10707eae7617b3e15e9c3a9327a8cf38a21dfca575d902715d951387b380daf9",
       "artifacts": {
         "linux-amd64": {
           "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.d46202f-linux-amd64.tar.gz",
           "binary_url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.d46202f-linux-amd64.tar.gz",
-          "sha256": "06b31e419f6a88a8dec6b026cf265589221da9ac48b64c734995b3a32f409d20"
+          "sha256": "10707eae7617b3e15e9c3a9327a8cf38a21dfca575d902715d951387b380daf9"
         },
         "linux-arm64": {
           "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.d46202f-linux-arm64.tar.gz",
           "binary_url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.d46202f-linux-arm64.tar.gz",
-          "sha256": "7622b64348f0f7c21221cf1478bbd02a6506d5be09b77f9e82b8db64c1d13d3a"
+          "sha256": "0c933747122e6f5e8265b3105a8c9c9f0fbbd31993970a98374b020d4ac53ca6"
         },
         "windows-amd64": {
           "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.d46202f-windows-amd64.zip",
           "binary_url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.d46202f-windows-amd64.zip",
-          "sha256": "46606faa69d320bdf665ed558741b4703b0a181f8e7b54df36af415da533f6c2"
+          "sha256": "9e9bbf5fcbd4cb87301e8bdb319dc0aec357168232da65a12db9a791974c66b3"
         }
       },
       "tarball": "lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.d46202f-linux-amd64.tar.gz"
