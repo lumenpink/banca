@@ -5,7 +5,7 @@
   "description": "Cliente de correio soberano e interface editorial",
   "repo": "https://git.2lp.in/lumen/lauda",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev",
+  "nightly_latest": "0.5.0-dev.225+20261023.6fc6e10-dev.20261024.27915ee",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.5.0-dev.225+20261023.6fc6e10-dev.20261024.27915ee",
+      "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.225+20261023.6fc6e10-dev.20261024.27915ee-linux-amd64.tar.gz",
+      "date": "2026-10-24",
+      "sha256": "65d0a5e97f50a20d000e6e8d2a07ac44c8072acac9bc9f19c098e470b717c74a",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.225+20261023.6fc6e10-dev.20261024.27915ee-linux-amd64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.225+20261023.6fc6e10-dev.20261024.27915ee-linux-amd64.tar.gz",
+          "sha256": "65d0a5e97f50a20d000e6e8d2a07ac44c8072acac9bc9f19c098e470b717c74a"
+        },
+        "linux-arm64": {
+          "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.225+20261023.6fc6e10-dev.20261024.27915ee-linux-arm64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.225+20261023.6fc6e10-dev.20261024.27915ee-linux-arm64.tar.gz",
+          "sha256": "bf0fc1d521c3ee2558633cdf3c2ecd3bea4d1d8d2685165c4dc5ff2996505f75"
+        },
+        "windows-amd64": {
+          "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.225+20261023.6fc6e10-dev.20261024.27915ee-windows-amd64.zip",
+          "binary_url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.225+20261023.6fc6e10-dev.20261024.27915ee-windows-amd64.zip",
+          "sha256": "a4c10fd88f11b71a350158af6d5b73f5774b362540b88dc05255c7998c819fea"
+        }
+      },
+      "tarball": "lauda-0.5.0-dev.225+20261023.6fc6e10-dev.20261024.27915ee-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev",
       "date": "2026-10-20",
