@@ -5,7 +5,7 @@
   "description": "Camada de conectividade e mensageria P2P distribuída",
   "repo": "https://gambi.2lp.in/lumen/svyaz",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev.20+20261022.614bef2+20261023.cf2c8e9",
+  "nightly_latest": "0.1.0-dev.30+20261025.441fd9f",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.30+20261025.441fd9f",
+      "url": "https://bucket.2lp.in/downloads/svyaz/nightly/svyaz-0.1.0-dev.30+20261025.441fd9f-linux-amd64.tar.gz",
+      "date": "2026-10-25",
+      "sha256": "f7d4c27ea758cd2242bf1b7e13547dc87f061e1fce7c55be26ca640a8d143247",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/svyaz/nightly/svyaz-0.1.0-dev.30+20261025.441fd9f-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/svyaz/nightly/svyaz-0.1.0-dev.30+20261025.441fd9f-linux-amd64.tar.gz",
+          "sha256": "f7d4c27ea758cd2242bf1b7e13547dc87f061e1fce7c55be26ca640a8d143247"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/svyaz/nightly/svyaz-0.1.0-dev.30+20261025.441fd9f-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/svyaz/nightly/svyaz-0.1.0-dev.30+20261025.441fd9f-linux-arm64.tar.gz",
+          "sha256": "9ae7df8ee8cf74068e2458ddd1730e15c9d8a666152ca136d723290189737454"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/svyaz/nightly/svyaz-0.1.0-dev.30+20261025.441fd9f-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/svyaz/nightly/svyaz-0.1.0-dev.30+20261025.441fd9f-windows-amd64.zip",
+          "sha256": "64d8dcec594f74500abf02660edb04ad6ec996526b826c7b8ac8e9e3853c787e"
+        }
+      },
+      "tarball": "svyaz-0.1.0-dev.30+20261025.441fd9f-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev.20+20261022.614bef2+20261023.cf2c8e9",
       "url": "https://bucket.2lp.in/downloads/svyaz/nightly/svyaz-0.1.0-dev.20+20261022.614bef2+20261023.cf2c8e9-linux-amd64.tar.gz",
