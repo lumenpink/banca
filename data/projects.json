@@ -733,5 +733,26 @@
     "group": "",
     "category": "apps",
     "banner": "assets/banners/mocambo-banner.png"
+  },
+  {
+    "name": "jornaleira",
+    "forge": "forgejo",
+    "slug": "lumen/jornaleira",
+    "description": "Gestora central de aplicativos, canais e auto-update da Banca",
+    "topics": [
+      "rust",
+      "cli",
+      "tui",
+      "gui",
+      "updater",
+      "desktop",
+      "package-manager"
+    ],
+    "license": "GPL-3.0",
+    "website": "https://banca.2lp.in",
+    "is_upstream": false,
+    "group": "",
+    "category": "apps",
+    "banner": "assets/banners/jornaleira-banner.png"
   }
 ]

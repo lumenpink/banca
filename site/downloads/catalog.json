@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-24T01:14:25.712129+00:00",
+  "updated_at": "2026-10-25T18:40:35.837761+00:00",
   "banca_url": "https://banca.2lp.in",
-  "total_apps": 15,
+  "total_apps": 16,
   "apps": [
     {
       "app": "ayvu",
@@ -20,7 +20,7 @@
       "description": "Plataforma de gestão de conhecimento e biblioteca",
       "repo": "https://gambi.2lp.in/lumen/baquara",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.1.0-dev",
+      "nightly_latest": "0.1.0-dev.21+20261024.4f708b3",
       "manifest_url": "https://banca.2lp.in/downloads/baquara/index.json"
     },
     {
@@ -54,6 +54,16 @@
       "manifest_url": "https://banca.2lp.in/downloads/joaju/index.json"
     },
     {
+      "app": "jornaleira",
+      "name": "Jornaleira",
+      "category": "system",
+      "description": "Gestor central de aplicativos e auto-update da Banca",
+      "repo": "https://gambi.2lp.in/lumen/jornaleira",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "0.1.0-dev",
+      "manifest_url": "https://banca.2lp.in/downloads/jornaleira/index.json"
+    },
+    {
       "app": "kvant",
       "name": "Kvant",
       "category": "analytics",
@@ -70,7 +80,7 @@
       "description": "Cockpit de som brutalista e jukebox comunitária",
       "repo": "https://gambi.2lp.in/lumen/lacraia",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.1.0-dev",
+      "nightly_latest": "0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7",
       "manifest_url": "https://banca.2lp.in/downloads/lacraia/index.json"
     },
     {
@@ -80,7 +90,7 @@
       "description": "Cliente de correio soberano e interface editorial",
       "repo": "https://gambi.2lp.in/lumen/lauda",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.1.0-dev",
+      "nightly_latest": "0.5.0-dev.244+20261024.16e927f-dev.20261024.d46202f",
       "manifest_url": "https://banca.2lp.in/downloads/lauda/index.json"
     },
     {
@@ -140,7 +150,7 @@
       "description": "Blindagem e firewall de borda com regras atômicas",
       "repo": "https://gambi.2lp.in/lumen/tatupeba",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.1.0-dev",
+      "nightly_latest": "0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43",
       "manifest_url": "https://banca.2lp.in/downloads/tatupeba/index.json"
     },
     {

@@ -1,0 +1,49 @@
+{
+  "app": "jornaleira",
+  "name": "Jornaleira",
+  "category": "system",
+  "description": "Gestor central de aplicativos e auto-update da Banca",
+  "repo": "https://gambi.2lp.in/lumen/jornaleira",
+  "stable_latest": "0.1.0",
+  "nightly_latest": "0.1.0-dev",
+  "stables": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-25",
+      "url": "https://bucket.2lp.in/downloads/jornaleira/stable-latest/jornaleira",
+      "sha256": "",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/jornaleira/stable/jornaleira-0.1.0-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/jornaleira/stable-latest/jornaleira-linux-amd64",
+          "sha256": ""
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/jornaleira/stable/jornaleira-0.1.0-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/jornaleira/stable-latest/jornaleira-linux-arm64",
+          "sha256": ""
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/jornaleira/stable/jornaleira-0.1.0-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/jornaleira/stable-latest/jornaleira.exe",
+          "sha256": ""
+        }
+      }
+    }
+  ],
+  "nightlies": [
+    {
+      "version": "0.1.0-dev",
+      "date": "2026-10-25",
+      "url": "https://bucket.2lp.in/downloads/jornaleira/nightly-latest/jornaleira",
+      "sha256": "",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/jornaleira/nightly/jornaleira-nightly-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/jornaleira/nightly-latest/jornaleira-linux-amd64",
+          "sha256": ""
+        }
+      }
+    }
+  ]
+}

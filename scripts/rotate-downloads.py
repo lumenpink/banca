@@ -31,7 +31,8 @@ DEFAULT_APPS = [
     ("mocambo", "Mocambo", "Cofre soberano de arquivos, documentos e fotos", "storage"),
     ("hendu", "Hendu", "Bot de acessibilidade e audiodescrição comunitária", "accessibility"),
     ("mandu", "Mandu", "Editor brutalista de notas em texto puro, Markdown e Joaju", "editorial"),
-    ("tatupeba", "Tatupeba", "Blindagem e firewall de borda com regras atômicas", "security")
+    ("tatupeba", "Tatupeba", "Blindagem e firewall de borda com regras atômicas", "security"),
+    ("jornaleira", "Jornaleira", "Gestor central de aplicativos e auto-update da Banca", "system")
 ]
 
 def prune_manifest_data(data):
@@ -176,7 +177,7 @@ def generate_default_manifests(downloads_dir):
             "name": app_title,
             "category": app_cat,
             "description": app_desc,
-            "repo": f"https://codeberg.org/lumenpink/{app_slug}",
+            "repo": f"https://gambi.2lp.in/lumen/{app_slug}",
             "stable_latest": "0.1.0",
             "nightly_latest": "0.1.0-dev",
             "stables": [

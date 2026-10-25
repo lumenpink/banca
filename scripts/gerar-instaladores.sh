@@ -28,6 +28,7 @@ APPS=(
   "hendu"
   "mandu"
   "tatupeba"
+  "jornaleira"
 )
 
 gerar_script_app() {
