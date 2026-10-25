@@ -76,6 +76,26 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 4. [MUTAÇÃO] Validar rejeição caso jornaleira seja removida do catálogo
+echo -n "-> 4. [MUTAÇÃO] Testando sensibilidade a catálogo sem jornaleira... "
+MUTATED_CHECK=$(python3 -c "
+import json
+with open('$CATALOG_FILE') as f:
+    d = json.load(f)
+d['apps'] = [a for a in d['apps'] if a.get('app') != 'jornaleira']
+try:
+    assert 'jornaleira' in [a['app'] for a in d['apps']]
+    print('MUTANTE_VIVEU')
+except AssertionError:
+    print('MUTANTE_MORTO')
+")
+if [ "$MUTATED_CHECK" = "MUTANTE_MORTO" ]; then
+    echo "✅ OK (Mutação detectada com precisão)"
+else
+    echo "❌ FALHOU (Mutação não detectada)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 if [ "$FAILURES" -gt 0 ]; then
     echo "❌ Teste falhou com $FAILURES erro(s)."
     exit 1
