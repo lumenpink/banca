@@ -5,7 +5,7 @@
   "description": "Tradutor e motor de síntese de voz soberano",
   "repo": "https://gambi.2lp.in/lumen/ayvu",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610",
+  "nightly_latest": "0.1.0-dev.37+20261025.4ebbb29",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.37+20261025.4ebbb29",
+      "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261025.4ebbb29-linux-amd64.tar.gz",
+      "date": "2026-10-25",
+      "sha256": "718984c4015660fb2f6ea58cb848ab96a8175865cca1cd7f347931d0d7d3d290",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261025.4ebbb29-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261025.4ebbb29-linux-amd64.tar.gz",
+          "sha256": "718984c4015660fb2f6ea58cb848ab96a8175865cca1cd7f347931d0d7d3d290"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261025.4ebbb29-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261025.4ebbb29-linux-arm64.tar.gz",
+          "sha256": "ec26ef77d5e6197b89e44621f31be74932d7245e2ea677e9de4c523ca8c5ecb5"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261025.4ebbb29-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261025.4ebbb29-windows-amd64.zip",
+          "sha256": "95ad9a6f46b6aef605d43677e2ecd3183e803042d3d037e28b89ad34d2aa4705"
+        }
+      },
+      "tarball": "ayvu-0.1.0-dev.37+20261025.4ebbb29-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610",
       "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610-linux-amd64.tar.gz",
