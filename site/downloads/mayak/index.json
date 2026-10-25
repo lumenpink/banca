@@ -5,7 +5,7 @@
   "description": "Farol de telemetria e observabilidade sem rastreamento",
   "repo": "https://gambi.2lp.in/lumen/mayak",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev.32+20261025.fa9f521",
+  "nightly_latest": "0.1.0-dev.32+20261025.4119331",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.32+20261025.4119331",
+      "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.4119331-linux-amd64.tar.gz",
+      "date": "2026-10-25",
+      "sha256": "59bb8c7b53e0cd25b506639b10df1e2dac1908ed13f34694948457bd4076616b",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.4119331-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.4119331-linux-amd64.tar.gz",
+          "sha256": "59bb8c7b53e0cd25b506639b10df1e2dac1908ed13f34694948457bd4076616b"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.4119331-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.4119331-linux-arm64.tar.gz",
+          "sha256": "fb0f3ec09ab650dad1d6015e468eeaf0cf007b2df90212e330bc727272f19462"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.4119331-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.4119331-windows-amd64.zip",
+          "sha256": "210fc229ebffd87ccedc9b56e42e73bc6d152e7e21182359390e4451020b02f8"
+        }
+      },
+      "tarball": "mayak-0.1.0-dev.32+20261025.4119331-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev.32+20261025.fa9f521",
       "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.fa9f521-linux-amd64.tar.gz",
