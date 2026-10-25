@@ -5,7 +5,7 @@
   "description": "Bot de acessibilidade e audiodescrição comunitária",
   "repo": "https://gambi.2lp.in/lumen/hendu",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f",
+  "nightly_latest": "0.1.0-dev.76+20261025.a2f00a8",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.76+20261025.a2f00a8",
+      "url": "https://bucket.2lp.in/downloads/hendu/nightly/hendu-0.1.0-dev.76+20261025.a2f00a8-linux-amd64.tar.gz",
+      "date": "2026-10-25",
+      "sha256": "478a994860ce74e506510b3a878d7f58e1684a91c3979ba3e3d65c78f4fb4f0c",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/hendu/nightly/hendu-0.1.0-dev.76+20261025.a2f00a8-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/hendu/nightly/hendu-0.1.0-dev.76+20261025.a2f00a8-linux-amd64.tar.gz",
+          "sha256": "478a994860ce74e506510b3a878d7f58e1684a91c3979ba3e3d65c78f4fb4f0c"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/hendu/nightly/hendu-0.1.0-dev.76+20261025.a2f00a8-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/hendu/nightly/hendu-0.1.0-dev.76+20261025.a2f00a8-linux-arm64.tar.gz",
+          "sha256": "3c12e3bc908cdb2a9f7a87f951d514f1a141d0dc19b5de5aca8efa2d946c10d4"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/hendu/nightly/hendu-0.1.0-dev.76+20261025.a2f00a8-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/hendu/nightly/hendu-0.1.0-dev.76+20261025.a2f00a8-windows-amd64.zip",
+          "sha256": "69377a63c8c4f836996209a51d3f0219904576a5e5102cd836394b7600b26e41"
+        }
+      },
+      "tarball": "hendu-0.1.0-dev.76+20261025.a2f00a8-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f",
       "url": "https://bucket.2lp.in/downloads/hendu/nightly/hendu-0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f-linux-amd64.tar.gz",
