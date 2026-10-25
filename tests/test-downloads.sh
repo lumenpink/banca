@@ -179,17 +179,17 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
-# 10. Validar resiliência a fallback de hash e integridade de todos os 15 apps
-echo -n "-> 10. Verificando cadastro de todos os 15 apps na vitrine... "
+# 10. Validar resiliência a fallback de hash e integridade de todos os 16 apps
+echo -n "-> 10. Verificando cadastro de todos os 16 apps na vitrine (incluindo Jornaleira)... "
 if [ -f "$DOWNLOADS_DIR/index.html" ]; then
     MISSING_APPS=0
-    for app in cccp navalha lauda lacraia joaju svyaz mayak kvant ayvu tuitata baquara mocambo hendu mandu tatupeba; do
+    for app in cccp navalha lauda lacraia joaju svyaz mayak kvant ayvu tuitata baquara mocambo hendu mandu tatupeba jornaleira; do
         if ! grep -q "\"$app\"" "$DOWNLOADS_DIR/index.html"; then
             MISSING_APPS=$((MISSING_APPS + 1))
         fi
     done
     if [ "$MISSING_APPS" -eq 0 ]; then
-        echo "✅ OK (todos os 15 apps registrados)"
+        echo "✅ OK (todos os 16 apps registrados)"
     else
         echo "❌ FALHOU ($MISSING_APPS app(s) ausentes do registro)"
         FAILURES=$((FAILURES + 1))

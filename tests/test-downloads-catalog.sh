@@ -38,7 +38,7 @@ else
 fi
 
 # 3. Validar campos essenciais e contagem mínima de apps
-echo -n "-> 3. Validando estrutura de campos e contagem mínima de 15 apps... "
+echo -n "-> 3. Validando estrutura de campos e contagem mínima de 16 apps (incluindo Jornaleira)... "
 if [ -f "$CATALOG_FILE" ]; then
     TOTAL=$(python3 -c "
 import json, sys
@@ -49,7 +49,8 @@ try:
     assert 'banca_url' in d
     assert 'apps' in d
     assert isinstance(d['apps'], list)
-    assert len(d['apps']) >= 15
+    assert len(d['apps']) >= 16
+    app_slugs = set()
     for a in d['apps']:
         assert 'app' in a and a['app']
         assert 'name' in a and a['name']
@@ -57,15 +58,17 @@ try:
         assert 'stable_latest' in a
         assert 'nightly_latest' in a
         assert 'manifest_url' in a
+        app_slugs.add(a['app'])
+    assert 'jornaleira' in app_slugs, 'jornaleira ausente no catalog.json'
     print(len(d['apps']))
 except Exception as e:
     sys.exit(1)
 " 2>/dev/null || true)
 
-    if [ -n "$TOTAL" ] && [ "$TOTAL" -ge 15 ]; then
+    if [ -n "$TOTAL" ] && [ "$TOTAL" -ge 16 ]; then
         echo "✅ OK ($TOTAL apps validados com sucesso)"
     else
-        echo "❌ FALHOU (estrutura inválida ou menos de 15 apps)"
+        echo "❌ FALHOU (estrutura inválida, menos de 16 apps ou jornaleira ausente)"
         FAILURES=$((FAILURES + 1))
     fi
 else
