@@ -5,7 +5,7 @@
   "description": "Farol de telemetria e observabilidade sem rastreamento",
   "repo": "https://gambi.2lp.in/lumen/mayak",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638",
+  "nightly_latest": "0.1.0-dev.32+20261025.fa9f521",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.32+20261025.fa9f521",
+      "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.fa9f521-linux-amd64.tar.gz",
+      "date": "2026-10-25",
+      "sha256": "bf7e391a56159ec3cc0695aca5215ec0dbf4559f94476a3c6ba6d043e2385ef4",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.fa9f521-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.fa9f521-linux-amd64.tar.gz",
+          "sha256": "bf7e391a56159ec3cc0695aca5215ec0dbf4559f94476a3c6ba6d043e2385ef4"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.fa9f521-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.fa9f521-linux-arm64.tar.gz",
+          "sha256": "5f6d644e9ec49fc630fd2116fe66b172a4283f67d24c6bf63fc20ce918af375e"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.fa9f521-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.fa9f521-windows-amd64.zip",
+          "sha256": "cb9f58a796c5695b9bb09f0081776e11fb3a029514653bb40aea5271d3362e51"
+        }
+      },
+      "tarball": "mayak-0.1.0-dev.32+20261025.fa9f521-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638",
       "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638-linux-amd64.tar.gz",
