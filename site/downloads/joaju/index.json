@@ -5,7 +5,7 @@
   "description": "Compilador vetorial de diagramas, tabelas e heredogramas",
   "repo": "https://gambi.2lp.in/lumen/joaju",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.2.0-dev.72+20261023.9672441+20261023.ec3330b",
+  "nightly_latest": "0.2.0-dev.91+20261025.3ba5233",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.2.0-dev.91+20261025.3ba5233",
+      "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.91+20261025.3ba5233-linux-amd64.tar.gz",
+      "date": "2026-10-25",
+      "sha256": "2a448db790eba3cf1350b10ed76d76258238dc81348b04710de562a690afe65a",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.91+20261025.3ba5233-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.91+20261025.3ba5233-linux-amd64.tar.gz",
+          "sha256": "2a448db790eba3cf1350b10ed76d76258238dc81348b04710de562a690afe65a"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.91+20261025.3ba5233-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.91+20261025.3ba5233-linux-arm64.tar.gz",
+          "sha256": "e9a255424901093246b737c7518fd54c6b446123d935df13fad450ee33da53e8"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.91+20261025.3ba5233-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.91+20261025.3ba5233-windows-amd64.zip",
+          "sha256": "17a232a4ab46b38ebdfa3791deb6070c8ca75a27795861f88fc1c2206bfb2594"
+        }
+      },
+      "tarball": "joaju-0.2.0-dev.91+20261025.3ba5233-linux-amd64.tar.gz"
+    },
     {
       "version": "0.2.0-dev.72+20261023.9672441+20261023.ec3330b",
       "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.72+20261023.9672441+20261023.ec3330b-linux-amd64.tar.gz",
