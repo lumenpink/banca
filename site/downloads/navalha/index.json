@@ -5,7 +5,7 @@
   "description": "Despachante e canivete suíço para deploy e automação",
   "repo": "https://gambi.2lp.in/lumen/navalha",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2",
+  "nightly_latest": "0.1.0-dev.91+20261025.4119a92",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.91+20261025.4119a92",
+      "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.91+20261025.4119a92-linux-amd64.tar.gz",
+      "date": "2026-10-25",
+      "sha256": "ef98e8c97f5ad54e40ba9913e3136cd74bce7064a70b8f7f65605e31a6ca0725",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.91+20261025.4119a92-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.91+20261025.4119a92-linux-amd64.tar.gz",
+          "sha256": "ef98e8c97f5ad54e40ba9913e3136cd74bce7064a70b8f7f65605e31a6ca0725"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.91+20261025.4119a92-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.91+20261025.4119a92-linux-arm64.tar.gz",
+          "sha256": "c9d64761a77cec8f782ee5ed054804d549d9454e43577dfcc204e135ccbc0c59"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.91+20261025.4119a92-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.91+20261025.4119a92-windows-amd64.zip",
+          "sha256": "626bdb65e50aec4c3dbca913edfed6f6c364e9cb00f14ef606e9a95e11fb0f89"
+        }
+      },
+      "tarball": "navalha-0.1.0-dev.91+20261025.4119a92-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2",
       "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-linux-amd64.tar.gz",
