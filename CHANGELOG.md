@@ -13,6 +13,7 @@
   - (pratilera) extrair metadados reais dos apks via aapt (closes #24)
 
 ### Features
+  - (downloads) registrar e publicar jornaleira na vitrine, catalogo e instaladores (closes #45)
   - (downloads) gerar instaladores dinamicos dedicados sem root por app e canal (closes #38)
   - (catalog) adicionar 6 modulos satelites do joaju com banners e metadados ao catalogo (closes #37)
   - (catalog) adicionar resenha com banner safe zone e metadados oficiais ao catalogo (closes #36)
