@@ -32,7 +32,8 @@ DEFAULT_APPS = [
     ("hendu", "Hendu", "Bot de acessibilidade e audiodescrição comunitária", "accessibility"),
     ("mandu", "Mandu", "Editor brutalista de notas em texto puro, Markdown e Joaju", "editorial"),
     ("tatupeba", "Tatupeba", "Blindagem e firewall de borda com regras atômicas", "security"),
-    ("jornaleira", "Jornaleira", "Gestor central de aplicativos e auto-update da Banca", "system")
+    ("jornaleira", "Jornaleira", "Gestor central de aplicativos e auto-update da Banca", "system"),
+    ("pult", "Pult", "Estação de trabalho TUI soberana e mediadora de contexto AST", "terminal")
 ]
 
 def prune_manifest_data(data):

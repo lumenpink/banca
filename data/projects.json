@@ -60,6 +60,28 @@
     "category": "governance"
   },
   {
+    "name": "pult",
+    "forge": "codeberg",
+    "slug": "lumenpink/pult",
+    "description": "Estação de trabalho TUI e mediadora de contexto AST para desenvolvimento com Antigravity CLI",
+    "topics": [
+      "rust",
+      "tui",
+      "terminal",
+      "ast",
+      "tree-sitter",
+      "ratatui",
+      "gost",
+      "antigravity"
+    ],
+    "license": "GPL-3.0",
+    "website": "https://pult.2lp.in",
+    "is_upstream": false,
+    "group": "comrades",
+    "category": "terminal",
+    "banner": "assets/banners/pult-banner.png"
+  },
+  {
     "name": "fuxico",
     "forge": "codeberg",
     "slug": "lumenpink/fuxico",
