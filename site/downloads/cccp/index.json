@@ -5,7 +5,7 @@
   "description": "Guardião de Conventional Commits e governança GOST",
   "repo": "https://gambi.2lp.in/lumen/cccp",
   "stable_latest": "0.1.0",
-  "nightly_latest": "3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b",
+  "nightly_latest": "3.2.0-dev.240+20261026.7ac2004",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "3.2.0-dev.240+20261026.7ac2004",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.240+20261026.7ac2004-linux-amd64.tar.gz",
+      "date": "2026-10-26",
+      "sha256": "ae98cd538680c16817098f5483e9a15a42b2a943f8678c61c23a0b481df7442c",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.240+20261026.7ac2004-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.240+20261026.7ac2004-linux-amd64.tar.gz",
+          "sha256": "ae98cd538680c16817098f5483e9a15a42b2a943f8678c61c23a0b481df7442c"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.240+20261026.7ac2004-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.240+20261026.7ac2004-linux-arm64.tar.gz",
+          "sha256": "c757b62278bbf3fbcf705cc7fc0626b0a4f3f29ca5895aad442dd9c375769bd0"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.240+20261026.7ac2004-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.240+20261026.7ac2004-windows-amd64.zip",
+          "sha256": "f7ffbd50fe3592addc7f9b6cde8481fd3ee17dbb9789114f3312099df5362100"
+        }
+      },
+      "tarball": "cccp-3.2.0-dev.240+20261026.7ac2004-linux-amd64.tar.gz"
+    },
     {
       "version": "3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b",
       "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b-linux-amd64.tar.gz",
