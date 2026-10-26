@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-25T18:40:35.837761+00:00",
+  "updated_at": "2026-10-26T20:55:42.149280+00:00",
   "banca_url": "https://banca.2lp.in",
-  "total_apps": 16,
+  "total_apps": 17,
   "apps": [
     {
       "app": "ayvu",
@@ -10,7 +10,7 @@
       "description": "Tradutor e motor de síntese de voz soberano",
       "repo": "https://gambi.2lp.in/lumen/ayvu",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610",
+      "nightly_latest": "0.1.0-dev.37+20261025.4ebbb29",
       "manifest_url": "https://banca.2lp.in/downloads/ayvu/index.json"
     },
     {
@@ -40,7 +40,7 @@
       "description": "Bot de acessibilidade e audiodescrição comunitária",
       "repo": "https://gambi.2lp.in/lumen/hendu",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f",
+      "nightly_latest": "0.1.0-dev.76+20261025.a2f00a8",
       "manifest_url": "https://banca.2lp.in/downloads/hendu/index.json"
     },
     {
@@ -70,7 +70,7 @@
       "description": "Motor analítico de dados e processamento vetorial",
       "repo": "https://gambi.2lp.in/lumen/kvant",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.1.0-dev.21+20261022.e87d416+20261023.10a8605",
+      "nightly_latest": "0.1.0-dev.32+20261025.632e317",
       "manifest_url": "https://banca.2lp.in/downloads/kvant/index.json"
     },
     {
@@ -80,7 +80,7 @@
       "description": "Cockpit de som brutalista e jukebox comunitária",
       "repo": "https://gambi.2lp.in/lumen/lacraia",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7",
+      "nightly_latest": "0.2.0-dev.235+20261024.abe50b7-dev.20261025.72a7598",
       "manifest_url": "https://banca.2lp.in/downloads/lacraia/index.json"
     },
     {
@@ -90,7 +90,7 @@
       "description": "Cliente de correio soberano e interface editorial",
       "repo": "https://gambi.2lp.in/lumen/lauda",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.5.0-dev.244+20261024.16e927f-dev.20261024.d46202f",
+      "nightly_latest": "0.5.0-dev.272+20261025.e6f1f54-dev.20261025.f575f30",
       "manifest_url": "https://banca.2lp.in/downloads/lauda/index.json"
     },
     {
@@ -110,7 +110,7 @@
       "description": "Farol de telemetria e observabilidade sem rastreamento",
       "repo": "https://gambi.2lp.in/lumen/mayak",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638",
+      "nightly_latest": "0.1.0-dev.32+20261025.4119331",
       "manifest_url": "https://banca.2lp.in/downloads/mayak/index.json"
     },
     {
@@ -130,8 +130,18 @@
       "description": "Despachante e canivete suíço para deploy e automação",
       "repo": "https://gambi.2lp.in/lumen/navalha",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2",
+      "nightly_latest": "0.1.0-dev.91+20261025.4119a92",
       "manifest_url": "https://banca.2lp.in/downloads/navalha/index.json"
+    },
+    {
+      "app": "pult",
+      "name": "Pult",
+      "category": "terminal",
+      "description": "Estação de trabalho TUI soberana e mediadora de contexto AST",
+      "repo": "https://gambi.2lp.in/lumen/pult",
+      "stable_latest": "0.1.0",
+      "nightly_latest": "0.1.0-dev",
+      "manifest_url": "https://banca.2lp.in/downloads/pult/index.json"
     },
     {
       "app": "svyaz",
@@ -140,7 +150,7 @@
       "description": "Camada de conectividade e mensageria P2P distribuída",
       "repo": "https://gambi.2lp.in/lumen/svyaz",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.1.0-dev.20+20261022.614bef2+20261023.cf2c8e9",
+      "nightly_latest": "0.1.0-dev.30+20261025.441fd9f",
       "manifest_url": "https://banca.2lp.in/downloads/svyaz/index.json"
     },
     {
@@ -150,7 +160,7 @@
       "description": "Blindagem e firewall de borda com regras atômicas",
       "repo": "https://gambi.2lp.in/lumen/tatupeba",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43",
+      "nightly_latest": "0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf",
       "manifest_url": "https://banca.2lp.in/downloads/tatupeba/index.json"
     },
     {
