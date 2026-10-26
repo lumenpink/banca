@@ -36,22 +36,22 @@
       "version": "0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f",
       "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-linux-amd64.tar.gz",
       "date": "2026-10-26",
-      "sha256": "4024a67a256cd7d9bd51dfded810bb7e41e1878208428ecaea7d7d2a41b8c141",
+      "sha256": "ed9b31abb46613648ff450dc35b4d1e7e71f4fe678059eb9c865b13b064b2e0e",
       "artifacts": {
         "linux-amd64": {
           "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-linux-amd64.tar.gz",
           "binary_url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-linux-amd64.tar.gz",
-          "sha256": "4024a67a256cd7d9bd51dfded810bb7e41e1878208428ecaea7d7d2a41b8c141"
+          "sha256": "ed9b31abb46613648ff450dc35b4d1e7e71f4fe678059eb9c865b13b064b2e0e"
         },
         "linux-arm64": {
           "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-linux-arm64.tar.gz",
           "binary_url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-linux-arm64.tar.gz",
-          "sha256": "e63d8142daa33ebb69f93e789035b6b43b90c0433d0817aa2d5f90365dc5c38c"
+          "sha256": "2ce39eaebc97c405732dac7388f433ccdde7bfb0a9c7333b303ab4b284986a02"
         },
         "windows-amd64": {
           "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-windows-amd64.zip",
           "binary_url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-windows-amd64.zip",
-          "sha256": "9810c73341d4288510c9b56c1d1afc018f3d967aeabf0256a63b27817417ed03"
+          "sha256": "4e3cf7facfbe24ae5ccfe7ce49019cf82fb631f375aef0c4899eafc53c798b8e"
         }
       },
       "tarball": "lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-linux-amd64.tar.gz"
