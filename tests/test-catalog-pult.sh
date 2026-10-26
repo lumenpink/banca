@@ -60,8 +60,18 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 6. site/downloads/index.html
+echo -n "-> 6. site/downloads/index.html possui o pult no seletor e registro... "
+DOWNLOADS_INDEX="$REPO_ROOT/site/downloads/index.html"
+if grep -q 'value="pult"' "$DOWNLOADS_INDEX" && grep -q '"pult":' "$DOWNLOADS_INDEX"; then
+    echo "✅ OK"
+else
+    echo "❌ FALHOU"
+    FAILURES=$((FAILURES + 1))
+fi
+
 if [ "$FAILURES" -eq 0 ]; then
-    echo "🎉 Todos os 5 testes do Pult na Banca passaram com sucesso!"
+    echo "🎉 Todos os 6 testes do Pult na Banca passaram com sucesso!"
     exit 0
 else
     echo "❌ $FAILURES falhas detectadas."
