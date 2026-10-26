@@ -5,7 +5,7 @@
   "description": "Cockpit de som brutalista e jukebox comunitária",
   "repo": "https://gambi.2lp.in/lumen/lacraia",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde",
+  "nightly_latest": "0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f",
+      "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-linux-amd64.tar.gz",
+      "date": "2026-10-26",
+      "sha256": "1e052d7e79fb6a30ac48ad969489b441fc1c54ec374ff5c1f21d3c7100aa2ba1",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-linux-amd64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-linux-amd64.tar.gz",
+          "sha256": "1e052d7e79fb6a30ac48ad969489b441fc1c54ec374ff5c1f21d3c7100aa2ba1"
+        },
+        "linux-arm64": {
+          "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-linux-arm64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-linux-arm64.tar.gz",
+          "sha256": "7fffc827de2cc5a3ad061f12bb29bb54fa955ebf55ad45fcd5b7c9bd0d2d2452"
+        },
+        "windows-amd64": {
+          "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-windows-amd64.zip",
+          "binary_url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-windows-amd64.zip",
+          "sha256": "b419f8f66863579990fae153e32e4f723c17d522c9d8adfae1835198638cec9f"
+        }
+      },
+      "tarball": "lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-linux-amd64.tar.gz"
+    },
     {
       "version": "0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde",
       "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde-linux-amd64.tar.gz",
