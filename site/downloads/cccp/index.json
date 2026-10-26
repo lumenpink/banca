@@ -5,7 +5,7 @@
   "description": "Guardião de Conventional Commits e governança GOST",
   "repo": "https://gambi.2lp.in/lumen/cccp",
   "stable_latest": "0.1.0",
-  "nightly_latest": "3.2.0-dev.240+20261026.7ac2004",
+  "nightly_latest": "3.2.0-dev.260+20261026.c5cb621",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "3.2.0-dev.260+20261026.c5cb621",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.260+20261026.c5cb621-linux-amd64.tar.gz",
+      "date": "2026-10-26",
+      "sha256": "7731acbb3200871f5d19649aea9f615dc073c86dbda705fa9edb27b53d231153",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.260+20261026.c5cb621-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.260+20261026.c5cb621-linux-amd64.tar.gz",
+          "sha256": "7731acbb3200871f5d19649aea9f615dc073c86dbda705fa9edb27b53d231153"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.260+20261026.c5cb621-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.260+20261026.c5cb621-linux-arm64.tar.gz",
+          "sha256": "9faedf0ac48cf0082624a0891080b064aeac75d20e0db3d4301cd9264ad63242"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.260+20261026.c5cb621-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.260+20261026.c5cb621-windows-amd64.zip",
+          "sha256": "67fea0a8cf2432c4145718b4f85f13ba1a1e8867d97609117deb15356ad4b901"
+        }
+      },
+      "tarball": "cccp-3.2.0-dev.260+20261026.c5cb621-linux-amd64.tar.gz"
+    },
     {
       "version": "3.2.0-dev.240+20261026.7ac2004",
       "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.240+20261026.7ac2004-linux-amd64.tar.gz",
