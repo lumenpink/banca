@@ -5,7 +5,7 @@
   "description": "Agregador e leitor de feeds RSS/Atom minimalista",
   "repo": "https://gambi.2lp.in/lumen/tuitata",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev.42+20261026.d25a282",
+  "nightly_latest": "0.1.0-dev.42+20261026.447f942",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.42+20261026.447f942",
+      "url": "https://bucket.2lp.in/downloads/tuitata/nightly/tuitata-0.1.0-dev.42+20261026.447f942-linux-amd64.tar.gz",
+      "date": "2026-10-26",
+      "sha256": "7a60bd9827b114938d5b21af614525b9f9ad5a0376aa0dc05ae81b2d4ff01766",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/tuitata/nightly/tuitata-0.1.0-dev.42+20261026.447f942-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/tuitata/nightly/tuitata-0.1.0-dev.42+20261026.447f942-linux-amd64.tar.gz",
+          "sha256": "7a60bd9827b114938d5b21af614525b9f9ad5a0376aa0dc05ae81b2d4ff01766"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/tuitata/nightly/tuitata-0.1.0-dev.42+20261026.447f942-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/tuitata/nightly/tuitata-0.1.0-dev.42+20261026.447f942-linux-arm64.tar.gz",
+          "sha256": "dc0b1e7ae79069b1435f000cdbe0c2994ef29b18aa80d74b5a34b7e431704700"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/tuitata/nightly/tuitata-0.1.0-dev.42+20261026.447f942-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/tuitata/nightly/tuitata-0.1.0-dev.42+20261026.447f942-windows-amd64.zip",
+          "sha256": "373299c6bfa87109003e3fa448afd722e7d44540f6d43a95f7f8be7cf58d99a6"
+        }
+      },
+      "tarball": "tuitata-0.1.0-dev.42+20261026.447f942-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev.42+20261026.d25a282",
       "url": "https://bucket.2lp.in/downloads/tuitata/nightly/tuitata-0.1.0-dev.42+20261026.d25a282-linux-amd64.tar.gz",
