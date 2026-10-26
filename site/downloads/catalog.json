@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T20:55:42.149280+00:00",
+  "updated_at": "2026-10-26T21:01:46.083373+00:00",
   "banca_url": "https://banca.2lp.in",
   "total_apps": 17,
   "apps": [
@@ -30,7 +30,7 @@
       "description": "Guardião de Conventional Commits e governança GOST",
       "repo": "https://gambi.2lp.in/lumen/cccp",
       "stable_latest": "0.1.0",
-      "nightly_latest": "3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b",
+      "nightly_latest": "3.2.0-dev.260+20261026.c5cb621",
       "manifest_url": "https://banca.2lp.in/downloads/cccp/index.json"
     },
     {
@@ -50,7 +50,7 @@
       "description": "Compilador vetorial de diagramas, tabelas e heredogramas",
       "repo": "https://gambi.2lp.in/lumen/joaju",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.2.0-dev.72+20261023.9672441+20261023.ec3330b",
+      "nightly_latest": "0.2.0-dev.91+20261025.3ba5233",
       "manifest_url": "https://banca.2lp.in/downloads/joaju/index.json"
     },
     {
@@ -80,7 +80,7 @@
       "description": "Cockpit de som brutalista e jukebox comunitária",
       "repo": "https://gambi.2lp.in/lumen/lacraia",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.2.0-dev.235+20261024.abe50b7-dev.20261025.72a7598",
+      "nightly_latest": "0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7",
       "manifest_url": "https://banca.2lp.in/downloads/lacraia/index.json"
     },
     {
@@ -90,7 +90,7 @@
       "description": "Cliente de correio soberano e interface editorial",
       "repo": "https://gambi.2lp.in/lumen/lauda",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.5.0-dev.272+20261025.e6f1f54-dev.20261025.f575f30",
+      "nightly_latest": "0.5.0-dev.281+20261026.2d3d6fb-dev.20261026.d7b7069",
       "manifest_url": "https://banca.2lp.in/downloads/lauda/index.json"
     },
     {
@@ -100,7 +100,7 @@
       "description": "Editor brutalista de notas em texto puro, Markdown e Joaju",
       "repo": "https://gambi.2lp.in/lumen/mandu",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.1.0-dev.220+20261021.8bcb4bb+20261022.6dadf72",
+      "nightly_latest": "0.1.0-dev.263+20261026.50938f7",
       "manifest_url": "https://banca.2lp.in/downloads/mandu/index.json"
     },
     {
@@ -120,7 +120,7 @@
       "description": "Cofre soberano de arquivos, documentos e fotos",
       "repo": "https://gambi.2lp.in/lumen/mocambo",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238",
+      "nightly_latest": "0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301",
       "manifest_url": "https://banca.2lp.in/downloads/mocambo/index.json"
     },
     {
@@ -170,7 +170,7 @@
       "description": "Agregador e leitor de feeds RSS/Atom minimalista",
       "repo": "https://gambi.2lp.in/lumen/tuitata",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.1.0-dev.37+20261023.d83358f+20261023.51cd01d",
+      "nightly_latest": "0.1.0-dev.42+20261026.447f942",
       "manifest_url": "https://banca.2lp.in/downloads/tuitata/index.json"
     }
   ]
