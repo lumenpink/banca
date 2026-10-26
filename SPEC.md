@@ -258,3 +258,12 @@ site/pratilera/
   - Emissão de comando PowerShell nativo (`Invoke-WebRequest`) para usuários Windows e `curl -sSL` para usuários Linux.
   - Atualização do Mandu como editor soberano brutalista de notas em texto puro, Markdown e Joaju.
 
+## 20. Registro da Estação de Trabalho Pult (Ticket #46)
+
+- **Identidade e Categoria**:
+  - O aplicativo `pult` é registrado como estação de trabalho TUI soberana e mediadora de contexto AST para desenvolvimento com Antigravity CLI e ciclo GOST DD-TDD, classificado na categoria `terminal` com insígnia `★ CCCP COMRADE`.
+- **Distribuição Multi-Arquitetura**:
+  - Disponibilizado no catálogo unificado (`site/downloads/catalog.json`) e manifesto atômico (`site/downloads/pult/index.json`) com suporte a `linux-amd64`, `linux-arm64` e `windows-amd64` sincronizados com o Cloudflare R2 (`twolp-bucket/downloads/pult/`).
+- **Pôster Anti-Design e Vitrine**:
+  - Artefato visual em 1200x630 (Safe Zone 4:3) `site/assets/banners/pult-banner.png`, com cards e links para o portal oficial `https://pult.2lp.in` e forja soberana.
+
