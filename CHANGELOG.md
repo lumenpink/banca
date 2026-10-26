@@ -13,6 +13,7 @@
   - (pratilera) extrair metadados reais dos apks via aapt (closes #24)
 
 ### Features
+  - (catalog) registrar e publicar pult na vitrine, catalogo e manifesto de downloads (closes #46)
   - (downloads) registrar e publicar jornaleira na vitrine, catalogo e instaladores (closes #45)
   - (downloads) gerar instaladores dinamicos dedicados sem root por app e canal (closes #38)
   - (catalog) adicionar 6 modulos satelites do joaju com banners e metadados ao catalogo (closes #37)
