@@ -5,7 +5,7 @@
   "description": "Cliente de correio soberano e interface editorial",
   "repo": "https://gambi.2lp.in/lumen/lauda",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.5.0-dev.287+20261026.a98ede5-dev.20261026.569bee8",
+  "nightly_latest": "0.5.0-dev.289+20261027.bf671e9-dev.20261027.614356b",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.5.0-dev.289+20261027.bf671e9-dev.20261027.614356b",
+      "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261027.614356b-linux-amd64.tar.gz",
+      "date": "2026-10-27",
+      "sha256": "33299924a030134cf33002a15bbaca116cdada3b68594b1db08c30f2039e83b7",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261027.614356b-linux-amd64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261027.614356b-linux-amd64.tar.gz",
+          "sha256": "33299924a030134cf33002a15bbaca116cdada3b68594b1db08c30f2039e83b7"
+        },
+        "linux-arm64": {
+          "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261027.614356b-linux-arm64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261027.614356b-linux-arm64.tar.gz",
+          "sha256": "268a8b86c387f1c2baddb88d397b52d01e5e97ecd1947f325f6ed937eafdca08"
+        },
+        "windows-amd64": {
+          "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261027.614356b-windows-amd64.zip",
+          "binary_url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261027.614356b-windows-amd64.zip",
+          "sha256": "49d00557a182e5b5af779093ba00c630d33fe087ecf32afcfe337fe3ae98b6e3"
+        }
+      },
+      "tarball": "lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261027.614356b-linux-amd64.tar.gz"
+    },
     {
       "version": "0.5.0-dev.287+20261026.a98ede5-dev.20261026.569bee8",
       "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.287+20261026.a98ede5-dev.20261026.569bee8-linux-amd64.tar.gz",
