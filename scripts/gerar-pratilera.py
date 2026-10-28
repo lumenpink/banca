@@ -438,18 +438,20 @@ def extract_apk_metadata(apk_path: Path) -> dict:
     return info
 
 def build_index_v1():
-    now_ms = int(time.time() * 1000)
-    
     # 0. Carregar índice index-v1.json existente para fallback resiliente
     existing_packages = {}
+    prev_timestamp = 0
     index_v1_path = PRATILERA_DIR / "index-v1.json"
     if index_v1_path.exists():
         try:
             with open(index_v1_path, encoding="utf-8") as f:
                 prev_data = json.load(f)
                 existing_packages = prev_data.get("packages", {})
+                prev_timestamp = prev_data.get("repo", {}).get("timestamp", 0)
         except Exception:
             pass
+
+    now_ms = max(int(time.time() * 1000), prev_timestamp + 1000)
 
     apps_list = []
     packages_map = {}
