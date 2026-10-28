@@ -25,12 +25,13 @@ else
 fi
 
 # 2. Validar existência e sintaxe do índice index-v1.json
-echo -n "-> 2. Verificando index-v1.json... "
+echo -n "-> 2. Verificando index-v1.json e timestamp monotônico... "
 if [ -f "$PRATILERA_DIR/index-v1.json" ]; then
-    if python3 -m json.tool "$PRATILERA_DIR/index-v1.json" >/dev/null 2>&1; then
-        echo "✅ OK (JSON válido)"
+    TS=$(python3 -c "import json; data = json.load(open('$PRATILERA_DIR/index-v1.json')); print(data.get('repo', {}).get('timestamp', 0))" 2>/dev/null || echo "0")
+    if [ "$TS" -gt 1793099258296 ]; then
+        echo "✅ OK (JSON válido, timestamp monotônico $TS > 1793099258296)"
     else
-        echo "❌ FALHOU (JSON inválido)"
+        echo "❌ FALHOU (Timestamp $TS inferior ao registrado no Droid-ify 1793099258296)"
         FAILURES=$((FAILURES + 1))
     fi
 else
