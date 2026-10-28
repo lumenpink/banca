@@ -267,3 +267,12 @@ site/pratilera/
 - **Pôster Anti-Design e Vitrine**:
   - Artefato visual em 1200x630 (Safe Zone 4:3) `site/assets/banners/pult-banner.png`, com cards e links para o portal oficial `https://pult.2lp.in` e forja soberana.
 
+## 21. Monotonicidade Estrita do Timestamp de Repositório F-Droid (Ticket #48)
+
+- **Invariante Temporal do Índice (`repo.timestamp`)**:
+  - Clientes F-Droid, Neo Store e Droid-ify validam a integridade cronológica do repositório comparando o carimbo de data/hora (`repo.timestamp`) recebido em `index-v1.json` contra a última marca temporal registrada no DataStore local (`current_timestamp`).
+  - Se `new_timestamp < current_timestamp`, o cliente Android rejeita categoricamente o catálogo com `UpdateException: New index is older than current index`.
+  - O script gerador `scripts/gerar-pratilera.py` implementa a invariante estrita:
+    `now_ms = max(int(time.time() * 1000), prev_timestamp + 1000)`
+  - Isso garante que o carimbo de data/hora nunca retroceda sob nenhuma hipótese de deploy, regeneração de catálogo ou dessincronização de relógio.
+
