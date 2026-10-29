@@ -149,6 +149,9 @@ def import_external_apks():
                 shutil.copy2(src, dst)
                 print(f"-> Importado do Lacraia: {canonical_name}")
 
+    # Remover duplicidade legada lacraia-app.apk se existir na Pratilera
+    (PRATILERA_DIR / "lacraia-app.apk").unlink(missing_ok=True)
+
     # Importar ícones oficiais do repositório lacraia se presentes
     lacraia_assets = lacraia_dir / "site" / "assets"
     if (lacraia_assets / "icon.png").exists():
@@ -485,7 +488,7 @@ def build_index_v1():
         # - versionCode DEVE vir do APK real para evitar 'Metadado inválido' no Android/Droid-ify.
         # - versionName DEVE vir canonicamente do CCCP (arquivo VERSION do repositório irmão).
         project_slug = "lacraia" if "lacraia" in pkg_id else ("lauda" if "lauda" in pkg_id else ("mocambo" if "mocambo" in pkg_id else ("mandu" if "mandu" in pkg_id else "")))
-        fallback_ver = prev_entry.get("versionName", meta["version_name"])
+        fallback_ver = apk_meta.get("version_name") or prev_entry.get("versionName") or meta["version_name"]
         ver_name = get_project_version(project_slug, fallback_ver) if project_slug else fallback_ver
         ver_code = apk_meta.get("version_code", prev_entry.get("versionCode", meta.get("version_code", 1)))
 

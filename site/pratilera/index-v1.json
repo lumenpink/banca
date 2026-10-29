@@ -4,7 +4,7 @@
     "description": "Loja e Repositório Soberano de Aplicativos do Ecossistema 2lp. Fanzines, paredões, correio e ferramentas de calçada.",
     "address": "https://bucket.2lp.in",
     "icon": "icon.png",
-    "timestamp": 1793147480483,
+    "timestamp": 1793265666741,
     "version": 20
   },
   "requests": {
@@ -32,9 +32,9 @@
           "icon": "icon.png"
         }
       },
-      "added": 1793147480483,
-      "lastUpdated": 1793147480483,
-      "suggestedVersionCode": "1",
+      "added": 1793265666741,
+      "lastUpdated": 1793265666741,
+      "suggestedVersionCode": "242",
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
       "categories": [
@@ -64,9 +64,9 @@
           "icon": "icon.png"
         }
       },
-      "added": 1793147480483,
-      "lastUpdated": 1793147480483,
-      "suggestedVersionCode": "1",
+      "added": 1793265666741,
+      "lastUpdated": 1793265666741,
+      "suggestedVersionCode": "242",
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
       "categories": [
@@ -96,8 +96,8 @@
           "icon": "icon.png"
         }
       },
-      "added": 1793147480483,
-      "lastUpdated": 1793147480483,
+      "added": 1793265666741,
+      "lastUpdated": 1793265666741,
       "suggestedVersionCode": "26102710",
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
@@ -128,8 +128,8 @@
           "icon": "icon.png"
         }
       },
-      "added": 1793147480483,
-      "lastUpdated": 1793147480483,
+      "added": 1793265666741,
+      "lastUpdated": 1793265666741,
       "suggestedVersionCode": "1",
       "authorName": "Lumen Pink",
       "license": "CC0-1.0",
@@ -161,8 +161,8 @@
           "icon": "icon.png"
         }
       },
-      "added": 1793147480483,
-      "lastUpdated": 1793147480483,
+      "added": 1793265666741,
+      "lastUpdated": 1793265666741,
       "suggestedVersionCode": "1",
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
@@ -178,9 +178,9 @@
   "packages": {
     "in.twolp.lacraia.app": [
       {
-        "added": 1793147480483,
+        "added": 1793265666741,
         "apkName": "lacraia.apk",
-        "hash": "4c675eb182782134af79d9017b807418a7380cf19168f9d39274e8ed1eb6bbd8",
+        "hash": "e4ed49c87e46d10423fc66efd21f467fe736a10ab59089f3244a20f03fc6ae59",
         "hashType": "sha256",
         "minSdkVersion": 26,
         "targetSdkVersion": 34,
@@ -188,15 +188,15 @@
         "sig": "7beec8b0a6c7946b04d538543d495a82",
         "signer": "7beec8b0a6c7946b04d538543d495a8210ad6cfc1859f42e7180bcfbd38fe582",
         "size": 5234537,
-        "versionCode": 1,
+        "versionCode": 242,
         "versionName": "0.2.0-dev.242+20261027.1fba108"
       }
     ],
     "in.twolp.lacraia.simbiotyka": [
       {
-        "added": 1793147480483,
+        "added": 1793265666741,
         "apkName": "simbiotyka.apk",
-        "hash": "dfdd79e64f492bad84677a421c3a58f1a730bc406c6d1870e04113a3fee8a9b3",
+        "hash": "507394be72f17cfab38cdda288a02ca218f92716c1d9bdfdd91caa5618adc3da",
         "hashType": "sha256",
         "minSdkVersion": 26,
         "targetSdkVersion": 34,
@@ -204,13 +204,13 @@
         "sig": "7beec8b0a6c7946b04d538543d495a82",
         "signer": "7beec8b0a6c7946b04d538543d495a8210ad6cfc1859f42e7180bcfbd38fe582",
         "size": 5226260,
-        "versionCode": 1,
+        "versionCode": 242,
         "versionName": "0.2.0-dev.242+20261027.1fba108"
       }
     ],
     "in.twolp.lauda": [
       {
-        "added": 1793147480483,
+        "added": 1793265666741,
         "apkName": "lauda.apk",
         "hash": "dcfc06ac4b04a30228741a4e673160125abd769f1cbf61baf8263c1401b8faf1",
         "hashType": "sha256",
@@ -226,7 +226,7 @@
     ],
     "in.twolp.mocambo": [
       {
-        "added": 1793147480483,
+        "added": 1793265666741,
         "apkName": "mocambo.apk",
         "hash": "ab28c40e049a04680c0583fa634b2ad8fe5d83c6dfea809780b3f8890253547c",
         "hashType": "sha256",
@@ -242,7 +242,7 @@
     ],
     "in.twolp.mandu": [
       {
-        "added": 1793147480483,
+        "added": 1793265666741,
         "apkName": "mandu.apk",
         "hash": "460b78149452c7eec058f95465bb80a1c4116fa0b0182dc294f64af3d207b490",
         "hashType": "sha256",
