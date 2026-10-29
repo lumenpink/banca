@@ -5,7 +5,7 @@
   "description": "Compilador vetorial de diagramas, tabelas e heredogramas",
   "repo": "https://gambi.2lp.in/lumen/joaju",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.2.0-dev.131+20261027.653abaa",
+  "nightly_latest": "0.2.0-dev.137+20261029.d698d99",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.2.0-dev.137+20261029.d698d99",
+      "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261029.d698d99-linux-amd64.tar.gz",
+      "date": "2026-10-29",
+      "sha256": "2859f6bfc9c73110d10850fb178cfdff8544ef6c092092172b3ad26b34e42d93",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261029.d698d99-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261029.d698d99-linux-amd64.tar.gz",
+          "sha256": "2859f6bfc9c73110d10850fb178cfdff8544ef6c092092172b3ad26b34e42d93"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261029.d698d99-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261029.d698d99-linux-arm64.tar.gz",
+          "sha256": "38bd5387a89cfff5e10c37d7376d5f293f8d38aa48b210a73a31172cba83e5f0"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261029.d698d99-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261029.d698d99-windows-amd64.zip",
+          "sha256": "2aeb5bbbf2a2e1ca8b18d70ea4bc579281ca645ac6fa943a60205cfac92ee34c"
+        }
+      },
+      "tarball": "joaju-0.2.0-dev.137+20261029.d698d99-linux-amd64.tar.gz"
+    },
     {
       "version": "0.2.0-dev.131+20261027.653abaa",
       "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.131+20261027.653abaa-linux-amd64.tar.gz",
