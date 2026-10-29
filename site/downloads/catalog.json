@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T21:01:46.083373+00:00",
+  "updated_at": "2026-10-29T21:13:12.836442+00:00",
   "banca_url": "https://banca.2lp.in",
   "total_apps": 17,
   "apps": [
@@ -50,7 +50,7 @@
       "description": "Compilador vetorial de diagramas, tabelas e heredogramas",
       "repo": "https://gambi.2lp.in/lumen/joaju",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.2.0-dev.91+20261025.3ba5233",
+      "nightly_latest": "0.2.0-dev.137+20261029.d698d99",
       "manifest_url": "https://banca.2lp.in/downloads/joaju/index.json"
     },
     {
@@ -80,7 +80,7 @@
       "description": "Cockpit de som brutalista e jukebox comunitária",
       "repo": "https://gambi.2lp.in/lumen/lacraia",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7",
+      "nightly_latest": "0.2.0-dev.242+20261027.1fba108-dev.20261028.e92c91b",
       "manifest_url": "https://banca.2lp.in/downloads/lacraia/index.json"
     },
     {
@@ -90,7 +90,7 @@
       "description": "Cliente de correio soberano e interface editorial",
       "repo": "https://gambi.2lp.in/lumen/lauda",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.5.0-dev.281+20261026.2d3d6fb-dev.20261026.d7b7069",
+      "nightly_latest": "0.5.0-dev.289+20261027.bf671e9-dev.20261027.614356b",
       "manifest_url": "https://banca.2lp.in/downloads/lauda/index.json"
     },
     {
@@ -140,7 +140,7 @@
       "description": "Estação de trabalho TUI soberana e mediadora de contexto AST",
       "repo": "https://gambi.2lp.in/lumen/pult",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.1.0-dev",
+      "nightly_latest": "0.1.0-dev.237+20261029.25c76a4",
       "manifest_url": "https://banca.2lp.in/downloads/pult/index.json"
     },
     {
