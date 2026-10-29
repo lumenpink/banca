@@ -5,7 +5,7 @@
   "description": "Guardião de Conventional Commits e governança GOST",
   "repo": "https://gambi.2lp.in/lumen/cccp",
   "stable_latest": "0.1.0",
-  "nightly_latest": "3.2.0-dev.260+20261026.c5cb621",
+  "nightly_latest": "3.2.0-dev.437+20261029.b2b0d30",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "3.2.0-dev.437+20261029.b2b0d30",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.437+20261029.b2b0d30-linux-amd64.tar.gz",
+      "date": "2026-10-29",
+      "sha256": "3f6bcf853b0438066d2caa45b59bb690cdd8cb2e8320f03d7cc49a43b096b51b",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.437+20261029.b2b0d30-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.437+20261029.b2b0d30-linux-amd64.tar.gz",
+          "sha256": "3f6bcf853b0438066d2caa45b59bb690cdd8cb2e8320f03d7cc49a43b096b51b"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.437+20261029.b2b0d30-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.437+20261029.b2b0d30-linux-arm64.tar.gz",
+          "sha256": "21eebcc7511ea59b8556dc4e1112fe44ba666cc5241a59ef21fbf87f44b2f90a"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.437+20261029.b2b0d30-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.437+20261029.b2b0d30-windows-amd64.zip",
+          "sha256": "4bf6b6d8e1e59dd6464e22139e3c6fb3d2b70d9409156fa522e7b738b81d65a7"
+        }
+      },
+      "tarball": "cccp-3.2.0-dev.437+20261029.b2b0d30-linux-amd64.tar.gz"
+    },
     {
       "version": "3.2.0-dev.260+20261026.c5cb621",
       "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.260+20261026.c5cb621-linux-amd64.tar.gz",
