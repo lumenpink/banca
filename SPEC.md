@@ -276,3 +276,13 @@ site/pratilera/
     `now_ms = max(int(time.time() * 1000), prev_timestamp + 1000)`
   - Isso garante que o carimbo de data/hora nunca retroceda sob nenhuma hipótese de deploy, regeneração de catálogo ou dessincronização de relógio.
 
+## 22. Priorização de Version Name do APK e Unificação de Artefatos na Pratilera (Ticket #49)
+
+- **Priorização Canônica de Version Name no CI**:
+  - Em ambientes de CI isolados onde repositórios irmãos não estão montados no sistema de arquivos, o gerador `scripts/gerar-pratilera.py` prioriza o `versionName` e `versionCode` extraídos diretamente do APK via `aapt dump badging` sobre entradas legadas do cache ou fallbacks estáticos.
+  - Isso garante que versões de desenvolvimento completas (`dev.XXX`) sejam refletidas fielmente no índice F-Droid (`index-v1.json` e `index-v1.jar`).
+- **Unificação do Artefato La Craia**:
+  - O aplicativo La Craia é distribuído exclusivamente como `lacraia.apk` (e Simbiótyka como `simbiotyka.apk`).
+  - Redirecionamentos HTTP 302 em `site/_redirects` preservam compatibilidade com requisições antigas para `lacraia-app.apk`.
+
+

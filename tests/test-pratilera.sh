@@ -788,6 +788,46 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 31. Verificar priorização de versionName do APK e unificação lacraia.apk (Ticket #49)
+echo -n "-> 31. Verificando priorização de versionName do APK e unificação lacraia.apk (Ticket #49)... "
+T31_RES=$(python3 -c '
+import sys
+from pathlib import Path
+
+# 1. Validar que lacraia-app.apk não existe como binário duplicado na Pratilera
+if Path("site/pratilera/lacraia-app.apk").exists():
+    print("lacraia-app.apk ainda existe em site/pratilera/ (deve ser unificado para lacraia.apk)")
+    sys.exit(1)
+
+# 2. Validar que lacraia.apk e simbiotyka.apk possuem versionName canônico em index-v1.json
+idx_file = Path("site/pratilera/index-v1.json")
+import json
+with open(idx_file, encoding="utf-8") as f:
+    d = json.load(f)
+
+for pkg in ["in.twolp.lacraia.app", "in.twolp.lacraia.simbiotyka"]:
+    ver = d.get("packages", {}).get(pkg, [{}])[0].get("versionName", "")
+    if not ver.startswith("0.2.0-dev."):
+        print(f"Pacote {pkg} não possui versionName canônico dev: {ver}")
+        sys.exit(1)
+
+# 3. Validar lógica de fallback em gerar-pratilera.py (deve priorizar apk_meta sobre meta)
+gp_text = Path("scripts/gerar-pratilera.py").read_text(encoding="utf-8")
+if "fallback_ver = apk_meta.get(\"version_name\")" not in gp_text:
+    print("gerar-pratilera.py não prioriza apk_meta.get(\"version_name\") no fallback")
+    sys.exit(1)
+
+print("OK")
+sys.exit(0)
+' || true)
+
+if [ "$T31_RES" = "OK" ]; then
+    echo "✅ OK (versionName canônico do APK priorizado e lacraia.apk unificado)"
+else
+    echo "❌ FALHOU ($T31_RES)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
