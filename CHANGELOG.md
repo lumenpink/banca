@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Fixes
+  - (catalog) sincronizar catalogo com releases ativas de jornaleira e cccp (closes #51)
   - (downloads) suportar pacotes multi-binarios e corrigir links r2 (closes #40)
   - (downloads) eliminar loop infinito de redirecionamento em site/_redirects (closes #39)
   - (pratilera) sincronizar versao canonica cccp e apk assinado do mocambo (closes #29)
