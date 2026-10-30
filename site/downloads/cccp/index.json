@@ -5,7 +5,7 @@
   "description": "Guardião de Conventional Commits e governança GOST",
   "repo": "https://gambi.2lp.in/lumen/cccp",
   "stable_latest": "0.1.0",
-  "nightly_latest": "3.2.0-dev.450+20261030.e03f37e",
+  "nightly_latest": "3.2.0-dev.455+20261030.b2be2f7",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "3.2.0-dev.455+20261030.b2be2f7",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.455+20261030.b2be2f7-linux-amd64.tar.gz",
+      "date": "2026-10-30",
+      "sha256": "4c2238016c028c9d4efdc92de1fbb93d0850cc5e9832f233d82e0bb6330051f5",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.455+20261030.b2be2f7-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.455+20261030.b2be2f7-linux-amd64.tar.gz",
+          "sha256": "4c2238016c028c9d4efdc92de1fbb93d0850cc5e9832f233d82e0bb6330051f5"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.455+20261030.b2be2f7-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.455+20261030.b2be2f7-linux-arm64.tar.gz",
+          "sha256": "ac38247e76606ca1676d2a7cb9a7efbc1180e5eb14150d94020d3cf417e72f21"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.455+20261030.b2be2f7-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.455+20261030.b2be2f7-windows-amd64.zip",
+          "sha256": "406aae49f8686d8d2b079616ae01c7355695247654f1fb45794560467259ab29"
+        }
+      },
+      "tarball": "cccp-3.2.0-dev.455+20261030.b2be2f7-linux-amd64.tar.gz"
+    },
     {
       "version": "3.2.0-dev.450+20261030.e03f37e",
       "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.450+20261030.e03f37e-linux-amd64.tar.gz",
