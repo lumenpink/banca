@@ -53,6 +53,27 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 3. [MUTAÇÃO] Validar sensibilidade da detecção de artefato real
+echo -n "-> 3. [MUTAÇÃO] Testando sensibilidade a mutação em release vazia... "
+MUTANT_KILLED=$(python3 -c "
+import tempfile, json, subprocess
+with tempfile.NamedTemporaryFile('w', suffix='.json', delete=False) as f:
+    json.dump({'app': 'test', 'stable_latest': '0.1.0', 'stables': [{'version': '0.1.0', 'sha256': ''}]}, f)
+    fname = f.name
+subprocess.run(['python3', '$ROTATE_SCRIPT', '--prune-manifest', fname], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+data = json.load(open(fname))
+if data.get('stable_latest') == '0.1.0':
+    print('MUTANTE_VIVEU')
+else:
+    print('MUTANTE_MORTO')
+")
+if [ "$MUTANT_KILLED" = "MUTANTE_MORTO" ]; then
+    echo "✅ OK (Mutação detectada com precisão)"
+else
+    echo "❌ FALHOU (Mutação sobreviveu)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 if [ "$FAILURES" -gt 0 ]; then
     echo "💥 $FAILURES TESTE(S) FALHARAM (Comprovada falha Red)."
     exit 1
