@@ -5,7 +5,7 @@
   "description": "Guardião de Conventional Commits e governança GOST",
   "repo": "https://gambi.2lp.in/lumen/cccp",
   "stable_latest": "0.1.0",
-  "nightly_latest": "3.2.0-dev.437+20261029.b2b0d30",
+  "nightly_latest": "3.2.0-dev.450+20261030.e03f37e",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "3.2.0-dev.450+20261030.e03f37e",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.450+20261030.e03f37e-linux-amd64.tar.gz",
+      "date": "2026-10-30",
+      "sha256": "d9522b28451256ce65234b14b4b02f89e9c405a1999df6ee9d669159156fee91",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.450+20261030.e03f37e-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.450+20261030.e03f37e-linux-amd64.tar.gz",
+          "sha256": "d9522b28451256ce65234b14b4b02f89e9c405a1999df6ee9d669159156fee91"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.450+20261030.e03f37e-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.450+20261030.e03f37e-linux-arm64.tar.gz",
+          "sha256": "79b8be4d9da04b7fc69de0aee2b324b4322adab680979657656f4660368cbba5"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.450+20261030.e03f37e-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.450+20261030.e03f37e-windows-amd64.zip",
+          "sha256": "27c6fe3c52e503130f903bbb12f79ff038e2c73a0346c4415e1c21c55c1883d8"
+        }
+      },
+      "tarball": "cccp-3.2.0-dev.450+20261030.e03f37e-linux-amd64.tar.gz"
+    },
     {
       "version": "3.2.0-dev.437+20261029.b2b0d30",
       "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.437+20261029.b2b0d30-linux-amd64.tar.gz",
