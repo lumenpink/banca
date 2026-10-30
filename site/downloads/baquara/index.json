@@ -4,33 +4,9 @@
   "category": "knowledge",
   "description": "Plataforma de gestão de conhecimento e biblioteca",
   "repo": "https://gambi.2lp.in/lumen/baquara",
-  "stable_latest": "0.1.0",
+  "stable_latest": "",
   "nightly_latest": "0.1.0-dev.21+20261024.4f708b3",
-  "stables": [
-    {
-      "version": "0.1.0",
-      "date": "2026-10-20",
-      "url": "https://bucket.2lp.in/downloads/baquara/stable-latest/baquara",
-      "sha256": "",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/baquara/stable/baquara-0.1.0-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/baquara/stable-latest/baquara-linux-amd64",
-          "sha256": ""
-        },
-        "linux-arm64": {
-          "url": "https://bucket.2lp.in/downloads/baquara/stable/baquara-0.1.0-linux-arm64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/baquara/stable-latest/baquara-linux-arm64",
-          "sha256": ""
-        },
-        "windows-amd64": {
-          "url": "https://bucket.2lp.in/downloads/baquara/stable/baquara-0.1.0-windows-amd64.zip",
-          "binary_url": "https://bucket.2lp.in/downloads/baquara/stable-latest/baquara.exe",
-          "sha256": ""
-        }
-      }
-    }
-  ],
+  "stables": [],
   "nightlies": [
     {
       "version": "0.1.0-dev.21+20261024.4f708b3",
@@ -55,19 +31,6 @@
         }
       },
       "tarball": "baquara-0.1.0-dev.21+20261024.4f708b3-linux-amd64.tar.gz"
-    },
-    {
-      "version": "0.1.0-dev",
-      "date": "2026-10-20",
-      "url": "https://bucket.2lp.in/downloads/baquara/nightly-latest/baquara",
-      "sha256": "",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/baquara/nightly/baquara-nightly-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/baquara/nightly-latest/baquara-linux-amd64",
-          "sha256": ""
-        }
-      }
     }
   ]
 }

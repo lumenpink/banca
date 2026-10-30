@@ -4,33 +4,9 @@
   "category": "editorial",
   "description": "Cliente de correio soberano e interface editorial",
   "repo": "https://gambi.2lp.in/lumen/lauda",
-  "stable_latest": "0.1.0",
+  "stable_latest": "",
   "nightly_latest": "0.5.0-dev.289+20261027.bf671e9-dev.20261027.614356b",
-  "stables": [
-    {
-      "version": "0.1.0",
-      "date": "2026-10-20",
-      "url": "https://bucket.2lp.in/downloads/lauda/stable-latest/lauda",
-      "sha256": "",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/lauda/stable/lauda-0.1.0-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/lauda/stable-latest/lauda-linux-amd64",
-          "sha256": ""
-        },
-        "linux-arm64": {
-          "url": "https://bucket.2lp.in/downloads/lauda/stable/lauda-0.1.0-linux-arm64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/lauda/stable-latest/lauda-linux-arm64",
-          "sha256": ""
-        },
-        "windows-amd64": {
-          "url": "https://bucket.2lp.in/downloads/lauda/stable/lauda-0.1.0-windows-amd64.zip",
-          "binary_url": "https://bucket.2lp.in/downloads/lauda/stable-latest/lauda.exe",
-          "sha256": ""
-        }
-      }
-    }
-  ],
+  "stables": [],
   "nightlies": [
     {
       "version": "0.5.0-dev.289+20261027.bf671e9-dev.20261027.614356b",
@@ -247,19 +223,6 @@
         }
       },
       "tarball": "lauda-0.5.0-dev.225+20261023.6fc6e10-dev.20261024.27915ee-linux-amd64.tar.gz"
-    },
-    {
-      "version": "0.1.0-dev",
-      "date": "2026-10-20",
-      "url": "https://bucket.2lp.in/downloads/lauda/nightly-latest/lauda",
-      "sha256": "",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-nightly-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/lauda/nightly-latest/lauda-linux-amd64",
-          "sha256": ""
-        }
-      }
     }
   ]
 }

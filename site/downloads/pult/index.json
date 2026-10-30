@@ -4,33 +4,9 @@
   "category": "terminal",
   "description": "Estação de trabalho TUI soberana e mediadora de contexto AST",
   "repo": "https://gambi.2lp.in/lumen/pult",
-  "stable_latest": "0.1.0",
+  "stable_latest": "",
   "nightly_latest": "0.1.0-dev.239+20261030.0d68603",
-  "stables": [
-    {
-      "version": "0.1.0",
-      "date": "2026-10-26",
-      "url": "https://bucket.2lp.in/downloads/pult/stable-latest/pult",
-      "sha256": "",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/pult/stable/pult-0.1.0-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/pult/stable-latest/pult-linux-amd64",
-          "sha256": ""
-        },
-        "linux-arm64": {
-          "url": "https://bucket.2lp.in/downloads/pult/stable/pult-0.1.0-linux-arm64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/pult/stable-latest/pult-linux-arm64",
-          "sha256": ""
-        },
-        "windows-amd64": {
-          "url": "https://bucket.2lp.in/downloads/pult/stable/pult-0.1.0-windows-amd64.zip",
-          "binary_url": "https://bucket.2lp.in/downloads/pult/stable-latest/pult.exe",
-          "sha256": ""
-        }
-      }
-    }
-  ],
+  "stables": [],
   "nightlies": [
     {
       "version": "0.1.0-dev.239+20261030.0d68603",
@@ -79,19 +55,6 @@
         }
       },
       "tarball": "pult-0.1.0-dev.237+20261029.25c76a4-linux-amd64.tar.gz"
-    },
-    {
-      "version": "0.1.0-dev",
-      "date": "2026-10-26",
-      "url": "https://bucket.2lp.in/downloads/pult/nightly-latest/pult",
-      "sha256": "",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-nightly-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/pult/nightly-latest/pult-linux-amd64",
-          "sha256": ""
-        }
-      }
     }
   ]
 }

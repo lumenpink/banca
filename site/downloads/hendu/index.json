@@ -4,33 +4,9 @@
   "category": "accessibility",
   "description": "Bot de acessibilidade e audiodescrição comunitária",
   "repo": "https://gambi.2lp.in/lumen/hendu",
-  "stable_latest": "0.1.0",
+  "stable_latest": "",
   "nightly_latest": "0.1.0-dev.76+20261025.a2f00a8",
-  "stables": [
-    {
-      "version": "0.1.0",
-      "date": "2026-10-20",
-      "url": "https://bucket.2lp.in/downloads/hendu/stable-latest/hendu",
-      "sha256": "",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/hendu/stable/hendu-0.1.0-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/hendu/stable-latest/hendu-linux-amd64",
-          "sha256": ""
-        },
-        "linux-arm64": {
-          "url": "https://bucket.2lp.in/downloads/hendu/stable/hendu-0.1.0-linux-arm64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/hendu/stable-latest/hendu-linux-arm64",
-          "sha256": ""
-        },
-        "windows-amd64": {
-          "url": "https://bucket.2lp.in/downloads/hendu/stable/hendu-0.1.0-windows-amd64.zip",
-          "binary_url": "https://bucket.2lp.in/downloads/hendu/stable-latest/hendu.exe",
-          "sha256": ""
-        }
-      }
-    }
-  ],
+  "stables": [],
   "nightlies": [
     {
       "version": "0.1.0-dev.76+20261025.a2f00a8",
@@ -79,19 +55,6 @@
         }
       },
       "tarball": "hendu-0.1.0-dev.56+20261023.729fb7e+20261023.c1dc05f-linux-amd64.tar.gz"
-    },
-    {
-      "version": "0.1.0-dev",
-      "date": "2026-10-20",
-      "url": "https://bucket.2lp.in/downloads/hendu/nightly-latest/hendu",
-      "sha256": "",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/hendu/nightly/hendu-nightly-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/hendu/nightly-latest/hendu-linux-amd64",
-          "sha256": ""
-        }
-      }
     }
   ]
 }

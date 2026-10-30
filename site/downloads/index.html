@@ -337,6 +337,15 @@
       background: var(--cyan);
     }
 
+    .download-btn.disabled {
+      background: #ccc !important;
+      color: #666 !important;
+      cursor: not-allowed !important;
+      pointer-events: none !important;
+      box-shadow: none !important;
+      transform: none !important;
+    }
+
     .curl-box {
       background: var(--ink);
       color: #00ff66;
@@ -761,41 +770,77 @@
           return res.json();
         })
         .then(manifest => {
-          if (manifest.stable_latest) {
-            document.getElementById("stable-ver-text").textContent = "v" + manifest.stable_latest;
-          }
-          if (manifest.nightly_latest) {
-            document.getElementById("nightly-ver-text").textContent = manifest.nightly_latest;
-          }
+          // Filtrar apenas releases que possuam artefato/hash real (#50)
+          const isRealItem = item => item && (item.sha256 || (item.artifacts && Object.values(item.artifacts).some(a => a && a.sha256)));
+          const stables = (manifest.stables || []).filter(isRealItem);
+          const nightlies = (manifest.nightlies || []).filter(isRealItem);
 
-          // Atualizar links dos botões principais de download com URLs resolvidas do manifesto
-          const latestStable = (manifest.stables || [])[0];
-          if (latestStable) {
+          const stableBtn = document.getElementById("stable-download-btn");
+          const stableVer = document.getElementById("stable-ver-text");
+          const stableCurl = document.getElementById("stable-curl-code");
+          const stableList = document.getElementById("stable-history-list");
+
+          const nightlyBtn = document.getElementById("nightly-download-btn");
+          const nightlyVer = document.getElementById("nightly-ver-text");
+          const nightlyCurl = document.getElementById("nightly-curl-code");
+          const nightlyList = document.getElementById("nightly-history-list");
+
+          // 1. Renderização do Canal Estável
+          if (stables.length > 0 && manifest.stable_latest) {
+            stableVer.textContent = "v" + manifest.stable_latest;
+            stableVer.style.color = "var(--ink)";
+            stableBtn.classList.remove("disabled");
+            stableBtn.removeAttribute("aria-disabled");
+            const latestStable = stables[0];
             const art = latestStable.artifacts?.[currentArch] || {};
             let realStableUrl = art.binary_url || art.url || latestStable.url;
             if (realStableUrl && (realStableUrl.startsWith("http://") || realStableUrl.startsWith("https://"))) {
-              document.getElementById("stable-download-btn").href = realStableUrl;
+              stableBtn.href = realStableUrl;
             }
+            stableBtn.textContent = currentArch === "windows-amd64" ? "↓ BAIXAR ZIP (WINDOWS x86_64)" : `↓ BAIXAR EXECUTÁVEL (${currentArch})`;
+            stableCurl.textContent = `curl -fsSL https://banca.2lp.in/install/${app.name} | sh`;
+          } else {
+            stableVer.textContent = "Nenhuma versão estável lançada";
+            stableVer.style.color = "#888";
+            stableBtn.classList.add("disabled");
+            stableBtn.setAttribute("aria-disabled", "true");
+            stableBtn.removeAttribute("href");
+            stableBtn.textContent = "SEM VERSÃO ESTÁVEL";
+            stableCurl.textContent = `# ${app.name}: canal estável ainda não possui versão lançada`;
           }
 
-          const latestNightly = (manifest.nightlies || [])[0];
-          if (latestNightly) {
+          // 2. Renderização do Canal Nightly
+          if (nightlies.length > 0 && manifest.nightly_latest) {
+            nightlyVer.textContent = manifest.nightly_latest;
+            nightlyVer.style.color = "var(--ink)";
+            nightlyBtn.classList.remove("disabled");
+            nightlyBtn.removeAttribute("aria-disabled");
+            const latestNightly = nightlies[0];
             const art = latestNightly.artifacts?.[currentArch] || {};
             let realNightlyUrl = art.binary_url || art.url || latestNightly.url;
             if (realNightlyUrl) {
               if (!realNightlyUrl.startsWith("http://") && !realNightlyUrl.startsWith("https://")) {
                 realNightlyUrl = `https://bucket.2lp.in/downloads/${app.name}/nightly/${realNightlyUrl}`;
               }
-              document.getElementById("nightly-download-btn").href = realNightlyUrl;
+              nightlyBtn.href = realNightlyUrl;
             }
+            nightlyBtn.textContent = currentArch === "windows-amd64" ? "⚡ BAIXAR ZIP (NIGHTLY)" : `⚡ BAIXAR EXECUTÁVEL (${currentArch})`;
+            nightlyCurl.textContent = `curl -fsSL https://banca.2lp.in/install/${app.name}-nightly | sh`;
+          } else {
+            nightlyVer.textContent = "Nenhuma versão de desenvolvimento lançada";
+            nightlyVer.style.color = "#888";
+            nightlyBtn.classList.add("disabled");
+            nightlyBtn.setAttribute("aria-disabled", "true");
+            nightlyBtn.removeAttribute("href");
+            nightlyBtn.textContent = "SEM VERSÃO NIGHTLY";
+            nightlyCurl.textContent = `# ${app.name}: canal nightly ainda não possui versão lançada`;
           }
 
-          // Renderizar histórico estável (até 5)
-          const stableList = document.getElementById("stable-history-list");
+          // 3. Renderizar histórico estável (até 5)
           stableList.innerHTML = "";
-          const stables = (manifest.stables || []).slice(0, 5);
-          if (stables.length > 0) {
-            stables.forEach(item => {
+          const stablesSlice = stables.slice(0, 5);
+          if (stablesSlice.length > 0) {
+            stablesSlice.forEach(item => {
               const art = item.artifacts?.[currentArch] || {};
               let targetUrl = art.binary_url || art.url || item.url || stableUrl;
               if (targetUrl && !targetUrl.startsWith("http://") && !targetUrl.startsWith("https://")) {
@@ -813,18 +858,16 @@
           } else {
             stableList.innerHTML = `
               <li class="history-item">
-                <a href="${stableUrl}">stable-latest (${currentArch})</a>
-                <span class="history-meta">canal principal</span>
+                <span style="color:#777; font-style:italic;">Nenhuma publicação no canal estável</span>
               </li>
             `;
           }
 
-          // Renderizar histórico nightly (até 10)
-          const nightlyList = document.getElementById("nightly-history-list");
+          // 4. Renderizar histórico nightly (até 10)
           nightlyList.innerHTML = "";
-          const nightlies = (manifest.nightlies || []).slice(0, 10);
-          if (nightlies.length > 0) {
-            nightlies.forEach(item => {
+          const nightliesSlice = nightlies.slice(0, 10);
+          if (nightliesSlice.length > 0) {
+            nightliesSlice.forEach(item => {
               const art = item.artifacts?.[currentArch] || {};
               let targetUrl = art.binary_url || art.url || item.url || nightlyUrl;
               if (targetUrl && !targetUrl.startsWith("http://") && !targetUrl.startsWith("https://")) {
@@ -841,8 +884,7 @@
           } else {
             nightlyList.innerHTML = `
               <li class="history-item">
-                <a href="${nightlyUrl}">nightly-latest (${currentArch})</a>
-                <span class="history-meta">compilação de esteira</span>
+                <span style="color:#777; font-style:italic;">Nenhuma publicação no canal de desenvolvimento</span>
               </li>
             `;
           }

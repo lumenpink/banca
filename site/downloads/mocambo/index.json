@@ -4,33 +4,9 @@
   "category": "storage",
   "description": "Cofre soberano de arquivos, documentos e fotos",
   "repo": "https://gambi.2lp.in/lumen/mocambo",
-  "stable_latest": "0.1.0",
+  "stable_latest": "",
   "nightly_latest": "0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5",
-  "stables": [
-    {
-      "version": "0.1.0",
-      "date": "2026-10-20",
-      "url": "https://bucket.2lp.in/downloads/mocambo/stable-latest/mocambo",
-      "sha256": "",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/mocambo/stable/mocambo-0.1.0-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/mocambo/stable-latest/mocambo-linux-amd64",
-          "sha256": ""
-        },
-        "linux-arm64": {
-          "url": "https://bucket.2lp.in/downloads/mocambo/stable/mocambo-0.1.0-linux-arm64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/mocambo/stable-latest/mocambo-linux-arm64",
-          "sha256": ""
-        },
-        "windows-amd64": {
-          "url": "https://bucket.2lp.in/downloads/mocambo/stable/mocambo-0.1.0-windows-amd64.zip",
-          "binary_url": "https://bucket.2lp.in/downloads/mocambo/stable-latest/mocambo.exe",
-          "sha256": ""
-        }
-      }
-    }
-  ],
+  "stables": [],
   "nightlies": [
     {
       "version": "0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5",
@@ -103,19 +79,6 @@
         }
       },
       "tarball": "mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-amd64.tar.gz"
-    },
-    {
-      "version": "0.1.0-dev",
-      "date": "2026-10-20",
-      "url": "https://bucket.2lp.in/downloads/mocambo/nightly-latest/mocambo",
-      "sha256": "",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-nightly-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly-latest/mocambo-linux-amd64",
-          "sha256": ""
-        }
-      }
     }
   ]
 }

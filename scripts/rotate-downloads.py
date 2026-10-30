@@ -36,21 +36,43 @@ DEFAULT_APPS = [
     ("pult", "Pult", "Estação de trabalho TUI soberana e mediadora de contexto AST", "terminal")
 ]
 
+def is_real_release(entry):
+    if not isinstance(entry, dict):
+        return False
+    if entry.get("sha256"):
+        return True
+    artifacts = entry.get("artifacts", {})
+    if isinstance(artifacts, dict):
+        for _arch, art in artifacts.items():
+            if isinstance(art, dict) and art.get("sha256"):
+                return True
+    v = entry.get("version", "")
+    if v in ("0.1.0", "0.1.0-dev"):
+        return False
+    if v and (entry.get("url") or artifacts):
+        return True
+    return False
+
 def prune_manifest_data(data):
     """
     Trunca listas de versões para os limites máximos permitidos:
     - stables: máximo 5 versões
     - nightlies: máximo 10 versões
+    Limpa canais que contenham apenas placeholders sem releases reais (#50).
     """
     if "stables" in data and isinstance(data["stables"], list):
-        data["stables"] = data["stables"][:MAX_STABLES]
-        if data["stables"] and not data.get("stable_latest"):
+        data["stables"] = [e for e in data["stables"] if is_real_release(e)][:MAX_STABLES]
+        if data["stables"]:
             data["stable_latest"] = data["stables"][0].get("version", "")
+        else:
+            data["stable_latest"] = ""
 
     if "nightlies" in data and isinstance(data["nightlies"], list):
-        data["nightlies"] = data["nightlies"][:MAX_NIGHTLIES]
-        if data["nightlies"] and not data.get("nightly_latest"):
+        data["nightlies"] = [e for e in data["nightlies"] if is_real_release(e)][:MAX_NIGHTLIES]
+        if data["nightlies"]:
             data["nightly_latest"] = data["nightlies"][0].get("version", "")
+        else:
+            data["nightly_latest"] = ""
 
     return data
 
@@ -179,48 +201,10 @@ def generate_default_manifests(downloads_dir):
             "category": app_cat,
             "description": app_desc,
             "repo": f"https://gambi.2lp.in/lumen/{app_slug}",
-            "stable_latest": "0.1.0",
-            "nightly_latest": "0.1.0-dev",
-            "stables": [
-                {
-                    "version": "0.1.0",
-                    "date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-                    "url": f"{base_url}/stable-latest/{app_slug}",
-                    "sha256": "",
-                    "artifacts": {
-                        "linux-amd64": {
-                            "url": f"{base_url}/stable/{app_slug}-0.1.0-linux-amd64.tar.gz",
-                            "binary_url": f"{base_url}/stable-latest/{app_slug}-linux-amd64",
-                            "sha256": ""
-                        },
-                        "linux-arm64": {
-                            "url": f"{base_url}/stable/{app_slug}-0.1.0-linux-arm64.tar.gz",
-                            "binary_url": f"{base_url}/stable-latest/{app_slug}-linux-arm64",
-                            "sha256": ""
-                        },
-                        "windows-amd64": {
-                            "url": f"{base_url}/stable/{app_slug}-0.1.0-windows-amd64.zip",
-                            "binary_url": f"{base_url}/stable-latest/{app_slug}.exe",
-                            "sha256": ""
-                        }
-                    }
-                }
-            ],
-            "nightlies": [
-                {
-                    "version": "0.1.0-dev",
-                    "date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-                    "url": f"{base_url}/nightly-latest/{app_slug}",
-                    "sha256": "",
-                    "artifacts": {
-                        "linux-amd64": {
-                            "url": f"{base_url}/nightly/{app_slug}-nightly-linux-amd64.tar.gz",
-                            "binary_url": f"{base_url}/nightly-latest/{app_slug}-linux-amd64",
-                            "sha256": ""
-                        }
-                    }
-                }
-            ]
+            "stable_latest": "",
+            "nightly_latest": "",
+            "stables": [],
+            "nightlies": []
         }
 
         with open(manifest_file, "w", encoding="utf-8") as f:

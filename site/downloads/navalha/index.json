@@ -4,33 +4,9 @@
   "category": "devops",
   "description": "Despachante e canivete suíço para deploy e automação",
   "repo": "https://gambi.2lp.in/lumen/navalha",
-  "stable_latest": "0.1.0",
+  "stable_latest": "",
   "nightly_latest": "0.1.0-dev.91+20261025.4119a92",
-  "stables": [
-    {
-      "version": "0.1.0",
-      "date": "2026-10-20",
-      "url": "https://bucket.2lp.in/downloads/navalha/stable-latest/navalha",
-      "sha256": "",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/navalha/stable/navalha-0.1.0-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/navalha/stable-latest/navalha-linux-amd64",
-          "sha256": ""
-        },
-        "linux-arm64": {
-          "url": "https://bucket.2lp.in/downloads/navalha/stable/navalha-0.1.0-linux-arm64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/navalha/stable-latest/navalha-linux-arm64",
-          "sha256": ""
-        },
-        "windows-amd64": {
-          "url": "https://bucket.2lp.in/downloads/navalha/stable/navalha-0.1.0-windows-amd64.zip",
-          "binary_url": "https://bucket.2lp.in/downloads/navalha/stable-latest/navalha.exe",
-          "sha256": ""
-        }
-      }
-    }
-  ],
+  "stables": [],
   "nightlies": [
     {
       "version": "0.1.0-dev.91+20261025.4119a92",
@@ -79,19 +55,6 @@
         }
       },
       "tarball": "navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-linux-amd64.tar.gz"
-    },
-    {
-      "version": "0.1.0-dev",
-      "date": "2026-10-20",
-      "url": "https://bucket.2lp.in/downloads/navalha/nightly-latest/navalha",
-      "sha256": "",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-nightly-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/navalha/nightly-latest/navalha-linux-amd64",
-          "sha256": ""
-        }
-      }
     }
   ]
 }

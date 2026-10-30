@@ -4,33 +4,9 @@
   "category": "governance",
   "description": "Guardião de Conventional Commits e governança GOST",
   "repo": "https://gambi.2lp.in/lumen/cccp",
-  "stable_latest": "0.1.0",
+  "stable_latest": "",
   "nightly_latest": "3.2.0-dev.450+20261030.e03f37e",
-  "stables": [
-    {
-      "version": "0.1.0",
-      "date": "2026-10-20",
-      "url": "https://bucket.2lp.in/downloads/cccp/stable-latest/cccp",
-      "sha256": "",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/cccp/stable/cccp-0.1.0-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/cccp/stable-latest/cccp-linux-amd64",
-          "sha256": ""
-        },
-        "linux-arm64": {
-          "url": "https://bucket.2lp.in/downloads/cccp/stable/cccp-0.1.0-linux-arm64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/cccp/stable-latest/cccp-linux-arm64",
-          "sha256": ""
-        },
-        "windows-amd64": {
-          "url": "https://bucket.2lp.in/downloads/cccp/stable/cccp-0.1.0-windows-amd64.zip",
-          "binary_url": "https://bucket.2lp.in/downloads/cccp/stable-latest/cccp.exe",
-          "sha256": ""
-        }
-      }
-    }
-  ],
+  "stables": [],
   "nightlies": [
     {
       "version": "3.2.0-dev.450+20261030.e03f37e",
@@ -151,19 +127,6 @@
         }
       },
       "tarball": "cccp-3.2.0-dev.227+20261020.50fb04f+20261023.fc29a5b-linux-amd64.tar.gz"
-    },
-    {
-      "version": "0.1.0-dev",
-      "date": "2026-10-20",
-      "url": "https://bucket.2lp.in/downloads/cccp/nightly-latest/cccp",
-      "sha256": "",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-nightly-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly-latest/cccp-linux-amd64",
-          "sha256": ""
-        }
-      }
     }
   ]
 }

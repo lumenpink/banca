@@ -4,33 +4,9 @@
   "category": "monitoring",
   "description": "Farol de telemetria e observabilidade sem rastreamento",
   "repo": "https://gambi.2lp.in/lumen/mayak",
-  "stable_latest": "0.1.0",
+  "stable_latest": "",
   "nightly_latest": "0.1.0-dev.32+20261025.4119331",
-  "stables": [
-    {
-      "version": "0.1.0",
-      "date": "2026-10-20",
-      "url": "https://bucket.2lp.in/downloads/mayak/stable-latest/mayak",
-      "sha256": "",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/mayak/stable/mayak-0.1.0-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/mayak/stable-latest/mayak-linux-amd64",
-          "sha256": ""
-        },
-        "linux-arm64": {
-          "url": "https://bucket.2lp.in/downloads/mayak/stable/mayak-0.1.0-linux-arm64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/mayak/stable-latest/mayak-linux-arm64",
-          "sha256": ""
-        },
-        "windows-amd64": {
-          "url": "https://bucket.2lp.in/downloads/mayak/stable/mayak-0.1.0-windows-amd64.zip",
-          "binary_url": "https://bucket.2lp.in/downloads/mayak/stable-latest/mayak.exe",
-          "sha256": ""
-        }
-      }
-    }
-  ],
+  "stables": [],
   "nightlies": [
     {
       "version": "0.1.0-dev.32+20261025.4119331",
@@ -127,19 +103,6 @@
         }
       },
       "tarball": "mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-linux-amd64.tar.gz"
-    },
-    {
-      "version": "0.1.0-dev",
-      "date": "2026-10-20",
-      "url": "https://bucket.2lp.in/downloads/mayak/nightly-latest/mayak",
-      "sha256": "",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-nightly-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly-latest/mayak-linux-amd64",
-          "sha256": ""
-        }
-      }
     }
   ]
 }
