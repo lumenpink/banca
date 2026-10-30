@@ -5,7 +5,7 @@
   "description": "Estação de trabalho TUI soberana e mediadora de contexto AST",
   "repo": "https://gambi.2lp.in/lumen/pult",
   "stable_latest": "0.1.0",
-  "nightly_latest": "0.1.0-dev.237+20261029.25c76a4",
+  "nightly_latest": "0.1.0-dev.239+20261030.0d68603",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.239+20261030.0d68603",
+      "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.239+20261030.0d68603-linux-amd64.tar.gz",
+      "date": "2026-10-30",
+      "sha256": "a80b75411c033649e512a10cb99fd6fbf3ac04458e5131982c29c3c508c8d52a",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.239+20261030.0d68603-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.239+20261030.0d68603-linux-amd64.tar.gz",
+          "sha256": "a80b75411c033649e512a10cb99fd6fbf3ac04458e5131982c29c3c508c8d52a"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.239+20261030.0d68603-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.239+20261030.0d68603-linux-arm64.tar.gz",
+          "sha256": "d2d9361bde03a56eb5c410bfc22f8378a3faaf201e7117b16ff03a75caf8c3f0"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.239+20261030.0d68603-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.239+20261030.0d68603-windows-amd64.zip",
+          "sha256": "12025fa7a7427d038df65b461c555c901612ce3b54e265283e86f8891bc4bc88"
+        }
+      },
+      "tarball": "pult-0.1.0-dev.239+20261030.0d68603-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev.237+20261029.25c76a4",
       "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.237+20261029.25c76a4-linux-amd64.tar.gz",

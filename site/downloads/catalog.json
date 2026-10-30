@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T21:13:12.836442+00:00",
+  "updated_at": "2026-10-30T00:37:12.968686+00:00",
   "banca_url": "https://banca.2lp.in",
   "total_apps": 17,
   "apps": [
@@ -30,7 +30,7 @@
       "description": "Guardião de Conventional Commits e governança GOST",
       "repo": "https://gambi.2lp.in/lumen/cccp",
       "stable_latest": "0.1.0",
-      "nightly_latest": "3.2.0-dev.260+20261026.c5cb621",
+      "nightly_latest": "3.2.0-dev.437+20261029.b2b0d30",
       "manifest_url": "https://banca.2lp.in/downloads/cccp/index.json"
     },
     {
@@ -120,7 +120,7 @@
       "description": "Cofre soberano de arquivos, documentos e fotos",
       "repo": "https://gambi.2lp.in/lumen/mocambo",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301",
+      "nightly_latest": "0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5",
       "manifest_url": "https://banca.2lp.in/downloads/mocambo/index.json"
     },
     {
@@ -140,7 +140,7 @@
       "description": "Estação de trabalho TUI soberana e mediadora de contexto AST",
       "repo": "https://gambi.2lp.in/lumen/pult",
       "stable_latest": "0.1.0",
-      "nightly_latest": "0.1.0-dev.237+20261029.25c76a4",
+      "nightly_latest": "0.1.0-dev.239+20261030.0d68603",
       "manifest_url": "https://banca.2lp.in/downloads/pult/index.json"
     },
     {
