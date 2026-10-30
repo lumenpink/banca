@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T20:12:57.861570+00:00",
+  "updated_at": "2026-10-30T23:44:31.100302+00:00",
   "banca_url": "https://banca.2lp.in",
   "total_apps": 17,
   "apps": [
@@ -30,7 +30,7 @@
       "description": "Guardião de Conventional Commits e governança GOST",
       "repo": "https://gambi.2lp.in/lumen/cccp",
       "stable_latest": "",
-      "nightly_latest": "3.2.0-dev.462+20261030.0497ffe",
+      "nightly_latest": "3.2.0-dev.474+20261030.1ef8222",
       "manifest_url": "https://banca.2lp.in/downloads/cccp/index.json"
     },
     {
@@ -60,7 +60,7 @@
       "description": "Gestor central de aplicativos e auto-update da Banca",
       "repo": "https://gambi.2lp.in/lumen/jornaleira",
       "stable_latest": "",
-      "nightly_latest": "",
+      "nightly_latest": "0.1.0-dev.27+20261030.11e3009",
       "manifest_url": "https://banca.2lp.in/downloads/jornaleira/index.json"
     },
     {
