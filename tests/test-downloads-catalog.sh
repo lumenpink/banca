@@ -99,6 +99,30 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 5. [MUTAÇÃO] Validar rejeição caso jornaleira tenha nightly_latest vazio
+echo -n "-> 5. [MUTAÇÃO] Testando sensibilidade a jornaleira sem nightly_latest... "
+MUTATED_CHECK_NIGHTLY=$(python3 -c "
+import json
+with open('$CATALOG_FILE') as f:
+    d = json.load(f)
+for a in d['apps']:
+    if a.get('app') == 'jornaleira':
+        a['nightly_latest'] = ''
+try:
+    j = [a for a in d['apps'] if a.get('app') == 'jornaleira'][0]
+    assert j.get('nightly_latest')
+    print('MUTANTE_VIVEU')
+except AssertionError:
+    print('MUTANTE_MORTO')
+")
+if [ "$MUTATED_CHECK_NIGHTLY" = "MUTANTE_MORTO" ]; then
+    echo "✅ OK (Mutação detectada com precisão)"
+else
+    echo "❌ FALHOU (Mutação não detectada)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+
 if [ "$FAILURES" -gt 0 ]; then
     echo "❌ Teste falhou com $FAILURES erro(s)."
     exit 1
