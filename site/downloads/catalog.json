@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T19:10:16.778077+00:00",
+  "updated_at": "2026-10-30T20:12:57.861570+00:00",
   "banca_url": "https://banca.2lp.in",
   "total_apps": 17,
   "apps": [
@@ -30,7 +30,7 @@
       "description": "Guardião de Conventional Commits e governança GOST",
       "repo": "https://gambi.2lp.in/lumen/cccp",
       "stable_latest": "",
-      "nightly_latest": "3.2.0-dev.450+20261030.e03f37e",
+      "nightly_latest": "3.2.0-dev.462+20261030.0497ffe",
       "manifest_url": "https://banca.2lp.in/downloads/cccp/index.json"
     },
     {
@@ -80,7 +80,7 @@
       "description": "Cockpit de som brutalista e jukebox comunitária",
       "repo": "https://gambi.2lp.in/lumen/lacraia",
       "stable_latest": "",
-      "nightly_latest": "0.2.0-dev.242+20261027.1fba108-dev.20261028.e92c91b",
+      "nightly_latest": "0.2.0-dev.251+20261030.580f23f-dev.20261030.8d166f0",
       "manifest_url": "https://banca.2lp.in/downloads/lacraia/index.json"
     },
     {
