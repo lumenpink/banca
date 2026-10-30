@@ -5,9 +5,33 @@
   "description": "Guardião de Conventional Commits e governança GOST",
   "repo": "https://gambi.2lp.in/lumen/cccp",
   "stable_latest": "",
-  "nightly_latest": "3.2.0-dev.462+20261030.0497ffe",
+  "nightly_latest": "3.2.0-dev.468+20261030.fefc1cd",
   "stables": [],
   "nightlies": [
+    {
+      "version": "3.2.0-dev.468+20261030.fefc1cd",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.468+20261030.fefc1cd-linux-amd64.tar.gz",
+      "date": "2026-10-30",
+      "sha256": "aefcd26e3e506bc1fd83f1ee3e1210fa01a1f54f34a0fb8de5dfed1a34150147",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.468+20261030.fefc1cd-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.468+20261030.fefc1cd-linux-amd64.tar.gz",
+          "sha256": "aefcd26e3e506bc1fd83f1ee3e1210fa01a1f54f34a0fb8de5dfed1a34150147"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.468+20261030.fefc1cd-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.468+20261030.fefc1cd-linux-arm64.tar.gz",
+          "sha256": "963280d0adc585f19651a650913f5345fbb86857758c15d52d09389904464130"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.468+20261030.fefc1cd-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.468+20261030.fefc1cd-windows-amd64.zip",
+          "sha256": "139de9d504f3211723fb6a4ecc915320fe6f9ed883ee84c4fc2fc3c986b7cb38"
+        }
+      },
+      "tarball": "cccp-3.2.0-dev.468+20261030.fefc1cd-linux-amd64.tar.gz"
+    },
     {
       "version": "3.2.0-dev.462+20261030.0497ffe",
       "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-linux-amd64.tar.gz",
