@@ -60,7 +60,10 @@ try:
         assert 'manifest_url' in a
         app_slugs.add(a['app'])
     assert 'jornaleira' in app_slugs, 'jornaleira ausente no catalog.json'
+    jornaleira_app = [a for a in d['apps'] if a.get('app') == 'jornaleira'][0]
+    assert jornaleira_app.get('nightly_latest'), 'jornaleira sem nightly_latest no catalog.json'
     print(len(d['apps']))
+
 except Exception as e:
     sys.exit(1)
 " 2>/dev/null || true)
