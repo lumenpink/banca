@@ -5,7 +5,7 @@
   "description": "Guardião de Conventional Commits e governança GOST",
   "repo": "https://gambi.2lp.in/lumen/cccp",
   "stable_latest": "0.1.0",
-  "nightly_latest": "3.2.0-dev.455+20261030.b2be2f7",
+  "nightly_latest": "3.2.0-dev.462+20261030.0497ffe",
   "stables": [
     {
       "version": "0.1.0",
@@ -32,6 +32,30 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "3.2.0-dev.462+20261030.0497ffe",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-linux-amd64.tar.gz",
+      "date": "2026-10-30",
+      "sha256": "020c1228c27bfaf35e9fd82804bf43ed208cc1a7a9a7fa7d8f4992089f1269cd",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-linux-amd64.tar.gz",
+          "sha256": "020c1228c27bfaf35e9fd82804bf43ed208cc1a7a9a7fa7d8f4992089f1269cd"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-linux-arm64.tar.gz",
+          "sha256": "952a44da77a808cb69d0627de41f616ba09cf69f0b9588cce97e5293058f40af"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-windows-amd64.zip",
+          "sha256": "537e878f48f195c5c73e0b01170a61593a392ffb10336967d65bd17d5d677882"
+        }
+      },
+      "tarball": "cccp-3.2.0-dev.462+20261030.0497ffe-linux-amd64.tar.gz"
+    },
     {
       "version": "3.2.0-dev.455+20261030.b2be2f7",
       "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.455+20261030.b2be2f7-linux-amd64.tar.gz",
