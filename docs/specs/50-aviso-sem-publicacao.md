@@ -21,3 +21,8 @@ Evitar a exibição enganosa de versões fictícias como `v0.1.0` ou `dev-latest
 - Ausência de menções a `v0.1.0` para apps que só possuem nightlies.
 - Vitrine web exibe mensagens amigáveis e desabilita cliques em downloads inexistentes.
 - Todos os testes de download e catálogo passam com 100% de sucesso.
+
+## 4. Status de Conclusão (Fase 9)
+- **Status**: Concluído e auditado na Fase 8.
+- **Validação**: Testes de catálogo e downloads em `tests/test-downloads-empty-channel.sh` aprovados.
+
