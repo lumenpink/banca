@@ -5,9 +5,23 @@
   "description": "Editor brutalista de notas em texto puro, Markdown e Joaju",
   "repo": "https://gambi.2lp.in/lumen/mandu",
   "stable_latest": "",
-  "nightly_latest": "0.1.0-dev.263+20261026.50938f7",
+  "nightly_latest": "0.1.0-dev.283+20261031.70a7225",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.283+20261031.70a7225",
+      "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.283+20261031.70a7225-linux-amd64.tar.gz",
+      "date": "2026-10-31",
+      "sha256": "4003a1f8c179199dcc4c92907ba4ac78ed3f63f6f8a3a655dc33ac908259fd3f",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.283+20261031.70a7225-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.283+20261031.70a7225-linux-amd64.tar.gz",
+          "sha256": "4003a1f8c179199dcc4c92907ba4ac78ed3f63f6f8a3a655dc33ac908259fd3f"
+        }
+      },
+      "tarball": "mandu-0.1.0-dev.283+20261031.70a7225-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev.263+20261026.50938f7",
       "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.263+20261026.50938f7-windows-amd64.zip",
