@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T23:44:31.100302+00:00",
+  "updated_at": "2026-10-31T00:44:48.883999+00:00",
   "banca_url": "https://banca.2lp.in",
   "total_apps": 17,
   "apps": [
@@ -60,7 +60,7 @@
       "description": "Gestor central de aplicativos e auto-update da Banca",
       "repo": "https://gambi.2lp.in/lumen/jornaleira",
       "stable_latest": "",
-      "nightly_latest": "0.1.0-dev.27+20261030.11e3009",
+      "nightly_latest": "0.1.0-dev.33+20261031.fe0668f",
       "manifest_url": "https://banca.2lp.in/downloads/jornaleira/index.json"
     },
     {

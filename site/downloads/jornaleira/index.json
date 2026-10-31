@@ -5,9 +5,23 @@
   "description": "Gestor central de aplicativos e auto-update da Banca",
   "repo": "https://gambi.2lp.in/lumen/jornaleira",
   "stable_latest": "",
-  "nightly_latest": "0.1.0-dev.27+20261030.11e3009",
+  "nightly_latest": "0.1.0-dev.33+20261031.fe0668f",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.33+20261031.fe0668f",
+      "url": "https://banca.2lp.in/downloads/jornaleira/nightly/jornaleira-0.1.0-dev.33+20261031.fe0668f-linux-amd64.tar.gz",
+      "date": "2026-10-31",
+      "sha256": "58a601d588674fac64712671fb52bb0315e9974179dc2f963c77104d67a6b926",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://banca.2lp.in/downloads/jornaleira/nightly/jornaleira-0.1.0-dev.33+20261031.fe0668f-linux-amd64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/jornaleira/nightly/jornaleira-0.1.0-dev.33+20261031.fe0668f-linux-amd64.tar.gz",
+          "sha256": "58a601d588674fac64712671fb52bb0315e9974179dc2f963c77104d67a6b926"
+        }
+      },
+      "tarball": "jornaleira-0.1.0-dev.33+20261031.fe0668f-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev.27+20261030.11e3009",
       "url": "https://banca.2lp.in/downloads/jornaleira/nightly/jornaleira-0.1.0-dev.27+20261030.11e3009-linux-amd64.tar.gz",
