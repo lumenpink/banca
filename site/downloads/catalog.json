@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T02:17:03.361696+00:00",
+  "updated_at": "2026-10-31T12:34:55.500321+00:00",
   "banca_url": "https://banca.2lp.in",
   "total_apps": 17,
   "apps": [
@@ -30,7 +30,7 @@
       "description": "Guardião de Conventional Commits e governança GOST",
       "repo": "https://gambi.2lp.in/lumen/cccp",
       "stable_latest": "",
-      "nightly_latest": "3.2.0-dev.532+20261031.1e2d017",
+      "nightly_latest": "3.2.0-dev.539+20261031.ddeea54",
       "manifest_url": "https://banca.2lp.in/downloads/cccp/index.json"
     },
     {
