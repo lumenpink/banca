@@ -12,12 +12,12 @@
       "version": "0.1.0-dev.283+20261031.70a7225",
       "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.283+20261031.70a7225-linux-amd64.tar.gz",
       "date": "2026-10-31",
-      "sha256": "4003a1f8c179199dcc4c92907ba4ac78ed3f63f6f8a3a655dc33ac908259fd3f",
+      "sha256": "bc4af1d4db5400b65a28f410efe39568df66c59b3ab1343cc02041893b6e6b59",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.283+20261031.70a7225-linux-amd64.tar.gz",
           "binary_url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.283+20261031.70a7225-linux-amd64.tar.gz",
-          "sha256": "4003a1f8c179199dcc4c92907ba4ac78ed3f63f6f8a3a655dc33ac908259fd3f"
+          "sha256": "bc4af1d4db5400b65a28f410efe39568df66c59b3ab1343cc02041893b6e6b59"
         }
       },
       "tarball": "mandu-0.1.0-dev.283+20261031.70a7225-linux-amd64.tar.gz"
