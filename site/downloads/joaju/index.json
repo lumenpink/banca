@@ -5,9 +5,33 @@
   "description": "Compilador vetorial de diagramas, tabelas e heredogramas",
   "repo": "https://gambi.2lp.in/lumen/joaju",
   "stable_latest": "",
-  "nightly_latest": "0.2.0-dev.137+20261029.d698d99",
+  "nightly_latest": "0.2.0-dev.137+20261101.2c4fe02",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.2.0-dev.137+20261101.2c4fe02",
+      "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261101.2c4fe02-linux-amd64.tar.gz",
+      "date": "2026-11-01",
+      "sha256": "9026fffd240e906a943e83013f53f94c1125681f502e21e4ca8c381ff8de968d",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261101.2c4fe02-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261101.2c4fe02-linux-amd64.tar.gz",
+          "sha256": "9026fffd240e906a943e83013f53f94c1125681f502e21e4ca8c381ff8de968d"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261101.2c4fe02-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261101.2c4fe02-linux-arm64.tar.gz",
+          "sha256": "74b244afc4ddd066d7a21261fa6fda8e089b068dde3a9c2f33d09bddc9fc856a"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261101.2c4fe02-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261101.2c4fe02-windows-amd64.zip",
+          "sha256": "a2fda80e6a6cf04eb493d85b7493bcfdbdafe7ebc6ef6cebbccd6509a35671da"
+        }
+      },
+      "tarball": "joaju-0.2.0-dev.137+20261101.2c4fe02-linux-amd64.tar.gz"
+    },
     {
       "version": "0.2.0-dev.137+20261029.d698d99",
       "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261029.d698d99-linux-amd64.tar.gz",
