@@ -5,9 +5,33 @@
   "description": "Estação de trabalho TUI soberana e mediadora de contexto AST",
   "repo": "https://gambi.2lp.in/lumen/pult",
   "stable_latest": "",
-  "nightly_latest": "0.1.0-dev.239+20261030.0d68603",
+  "nightly_latest": "0.1.0-dev.244+20261101.0c82c73",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.244+20261101.0c82c73",
+      "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.244+20261101.0c82c73-linux-amd64.tar.gz",
+      "date": "2026-11-01",
+      "sha256": "cec484689984fb39db0c2eeb61fcdacc552b205863cea43c58f76bdccecde09d",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.244+20261101.0c82c73-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.244+20261101.0c82c73-linux-amd64.tar.gz",
+          "sha256": "cec484689984fb39db0c2eeb61fcdacc552b205863cea43c58f76bdccecde09d"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.244+20261101.0c82c73-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.244+20261101.0c82c73-linux-arm64.tar.gz",
+          "sha256": "b4a4ac4cb277a30c13216e43c602f0e99b79a7228c49b16a3eb58a7f85da48e2"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.244+20261101.0c82c73-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.244+20261101.0c82c73-windows-amd64.zip",
+          "sha256": "d13b91324fec62191978fbbf882eebbb736c68d112734748f2475ef058e83e63"
+        }
+      },
+      "tarball": "pult-0.1.0-dev.244+20261101.0c82c73-linux-amd64.tar.gz"
+    },
     {
       "version": "0.1.0-dev.239+20261030.0d68603",
       "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.239+20261030.0d68603-linux-amd64.tar.gz",
