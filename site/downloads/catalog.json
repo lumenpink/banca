@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T17:22:48.583935+00:00",
+  "updated_at": "2026-11-01T20:33:21.997731+00:00",
   "banca_url": "https://banca.2lp.in",
   "total_apps": 17,
   "apps": [
@@ -30,7 +30,7 @@
       "description": "Guardião de Conventional Commits e governança GOST",
       "repo": "https://gambi.2lp.in/lumen/cccp",
       "stable_latest": "",
-      "nightly_latest": "3.2.0-dev.614+20261101.4e787e2",
+      "nightly_latest": "3.2.0-dev.621+20261101.c5946f3",
       "manifest_url": "https://banca.2lp.in/downloads/cccp/index.json"
     },
     {
@@ -90,7 +90,7 @@
       "description": "Cliente de correio soberano e interface editorial",
       "repo": "https://gambi.2lp.in/lumen/lauda",
       "stable_latest": "",
-      "nightly_latest": "0.5.0-dev.289+20261027.bf671e9-dev.20261027.614356b",
+      "nightly_latest": "0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21",
       "manifest_url": "https://banca.2lp.in/downloads/lauda/index.json"
     },
     {
