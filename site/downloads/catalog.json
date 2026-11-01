@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T12:34:55.500321+00:00",
+  "updated_at": "2026-11-01T03:27:34.152921+00:00",
   "banca_url": "https://banca.2lp.in",
   "total_apps": 17,
   "apps": [
@@ -60,7 +60,7 @@
       "description": "Gestor central de aplicativos e auto-update da Banca",
       "repo": "https://gambi.2lp.in/lumen/jornaleira",
       "stable_latest": "",
-      "nightly_latest": "0.1.0-dev.33+20261031.fe0668f",
+      "nightly_latest": "0.1.0-dev.39+20261101.075a781",
       "manifest_url": "https://banca.2lp.in/downloads/jornaleira/index.json"
     },
     {
@@ -100,7 +100,7 @@
       "description": "Editor brutalista de notas em texto puro, Markdown e Joaju",
       "repo": "https://gambi.2lp.in/lumen/mandu",
       "stable_latest": "",
-      "nightly_latest": "0.1.0-dev.263+20261026.50938f7",
+      "nightly_latest": "0.1.0-dev.283+20261031.70a7225",
       "manifest_url": "https://banca.2lp.in/downloads/mandu/index.json"
     },
     {
