@@ -18,6 +18,11 @@
           "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.297+20261102.3447bde-linux-amd64.tar.gz",
           "binary_url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.297+20261102.3447bde-linux-amd64.tar.gz",
           "sha256": "a5cb07c888a27621c93b02ec7b464476c399f69201c032c29a3bcc82d329643f"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.297+20261102.3447bde-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.297+20261102.3447bde-linux-arm64.tar.gz",
+          "sha256": "e8dd9b5f4694bb16a8102067b644d83796b9bafcbd2352ed6d19a3dee0d9882f"
         }
       },
       "tarball": "mandu-0.1.0-dev.297+20261102.3447bde-linux-amd64.tar.gz"
