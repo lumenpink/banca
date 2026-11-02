@@ -5,9 +5,33 @@
   "description": "Cofre soberano de arquivos, documentos e fotos",
   "repo": "https://gambi.2lp.in/lumen/mocambo",
   "stable_latest": "",
-  "nightly_latest": "0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5",
+  "nightly_latest": "0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6",
+      "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-amd64.tar.gz",
+      "date": "2026-11-02",
+      "sha256": "347de67caec9970768882128293b0da141133bf3855fe894f4232d7a6bfa1835",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-amd64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-amd64.tar.gz",
+          "sha256": "347de67caec9970768882128293b0da141133bf3855fe894f4232d7a6bfa1835"
+        },
+        "linux-arm64": {
+          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-arm64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-arm64.tar.gz",
+          "sha256": "dd83e7441b3b4285f172386746cb03e1021d365483f51f84bbf5eaa6be9713b5"
+        },
+        "windows-amd64": {
+          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-windows-amd64.zip",
+          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-windows-amd64.zip",
+          "sha256": "8667a7ac25a8376e70b26cd8cf138c8c29bd12a1e1c0acff648234624344a099"
+        }
+      },
+      "tarball": "mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-amd64.tar.gz"
+    },
     {
       "version": "0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5",
       "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-linux-amd64.tar.gz",
