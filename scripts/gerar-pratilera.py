@@ -198,11 +198,15 @@ def import_external_apks():
         mandu_dir / "dist" / "mandu.apk",
         mandu_dir / "site" / "mandu.apk"
     ]:
-        if apk_candidate.exists():
+        if apk_candidate.exists() and apk_candidate.stat().st_size >= 1048576:
             dst = PRATILERA_DIR / "mandu.apk"
             shutil.copy2(apk_candidate, dst)
             print(f"-> Importado do Mandu: mandu.apk (de {apk_candidate.name})")
             break
+
+    # Remover mandu.apk anômalo da Pratilera se < 1MB
+    if (PRATILERA_DIR / "mandu.apk").exists() and (PRATILERA_DIR / "mandu.apk").stat().st_size < 1048576:
+        (PRATILERA_DIR / "mandu.apk").unlink(missing_ok=True)
 
     for icon_candidate in [
         mandu_dir / "fastlane" / "metadata" / "android" / "in.twolp.mandu" / "icon.png",
@@ -218,14 +222,14 @@ def resolve_apk_binary(meta: dict) -> Path | None:
     """Procura o APK localmente em PRATILERA_DIR, diretórios irmãos ou faz download para .cache/apks."""
     apk_name = meta["apk_filename"]
     
-    # 1. Se estiver em PRATILERA_DIR e <= 25MB
+    # 1. Se estiver em PRATILERA_DIR e <= 25MB (e tamanho >= 1MB para não aceitar stubs)
     local_apk = PRATILERA_DIR / apk_name
-    if local_apk.exists() and local_apk.stat().st_size > 1024:
+    if local_apk.exists() and local_apk.stat().st_size >= 1048576:
         return local_apk
         
     # 2. Se estiver em CACHE_APK_DIR
     cached_apk = CACHE_APK_DIR / apk_name
-    if cached_apk.exists() and cached_apk.stat().st_size > 1024:
+    if cached_apk.exists() and cached_apk.stat().st_size >= 1048576:
         return cached_apk
         
     # 3. Se estiver em diretório irmão
