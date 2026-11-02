@@ -142,7 +142,7 @@ def import_external_apks():
     lacraia_dir = src_dir / "lacraia"
     lacraia_dist = lacraia_dir / "dist"
     if lacraia_dist.exists():
-        for apk_src_candidate, canonical_name in [("lacraia.apk", "lacraia.apk"), ("lacraia-app.apk", "lacraia.apk"), ("simbiotyka.apk", "simbiotyka.apk")]:
+        for apk_src_candidate, canonical_name in [("lacraia.apk", "lacraia.apk"), ("simbiotyka.apk", "simbiotyka.apk")]:
             src = lacraia_dist / apk_src_candidate
             if src.exists():
                 dst = PRATILERA_DIR / canonical_name
@@ -233,7 +233,7 @@ def resolve_apk_binary(meta: dict) -> Path | None:
     if "lacraia" in apk_name or "simbiotyka" in apk_name:
         candidates.extend([
             src_dir / "lacraia" / "dist" / apk_name,
-            src_dir / "lacraia" / "dist" / "lacraia-app.apk",
+            src_dir / "lacraia" / "dist" / "lacraia.apk",
             src_dir / "lacraia" / "dist" / "simbiotyka.apk",
         ])
     elif "lauda" in apk_name:
