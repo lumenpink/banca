@@ -4,7 +4,7 @@
     "description": "Loja e Repositório Soberano de Aplicativos do Ecossistema 2lp. Fanzines, paredões, correio e ferramentas de calçada.",
     "address": "https://bucket.2lp.in",
     "icon": "icon.png",
-    "timestamp": 1793616730271,
+    "timestamp": 1793620695882,
     "version": 20
   },
   "requests": {
@@ -32,9 +32,9 @@
           "icon": "icon.png"
         }
       },
-      "added": 1793616730271,
-      "lastUpdated": 1793616730271,
-      "suggestedVersionCode": "251",
+      "added": 1793620695882,
+      "lastUpdated": 1793620695882,
+      "suggestedVersionCode": "252",
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
       "categories": [
@@ -64,9 +64,9 @@
           "icon": "icon.png"
         }
       },
-      "added": 1793616730271,
-      "lastUpdated": 1793616730271,
-      "suggestedVersionCode": "251",
+      "added": 1793620695882,
+      "lastUpdated": 1793620695882,
+      "suggestedVersionCode": "252",
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
       "categories": [
@@ -96,8 +96,8 @@
           "icon": "icon.png"
         }
       },
-      "added": 1793616730271,
-      "lastUpdated": 1793616730271,
+      "added": 1793620695882,
+      "lastUpdated": 1793620695882,
       "suggestedVersionCode": "26102710",
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
@@ -128,8 +128,8 @@
           "icon": "icon.png"
         }
       },
-      "added": 1793616730271,
-      "lastUpdated": 1793616730271,
+      "added": 1793620695882,
+      "lastUpdated": 1793620695882,
       "suggestedVersionCode": "1",
       "authorName": "Lumen Pink",
       "license": "CC0-1.0",
@@ -161,8 +161,8 @@
           "icon": "icon.png"
         }
       },
-      "added": 1793616730271,
-      "lastUpdated": 1793616730271,
+      "added": 1793620695882,
+      "lastUpdated": 1793620695882,
       "suggestedVersionCode": "1",
       "authorName": "Lumen Pink",
       "license": "GPL-3.0",
@@ -178,25 +178,25 @@
   "packages": {
     "in.twolp.lacraia.app": [
       {
-        "added": 1793616730271,
+        "added": 1793620695882,
         "apkName": "lacraia.apk",
-        "hash": "f227d8f93914d8a637490e28f2bf2c7a6b62d50011038dc6ae7a4cf07b59609f",
+        "hash": "6bd2e7142f3b5229155ea6d5c10e00cee4f25560e31631b14083c34fa352d873",
         "hashType": "sha256",
         "minSdkVersion": 26,
         "targetSdkVersion": 34,
         "packageName": "in.twolp.lacraia.app",
         "sig": "7beec8b0a6c7946b04d538543d495a82",
         "signer": "7beec8b0a6c7946b04d538543d495a8210ad6cfc1859f42e7180bcfbd38fe582",
-        "size": 5238633,
-        "versionCode": 251,
-        "versionName": "0.2.0-dev.251+20261030.580f23f"
+        "size": 6594867,
+        "versionCode": 252,
+        "versionName": "0.2.0-dev.252+20261102"
       }
     ],
     "in.twolp.lacraia.simbiotyka": [
       {
-        "added": 1793616730271,
+        "added": 1793620695882,
         "apkName": "simbiotyka.apk",
-        "hash": "0dd6647096b65769d879ab188ddfb92bc68b96ac33900f20eaa33b9766574584",
+        "hash": "eb834e94e2a6c65e49e46eaad86b7e328a84b04c96ac8e2e21bea07ca4b7bae1",
         "hashType": "sha256",
         "minSdkVersion": 26,
         "targetSdkVersion": 34,
@@ -204,13 +204,13 @@
         "sig": "7beec8b0a6c7946b04d538543d495a82",
         "signer": "7beec8b0a6c7946b04d538543d495a8210ad6cfc1859f42e7180bcfbd38fe582",
         "size": 5226260,
-        "versionCode": 251,
-        "versionName": "0.2.0-dev.251+20261030.580f23f"
+        "versionCode": 252,
+        "versionName": "0.2.0-dev.252+20261102"
       }
     ],
     "in.twolp.lauda": [
       {
-        "added": 1793616730271,
+        "added": 1793620695882,
         "apkName": "lauda.apk",
         "hash": "0bf05403ee63079ab251f89ac325b5a2e6c829df07c835e58b633b2526b38237",
         "hashType": "sha256",
@@ -226,23 +226,23 @@
     ],
     "in.twolp.mocambo": [
       {
-        "added": 1793616730271,
+        "added": 1793620695882,
         "apkName": "mocambo.apk",
-        "hash": "ab28c40e049a04680c0583fa634b2ad8fe5d83c6dfea809780b3f8890253547c",
+        "hash": "edee95f02020d1122761419814bfc1165681e3749bcc2f898d3f6419f4fd7caa",
         "hashType": "sha256",
         "minSdkVersion": 24,
         "targetSdkVersion": 36,
         "packageName": "in.twolp.mocambo",
-        "sig": "7beec8b0a6c7946b04d538543d495a82",
-        "signer": "7beec8b0a6c7946b04d538543d495a8210ad6cfc1859f42e7180bcfbd38fe582",
-        "size": 49661573,
+        "sig": "c443f2350de4b07cb9714c347580623b",
+        "signer": "c443f2350de4b07cb9714c347580623b9e1f4c6474f70eddc19bdd9599d5627e",
+        "size": 49650126,
         "versionCode": 1,
         "versionName": "0.3.0-dev.41+20261102.cc22671"
       }
     ],
     "in.twolp.mandu": [
       {
-        "added": 1793616730271,
+        "added": 1793620695882,
         "apkName": "mandu.apk",
         "hash": "460b78149452c7eec058f95465bb80a1c4116fa0b0182dc294f64af3d207b490",
         "hashType": "sha256",

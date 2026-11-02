@@ -178,8 +178,9 @@ def import_external_apks():
     # 3. Mocambo APK e Ícone (salvo em cache fora de site/ devido ao limite de 25MB do Workers)
     mocambo_dir = src_dir / "mocambo"
     for apk_candidate in [
+        mocambo_dir / "mobile" / "build" / "app" / "outputs" / "flutter-apk" / "app-release.apk",
+        mocambo_dir / "mobile" / "build" / "app" / "outputs" / "apk" / "release" / "app-release.apk",
         mocambo_dir / "site" / "mocambo.apk",
-        mocambo_dir / "mobile" / "build" / "app" / "outputs" / "flutter-apk" / "app-release.apk"
     ]:
         if apk_candidate.exists():
             CACHE_APK_DIR.mkdir(parents=True, exist_ok=True)
@@ -243,8 +244,9 @@ def resolve_apk_binary(meta: dict) -> Path | None:
         ])
     elif "mocambo" in apk_name:
         candidates.extend([
-            src_dir / "mocambo" / "site" / "mocambo.apk",
             src_dir / "mocambo" / "mobile" / "build" / "app" / "outputs" / "flutter-apk" / "app-release.apk",
+            src_dir / "mocambo" / "mobile" / "build" / "app" / "outputs" / "apk" / "release" / "app-release.apk",
+            src_dir / "mocambo" / "site" / "mocambo.apk",
         ])
     elif "mandu" in apk_name:
         candidates.extend([
