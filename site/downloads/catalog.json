@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T06:29:10.490854+00:00",
+  "updated_at": "2026-11-03T13:37:29.882638+00:00",
   "banca_url": "https://banca.2lp.in",
   "total_apps": 17,
   "apps": [
@@ -60,7 +60,7 @@
       "description": "Gestor central de aplicativos e auto-update da Banca",
       "repo": "https://gambi.2lp.in/lumen/jornaleira",
       "stable_latest": "",
-      "nightly_latest": "0.1.0-dev.44+20261101.d671b4e",
+      "nightly_latest": "0.1.0-dev.51+20261103.5aba6e6",
       "manifest_url": "https://banca.2lp.in/downloads/jornaleira/index.json"
     },
     {
@@ -80,7 +80,7 @@
       "description": "Cockpit de som brutalista e jukebox comunitária",
       "repo": "https://gambi.2lp.in/lumen/lacraia",
       "stable_latest": "",
-      "nightly_latest": "0.2.0-dev.251+20261030.580f23f-dev.20261030.8d166f0",
+      "nightly_latest": "0.2.0-dev.251+20261030.580f23f-dev.20261102.5be473e",
       "manifest_url": "https://banca.2lp.in/downloads/lacraia/index.json"
     },
     {
@@ -120,7 +120,7 @@
       "description": "Cofre soberano de arquivos, documentos e fotos",
       "repo": "https://gambi.2lp.in/lumen/mocambo",
       "stable_latest": "",
-      "nightly_latest": "0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5",
+      "nightly_latest": "0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5",
       "manifest_url": "https://banca.2lp.in/downloads/mocambo/index.json"
     },
     {
