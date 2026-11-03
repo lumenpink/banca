@@ -5,9 +5,33 @@
   "description": "Cockpit de som brutalista e jukebox comunitária",
   "repo": "https://gambi.2lp.in/lumen/lacraia",
   "stable_latest": "",
-  "nightly_latest": "0.2.0-dev.251+20261030.580f23f-dev.20261102.5be473e",
+  "nightly_latest": "0.2.0-dev.252+20261102-dev.20261103.49619af",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.2.0-dev.252+20261102-dev.20261103.49619af",
+      "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261103.49619af-linux-amd64.tar.gz",
+      "date": "2026-11-03",
+      "sha256": "c6c8aa5a1d70fb741ee0814f651beabb48d9a0b3a2dfd2097ac9ae23d1c58ef9",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261103.49619af-linux-amd64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261103.49619af-linux-amd64.tar.gz",
+          "sha256": "c6c8aa5a1d70fb741ee0814f651beabb48d9a0b3a2dfd2097ac9ae23d1c58ef9"
+        },
+        "linux-arm64": {
+          "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261103.49619af-linux-arm64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261103.49619af-linux-arm64.tar.gz",
+          "sha256": "549ccaf6e1b009c179115b96d73361e07e83d7edfa2c78e6c6390079b97b42aa"
+        },
+        "windows-amd64": {
+          "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261103.49619af-windows-amd64.zip",
+          "binary_url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261103.49619af-windows-amd64.zip",
+          "sha256": "0e0282482b37654fc4605b315a14b14689f1fe977749cf4402233c478f3ab7ec"
+        }
+      },
+      "tarball": "lacraia-0.2.0-dev.252+20261102-dev.20261103.49619af-linux-amd64.tar.gz"
+    },
     {
       "version": "0.2.0-dev.251+20261030.580f23f-dev.20261102.5be473e",
       "url": "https://banca.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261102.5be473e-linux-amd64.tar.gz",
