@@ -38,6 +38,10 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
+      - name: "Build Site & Regenerate Pratilera Catalog"
+        run: |
+          ./build.sh
+          python3 scripts/gerar-pratilera.py
       - name: "Deploy to Cloudflare Workers"
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# tests/test-downloads-catalog.sh — Validação do Catálogo Consolidado (catalog.json) (#41)
+# tests/test-downloads-catalog.sh — Validação do Catálogo Consolidado (catalog.json) (#41, #53)
 # ==============================================================================
 set -euo pipefail
 
