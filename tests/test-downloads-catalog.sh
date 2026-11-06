@@ -122,7 +122,7 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
-# 6. Validar paridade de versão do joaju entre index.json e catalog.json
+# 6. Validar paridade de versão do joaju entre index.json e catalog.json (red test)
 echo -n "-> 6. Validando paridade de versão do joaju entre index.json e catalog.json... "
 PARITY=$(python3 -c "
 import json

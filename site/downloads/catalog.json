@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T13:37:29.882638+00:00",
+  "updated_at": "2026-11-06T20:30:08.075569+00:00",
   "banca_url": "https://banca.2lp.in",
   "total_apps": 17,
   "apps": [
@@ -50,7 +50,7 @@
       "description": "Compilador vetorial de diagramas, tabelas e heredogramas",
       "repo": "https://gambi.2lp.in/lumen/joaju",
       "stable_latest": "",
-      "nightly_latest": "0.2.0-dev.137+20261101.2c4fe02",
+      "nightly_latest": "0.2.0-dev.137+20261105.e672a64",
       "manifest_url": "https://banca.2lp.in/downloads/joaju/index.json"
     },
     {
@@ -80,7 +80,7 @@
       "description": "Cockpit de som brutalista e jukebox comunitária",
       "repo": "https://gambi.2lp.in/lumen/lacraia",
       "stable_latest": "",
-      "nightly_latest": "0.2.0-dev.251+20261030.580f23f-dev.20261102.5be473e",
+      "nightly_latest": "0.2.0-dev.252+20261102-dev.20261103.49619af",
       "manifest_url": "https://banca.2lp.in/downloads/lacraia/index.json"
     },
     {
@@ -90,7 +90,7 @@
       "description": "Cliente de correio soberano e interface editorial",
       "repo": "https://gambi.2lp.in/lumen/lauda",
       "stable_latest": "",
-      "nightly_latest": "0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21",
+      "nightly_latest": "0.5.0-dev.289+20261027.bf671e9-dev.20261106.a8acaa9",
       "manifest_url": "https://banca.2lp.in/downloads/lauda/index.json"
     },
     {
@@ -100,7 +100,7 @@
       "description": "Editor brutalista de notas em texto puro, Markdown e Joaju",
       "repo": "https://gambi.2lp.in/lumen/mandu",
       "stable_latest": "",
-      "nightly_latest": "0.1.0-dev.297+20261102.3447bde",
+      "nightly_latest": "0.1.0-dev.354+20261103.06bb129",
       "manifest_url": "https://banca.2lp.in/downloads/mandu/index.json"
     },
     {
@@ -120,7 +120,7 @@
       "description": "Cofre soberano de arquivos, documentos e fotos",
       "repo": "https://gambi.2lp.in/lumen/mocambo",
       "stable_latest": "",
-      "nightly_latest": "0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5",
+      "nightly_latest": "0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c",
       "manifest_url": "https://banca.2lp.in/downloads/mocambo/index.json"
     },
     {
@@ -130,7 +130,7 @@
       "description": "Despachante e canivete suíço para deploy e automação",
       "repo": "https://gambi.2lp.in/lumen/navalha",
       "stable_latest": "",
-      "nightly_latest": "0.1.0-dev.91+20261025.4119a92",
+      "nightly_latest": "0.1.0-dev.106+20261104.2df538c",
       "manifest_url": "https://banca.2lp.in/downloads/navalha/index.json"
     },
     {
