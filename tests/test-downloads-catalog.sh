@@ -122,6 +122,27 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 6. Validar paridade de versão do joaju entre index.json e catalog.json
+echo -n "-> 6. Validando paridade de versão do joaju entre index.json e catalog.json... "
+PARITY=$(python3 -c "
+import json
+with open('site/downloads/joaju/index.json') as f:
+    joaju_index = json.load(f)
+with open('$CATALOG_FILE') as f:
+    catalog = json.load(f)
+joaju_cat = [a for a in catalog['apps'] if a.get('app') == 'joaju'][0]
+if joaju_index.get('nightly_latest') == joaju_cat.get('nightly_latest'):
+    print('OK')
+else:
+    print('MISMATCH: index=' + str(joaju_index.get('nightly_latest')) + ' cat=' + str(joaju_cat.get('nightly_latest')))
+")
+if [ "$PARITY" = "OK" ]; then
+    echo "✅ OK"
+else
+    echo "❌ FALHOU ($PARITY)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 
 if [ "$FAILURES" -gt 0 ]; then
     echo "❌ Teste falhou com $FAILURES erro(s)."
