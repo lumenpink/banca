@@ -5,9 +5,33 @@
   "description": "Cliente de correio soberano e interface editorial",
   "repo": "https://gambi.2lp.in/lumen/lauda",
   "stable_latest": "",
-  "nightly_latest": "0.5.0-dev.289+20261027.bf671e9-dev.20261106.a8acaa9",
+  "nightly_latest": "0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a",
+      "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a-linux-amd64.tar.gz",
+      "date": "2026-11-06",
+      "sha256": "d801d4b6cd85845c77b2199a3015684918745db36047d3463d0bc45e97c6935e",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a-linux-amd64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a-linux-amd64.tar.gz",
+          "sha256": "d801d4b6cd85845c77b2199a3015684918745db36047d3463d0bc45e97c6935e"
+        },
+        "linux-arm64": {
+          "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a-linux-arm64.tar.gz",
+          "binary_url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a-linux-arm64.tar.gz",
+          "sha256": "9ec4820a550c84328c020d488b9a209fb0f761fec991a2f4bca05d08528a5502"
+        },
+        "windows-amd64": {
+          "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a-windows-amd64.zip",
+          "binary_url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a-windows-amd64.zip",
+          "sha256": "850d932b75e5bc0cb2d9006d11ea8fa28873b2f4cfbcf55303989f9c53ce431b"
+        }
+      },
+      "tarball": "lauda-0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a-linux-amd64.tar.gz"
+    },
     {
       "version": "0.5.0-dev.289+20261027.bf671e9-dev.20261106.a8acaa9",
       "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261106.a8acaa9-linux-amd64.tar.gz",
@@ -223,30 +247,6 @@
         }
       },
       "tarball": "lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.d46202f-linux-amd64.tar.gz"
-    },
-    {
-      "version": "0.5.0-dev.244+20261024.16e927f-dev.20261024.2f95d5d",
-      "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.2f95d5d-linux-amd64.tar.gz",
-      "date": "2026-10-24",
-      "sha256": "e6da5a0d2e6d6b11e41eb0de49b2f70d56ad69dad4740316e7faa565e061a146",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.2f95d5d-linux-amd64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.2f95d5d-linux-amd64.tar.gz",
-          "sha256": "e6da5a0d2e6d6b11e41eb0de49b2f70d56ad69dad4740316e7faa565e061a146"
-        },
-        "linux-arm64": {
-          "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.2f95d5d-linux-arm64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.2f95d5d-linux-arm64.tar.gz",
-          "sha256": "14e989aa7971fb6006b320603133b17617bf18df5818ce9f8bc628353833c78c"
-        },
-        "windows-amd64": {
-          "url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.2f95d5d-windows-amd64.zip",
-          "binary_url": "https://banca.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.2f95d5d-windows-amd64.zip",
-          "sha256": "7075c6c155032456ef14050d82ecd7a9df823db45c7a8ff0db8338cc33ea84f5"
-        }
-      },
-      "tarball": "lauda-0.5.0-dev.244+20261024.16e927f-dev.20261024.2f95d5d-linux-amd64.tar.gz"
     }
   ]
 }
