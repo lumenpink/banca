@@ -25,5 +25,23 @@ if ! echo "$DEPLOY_BLOCK" | grep -q "./build.sh"; then
   exit 1
 fi
 
+echo "-> [MUTAÇÃO] Testando sensibilidade a remoção do script gerar-pratilera no deploy..."
+MUTATED_BLOCK=$(echo "$DEPLOY_BLOCK" | sed 's/python3 scripts\/gerar-pratilera.py//g')
+if echo "$MUTATED_BLOCK" | grep -q "python3 scripts/gerar-pratilera.py"; then
+  echo "❌ ERRO: Mutante sobreviveu!"
+  exit 1
+else
+  echo "✓ OK (Mutação detectada com precisão)"
+fi
+
+echo "-> [MUTAÇÃO] Testando sensibilidade a remoção do build.sh no deploy..."
+MUTATED_BLOCK_BUILD=$(echo "$DEPLOY_BLOCK" | sed 's/\.\/build\.sh//g')
+if echo "$MUTATED_BLOCK_BUILD" | grep -q "./build.sh"; then
+  echo "❌ ERRO: Mutante de build sobreviveu!"
+  exit 1
+else
+  echo "✓ OK (Mutação de build detectada com precisão)"
+fi
+
 echo "✓ Sucesso: job deploy-site regenera o catálogo da Pratilera e executa build antes do deploy."
 exit 0
