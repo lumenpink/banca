@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T22:16:18.530232+00:00",
+  "updated_at": "2026-11-06T22:21:30.689483+00:00",
   "banca_url": "https://banca.2lp.in",
   "total_apps": 17,
   "apps": [
@@ -50,7 +50,7 @@
       "description": "Compilador vetorial de diagramas, tabelas e heredogramas",
       "repo": "https://gambi.2lp.in/lumen/joaju",
       "stable_latest": "",
-      "nightly_latest": "0.2.0-dev.137+20261105.e672a64",
+      "nightly_latest": "0.2.0-dev.137+20261106.6eda140",
       "manifest_url": "https://banca.2lp.in/downloads/joaju/index.json"
     },
     {
