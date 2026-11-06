@@ -23,3 +23,4 @@ O job `test` executava `python3 scripts/gerar-pratilera.py`, mas o job `deploy-s
 1. O fluxo `.forgejo/workflows/ci.yml` no job `deploy-site` deve conter a etapa de regeneração do catálogo da Pratilera executando `python3 scripts/gerar-pratilera.py` e `./build.sh` antes da chamada a `npx wrangler deploy`.
 2. O teste automatizado em `tests/test-ci-deploy-pratilera.sh` deve validar que o job `deploy-site` do workflow do CI contém os comandos de regeneração do catálogo.
 3. Auditoria estrita com `cccp check --strict` deve ser aprovada com 100% de conformidade.
+2026-11-06 21:08:17 UTC
