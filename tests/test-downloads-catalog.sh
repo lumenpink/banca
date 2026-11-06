@@ -143,6 +143,29 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 7. [MUTAÇÃO] Validar rejeição caso versão do joaju divirja do index.json
+echo -n "-> 7. [MUTAÇÃO] Testando sensibilidade a descompasso do joaju... "
+MUTATED_CHECK_JOAJU=$(python3 -c "
+import json
+with open('site/downloads/joaju/index.json') as f:
+    joaju_index = json.load(f)
+with open('$CATALOG_FILE') as f:
+    catalog = json.load(f)
+joaju_cat = [a for a in catalog['apps'] if a.get('app') == 'joaju'][0]
+joaju_cat['nightly_latest'] = '0.0.0-mutant'
+try:
+    assert joaju_index.get('nightly_latest') == joaju_cat.get('nightly_latest')
+    print('MUTANTE_VIVEU')
+except AssertionError:
+    print('MUTANTE_MORTO')
+")
+if [ "$MUTATED_CHECK_JOAJU" = "MUTANTE_MORTO" ]; then
+    echo "✅ OK (Mutação detectada com precisão)"
+else
+    echo "❌ FALHOU (Mutação não detectada)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 
 if [ "$FAILURES" -gt 0 ]; then
     echo "❌ Teste falhou com $FAILURES erro(s)."
