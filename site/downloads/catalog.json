@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T22:13:54.265379+00:00",
+  "updated_at": "2026-11-06T22:16:18.530232+00:00",
   "banca_url": "https://banca.2lp.in",
   "total_apps": 17,
   "apps": [
@@ -90,7 +90,7 @@
       "description": "Cliente de correio soberano e interface editorial",
       "repo": "https://gambi.2lp.in/lumen/lauda",
       "stable_latest": "",
-      "nightly_latest": "0.5.0-dev.289+20261027.bf671e9-dev.20261106.a8acaa9",
+      "nightly_latest": "0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a",
       "manifest_url": "https://banca.2lp.in/downloads/lauda/index.json"
     },
     {
