@@ -14,6 +14,7 @@
   - (pratilera) extrair metadados reais dos apks via aapt (closes #24)
 
 ### Features
+  - (catalog) implementar schema declarativo e gerador do catalogo unificado (closes #54)
   - (downloads) incluir pult no seletor de downloads e instaladores dedicados (closes #47)
   - (catalog) registrar e publicar pult na vitrine, catalogo e manifesto de downloads (closes #46)
   - (downloads) registrar e publicar jornaleira na vitrine, catalogo e instaladores (closes #45)
