@@ -1,0 +1,10 @@
+{
+  "app": "tachinha",
+  "name": "Tachinha",
+  "description": "Gerador de sites estáticos ágil e minimalista em Rust",
+  "repo": "https://gambi.2lp.in/lumen/tachinha",
+  "stable_latest": "",
+  "nightly_latest": "",
+  "stables": [],
+  "nightlies": []
+}

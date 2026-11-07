@@ -1,8 +1,7 @@
 {
   "app": "mocambo",
   "name": "Mocambo",
-  "category": "storage",
-  "description": "Cofre soberano de arquivos, documentos e fotos",
+  "description": "Cofre autônomo de arquivos, documentos e fotos",
   "repo": "https://gambi.2lp.in/lumen/mocambo",
   "stable_latest": "",
   "nightly_latest": "0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c",
@@ -10,219 +9,210 @@
   "nightlies": [
     {
       "version": "0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c",
-      "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-linux-amd64.tar.gz",
       "date": "2026-11-04",
       "sha256": "4cf06ebafb51e436f456b5143ecedf6f66004a20fad45285b36d48405f5244a4",
+      "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-linux-amd64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-linux-amd64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-linux-amd64.tar.gz",
           "sha256": "4cf06ebafb51e436f456b5143ecedf6f66004a20fad45285b36d48405f5244a4"
         },
         "linux-arm64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-linux-arm64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-linux-arm64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-linux-arm64.tar.gz",
           "sha256": "6d5f4508eb37d4b350ead153981618268cdc7d5d595de0cba925925b8f3ba57a"
         },
-        "windows-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-windows-amd64.zip",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-windows-amd64.zip",
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-windows-amd64.zip",
           "sha256": "28bb333bcabc29d4511780a904f90f9d6f1e7059e76cb171fe7742c704c8d1da"
         }
-      },
-      "tarball": "mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c",
-      "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-linux-amd64.tar.gz",
       "date": "2026-11-03",
       "sha256": "54b9e7a64c7dbf48adab8ade26db0e60767f6c7ce68534530650ea75c851cf3c",
+      "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-linux-amd64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-linux-amd64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-linux-amd64.tar.gz",
           "sha256": "54b9e7a64c7dbf48adab8ade26db0e60767f6c7ce68534530650ea75c851cf3c"
         },
         "linux-arm64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-linux-arm64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-linux-arm64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-linux-arm64.tar.gz",
           "sha256": "28eebb8de57d6e53176b7d8457a8cde0d15b4cda642b5b73adcb8d60635ba1e0"
         },
-        "windows-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-windows-amd64.zip",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-windows-amd64.zip",
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-windows-amd64.zip",
           "sha256": "b9c1e826dc0053c0e8cb0c3a691d7deacc6d4f04af10fe6780f81246cb20b138"
         }
-      },
-      "tarball": "mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5",
-      "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5-linux-amd64.tar.gz",
       "date": "2026-11-02",
       "sha256": "470b4663b520d0ce7a1da5200d76498ac8c8c98deace4b5a1d8deb14b4f79c0f",
+      "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5-linux-amd64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5-linux-amd64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5-linux-amd64.tar.gz",
           "sha256": "470b4663b520d0ce7a1da5200d76498ac8c8c98deace4b5a1d8deb14b4f79c0f"
         },
         "linux-arm64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5-linux-arm64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5-linux-arm64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5-linux-arm64.tar.gz",
           "sha256": "ea99dd83e29c8e23b1d95dc199343a57f45720cdd1b892eec9f3b36a344e571f"
         },
-        "windows-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5-windows-amd64.zip",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5-windows-amd64.zip",
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5-windows-amd64.zip",
           "sha256": "2daa776bbec5b2ae40d07f273c72b083b01d535ed17e9ae5fd32c55f052f6940"
         }
-      },
-      "tarball": "mocambo-0.3.0-dev.38+20261102.f7792f2-dev.20261102.4af6ec5-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.3.0-dev.37+20261102.2e6e511-dev.20261102.f7792f2",
-      "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.37+20261102.2e6e511-dev.20261102.f7792f2-linux-amd64.tar.gz",
       "date": "2026-11-02",
       "sha256": "c31fb1145c78dd33f51939f2b1dded590fac2f62182df0fdab3ee24e7cf63e4f",
+      "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.37+20261102.2e6e511-dev.20261102.f7792f2-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.37+20261102.2e6e511-dev.20261102.f7792f2-linux-amd64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.37+20261102.2e6e511-dev.20261102.f7792f2-linux-amd64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.37+20261102.2e6e511-dev.20261102.f7792f2-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.37+20261102.2e6e511-dev.20261102.f7792f2-linux-amd64.tar.gz",
           "sha256": "c31fb1145c78dd33f51939f2b1dded590fac2f62182df0fdab3ee24e7cf63e4f"
         },
         "linux-arm64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.37+20261102.2e6e511-dev.20261102.f7792f2-linux-arm64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.37+20261102.2e6e511-dev.20261102.f7792f2-linux-arm64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.37+20261102.2e6e511-dev.20261102.f7792f2-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.37+20261102.2e6e511-dev.20261102.f7792f2-linux-arm64.tar.gz",
           "sha256": "d4751b961013babb0906443ee0cb54614dcdafcecf00d50ac4f58444708700fd"
         },
-        "windows-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.37+20261102.2e6e511-dev.20261102.f7792f2-windows-amd64.zip",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.37+20261102.2e6e511-dev.20261102.f7792f2-windows-amd64.zip",
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.37+20261102.2e6e511-dev.20261102.f7792f2-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.37+20261102.2e6e511-dev.20261102.f7792f2-windows-amd64.zip",
           "sha256": "2415381614f19a806825c15538056c94bfdd4086edf877297d2a22fd07a07fc7"
         }
-      },
-      "tarball": "mocambo-0.3.0-dev.37+20261102.2e6e511-dev.20261102.f7792f2-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.3.0-dev.36+20261102.f2413b6-dev.20261102.2e6e511",
-      "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.36+20261102.f2413b6-dev.20261102.2e6e511-linux-amd64.tar.gz",
       "date": "2026-11-02",
       "sha256": "a9c73a63b75c53459bfb985c100f1a39e77885614469d4a51ef91c5c8b09558b",
+      "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.36+20261102.f2413b6-dev.20261102.2e6e511-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.36+20261102.f2413b6-dev.20261102.2e6e511-linux-amd64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.36+20261102.f2413b6-dev.20261102.2e6e511-linux-amd64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.36+20261102.f2413b6-dev.20261102.2e6e511-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.36+20261102.f2413b6-dev.20261102.2e6e511-linux-amd64.tar.gz",
           "sha256": "a9c73a63b75c53459bfb985c100f1a39e77885614469d4a51ef91c5c8b09558b"
         },
         "linux-arm64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.36+20261102.f2413b6-dev.20261102.2e6e511-linux-arm64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.36+20261102.f2413b6-dev.20261102.2e6e511-linux-arm64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.36+20261102.f2413b6-dev.20261102.2e6e511-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.36+20261102.f2413b6-dev.20261102.2e6e511-linux-arm64.tar.gz",
           "sha256": "57d8208d4e5332251dc4e121911874b3f39a57e1a0d352f3a829e79ff3bbfd4e"
         },
-        "windows-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.36+20261102.f2413b6-dev.20261102.2e6e511-windows-amd64.zip",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.36+20261102.f2413b6-dev.20261102.2e6e511-windows-amd64.zip",
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.36+20261102.f2413b6-dev.20261102.2e6e511-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.36+20261102.f2413b6-dev.20261102.2e6e511-windows-amd64.zip",
           "sha256": "42ce576396efb7c5ecb31a7afbbbb7149c5c415790dfaccb498994df3549c52d"
         }
-      },
-      "tarball": "mocambo-0.3.0-dev.36+20261102.f2413b6-dev.20261102.2e6e511-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6",
-      "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-amd64.tar.gz",
       "date": "2026-11-02",
       "sha256": "347de67caec9970768882128293b0da141133bf3855fe894f4232d7a6bfa1835",
+      "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-amd64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-amd64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-amd64.tar.gz",
           "sha256": "347de67caec9970768882128293b0da141133bf3855fe894f4232d7a6bfa1835"
         },
         "linux-arm64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-arm64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-arm64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-arm64.tar.gz",
           "sha256": "dd83e7441b3b4285f172386746cb03e1021d365483f51f84bbf5eaa6be9713b5"
         },
-        "windows-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-windows-amd64.zip",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-windows-amd64.zip",
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-windows-amd64.zip",
           "sha256": "8667a7ac25a8376e70b26cd8cf138c8c29bd12a1e1c0acff648234624344a099"
         }
-      },
-      "tarball": "mocambo-0.3.0-dev.35+20261029.473d8e5-dev.20261102.f2413b6-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5",
-      "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-linux-amd64.tar.gz",
       "date": "2026-10-29",
       "sha256": "cc3968c922f399c5d5e073ad6dafabe60e7a382dc118ea7f803eecef3fc5207d",
+      "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-linux-amd64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-linux-amd64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-linux-amd64.tar.gz",
           "sha256": "cc3968c922f399c5d5e073ad6dafabe60e7a382dc118ea7f803eecef3fc5207d"
         },
         "linux-arm64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-linux-arm64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-linux-arm64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-linux-arm64.tar.gz",
           "sha256": "bbbe66a794b5eba9853e57f295055461573aa72023e10460b48473b92504e11c"
         },
-        "windows-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-windows-amd64.zip",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-windows-amd64.zip",
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-windows-amd64.zip",
           "sha256": "3042450e69a533c70d442e7a991b3b4abbf3813c42b450244b93f6836258c5d0"
         }
-      },
-      "tarball": "mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301",
-      "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-linux-amd64.tar.gz",
       "date": "2026-10-25",
       "sha256": "0b9cb6e102904b69ea0297c6a1772a2005d8b28e2b6388b131365ef961393233",
+      "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-linux-amd64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-linux-amd64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-linux-amd64.tar.gz",
           "sha256": "0b9cb6e102904b69ea0297c6a1772a2005d8b28e2b6388b131365ef961393233"
         },
         "linux-arm64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-linux-arm64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-linux-arm64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-linux-arm64.tar.gz",
           "sha256": "b0816ebc5f7536dd977eefd054aa39097a8c6c79d1fcb7a927383e3fadf1d30c"
         },
-        "windows-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-windows-amd64.zip",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-windows-amd64.zip",
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-windows-amd64.zip",
           "sha256": "d17063405fa196111c9bdc2825c672967223b64894d2b782c35230cd7cb25af2"
         }
-      },
-      "tarball": "mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238",
-      "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-amd64.tar.gz",
       "date": "2026-10-23",
       "sha256": "961cd169e87f414b36c28a4c01843f1fd0f78951320d528126b31c16dbb8045d",
+      "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-amd64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-amd64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-amd64.tar.gz",
           "sha256": "961cd169e87f414b36c28a4c01843f1fd0f78951320d528126b31c16dbb8045d"
         },
         "linux-arm64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-arm64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-arm64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-arm64.tar.gz",
           "sha256": "c5674a6416ccf34ac9450ee19c0811f34259eb5523dc2a442ed1d5ce98d2e9e8"
         },
-        "windows-amd64": {
-          "url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-windows-amd64.zip",
-          "binary_url": "https://banca.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-windows-amd64.zip",
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-windows-amd64.zip",
           "sha256": "701fb85606049b56cc11ddb594ef66c807b1aa883cb47845a6d1ebfc83acc4e3"
         }
-      },
-      "tarball": "mocambo-0.3.0-dev.22+20261023.fa52c8a-dev.20261023.0508238-linux-amd64.tar.gz"
+      }
     }
   ]
 }

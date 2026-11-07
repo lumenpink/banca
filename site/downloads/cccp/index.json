@@ -1,7 +1,6 @@
 {
   "app": "cccp",
   "name": "CCCP CLI",
-  "category": "governance",
   "description": "Guardião de Conventional Commits e governança GOST",
   "repo": "https://gambi.2lp.in/lumen/cccp",
   "stable_latest": "",
@@ -10,9 +9,9 @@
   "nightlies": [
     {
       "version": "3.2.0-dev.730+20261106.0e6fd62",
-      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.730+20261106.0e6fd62-linux-amd64.tar.gz",
       "date": "2026-11-06",
       "sha256": "7c99917d7934442831f83e0d24218efe2b10a374e8857b0eb652d524a2c14762",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.730+20261106.0e6fd62-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.730+20261106.0e6fd62-linux-amd64.tar.gz",
@@ -24,19 +23,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.730+20261106.0e6fd62-linux-arm64.tar.gz",
           "sha256": "b893d5c987ef161b92a8deb2b0de6bd114ca3e1e63a5855f7c2c6c709fd8ea15"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.730+20261106.0e6fd62-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.730+20261106.0e6fd62-windows-amd64.zip",
           "sha256": "0ae37097fdf4aeaefb2cde4750a226b6b513a653c5e13be0f4bdce0e9e4dc4f3"
         }
-      },
-      "tarball": "cccp-3.2.0-dev.730+20261106.0e6fd62-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "3.2.0-dev.635+20261102.979530b",
-      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.635+20261102.979530b-linux-amd64.tar.gz",
       "date": "2026-11-02",
       "sha256": "3adf1ad2d5dd9e54d528207198da68d65ceaa51b873692f5100043206032b0b6",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.635+20261102.979530b-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.635+20261102.979530b-linux-amd64.tar.gz",
@@ -48,19 +46,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.635+20261102.979530b-linux-arm64.tar.gz",
           "sha256": "e5860d2d11231b07bc6ef2c248c21c2aad4124601fe6621e54193c8077a784fe"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.635+20261102.979530b-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.635+20261102.979530b-windows-amd64.zip",
           "sha256": "6997f25b6e37fb920f890ca023ecd345087ccc4cd8b6383d314b937812563e83"
         }
-      },
-      "tarball": "cccp-3.2.0-dev.635+20261102.979530b-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "3.2.0-dev.628+20261101.8d4e622",
-      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.628+20261101.8d4e622-linux-amd64.tar.gz",
       "date": "2026-11-02",
       "sha256": "008946ed3d1d6f4c09eaa139c3419b14e435ef68ef854ad9546ddd97baf1f4af",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.628+20261101.8d4e622-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.628+20261101.8d4e622-linux-amd64.tar.gz",
@@ -72,19 +69,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.628+20261101.8d4e622-linux-arm64.tar.gz",
           "sha256": "f553579cdba1006d692aaff18a31d49b40c8aa763ba42b68b75ee65f377224ea"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.628+20261101.8d4e622-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.628+20261101.8d4e622-windows-amd64.zip",
           "sha256": "81e6e736f5aa04f9ad86c7bc2fdbaf1ec68a837de6f2b23be9822bebdc154b87"
         }
-      },
-      "tarball": "cccp-3.2.0-dev.628+20261101.8d4e622-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "3.2.0-dev.621+20261101.c5946f3",
-      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.621+20261101.c5946f3-linux-amd64.tar.gz",
       "date": "2026-11-01",
       "sha256": "01c90379e0cc2bafceb62c44c4df8e6620aa96ae880f5ac81260ee84b93fd953",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.621+20261101.c5946f3-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.621+20261101.c5946f3-linux-amd64.tar.gz",
@@ -96,19 +92,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.621+20261101.c5946f3-linux-arm64.tar.gz",
           "sha256": "785396a632573c50658ffe70264d2a7190a6507041c6a373ec5dd2cb2d8c87dc"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.621+20261101.c5946f3-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.621+20261101.c5946f3-windows-amd64.zip",
           "sha256": "5b7717544ededb5f9206ab475f32383770a204fbdaf218df65cf7a6db39a08e4"
         }
-      },
-      "tarball": "cccp-3.2.0-dev.621+20261101.c5946f3-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "3.2.0-dev.614+20261101.4e787e2",
-      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.614+20261101.4e787e2-linux-amd64.tar.gz",
       "date": "2026-11-01",
       "sha256": "46fbef2e63d15016699947aa938ec2d537264867235a813ced07fb8573005e57",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.614+20261101.4e787e2-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.614+20261101.4e787e2-linux-amd64.tar.gz",
@@ -120,19 +115,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.614+20261101.4e787e2-linux-arm64.tar.gz",
           "sha256": "fb4d35ba04f608c831f8dd9c1cd8b12df35577bb514e9d0adc37b8c64c341fb3"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.614+20261101.4e787e2-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.614+20261101.4e787e2-windows-amd64.zip",
           "sha256": "d3869539f7911d84affe23795045a8001462e650e8fabd0b38d4079a0004a921"
         }
-      },
-      "tarball": "cccp-3.2.0-dev.614+20261101.4e787e2-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "3.2.0-dev.539+20261031.ddeea54",
-      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.539+20261031.ddeea54-linux-amd64.tar.gz",
       "date": "2026-10-31",
       "sha256": "42a2df78f7086a77f3a1e35d322352b5190228312439b0eb1e60cb2e983ef6f2",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.539+20261031.ddeea54-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.539+20261031.ddeea54-linux-amd64.tar.gz",
@@ -144,19 +138,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.539+20261031.ddeea54-linux-arm64.tar.gz",
           "sha256": "89cd1ff105f28e37f83787a44917b9eb0992ee9577f9bacb6230e1b88992bf1d"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.539+20261031.ddeea54-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.539+20261031.ddeea54-windows-amd64.zip",
           "sha256": "65a1409544e42d410adc00e51d9d4e0361681c092295b16457526e3048620870"
         }
-      },
-      "tarball": "cccp-3.2.0-dev.539+20261031.ddeea54-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "3.2.0-dev.532+20261031.1e2d017",
-      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.532+20261031.1e2d017-linux-amd64.tar.gz",
       "date": "2026-10-31",
       "sha256": "fb813891efa0ad71f42fdb5801f3d78ab4c42424840cb2bb21ae47beb02f3ec2",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.532+20261031.1e2d017-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.532+20261031.1e2d017-linux-amd64.tar.gz",
@@ -168,19 +161,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.532+20261031.1e2d017-linux-arm64.tar.gz",
           "sha256": "e83148cb238f6005557db47d4e06341561eb0815cebfc89698c23b74692c49bf"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.532+20261031.1e2d017-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.532+20261031.1e2d017-windows-amd64.zip",
           "sha256": "39c5b1cd26e6446a5702465ff5c534c29a8c50a60b001a27b1223a89356a6b1c"
         }
-      },
-      "tarball": "cccp-3.2.0-dev.532+20261031.1e2d017-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "3.2.0-dev.474+20261030.1ef8222",
-      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.474+20261030.1ef8222-linux-amd64.tar.gz",
       "date": "2026-10-30",
       "sha256": "7093bfa7eca6faf0dfe1b0db8f255967faa22ee636ea0dd269028abfe440a42f",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.474+20261030.1ef8222-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.474+20261030.1ef8222-linux-amd64.tar.gz",
@@ -192,19 +184,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.474+20261030.1ef8222-linux-arm64.tar.gz",
           "sha256": "d532638605deb7218dee442bbe468483d04f16f9473c54960a9cda43f5c342c4"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.474+20261030.1ef8222-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.474+20261030.1ef8222-windows-amd64.zip",
           "sha256": "9b264404c5d5ce94396d9103697daf9be32251aee021854e8cd62596c96afa62"
         }
-      },
-      "tarball": "cccp-3.2.0-dev.474+20261030.1ef8222-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "3.2.0-dev.468+20261030.fefc1cd",
-      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.468+20261030.fefc1cd-linux-amd64.tar.gz",
       "date": "2026-10-30",
       "sha256": "aefcd26e3e506bc1fd83f1ee3e1210fa01a1f54f34a0fb8de5dfed1a34150147",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.468+20261030.fefc1cd-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.468+20261030.fefc1cd-linux-amd64.tar.gz",
@@ -216,19 +207,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.468+20261030.fefc1cd-linux-arm64.tar.gz",
           "sha256": "963280d0adc585f19651a650913f5345fbb86857758c15d52d09389904464130"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.468+20261030.fefc1cd-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.468+20261030.fefc1cd-windows-amd64.zip",
           "sha256": "139de9d504f3211723fb6a4ecc915320fe6f9ed883ee84c4fc2fc3c986b7cb38"
         }
-      },
-      "tarball": "cccp-3.2.0-dev.468+20261030.fefc1cd-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "3.2.0-dev.462+20261030.0497ffe",
-      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-linux-amd64.tar.gz",
       "date": "2026-10-30",
       "sha256": "020c1228c27bfaf35e9fd82804bf43ed208cc1a7a9a7fa7d8f4992089f1269cd",
+      "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-linux-amd64.tar.gz",
@@ -240,13 +230,12 @@
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-linux-arm64.tar.gz",
           "sha256": "952a44da77a808cb69d0627de41f616ba09cf69f0b9588cce97e5293058f40af"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-windows-amd64.zip",
           "sha256": "537e878f48f195c5c73e0b01170a61593a392ffb10336967d65bd17d5d677882"
         }
-      },
-      "tarball": "cccp-3.2.0-dev.462+20261030.0497ffe-linux-amd64.tar.gz"
+      }
     }
   ]
 }

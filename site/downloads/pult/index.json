@@ -1,8 +1,7 @@
 {
   "app": "pult",
   "name": "Pult",
-  "category": "terminal",
-  "description": "Estação de trabalho TUI soberana e mediadora de contexto AST",
+  "description": "Estação de trabalho TUI autônomo e mediadora de contexto AST",
   "repo": "https://gambi.2lp.in/lumen/pult",
   "stable_latest": "",
   "nightly_latest": "0.1.0-dev.244+20261101.0c82c73",
@@ -10,9 +9,9 @@
   "nightlies": [
     {
       "version": "0.1.0-dev.244+20261101.0c82c73",
-      "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.244+20261101.0c82c73-linux-amd64.tar.gz",
       "date": "2026-11-01",
       "sha256": "cec484689984fb39db0c2eeb61fcdacc552b205863cea43c58f76bdccecde09d",
+      "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.244+20261101.0c82c73-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.244+20261101.0c82c73-linux-amd64.tar.gz",
@@ -24,19 +23,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.244+20261101.0c82c73-linux-arm64.tar.gz",
           "sha256": "b4a4ac4cb277a30c13216e43c602f0e99b79a7228c49b16a3eb58a7f85da48e2"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.244+20261101.0c82c73-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.244+20261101.0c82c73-windows-amd64.zip",
           "sha256": "d13b91324fec62191978fbbf882eebbb736c68d112734748f2475ef058e83e63"
         }
-      },
-      "tarball": "pult-0.1.0-dev.244+20261101.0c82c73-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.1.0-dev.239+20261030.0d68603",
-      "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.239+20261030.0d68603-linux-amd64.tar.gz",
       "date": "2026-10-30",
       "sha256": "a80b75411c033649e512a10cb99fd6fbf3ac04458e5131982c29c3c508c8d52a",
+      "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.239+20261030.0d68603-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.239+20261030.0d68603-linux-amd64.tar.gz",
@@ -48,19 +46,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.239+20261030.0d68603-linux-arm64.tar.gz",
           "sha256": "d2d9361bde03a56eb5c410bfc22f8378a3faaf201e7117b16ff03a75caf8c3f0"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.239+20261030.0d68603-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.239+20261030.0d68603-windows-amd64.zip",
           "sha256": "12025fa7a7427d038df65b461c555c901612ce3b54e265283e86f8891bc4bc88"
         }
-      },
-      "tarball": "pult-0.1.0-dev.239+20261030.0d68603-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.1.0-dev.237+20261029.25c76a4",
-      "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.237+20261029.25c76a4-linux-amd64.tar.gz",
       "date": "2026-10-29",
       "sha256": "73e7f31e8b17ee2991f79772a6e7fe29ed3ba216766336ed1fb65a8778d93ed6",
+      "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.237+20261029.25c76a4-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.237+20261029.25c76a4-linux-amd64.tar.gz",
@@ -72,13 +69,12 @@
           "binary_url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.237+20261029.25c76a4-linux-arm64.tar.gz",
           "sha256": "e0a2d0b6f836d766e78f66c61304b0a98683a563dd70c0d4d94e780df0123f54"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.237+20261029.25c76a4-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.237+20261029.25c76a4-windows-amd64.zip",
           "sha256": "7c41a97650048b06549623d7daf5d4934f88071b6c38aea38b6ae96381814108"
         }
-      },
-      "tarball": "pult-0.1.0-dev.237+20261029.25c76a4-linux-amd64.tar.gz"
+      }
     }
   ]
 }

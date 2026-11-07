@@ -1,8 +1,7 @@
 {
   "app": "ayvu",
   "name": "Ayvu",
-  "category": "ai",
-  "description": "Tradutor e motor de síntese de voz soberano",
+  "description": "Tradutor e motor de síntese de voz autônomo",
   "repo": "https://gambi.2lp.in/lumen/ayvu",
   "stable_latest": "",
   "nightly_latest": "0.1.0-dev.37+20261025.4ebbb29",
@@ -10,9 +9,9 @@
   "nightlies": [
     {
       "version": "0.1.0-dev.37+20261025.4ebbb29",
-      "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261025.4ebbb29-linux-amd64.tar.gz",
       "date": "2026-10-25",
       "sha256": "718984c4015660fb2f6ea58cb848ab96a8175865cca1cd7f347931d0d7d3d290",
+      "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261025.4ebbb29-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261025.4ebbb29-linux-amd64.tar.gz",
@@ -24,19 +23,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261025.4ebbb29-linux-arm64.tar.gz",
           "sha256": "ec26ef77d5e6197b89e44621f31be74932d7245e2ea677e9de4c523ca8c5ecb5"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261025.4ebbb29-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261025.4ebbb29-windows-amd64.zip",
           "sha256": "95ad9a6f46b6aef605d43677e2ecd3183e803042d3d037e28b89ad34d2aa4705"
         }
-      },
-      "tarball": "ayvu-0.1.0-dev.37+20261025.4ebbb29-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610",
-      "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610-linux-amd64.tar.gz",
       "date": "2026-10-23",
       "sha256": "1fdff0e0f61a7a6411c58edbdb40d9b6ace5c6329cddf6e1d55d21e120f520ed",
+      "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610-linux-amd64.tar.gz",
@@ -48,13 +46,12 @@
           "binary_url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610-linux-arm64.tar.gz",
           "sha256": "52cff912da6e798aa8ddd37f8fd8584b70e202b20e146900c3e2ad2eec5fbf65"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610-windows-amd64.zip",
           "sha256": "98a27e2ddc4c7323ef929b1d0c1969337e47ddc103d887c0662e2352efa2569e"
         }
-      },
-      "tarball": "ayvu-0.1.0-dev.27+20261019.caf0cc7+20261023.8f3d610-linux-amd64.tar.gz"
+      }
     }
   ]
 }

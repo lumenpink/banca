@@ -46,24 +46,29 @@ try:
     with open('$CATALOG_FILE') as f:
         d = json.load(f)
     assert 'updated_at' in d
-    assert 'banca_url' in d
     assert 'apps' in d
-    assert isinstance(d['apps'], list)
-    assert len(d['apps']) >= 16
-    app_slugs = set()
-    for a in d['apps']:
-        assert 'app' in a and a['app']
-        assert 'name' in a and a['name']
-        assert 'description' in a
-        assert 'stable_latest' in a
-        assert 'nightly_latest' in a
-        assert 'manifest_url' in a
-        app_slugs.add(a['app'])
-    assert 'jornaleira' in app_slugs, 'jornaleira ausente no catalog.json'
-    jornaleira_app = [a for a in d['apps'] if a.get('app') == 'jornaleira'][0]
-    assert jornaleira_app.get('nightly_latest'), 'jornaleira sem nightly_latest no catalog.json'
-    print(len(d['apps']))
-
+    apps = d['apps']
+    if isinstance(apps, dict):
+        assert len(apps) >= 16
+        assert 'jornaleira' in apps, 'jornaleira ausente no catalog.json'
+        jornaleira_app = apps['jornaleira']
+        dev_ver = jornaleira_app.get('channels', {}).get('dev', {}).get('latest_version')
+        assert dev_ver, 'jornaleira sem latest_version no canal dev do catalog.json'
+        print(len(apps))
+    elif isinstance(apps, list):
+        assert len(apps) >= 16
+        app_slugs = set()
+        for a in apps:
+            assert 'app' in a and a['app']
+            assert 'name' in a and a['name']
+            assert 'description' in a
+            app_slugs.add(a['app'])
+        assert 'jornaleira' in app_slugs, 'jornaleira ausente no catalog.json'
+        jornaleira_app = [a for a in apps if a.get('app') == 'jornaleira'][0]
+        assert jornaleira_app.get('nightly_latest'), 'jornaleira sem nightly_latest no catalog.json'
+        print(len(apps))
+    else:
+        sys.exit(1)
 except Exception as e:
     sys.exit(1)
 " 2>/dev/null || true)
@@ -85,12 +90,21 @@ MUTATED_CHECK=$(python3 -c "
 import json
 with open('$CATALOG_FILE') as f:
     d = json.load(f)
-d['apps'] = [a for a in d['apps'] if a.get('app') != 'jornaleira']
-try:
-    assert 'jornaleira' in [a['app'] for a in d['apps']]
-    print('MUTANTE_VIVEU')
-except AssertionError:
-    print('MUTANTE_MORTO')
+if isinstance(d.get('apps'), dict):
+    if 'jornaleira' in d['apps']:
+        del d['apps']['jornaleira']
+    try:
+        assert 'jornaleira' in d['apps']
+        print('MUTANTE_VIVEU')
+    except AssertionError:
+        print('MUTANTE_MORTO')
+else:
+    d['apps'] = [a for a in d['apps'] if a.get('app') != 'jornaleira']
+    try:
+        assert 'jornaleira' in [a['app'] for a in d['apps']]
+        print('MUTANTE_VIVEU')
+    except AssertionError:
+        print('MUTANTE_MORTO')
 ")
 if [ "$MUTATED_CHECK" = "MUTANTE_MORTO" ]; then
     echo "✅ OK (Mutação detectada com precisão)"
@@ -99,21 +113,31 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
-# 5. [MUTAÇÃO] Validar rejeição caso jornaleira tenha nightly_latest vazio
-echo -n "-> 5. [MUTAÇÃO] Testando sensibilidade a jornaleira sem nightly_latest... "
+# 5. [MUTAÇÃO] Validar rejeição caso jornaleira tenha nightly/dev latest vazio
+echo -n "-> 5. [MUTAÇÃO] Testando sensibilidade a jornaleira sem versão de desenvolvimento... "
 MUTATED_CHECK_NIGHTLY=$(python3 -c "
 import json
 with open('$CATALOG_FILE') as f:
     d = json.load(f)
-for a in d['apps']:
-    if a.get('app') == 'jornaleira':
-        a['nightly_latest'] = ''
-try:
-    j = [a for a in d['apps'] if a.get('app') == 'jornaleira'][0]
-    assert j.get('nightly_latest')
-    print('MUTANTE_VIVEU')
-except AssertionError:
-    print('MUTANTE_MORTO')
+if isinstance(d.get('apps'), dict):
+    if 'jornaleira' in d['apps']:
+        d['apps']['jornaleira']['channels']['dev']['latest_version'] = ''
+    try:
+        j = d['apps']['jornaleira']
+        assert j.get('channels', {}).get('dev', {}).get('latest_version')
+        print('MUTANTE_VIVEU')
+    except AssertionError:
+        print('MUTANTE_MORTO')
+else:
+    for a in d['apps']:
+        if a.get('app') == 'jornaleira':
+            a['nightly_latest'] = ''
+    try:
+        j = [a for a in d['apps'] if a.get('app') == 'jornaleira'][0]
+        assert j.get('nightly_latest')
+        print('MUTANTE_VIVEU')
+    except AssertionError:
+        print('MUTANTE_MORTO')
 ")
 if [ "$MUTATED_CHECK_NIGHTLY" = "MUTANTE_MORTO" ]; then
     echo "✅ OK (Mutação detectada com precisão)"
@@ -130,11 +154,17 @@ with open('site/downloads/joaju/index.json') as f:
     joaju_index = json.load(f)
 with open('$CATALOG_FILE') as f:
     catalog = json.load(f)
-joaju_cat = [a for a in catalog['apps'] if a.get('app') == 'joaju'][0]
-if joaju_index.get('nightly_latest') == joaju_cat.get('nightly_latest'):
+if isinstance(catalog.get('apps'), dict):
+    joaju_cat = catalog['apps'].get('joaju', {})
+    cat_ver = joaju_cat.get('channels', {}).get('dev', {}).get('latest_version')
+else:
+    joaju_cat = [a for a in catalog['apps'] if a.get('app') == 'joaju'][0]
+    cat_ver = joaju_cat.get('nightly_latest')
+
+if joaju_index.get('nightly_latest') == cat_ver:
     print('OK')
 else:
-    print('MISMATCH: index=' + str(joaju_index.get('nightly_latest')) + ' cat=' + str(joaju_cat.get('nightly_latest')))
+    print('MISMATCH: index=' + str(joaju_index.get('nightly_latest')) + ' cat=' + str(cat_ver))
 ")
 if [ "$PARITY" = "OK" ]; then
     echo "✅ OK"
@@ -151,10 +181,17 @@ with open('site/downloads/joaju/index.json') as f:
     joaju_index = json.load(f)
 with open('$CATALOG_FILE') as f:
     catalog = json.load(f)
-joaju_cat = [a for a in catalog['apps'] if a.get('app') == 'joaju'][0]
-joaju_cat['nightly_latest'] = '0.0.0-mutant'
+
+if isinstance(catalog.get('apps'), dict):
+    catalog['apps']['joaju']['channels']['dev']['latest_version'] = '0.0.0-mutant'
+    cat_ver = catalog['apps']['joaju']['channels']['dev']['latest_version']
+else:
+    joaju_cat = [a for a in catalog['apps'] if a.get('app') == 'joaju'][0]
+    joaju_cat['nightly_latest'] = '0.0.0-mutant'
+    cat_ver = joaju_cat['nightly_latest']
+
 try:
-    assert joaju_index.get('nightly_latest') == joaju_cat.get('nightly_latest')
+    assert joaju_index.get('nightly_latest') == cat_ver
     print('MUTANTE_VIVEU')
 except AssertionError:
     print('MUTANTE_MORTO')

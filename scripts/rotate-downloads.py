@@ -19,21 +19,21 @@ MAX_NIGHTLIES = 10
 DEFAULT_APPS = [
     ("cccp", "CCCP CLI", "Guardião de Conventional Commits e governança GOST", "governance"),
     ("navalha", "Navalha", "Despachante e canivete suíço para deploy e automação", "devops"),
-    ("lauda", "Lauda", "Cliente de correio soberano e interface editorial", "editorial"),
+    ("lauda", "Lauda", "Cliente de correio e interface editorial", "editorial"),
     ("lacraia", "La Craia", "Cockpit de som brutalista e jukebox comunitária", "multimedia"),
     ("joaju", "Joaju", "Compilador vetorial de diagramas, tabelas e heredogramas", "editorial"),
     ("svyaz", "Svyaz", "Camada de conectividade e mensageria P2P distribuída", "network"),
     ("mayak", "Mayak", "Farol de telemetria e observabilidade sem rastreamento", "monitoring"),
     ("kvant", "Kvant", "Motor analítico de dados e processamento vetorial", "analytics"),
-    ("ayvu", "Ayvu", "Tradutor e motor de síntese de voz soberano", "ai"),
+    ("ayvu", "Ayvu", "Tradutor e motor de síntese de voz", "ai"),
     ("tuitata", "Tuitatá", "Agregador e leitor de feeds RSS/Atom minimalista", "reader"),
     ("baquara", "Baquara", "Plataforma de gestão de conhecimento e biblioteca", "knowledge"),
-    ("mocambo", "Mocambo", "Cofre soberano de arquivos, documentos e fotos", "storage"),
+    ("mocambo", "Mocambo", "Cofre de arquivos, documentos e fotos", "storage"),
     ("hendu", "Hendu", "Bot de acessibilidade e audiodescrição comunitária", "accessibility"),
     ("mandu", "Mandu", "Editor brutalista de notas em texto puro, Markdown e Joaju", "editorial"),
     ("tatupeba", "Tatupeba", "Blindagem e firewall de borda com regras atômicas", "security"),
     ("jornaleira", "Jornaleira", "Gestor central de aplicativos e auto-update da Banca", "system"),
-    ("pult", "Pult", "Estação de trabalho TUI soberana e mediadora de contexto AST", "terminal")
+    ("pult", "Pult", "Estação de trabalho TUI e mediadora de contexto AST", "terminal")
 ]
 
 def is_real_release(entry):
@@ -216,50 +216,16 @@ def generate_default_manifests(downloads_dir):
     generate_catalog_json(downloads_dir)
 
 def generate_catalog_json(downloads_dir):
-    """Gera o arquivo catalog.json consolidado para a Jornaleira e consumidores dinâmicos (#41)."""
-    downloads_path = Path(downloads_dir)
-    downloads_path.mkdir(parents=True, exist_ok=True)
-    catalog_file = downloads_path / "catalog.json"
+    """Gera o catálogo unificado catalog.json e sincroniza os manifestos (#54)."""
+    try:
+        from scripts.banca_catalog import generate_unified_catalog, sync_compat_manifests
+    except ImportError:
+        import sys
+        sys.path.insert(0, str(Path(__file__).parent.parent))
+        from scripts.banca_catalog import generate_unified_catalog, sync_compat_manifests
 
-    apps_list = []
-    seen_slugs = set()
-    # Itera sobre todas as pastas que possuem index.json (ignorando symlinks e duplicatas)
-    for item in sorted(downloads_path.iterdir()):
-        if item.is_dir() and not item.is_symlink():
-            manifest_file = item / "index.json"
-            if manifest_file.exists():
-                try:
-                    with open(manifest_file, "r", encoding="utf-8") as f:
-                        data = json.load(f)
-                    app_slug = data.get("app", item.name)
-                    if app_slug in seen_slugs:
-                        continue
-                    seen_slugs.add(app_slug)
-                    apps_list.append({
-                        "app": app_slug,
-                        "name": data.get("name", app_slug),
-                        "category": data.get("category", "general"),
-                        "description": data.get("description", ""),
-                        "repo": data.get("repo", ""),
-                        "stable_latest": data.get("stable_latest", ""),
-                        "nightly_latest": data.get("nightly_latest", ""),
-                        "manifest_url": f"https://banca.2lp.in/downloads/{app_slug}/index.json"
-                    })
-                except Exception as e:
-                    print(f"⚠ Erro ao ler {manifest_file}: {e}")
-
-    catalog_data = {
-        "updated_at": datetime.now(timezone.utc).isoformat(),
-        "banca_url": "https://banca.2lp.in",
-        "total_apps": len(apps_list),
-        "apps": apps_list
-    }
-
-    with open(catalog_file, "w", encoding="utf-8") as f:
-        json.dump(catalog_data, f, indent=2, ensure_ascii=False)
-        f.write("\n")
-
-    print(f"✔ Catálogo consolidado gerado: {catalog_file} ({len(apps_list)} apps)")
+    cat_data = generate_unified_catalog(downloads_dir)
+    sync_compat_manifests(downloads_dir, cat_data)
     return True
 
 def main():

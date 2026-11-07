@@ -1,7 +1,6 @@
 {
   "app": "navalha",
   "name": "Navalha",
-  "category": "devops",
   "description": "Despachante e canivete suíço para deploy e automação",
   "repo": "https://gambi.2lp.in/lumen/navalha",
   "stable_latest": "",
@@ -10,9 +9,9 @@
   "nightlies": [
     {
       "version": "0.1.0-dev.106+20261104.2df538c",
-      "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.106+20261104.2df538c-linux-amd64.tar.gz",
       "date": "2026-11-04",
       "sha256": "7a9d49668197c119900093232f35a4c24ba092f685ddf8461b42a9695a96579a",
+      "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.106+20261104.2df538c-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.106+20261104.2df538c-linux-amd64.tar.gz",
@@ -24,19 +23,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.106+20261104.2df538c-linux-arm64.tar.gz",
           "sha256": "c94a23899b5e5a3efc493b33e74591efedfea10a09944a7d33d98109fe174516"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.106+20261104.2df538c-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.106+20261104.2df538c-windows-amd64.zip",
           "sha256": "5955070d2a1fb46fde79f66d6c384eb7d9b4e0aa874c09a90d6cd0e92736afcb"
         }
-      },
-      "tarball": "navalha-0.1.0-dev.106+20261104.2df538c-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.1.0-dev.91+20261025.4119a92",
-      "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.91+20261025.4119a92-linux-amd64.tar.gz",
       "date": "2026-10-25",
       "sha256": "ef98e8c97f5ad54e40ba9913e3136cd74bce7064a70b8f7f65605e31a6ca0725",
+      "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.91+20261025.4119a92-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.91+20261025.4119a92-linux-amd64.tar.gz",
@@ -48,19 +46,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.91+20261025.4119a92-linux-arm64.tar.gz",
           "sha256": "c9d64761a77cec8f782ee5ed054804d549d9454e43577dfcc204e135ccbc0c59"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.91+20261025.4119a92-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.91+20261025.4119a92-windows-amd64.zip",
           "sha256": "626bdb65e50aec4c3dbca913edfed6f6c364e9cb00f14ef606e9a95e11fb0f89"
         }
-      },
-      "tarball": "navalha-0.1.0-dev.91+20261025.4119a92-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2",
-      "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-linux-amd64.tar.gz",
       "date": "2026-10-23",
       "sha256": "8ac219d4131f605c7dfc5ef78504dfa0d2f0ec0a9270328e9ba170cc2c5a8d39",
+      "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-linux-amd64.tar.gz",
@@ -72,13 +69,12 @@
           "binary_url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-linux-arm64.tar.gz",
           "sha256": "296c455daf99723c05d32ea6f277f4a3b9b152a57760e948bbfed7efce4b9919"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-windows-amd64.zip",
           "sha256": "dce13fb1c7820d08d91fdc02fd027235d14134fa1e54a8c77f30da2b9c444092"
         }
-      },
-      "tarball": "navalha-0.1.0-dev.74+20261023.84801f8+20261023.cf0abd2-linux-amd64.tar.gz"
+      }
     }
   ]
 }

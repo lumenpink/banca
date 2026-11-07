@@ -26,7 +26,7 @@ fi
 
 # 2. catalog.json
 echo -n "-> 2. catalog.json contém pult... "
-if jq -e '.apps[] | select(.app == "pult")' "$CATALOG_FILE" >/dev/null; then
+if jq -e '.apps.pult // (.apps[]? | select(.app == "pult"))' "$CATALOG_FILE" >/dev/null; then
     echo "✅ OK"
 else
     echo "❌ FALHOU"

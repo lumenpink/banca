@@ -1,7 +1,6 @@
 {
   "app": "kvant",
   "name": "Kvant",
-  "category": "analytics",
   "description": "Motor analítico de dados e processamento vetorial",
   "repo": "https://gambi.2lp.in/lumen/kvant",
   "stable_latest": "",
@@ -10,9 +9,9 @@
   "nightlies": [
     {
       "version": "0.1.0-dev.32+20261025.632e317",
-      "url": "https://bucket.2lp.in/downloads/kvant/nightly/kvant-0.1.0-dev.32+20261025.632e317-linux-amd64.tar.gz",
       "date": "2026-10-25",
       "sha256": "27887355ce44c3005eb118a53b35e7d72fdaf73c0557a9ae158c9b8735253f80",
+      "url": "https://bucket.2lp.in/downloads/kvant/nightly/kvant-0.1.0-dev.32+20261025.632e317-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/kvant/nightly/kvant-0.1.0-dev.32+20261025.632e317-linux-amd64.tar.gz",
@@ -24,14 +23,13 @@
           "binary_url": "https://bucket.2lp.in/downloads/kvant/nightly/kvant-0.1.0-dev.32+20261025.632e317-linux-arm64.tar.gz",
           "sha256": "98966e3b654622624aab5408bc6e68f760285065cef4ecd4065b0660f2285b79"
         }
-      },
-      "tarball": "kvant-0.1.0-dev.32+20261025.632e317-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.1.0-dev.21+20261022.e87d416+20261023.10a8605",
-      "url": "https://bucket.2lp.in/downloads/kvant/nightly/kvant-0.1.0-dev.21+20261022.e87d416+20261023.10a8605-linux-amd64.tar.gz",
       "date": "2026-10-23",
       "sha256": "24583af4dc3769e311737e4b523d491b8eaf379ae122f0171b41d009f12e52b9",
+      "url": "https://bucket.2lp.in/downloads/kvant/nightly/kvant-0.1.0-dev.21+20261022.e87d416+20261023.10a8605-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/kvant/nightly/kvant-0.1.0-dev.21+20261022.e87d416+20261023.10a8605-linux-amd64.tar.gz",
@@ -43,8 +41,7 @@
           "binary_url": "https://bucket.2lp.in/downloads/kvant/nightly/kvant-0.1.0-dev.21+20261022.e87d416+20261023.10a8605-linux-arm64.tar.gz",
           "sha256": "3ab0d2bfd7c1c339b47c4a6fd134d5a9bb7900479902f591b3789fb35f8a3b35"
         }
-      },
-      "tarball": "kvant-0.1.0-dev.21+20261022.e87d416+20261023.10a8605-linux-amd64.tar.gz"
+      }
     }
   ]
 }

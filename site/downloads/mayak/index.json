@@ -1,7 +1,6 @@
 {
   "app": "mayak",
   "name": "Mayak",
-  "category": "monitoring",
   "description": "Farol de telemetria e observabilidade sem rastreamento",
   "repo": "https://gambi.2lp.in/lumen/mayak",
   "stable_latest": "",
@@ -10,9 +9,9 @@
   "nightlies": [
     {
       "version": "0.1.0-dev.32+20261025.4119331",
-      "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.4119331-linux-amd64.tar.gz",
       "date": "2026-10-25",
       "sha256": "59bb8c7b53e0cd25b506639b10df1e2dac1908ed13f34694948457bd4076616b",
+      "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.4119331-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.4119331-linux-amd64.tar.gz",
@@ -24,19 +23,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.4119331-linux-arm64.tar.gz",
           "sha256": "fb0f3ec09ab650dad1d6015e468eeaf0cf007b2df90212e330bc727272f19462"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.4119331-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.4119331-windows-amd64.zip",
           "sha256": "210fc229ebffd87ccedc9b56e42e73bc6d152e7e21182359390e4451020b02f8"
         }
-      },
-      "tarball": "mayak-0.1.0-dev.32+20261025.4119331-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.1.0-dev.32+20261025.fa9f521",
-      "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.fa9f521-linux-amd64.tar.gz",
       "date": "2026-10-25",
       "sha256": "bf7e391a56159ec3cc0695aca5215ec0dbf4559f94476a3c6ba6d043e2385ef4",
+      "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.fa9f521-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.fa9f521-linux-amd64.tar.gz",
@@ -48,19 +46,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.fa9f521-linux-arm64.tar.gz",
           "sha256": "5f6d644e9ec49fc630fd2116fe66b172a4283f67d24c6bf63fc20ce918af375e"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.fa9f521-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.32+20261025.fa9f521-windows-amd64.zip",
           "sha256": "cb9f58a796c5695b9bb09f0081776e11fb3a029514653bb40aea5271d3362e51"
         }
-      },
-      "tarball": "mayak-0.1.0-dev.32+20261025.fa9f521-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638",
-      "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638-linux-amd64.tar.gz",
       "date": "2026-10-23",
       "sha256": "e03e708a2ceb714c6e6c16bb89bc9d16dad12abf17ebdfbcf8c5b26993ebcc40",
+      "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638-linux-amd64.tar.gz",
@@ -72,19 +69,18 @@
           "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638-linux-arm64.tar.gz",
           "sha256": "52ea602387d69a5d6e4258e19a6a58050207a862230a874d1ff372146ef3159e"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638-windows-amd64.zip",
           "sha256": "3bf9f4a7e7af01200ce4b666d85dd553301a2030412c895c6c18a6c2ef45ea4f"
         }
-      },
-      "tarball": "mayak-0.1.0-dev.25+20261023.a50b7ba+20261023.8fcd638-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.1.0-dev.18+20261019.318cb42+20261023.080042d",
-      "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-linux-amd64.tar.gz",
       "date": "2026-10-23",
       "sha256": "8258eba591a5601229e360133891efade9295038bc0caee90821d77f41157778",
+      "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
           "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-linux-amd64.tar.gz",
@@ -96,13 +92,12 @@
           "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-linux-arm64.tar.gz",
           "sha256": "74d4ddfae68b0c73deb1a548faf884631c8ba5f259d96c18f992bebc574d8742"
         },
-        "windows-amd64": {
+        "windows-x86_64": {
           "url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/mayak/nightly/mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-windows-amd64.zip",
           "sha256": "866c3b6afe82951ed6f10d7f8b52a0d0fdba4e62db2f597b70deebea69421cc9"
         }
-      },
-      "tarball": "mayak-0.1.0-dev.18+20261019.318cb42+20261023.080042d-linux-amd64.tar.gz"
+      }
     }
   ]
 }

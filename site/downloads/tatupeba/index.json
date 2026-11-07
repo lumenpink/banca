@@ -1,7 +1,6 @@
 {
   "app": "tatupeba",
   "name": "Tatupeba",
-  "category": "security",
   "description": "Blindagem e firewall de borda com regras atômicas",
   "repo": "https://gambi.2lp.in/lumen/tatupeba",
   "stable_latest": "",
@@ -10,51 +9,49 @@
   "nightlies": [
     {
       "version": "0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf",
-      "url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf-linux-amd64.tar.gz",
       "date": "2026-10-25",
       "sha256": "04ffb4db6d75018b265ebc8d8fd6c0c23f4ac05bcd490d2c302e42d9a667d175",
+      "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
-          "url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf-linux-amd64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf-linux-amd64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf-linux-amd64.tar.gz",
           "sha256": "04ffb4db6d75018b265ebc8d8fd6c0c23f4ac05bcd490d2c302e42d9a667d175"
         },
         "linux-arm64": {
-          "url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf-linux-arm64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf-linux-arm64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf-linux-arm64.tar.gz",
           "sha256": "4da55c3f51240006deff102de125baa36020ec151514ac95d0c4f3e2e78c06d9"
         },
-        "windows-amd64": {
-          "url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf-windows-amd64.zip",
-          "binary_url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf-windows-amd64.zip",
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf-windows-amd64.zip",
           "sha256": "91bfa0d657a2663d1639a0b57d09d81356c05bd013018a450510bb10105004b2"
         }
-      },
-      "tarball": "tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261025.bf658cf-linux-amd64.tar.gz"
+      }
     },
     {
       "version": "0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43",
-      "url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-amd64.tar.gz",
       "date": "2026-10-24",
       "sha256": "27902976e1e70e320c5a1745f8dfc92f3ebab53f41dc3abcb6097627354e9faf",
+      "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-amd64.tar.gz",
       "artifacts": {
         "linux-amd64": {
-          "url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-amd64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-amd64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-amd64.tar.gz",
           "sha256": "27902976e1e70e320c5a1745f8dfc92f3ebab53f41dc3abcb6097627354e9faf"
         },
         "linux-arm64": {
-          "url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-arm64.tar.gz",
-          "binary_url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-arm64.tar.gz",
+          "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-arm64.tar.gz",
           "sha256": "3d3131e6d5db0d5d62f5e6978234b67a02964ac3a17c5a302db32ad79d39b810"
         },
-        "windows-amd64": {
-          "url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-windows-amd64.zip",
-          "binary_url": "https://banca.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-windows-amd64.zip",
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-windows-amd64.zip",
           "sha256": "c248d3d37f8fa26b226c8f44aeb6034c6b0c646b528c171f8c146ebe01dd764f"
         }
-      },
-      "tarball": "tatupeba-0.1.0-dev.24+20261023.f933e36-dev.20261024.76b0c43-linux-amd64.tar.gz"
+      }
     }
   ]
 }

@@ -1,0 +1,165 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "./catalog.schema.json",
+  "title": "Banca Catalog Schema",
+  "description": "Especificação formal do catálogo unificado de distribuição da Banca",
+  "type": "object",
+  "required": ["$schema", "updated_at", "apps"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "apps": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/appEntry"
+      }
+    }
+  },
+  "definitions": {
+    "appEntry": {
+      "type": "object",
+      "required": ["metadata", "channels"],
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "required": ["name", "description", "homepage", "repo"],
+          "properties": {
+            "name": { "type": "string", "minLength": 1 },
+            "description": { "type": "string" },
+            "homepage": { "type": "string" },
+            "repo": { "type": "string" }
+          },
+          "additionalProperties": true
+        },
+        "channels": {
+          "type": "object",
+          "required": ["stable", "dev"],
+          "properties": {
+            "stable": {
+              "$ref": "#/definitions/stableChannel"
+            },
+            "dev": {
+              "$ref": "#/definitions/devChannel"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": true
+    },
+    "stableChannel": {
+      "type": "object",
+      "required": ["label", "latest_version", "history_limit", "versions"],
+      "properties": {
+        "label": {
+          "type": "string",
+          "enum": ["Versão Recomendada"]
+        },
+        "latest_version": {
+          "type": "string"
+        },
+        "history_limit": {
+          "type": "integer",
+          "enum": [5]
+        },
+        "versions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/versionEntry"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "devChannel": {
+      "type": "object",
+      "required": ["label", "latest_version", "history_limit", "versions"],
+      "properties": {
+        "label": {
+          "type": "string",
+          "enum": ["Versão Experimental"]
+        },
+        "latest_version": {
+          "type": "string"
+        },
+        "history_limit": {
+          "type": "integer",
+          "enum": [10]
+        },
+        "versions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/versionEntry"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "versionEntry": {
+      "type": "object",
+      "required": ["version", "released_at", "commit", "assets"],
+      "properties": {
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "released_at": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string"
+        },
+        "assets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/assetEntry"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "assetEntry": {
+      "type": "object",
+      "required": ["target", "type", "format", "filename", "alias", "url", "alias_url", "sha256"],
+      "properties": {
+        "target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "enum": ["binary", "archive", "installer", "package"]
+        },
+        "format": {
+          "type": "string",
+          "minLength": 1
+        },
+        "filename": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alias": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alias_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}
