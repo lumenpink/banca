@@ -261,11 +261,11 @@ site/pratilera/
 ## 20. Registro da Estação de Trabalho Pult (Ticket #46)
 
 - **Identidade e Categoria**:
-  - O aplicativo `pult` é registrado como estação de trabalho TUI soberana e mediadora de contexto AST para desenvolvimento com Antigravity CLI e ciclo GOST DD-TDD, classificado na categoria `terminal` com insígnia `★ CCCP COMRADE`.
+  - O aplicativo `pult` é registrado como estação de trabalho TUI e mediadora de contexto AST para desenvolvimento com Antigravity CLI e ciclo GOST DD-TDD, classificado na categoria `terminal` com insígnia `★ CCCP COMRADE`.
 - **Distribuição Multi-Arquitetura**:
   - Disponibilizado no catálogo unificado (`site/downloads/catalog.json`) e manifesto atômico (`site/downloads/pult/index.json`) com suporte a `linux-amd64`, `linux-arm64` e `windows-amd64` sincronizados com o Cloudflare R2 (`twolp-bucket/downloads/pult/`).
 - **Pôster Anti-Design e Vitrine**:
-  - Artefato visual em 1200x630 (Safe Zone 4:3) `site/assets/banners/pult-banner.png`, com cards e links para o portal oficial `https://pult.2lp.in` e forja soberana.
+  - Artefato visual em 1200x630 (Safe Zone 4:3) `site/assets/banners/pult-banner.png`, com cards e links para o portal oficial `https://pult.2lp.in` e forja canônica.
 
 ## 21. Monotonicidade Estrita do Timestamp de Repositório F-Droid (Ticket #48)
 
@@ -284,5 +284,15 @@ site/pratilera/
 - **Unificação do Artefato La Craia**:
   - O aplicativo La Craia é distribuído exclusivamente como `lacraia.apk` (e Simbiótyka como `simbiotyka.apk`).
   - Redirecionamentos HTTP 302 em `site/_redirects` preservam compatibilidade com requisições antigas para `lacraia-app.apk`.
+
+## 23. Arquitetura de Distribuição e Catálogo Unificado (Ticket #54)
+
+- **Modelo Produtor–Curador Desacoplado**:
+  - A publicação de artefatos é dividida entre o repositório produtor (compilação na esteira, cálculo de SHA-256 e envio para o bucket R2) e a Banca como repositório curador central (auditoria estrita de integridade, gestão de retenção e publicação do catálogo).
+- **Catálogo Declarativo (`catalog.json` e `catalog.schema.json`)**:
+  - O catálogo unificado em `site/downloads/catalog.json` adota schema declarativo com validação estrita, organizando as aplicações em `apps.{slug}` com metadados e os canais canônicos `stable` e `dev`.
+  - Cada versão detalha seus ativos entregáveis tipados (`binary`, `archive`, `installer`, `package`), targets, formatos, filenames, aliases, URLs e checksums SHA-256.
+- **Camada de Compatibilidade Retroativa**:
+  - A Banca gera e sincroniza concomitantemente os manifestos individuais `site/downloads/{slug}/index.json` projetados a partir do catálogo, garantindo compatibilidade contínua com clientes e updaters existentes.
 
 
