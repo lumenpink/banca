@@ -14,6 +14,7 @@
   - (pratilera) extrair metadados reais dos apks via aapt (closes #24)
 
 ### Features
+  - (storage) implementar rotina de purga no bucket e emissor de issues na forja (closes #56)
   - (audit) implementar auditoria hermetica de rede e integridade de checksum (closes #55)
   - (catalog) implementar schema declarativo e gerador do catalogo unificado (closes #54)
   - (downloads) incluir pult no seletor de downloads e instaladores dedicados (closes #47)
