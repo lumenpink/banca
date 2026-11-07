@@ -315,6 +315,15 @@ site/pratilera/
 - **Emissão Automática de Issues**:
   - Em caso de falha de auditoria ou quebra de links ativos, a esteira emite automaticamente uma issue na forja do projeto produtor (`POST /api/v1/repos/{repo_slug}/issues`) documentando a falha.
 
+## 26. Esteira de Dispatch Serializada e Orquestração de Deploy (Ticket #57)
+
+- **Fila Serial Concorrente**:
+  - A esteira de curadoria opera com serialização nativa de concorrência (`concurrency: { group: "update-catalog", cancel-in-progress: false }`), garantindo que releases simultâneas sejam processadas em fila ordenada sem conflitos.
+- **Orquestração End-to-End**:
+  - O script orquestrador `scripts/banca_pipeline.py` integra as 4 etapas: Auditoria de Nova Versão -> Auditoria de Histórico Ativo -> Purga/Rotação -> Atualização do Catálogo e Deploy.
+  - Se qualquer etapa acusar falha, o deploy é cancelado e uma issue detalhada é aberta na forja do produtor.
+
+
 
 
 
