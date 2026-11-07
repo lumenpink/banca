@@ -1,0 +1,59 @@
+name: "Banca Release Dispatch & Deploy"
+
+on:
+  repository_dispatch:
+    types: [release-published]
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: "Payload JSON do release"
+        required: false
+        default: "{}"
+
+concurrency:
+  group: "update-catalog"
+  cancel-in-progress: false
+
+jobs:
+  curate-and-deploy:
+    name: "Curate Release & Update Catalog"
+    runs-on: ubuntu-latest
+    container:
+      image: gambi.2lp.in/lumen/gost-ci-banca:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: "Executar Orquestrador da Banca"
+        env:
+          EVENT_PAYLOAD: ${{ toJSON(github.event.client_payload) }}
+          MANUAL_PAYLOAD: ${{ github.event.inputs.payload }}
+          FORGE_TOKEN: ${{ secrets.FORGE_TOKEN || secrets.GITHUB_TOKEN }}
+          FORGE_URL: "https://gambi.2lp.in"
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          PAYLOAD="${EVENT_PAYLOAD}"
+          if [ -z "$PAYLOAD" ] || [ "$PAYLOAD" = "null" ]; then
+            PAYLOAD="${MANUAL_PAYLOAD}"
+          fi
+          echo "Processando payload de release..."
+          python3 scripts/banca_pipeline.py --payload "$PAYLOAD" --forge-url "$FORGE_URL" --forge-token "$FORGE_TOKEN"
+      - name: "Compilar Vitrine e Pratilera"
+        run: |
+          ./build.sh
+          python3 scripts/gerar-pratilera.py
+      - name: "Publicar Alterações no Catálogo"
+        run: |
+          git config user.name "Banca Curator Bot"
+          git config user.email "bot@2lp.in"
+          if ! git diff --quiet site/downloads/catalog.json site/downloads/*/index.json; then
+            git add site/downloads/catalog.json site/downloads/*/index.json
+            git commit -m "chore(catalog): atualizar catalogo via release-published dispatch"
+            git push origin main
+          fi
+      - name: "Deploy no Cloudflare"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
+            npx wrangler deploy
+          fi
