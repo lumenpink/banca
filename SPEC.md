@@ -11,7 +11,7 @@ A **Banca** é o gerador e portal estático de apresentação de todos os projet
 - **Norma Técnica:** GOST v1.1.0 (perfil `profiles/lumen.md`, tipologia Shell/Web).
 - **Publicação:** Cloudflare Workers Static Assets (`banca.2lp.in`) e Codeberg Pages.
 
-## 3. A Pratilera: Loja e Repositório F-Droid / Droid-ify Soberano
+## 3. A Pratilera: Loja e Repositório F-Droid / Droid-ify Autônomo
 
 A **Pratilera** é o repositório centralizado de distribuição de aplicativos Android do ecossistema 2lp (`in.twolp.*`), compatível nativamente com Droid-ify, Neo Store, F-Droid e Obtainium.
 
@@ -41,7 +41,7 @@ site/pratilera/
 
 ### 3.3 Chave e Assinatura Criptográfica
 - Todos os pacotes são identificados sob o domínio `in.twolp.*`.
-- O arquivo `index-v1.jar` é assinado utilizando a chave soberana `in_twolp` oriunda de `~/.android/in_twolp_release.keystore`.
+- O arquivo `index-v1.jar` é assinado utilizando a chave autônomo `in_twolp` oriunda de `~/.android/in_twolp_release.keystore`.
 - A impressão digital SHA256 da chave garante integridade e confiança unificada em um único repositório no smartphone do usuário.
 
 ### 3.4 Versionamento CCCP, Pré-Releases e UX HTTPS Canônica
@@ -71,9 +71,9 @@ site/pratilera/
 ## 5. Expansão para 27 Projetos Autorais e Taxonomia Semântica
 
 - **Adição dos 7 Projetos Autorais Estratégicos**:
-  - `lauda`: Cliente de correio soberano ultraleve (Rust, Dioxus, Android/Desktop).
+  - `lauda`: Cliente de correio autônomo ultraleve (Rust, Dioxus, Android/Desktop).
   - `ayvu`: Compilador declarativo de tirinhas e fanzines em quadrinhos (Rust, SVG).
-  - `muiraquita`: Suíte social soberana para a IndieWeb e ecossistema IndieInABox (Rust, Dioxus).
+  - `muiraquita`: Suíte social autônomo para a IndieWeb e ecossistema IndieInABox (Rust, Dioxus).
   - `tuitata`: Cliente TUI para IA em Rust com streaming, estética Boitatá e exportação Obsidian.
   - `urupema`: Utilitário post-queue em Rust para dissecação de MIME e triagem para Markdown.
   - `tatupeba`: Extrator e sincronizador contínuo do acervo Zotero para o cofre Obsidian.
@@ -108,10 +108,10 @@ site/pratilera/
 
 ## 7. Distribuição de Binários Reais e Integridade Criptográfica dos APKs
 
-- **Binários Nativos Soberanos**:
+- **Binários Nativos Autônomo**:
   - `site/pratilera/lacraia-app.apk`: Binário de produção do Cockpit Brutalista de Som & Jukebox (~4,9 MB), compilado a partir do módulo `:app` sob o namespace canônico `in.twolp.lacraia.app`.
   - `site/pratilera/simbiotyka.apk`: Binário de produção do HUD Flutuante de Letras Sincronizadas (~4,9 MB), compilado a partir do módulo `:simbiotyka` sob o namespace `in.twolp.lacraia.simbiotyka`.
-  - `site/pratilera/lauda-latest.apk`: Binário de produção do Cliente de Correio Soberano (~21,8 MB).
+  - `site/pratilera/lauda-latest.apk`: Binário de produção do Cliente de Correio Autônomo (~21,8 MB).
 - **Integridade Criptográfica e Manifestos F-Droid**:
   - O gerador `scripts/gerar-pratilera.py` afere o tamanho exato em bytes e computa a hash SHA-256 de cada arquivo físico.
   - O arquivo `site/pratilera/index-v1.jar` empacota o manifesto e é assinado via `jarsigner` com a chave `in_twolp`.
@@ -163,7 +163,7 @@ site/pratilera/
   - Declarar `versionCode` divergente do binário resulta no erro crítico `Metadado inválido` no cliente Android.
   - O campo `suggestedVersionCode` deve refletir como string (`"suggestedVersionCode": "<code_str>"`) o código de versão compatível para instalação direta.
 
-## 12. Soberania do SemVer Canônico CCCP em `versionName` (Ticket #25)
+## 12. Autonomia do SemVer Canônico CCCP em `versionName` (Ticket #25)
 
 - **Autoridade Estrita do Arquivo `VERSION` (CCCP)**:
   - Conforme as diretrizes GOST e do ecossistema CCCP, a versão canônica exibida aos usuários no catálogo (`versionName`) provém estritamente do arquivo `VERSION` na raiz do projeto irmão (ex: `lauda/VERSION`, `lacraia/VERSION`), gerenciado via `cccp version` / `cccp tag`.
@@ -226,13 +226,13 @@ site/pratilera/
   - O script `scripts/gerar-pratilera.py` importa `site/lauda-logo.png` do repositório irmão `lauda` e aplica sanitização vetorial estrita em 8-bit RGBA.
   - Espelhamento em todas as 6 pastas de densidade da Pratilera: `icons-120`, `icons-160`, `icons-240`, `icons-320`, `icons-480` e `icons-640`.
   - Atualização dos metadados Fastlane estruturados: `site/pratilera/in.twolp.lauda/pt-BR/icon.png` e `en-US/icon.png`.
-  - Re-assinatura do índice oficial `index-v1.jar` com a chave release soberana `in_twolp`.
+  - Re-assinatura do índice oficial `index-v1.jar` com a chave release autônomo `in_twolp`.
 
 ## 18. Distribuição Externa via Cloudflare R2 e Resiliência de Metadados da Pratilera (Ticket #31)
 
 - **Distribuição Canônica no Bucket R2 (`https://bucket.2lp.in`)**:
   - O catálogo da Pratilera declara `repo.address = "https://bucket.2lp.in"`.
-  - Os clientes Android (Droid-ify / F-Droid) resolvem o download dos binários diretamente contra a URL do bucket R2 soberano (`https://bucket.2lp.in/<app>.apk`), desonerando os Workers de streaming pesado.
+  - Os clientes Android (Droid-ify / F-Droid) resolvem o download dos binários diretamente contra a URL do bucket R2 autônomo (`https://bucket.2lp.in/<app>.apk`), desonerando os Workers de streaming pesado.
 - **Proteção Contra Limite de Assets do Cloudflare Workers (25 MB)**:
   - O diretório `site/` publicado via Cloudflare Workers Static Assets não deve conter arquivos `.apk` pesados (evitando rejeição de deploy por limite de 25 MB por asset).
   - O script gerador e o workflow de deploy garantem a limpeza de quaisquer APKs temporários em `site/pratilera/` antes da publicação.
@@ -256,7 +256,7 @@ site/pratilera/
 - **Vitrine Web com Detecção e PowerShell**:
   - Seletor tátil de arquiteturas na interface com detecção inteligente no navegador (`navigator.userAgentData` / `navigator.userAgent`).
   - Emissão de comando PowerShell nativo (`Invoke-WebRequest`) para usuários Windows e `curl -sSL` para usuários Linux.
-  - Atualização do Mandu como editor soberano brutalista de notas em texto puro, Markdown e Joaju.
+  - Atualização do Mandu como editor autônomo brutalista de notas em texto puro, Markdown e Joaju.
 
 ## 20. Registro da Estação de Trabalho Pult (Ticket #46)
 
@@ -294,5 +294,17 @@ site/pratilera/
   - Cada versão detalha seus ativos entregáveis tipados (`binary`, `archive`, `installer`, `package`), targets, formatos, filenames, aliases, URLs e checksums SHA-256.
 - **Camada de Compatibilidade Retroativa**:
   - A Banca gera e sincroniza concomitantemente os manifestos individuais `site/downloads/{slug}/index.json` projetados a partir do catálogo, garantindo compatibilidade contínua com clientes e updaters existentes.
+
+## 24. Auditoria Hermética de Rede e Integridade de Checksum (Ticket #55)
+
+- **Tolerância Zero a Links Quebrados**:
+  - Toda notificação de nova versão despachada para a Banca é submetida a uma verificação estrita antes de qualquer modificação no catálogo ou disparo de deploy.
+- **Auditoria de Nova Versão (Etapa 1)**:
+  - Requisição `HEAD` verificando código `200 OK` para cada arquivo físico de versão e para o respectivo arquivo de alias canônico no bucket R2.
+  - Verificação de integridade do hash SHA-256 publicado comparando o arquivo `.sha256` presente no storage.
+- **Auditoria do Histórico Ativo (Etapa 2)**:
+  - Verificação via requisições `HEAD` de todos os artefatos das versões que permanecerão ativas no catálogo após a inclusão (respeitando as quotas de retenção de 5 para `stable` e 10 para `dev`).
+  - Qualquer código HTTP diferente de `200` aborta a esteira imediatamente.
+
 
 
