@@ -306,5 +306,15 @@ site/pratilera/
   - Verificação via requisições `HEAD` de todos os artefatos das versões que permanecerão ativas no catálogo após a inclusão (respeitando as quotas de retenção de 5 para `stable` e 10 para `dev`).
   - Qualquer código HTTP diferente de `200` aborta a esteira imediatamente.
 
+## 25. Rotina de Purga no Bucket e Emissor de Issues na Forja (Ticket #56)
+
+- **Retenção e Purga no Storage**:
+  - A rotação de artefatos preserva no bucket até 5 versões de `stable` e até 10 versões de `dev` sob o prefixo `banca-artifacts/{app}/{channel}/`.
+  - Aliases canônicos (`*-latest.*` e `*-dev-latest.*`) são mantidos e imunes à purga.
+  - Arquivos excedentes e seus respectivos hashes `.sha256` são excluídos.
+- **Emissão Automática de Issues**:
+  - Em caso de falha de auditoria ou quebra de links ativos, a esteira emite automaticamente uma issue na forja do projeto produtor (`POST /api/v1/repos/{repo_slug}/issues`) documentando a falha.
+
+
 
 
