@@ -20,6 +20,11 @@
           "url": "https://bucket.2lp.in/downloads/mandu-gui/nightly/mandu-gui-0.1.0-dev.8+20261108.79720a8-linux-arm64.tar.gz",
           "binary_url": "https://bucket.2lp.in/downloads/mandu-gui/nightly/mandu-gui-0.1.0-dev.8+20261108.79720a8-linux-arm64.tar.gz",
           "sha256": "153a18e5a7a64ed7d7b1992ddd12a2803ef48d959e15a77ecd86cefd2908f7c5"
+        },
+        "windows-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mandu-gui/nightly/mandu-gui-0.1.0-dev.8+20261108.79720a8-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mandu-gui/nightly/mandu-gui-0.1.0-dev.8+20261108.79720a8-windows-amd64.zip",
+          "sha256": "a04c9c519c2d03168f758ca0a76664cea424078f3471064e95faa2b790440dab"
         }
       },
       "tarball": "mandu-gui-0.1.0-dev.8+20261108.79720a8-linux-amd64.tar.gz"
