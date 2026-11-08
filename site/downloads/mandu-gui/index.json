@@ -6,6 +6,20 @@
   },
   "nightlies": [
     {
+      "version": "0.1.0-dev.8+20261108.79720a8",
+      "url": "https://bucket.2lp.in/downloads/mandu-gui/nightly/mandu-gui-0.1.0-dev.8+20261108.79720a8-linux-amd64.tar.gz",
+      "date": "2026-11-08",
+      "sha256": "c62e385fff699e2571b24ae0f9dfe7da7428ee06cafb1ea2f40368a06105ded3",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mandu-gui/nightly/mandu-gui-0.1.0-dev.8+20261108.79720a8-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mandu-gui/nightly/mandu-gui-0.1.0-dev.8+20261108.79720a8-linux-amd64.tar.gz",
+          "sha256": "c62e385fff699e2571b24ae0f9dfe7da7428ee06cafb1ea2f40368a06105ded3"
+        }
+      },
+      "tarball": "mandu-gui-0.1.0-dev.8+20261108.79720a8-linux-amd64.tar.gz"
+    },
+    {
       "version": "0.1.0-dev.8+20261108.0b9d900",
       "url": "https://bucket.2lp.in/downloads/mandu-gui/nightly/mandu-gui-0.1.0-dev.8+20261108.0b9d900-linux-amd64.tar.gz",
       "date": "2026-11-08",
@@ -25,5 +39,5 @@
       "tarball": "mandu-gui-0.1.0-dev.8+20261108.0b9d900-linux-amd64.tar.gz"
     }
   ],
-  "nightly_latest": "0.1.0-dev.8+20261108.0b9d900"
+  "nightly_latest": "0.1.0-dev.8+20261108.79720a8"
 }
