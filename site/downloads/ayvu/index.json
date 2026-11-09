@@ -4,9 +4,32 @@
   "description": "Tradutor e motor de síntese de voz autônomo",
   "repo": "https://gambi.2lp.in/lumen/ayvu",
   "stable_latest": "",
-  "nightly_latest": "0.1.0-dev.37+20261025.4ebbb29",
+  "nightly_latest": "0.1.0-dev.37+20261109.7c7e632",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.37+20261109.7c7e632",
+      "date": "2026-11-09",
+      "sha256": "735d0b571dbe74b4d737e6d48deb6b2aae54f45a1268e672cf1c8815950c474a",
+      "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261109.7c7e632-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261109.7c7e632-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261109.7c7e632-linux-amd64.tar.gz",
+          "sha256": "735d0b571dbe74b4d737e6d48deb6b2aae54f45a1268e672cf1c8815950c474a"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261109.7c7e632-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261109.7c7e632-linux-arm64.tar.gz",
+          "sha256": "8f86dd4864a666478617086d1cd10bc9d29173756746e25cc088f08f2073f426"
+        },
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261109.7c7e632-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261109.7c7e632-windows-amd64.zip",
+          "sha256": "2d794bcfbf660d98a42a9d788e3e826cf5f72d360ddcbe403107849e68e314d3"
+        }
+      }
+    },
     {
       "version": "0.1.0-dev.37+20261025.4ebbb29",
       "date": "2026-10-25",
