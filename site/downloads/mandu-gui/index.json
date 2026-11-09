@@ -6,6 +6,20 @@
   },
   "nightlies": [
     {
+      "version": "0.1.0-dev.17+20261109.cdcafe7",
+      "url": "https://bucket.2lp.in/downloads/mandu-gui/nightly/mandu-gui-0.1.0-dev.17+20261109.cdcafe7-linux-amd64.tar.gz",
+      "date": "2026-11-09",
+      "sha256": "3cda432b1a1b610a875681bc483c7f36e88faebbfe36aa5b30473b7f5d7f7137",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mandu-gui/nightly/mandu-gui-0.1.0-dev.17+20261109.cdcafe7-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mandu-gui/nightly/mandu-gui-0.1.0-dev.17+20261109.cdcafe7-linux-amd64.tar.gz",
+          "sha256": "3cda432b1a1b610a875681bc483c7f36e88faebbfe36aa5b30473b7f5d7f7137"
+        }
+      },
+      "tarball": "mandu-gui-0.1.0-dev.17+20261109.cdcafe7-linux-amd64.tar.gz"
+    },
+    {
       "version": "0.1.0-dev.8+20261108.79720a8",
       "url": "https://bucket.2lp.in/downloads/mandu-gui/nightly/mandu-gui-0.1.0-dev.8+20261108.79720a8-linux-amd64.tar.gz",
       "date": "2026-11-08",
@@ -49,5 +63,5 @@
       "tarball": "mandu-gui-0.1.0-dev.8+20261108.0b9d900-linux-amd64.tar.gz"
     }
   ],
-  "nightly_latest": "0.1.0-dev.8+20261108.79720a8"
+  "nightly_latest": "0.1.0-dev.17+20261109.cdcafe7"
 }
