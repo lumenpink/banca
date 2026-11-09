@@ -3,7 +3,7 @@
 > **A Banca de Zines e Projetos: Vitrine Estática e Anti-Design do Ecossistema Lumen**
 
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](LICENSE)
-[![GOST: v1.1.0](https://img.shields.io/badge/GOST-v1.1.0-red.svg)](.gost/GOST.md)
+[![GOST: v1.5.0](https://img.shields.io/badge/GOST-v1.5.0-red.svg)](.gost/GOST.md)
 [![SemVer 2.0.0](https://img.shields.io/badge/SemVer-2.0.0-green.svg)](VERSION)
 
 ---
@@ -12,85 +12,39 @@
 
 A **Banca** é o catálogo e vitrine pública oficial dos projetos, ferramentas de terminal, utilitários e publicações independentes desenvolvidos e mantidos por **Lumen Pink (Baquara)**.
 
-Inspirada na estética de **fanzine punk brasileiro, zines de rua, lambe-lambe urbano, colagem xerox e anti-design de alta fricção**, a Banca reúne todos os projetos autorais do ecossistema em uma interface 100% estática, autônoma e resiliente.
-
 * **URL Pública:** [banca.2lp.in](https://banca.2lp.in)
-* **Arquitetura:** Gerador estático em Shell POSIX puro (estilo *bashblog*), sem dependências externas ou runtimes pesados.
-* **Motor Gráfico:** Integração nativa com o [Navalha](https://codeberg.org/lumenpink/navalha) para renderização determinística de pôsteres e cartazes com presets de anti-design.
+* **Arquitetura:** Gerador estático em Shell POSIX puro, sem dependências externas de runtime.
+* **Motor Gráfico:** Integração com o [Navalha](https://codeberg.org/lumenpink/navalha) para cartazes anti-design.
 
 ---
 
 ## 📲 A Pratilera (Loja Android F-Droid & Droid-ify)
 
-A Banca hospeda a **Pratilera**, o repositório oficial e soberano de aplicativos Android do ecossistema 2lp (`in.twolp.*`):
-* **URL Oficial da Loja:** `https://banca.2lp.in/pratilera`
-* **Deep Link no Droid-ify:** `fdroidrepos://banca.2lp.in/pratilera`
-* **Aliases Amigáveis:** `https://banca.2lp.in/patilera`, `/prateleira` e `/repo` (redirecionam automaticamente com afeto)
-* **Assinatura Soberana:** Índices F-Droid (`index-v1.jar`) assinados com a chave criptográfica oficial `in_twolp`
-* **Catálogo Ativo:** La Craia App, Simbiótyka HUD e Lauda Smolclient.
-
----
-
-## 📁 Estrutura do Repositório
-
-```text
-.
-├── .cccprc                    # Configuração local do CCCP
-├── .gost/                     # Especificações e regras GOST v1.1.0
-├── GOSTVER                    # Declaração canônica de versão GOST
-├── VERSION                    # Versão semântica (SemVer 2.0.0)
-├── CHANGELOG.md               # Histórico de alterações (Keep a Changelog)
-├── LICENSE                    # Licença principal GNU GPLv3
-├── README.md                  # Apresentação executiva e guia da Banca
-├── SPEC.md                    # Especificação técnica do projeto
-├── build.sh                   # Script gerador da vitrine estática em shell
-├── data/
-│   └── projects.json          # Base de dados canônica dos projetos autorais
-├── scripts/
-│   ├── gerar-banner.sh        # Utilitário de geração de pôsteres via Navalha
-│   └── gerar-pratilera.py     # Gerador e assinador de catálogo F-Droid
-├── site/
-│   ├── _headers               # Cabeçalhos HTTP de segurança
-│   ├── _redirects             # Aliases e redirecionamentos (/patilera, etc.)
-│   ├── index.html             # Vitrine compilada (Single-File responsivo)
-│   ├── pratilera/             # Índices e catálogo F-Droid da Pratilera
-│   └── assets/
-│       └── banners/           # Cartazes e banners gerados
-└── wrangler.jsonc             # Deploy Cloudflare Workers / Pages (*.2lp.in)
-```
+A Banca hospeda a **Pratilera**, o repositório de aplicativos Android do ecossistema 2lp (`in.twolp.*`):
+* **URL Oficial:** `https://banca.2lp.in/pratilera`
+* **Deep Link:** `fdroidrepos://banca.2lp.in/pratilera`
+* **Aliases:** `/patilera`, `/prateleira` e `/repo`
+* **Assinatura:** Índices F-Droid (`index-v1.jar`) assinados com a chave oficial `in_twolp`.
 
 ---
 
 ## ⚡ Comandos Rápidos
 
-### 1. Compilar o Site
-Gera o arquivo `site/index.html` a partir de `data/projects.json`:
 ```bash
+# Compilar a vitrine estática
 ./build.sh
-```
 
-### 2. Gerar Novo Pôster via Navalha
-Para gerar um cartaz anti-design para qualquer projeto da lista:
-```bash
-./scripts/gerar-banner.sh <nome-do-projeto> [preset] [texto-superior] [texto-inferior]
+# Gerar pôster anti-design via Navalha
+./scripts/gerar-banner.sh <projeto> [preset]
 
-# Exemplo:
-./scripts/gerar-banner.sh kvant punk-riot "KVANT" "MICRO EDITOR // CCCP COMRADES"
-```
-Presets disponíveis no Navalha: `punk-riot`, `fanzine-digital`, `risografia`, `tabloide-popular`, `xerox-podre`, `navalha-sata`.
-
-### 3. Visualizar Localmente
-```bash
-cccp serve site
-# ou abra direto no navegador:
-xdg-open site/index.html
+# Testes de validação
+./tests/test-pratilera.sh
 ```
 
 ---
 
-## 📜 Política de Licenciamento & Matriz Modular
+## 📜 Licenciamento
 
-Em conformidade com a norma [GOST v1.1.0](.gost/GOST.md):
-* **Código-Fonte e Gerador Shell (`build.sh`, `scripts/`):** Licenciados sob a [GNU General Public License v3.0 (GPL-3.0)](LICENSE).
-* **Identidade Visual, Emblema e Insígnia:** Licenciados sob a [Creative Commons Atribuição-SemDerivações 4.0 Internacional (CC-BY-ND 4.0)](LICENSE-LOGO).
-* **Pôsteres e Arte Visual (`site/assets/banners/`):** Licenciados sob a [Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional (CC-BY-SA 4.0)](LICENSE-MEDIA).
+* Código e scripts: [GNU GPLv3](LICENSE)
+* Marcas e insígnias: [CC-BY-ND 4.0](LICENSE-LOGO)
+* Pôsteres e mídias: [CC-BY-SA 4.0](LICENSE-MEDIA)
