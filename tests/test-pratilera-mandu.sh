@@ -28,6 +28,17 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 1b. Verificar mapeamento do repositório irmão mandu-mobile em gerar-pratilera.py (#58)
+echo -n "-> 1b. Verificando repositório irmão mandu-mobile em scripts/gerar-pratilera.py... "
+if grep -q 'src_dir / "mandu-mobile"' "$GERAR_SCRIPT"; then
+    echo "✅ OK"
+else
+    echo "❌ FALHOU (repositório irmão mandu-mobile ausente em scripts/gerar-pratilera.py)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+
+
 # 2. Verificar presença do pacote in.twolp.mandu no index-v1.json da Pratilera
 echo -n "-> 2. Verificando in.twolp.mandu em index-v1.json... "
 if [ -f "$INDEX_JSON" ]; then
