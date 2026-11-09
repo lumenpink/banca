@@ -192,8 +192,11 @@ def import_external_apks():
             break
 
     # 4. Mandu APK e Ícone
+    mandu_mobile_dir = src_dir / "mandu-mobile"
     mandu_dir = src_dir / "mandu"
     for apk_candidate in [
+        mandu_mobile_dir / "dist" / "android" / "mandu.apk",
+        mandu_mobile_dir / "dist" / "mandu.apk",
         mandu_dir / "dist" / "android" / "mandu.apk",
         mandu_dir / "dist" / "mandu.apk",
         mandu_dir / "site" / "mandu.apk"
@@ -201,7 +204,7 @@ def import_external_apks():
         if apk_candidate.exists() and apk_candidate.stat().st_size >= 1048576:
             dst = PRATILERA_DIR / "mandu.apk"
             shutil.copy2(apk_candidate, dst)
-            print(f"-> Importado do Mandu: mandu.apk (de {apk_candidate.name})")
+            print(f"-> Importado do Mandu: mandu.apk (de {apk_candidate})")
             break
 
     # Remover mandu.apk anômalo da Pratilera se < 1MB
@@ -209,6 +212,8 @@ def import_external_apks():
         (PRATILERA_DIR / "mandu.apk").unlink(missing_ok=True)
 
     for icon_candidate in [
+        mandu_mobile_dir / "fastlane" / "metadata" / "android" / "in.twolp.mandu" / "icon.png",
+        mandu_mobile_dir / "assets" / "icon.png",
         mandu_dir / "fastlane" / "metadata" / "android" / "in.twolp.mandu" / "icon.png",
         mandu_dir / "crates" / "mandu-mobile" / "assets" / "icon.png",
         mandu_dir / "site" / "assets" / "icon.png"
@@ -254,6 +259,8 @@ def resolve_apk_binary(meta: dict) -> Path | None:
         ])
     elif "mandu" in apk_name:
         candidates.extend([
+            src_dir / "mandu-mobile" / "dist" / "android" / "mandu.apk",
+            src_dir / "mandu-mobile" / "dist" / "mandu.apk",
             src_dir / "mandu" / "dist" / "android" / "mandu.apk",
             src_dir / "mandu" / "dist" / "mandu.apk",
             src_dir / "mandu" / "site" / "mandu.apk",
@@ -354,14 +361,20 @@ def is_prerelease(version_name: str) -> bool:
 
 def get_project_version(project_name: str, fallback: str = "0.2.0") -> str:
     """Tenta ler a versão canônica do CCCP em VERSION do projeto irmão."""
-    candidate = REPO_ROOT.parent / project_name / "VERSION"
-    if candidate.exists():
-        try:
-            val = candidate.read_text(encoding="utf-8").strip()
-            if val:
-                return val
-        except Exception:
-            pass
+    candidates = [
+        REPO_ROOT.parent / project_name / "VERSION",
+    ]
+    if project_name == "mandu":
+        candidates.insert(0, REPO_ROOT.parent / "mandu-mobile" / "VERSION")
+
+    for candidate in candidates:
+        if candidate.exists():
+            try:
+                val = candidate.read_text(encoding="utf-8").strip()
+                if val:
+                    return val
+            except Exception:
+                pass
     return fallback
 
 def extract_apk_signer(apk_path: Path) -> str:
@@ -501,7 +514,7 @@ def build_index_v1():
         min_sdk = apk_meta.get("min_sdk", prev_entry.get("minSdkVersion", meta["min_sdk"]))
         target_sdk = apk_meta.get("target_sdk", prev_entry.get("targetSdkVersion", meta["target_sdk"]))
 
-        # Gestão soberana de pré-releases F-Droid
+        # Gestão canônica de pré-releases F-Droid
         # suggestedVersionCode define a versão estável; pré-releases não forçam atualização
         is_pre = is_prerelease(ver_name)
         suggested_code = meta.get("stable_version_code", ver_code) if is_pre else ver_code
@@ -516,16 +529,21 @@ def build_index_v1():
             # Importar descrições e títulos Fastlane oficiais se disponíveis
             src_dir = REPO_ROOT.parent
             if "mandu" in pkg_id:
-                loc_dir = src_dir / "mandu" / "fastlane" / "metadata" / "android" / "in.twolp.mandu" / loc
-                title_file = loc_dir / "title.txt"
-                short_file = loc_dir / "short_description.txt"
-                full_file = loc_dir / "full_description.txt"
-                if title_file.exists():
-                    loc_title = title_file.read_text(encoding="utf-8").strip()
-                if short_file.exists():
-                    loc_summary = short_file.read_text(encoding="utf-8").strip()
-                if full_file.exists():
-                    loc_desc = full_file.read_text(encoding="utf-8").strip()
+                for loc_dir in [
+                    src_dir / "mandu-mobile" / "fastlane" / "metadata" / "android" / "in.twolp.mandu" / loc,
+                    src_dir / "mandu" / "fastlane" / "metadata" / "android" / "in.twolp.mandu" / loc,
+                ]:
+                    if loc_dir.exists():
+                        title_file = loc_dir / "title.txt"
+                        short_file = loc_dir / "short_description.txt"
+                        full_file = loc_dir / "full_description.txt"
+                        if title_file.exists():
+                            loc_title = title_file.read_text(encoding="utf-8").strip()
+                        if short_file.exists():
+                            loc_summary = short_file.read_text(encoding="utf-8").strip()
+                        if full_file.exists():
+                            loc_desc = full_file.read_text(encoding="utf-8").strip()
+                        break
 
             localized_map[loc] = {
                 "name": loc_title,
