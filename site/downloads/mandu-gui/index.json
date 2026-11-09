@@ -15,6 +15,11 @@
           "url": "https://bucket.2lp.in/downloads/mandu-gui/nightly/mandu-gui-0.1.0-dev.17+20261109.cdcafe7-linux-amd64.tar.gz",
           "binary_url": "https://bucket.2lp.in/downloads/mandu-gui/nightly/mandu-gui-0.1.0-dev.17+20261109.cdcafe7-linux-amd64.tar.gz",
           "sha256": "3cda432b1a1b610a875681bc483c7f36e88faebbfe36aa5b30473b7f5d7f7137"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/mandu-gui/nightly/mandu-gui-0.1.0-dev.17+20261109.cdcafe7-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mandu-gui/nightly/mandu-gui-0.1.0-dev.17+20261109.cdcafe7-linux-arm64.tar.gz",
+          "sha256": "d051569ba22b8bb58219304d594c78499c85fc7c6ff950680f5ba8d3b1447319"
         }
       },
       "tarball": "mandu-gui-0.1.0-dev.17+20261109.cdcafe7-linux-amd64.tar.gz"
