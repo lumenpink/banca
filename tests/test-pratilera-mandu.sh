@@ -183,6 +183,24 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 9. [MUTAÇÃO] Validar sensibilidade a remoção do suporte a mandu-mobile (#58)
+echo -n "-> 9. [MUTAÇÃO] Testando sensibilidade a remoção de mandu-mobile... "
+MUT_MANDU=$(python3 -c "
+with open('$GERAR_SCRIPT') as f:
+    content = f.read()
+mutated = content.replace('mandu-mobile', 'inexistente')
+assert 'src_dir / \"mandu-mobile\"' not in mutated, 'Mutação falhou'
+assert 'src_dir / \"mandu-mobile\"' in content, 'Script oficial deve conter src_dir / mandu-mobile'
+print('OK')
+" 2>&1)
+if [ "$MUT_MANDU" == "OK" ]; then
+    echo "✅ OK (Detecção estrita da presença de mandu-mobile via mutação)"
+else
+    echo "❌ FALHOU no teste de mutação mandu-mobile: $MUT_MANDU"
+    FAILURES=$((FAILURES + 1))
+fi
+
+
 echo "================================================================="
 if [ "$FAILURES" -gt 0 ]; then
     echo "💥 $FAILURES TESTE(S) FALHARAM (Esperado na Fase Red do DD-TDD)."
