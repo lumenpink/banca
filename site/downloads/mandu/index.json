@@ -4,9 +4,22 @@
   "description": "Editor brutalista de notas em texto puro, Markdown e Joaju",
   "repo": "https://gambi.2lp.in/lumen/mandu",
   "stable_latest": "",
-  "nightly_latest": "0.1.0-dev.375+20261109.f2f75c7",
+  "nightly_latest": "0.1.0-dev.381+20261109.83b75ef",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.381+20261109.83b75ef",
+      "date": "2026-11-09",
+      "sha256": "c4054b832ef53ef7552901eb46a58f46ea2adebacb247d75891acef8e3b71a55",
+      "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.381+20261109.83b75ef-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.381+20261109.83b75ef-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.381+20261109.83b75ef-linux-amd64.tar.gz",
+          "sha256": "c4054b832ef53ef7552901eb46a58f46ea2adebacb247d75891acef8e3b71a55"
+        }
+      }
+    },
     {
       "version": "0.1.0-dev.375+20261109.f2f75c7",
       "date": "2026-11-09",
