@@ -191,7 +191,7 @@ def import_external_apks():
             (PRATILERA_DIR / "mocambo.apk").unlink(missing_ok=True)
             break
 
-    # 4. Mandu APK e Ícone
+    # 4. Mandu APK e Ícone (priorizando repositório standalone mandu-mobile)
     mandu_mobile_dir = src_dir / "mandu-mobile"
     mandu_dir = src_dir / "mandu"
     for apk_candidate in [
