@@ -4,9 +4,32 @@
   "description": "Cliente de correio autônomo e interface editorial",
   "repo": "https://gambi.2lp.in/lumen/lauda",
   "stable_latest": "",
-  "nightly_latest": "0.5.0-dev.508+20261107.c6530c0-dev.20261109.d62c204",
+  "nightly_latest": "0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8",
+      "date": "2026-11-10",
+      "sha256": "f5b73f3b2afc3c517e158d7d1690633d68c8d48e306a183df6a417f951892d45",
+      "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-linux-amd64.tar.gz",
+          "sha256": "f5b73f3b2afc3c517e158d7d1690633d68c8d48e306a183df6a417f951892d45"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-linux-arm64.tar.gz",
+          "sha256": "6d467f816dab5e52e237c77120546e8b43496a0388dcb6a484029f6b5afd71db"
+        },
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-windows-amd64.zip",
+          "sha256": "e468c175d49f6c50d8ffd278b3e8adfb882386f20031a9a9c5e28a27bca9d157"
+        }
+      }
+    },
     {
       "version": "0.5.0-dev.508+20261107.c6530c0-dev.20261109.d62c204",
       "date": "2026-11-09",
@@ -211,29 +234,6 @@
           "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261103.c7f26fb-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261103.c7f26fb-windows-amd64.zip",
           "sha256": "63a424805908129e39acc04441815a4d47988f5e7a122d683bb5b57e2130ece0"
-        }
-      }
-    },
-    {
-      "version": "0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21",
-      "date": "2026-11-01",
-      "sha256": "11723c142a53751b1141f4c6a9f7e577bca3b0f12441fa9f2eb4bcf8113623d4",
-      "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21-linux-amd64.tar.gz",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21-linux-amd64.tar.gz",
-          "sha256": "11723c142a53751b1141f4c6a9f7e577bca3b0f12441fa9f2eb4bcf8113623d4"
-        },
-        "linux-arm64": {
-          "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21-linux-arm64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21-linux-arm64.tar.gz",
-          "sha256": "b36f6c54ab3cb470ece9fc30700f070192ad314a78deeca8f4a33cfc13353e50"
-        },
-        "windows-x86_64": {
-          "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21-windows-amd64.zip",
-          "binary_url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21-windows-amd64.zip",
-          "sha256": "7904894a47992e227b3f1938255e9960911eea0c9b99b2ba198322f4eeec5130"
         }
       }
     }
