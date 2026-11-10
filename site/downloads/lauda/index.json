@@ -3,9 +3,33 @@
   "name": "Lauda",
   "description": "Cliente de correio autônomo e interface editorial",
   "repo": "https://gambi.2lp.in/lumen/lauda",
-  "stable_latest": "",
+  "stable_latest": "0.5.1",
   "nightly_latest": "0.5.1-dev.20261110.6a5d1fc",
-  "stables": [],
+  "stables": [
+    {
+      "version": "0.5.1",
+      "date": "2026-11-10",
+      "sha256": "f28991b52b4fe4df30d9a8c72de7c8d44301d8310df61f9abcefb6db8cbb0c21",
+      "url": "https://bucket.2lp.in/downloads/lauda/stable/lauda-0.5.1-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/lauda/stable/lauda-0.5.1-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/lauda/stable/lauda-0.5.1-linux-amd64.tar.gz",
+          "sha256": "f28991b52b4fe4df30d9a8c72de7c8d44301d8310df61f9abcefb6db8cbb0c21"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/lauda/stable/lauda-0.5.1-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/lauda/stable/lauda-0.5.1-linux-arm64.tar.gz",
+          "sha256": "8ea736756d3efbec6eb89a6a4c5a97d43c0ce556f31c27c28bd2dfe82af120aa"
+        },
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/lauda/stable/lauda-0.5.1-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/lauda/stable/lauda-0.5.1-windows-amd64.zip",
+          "sha256": "e04714853c722e99a2a2a2d7fb4a4eb3d3b72cb98446dd09eaef15817627becc"
+        }
+      }
+    }
+  ],
   "nightlies": [
     {
       "version": "0.5.1-dev.20261110.6a5d1fc",
