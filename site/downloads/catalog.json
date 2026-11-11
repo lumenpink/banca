@@ -1,6 +1,6 @@
 {
   "$schema": "./catalog.schema.json",
-  "updated_at": "2026-11-09T16:46:51.268661+00:00",
+  "updated_at": "2026-11-11T22:36:17.022021+00:00",
   "apps": {
     "cccp": {
       "metadata": {
@@ -18,9 +18,46 @@
         },
         "dev": {
           "label": "Versão Experimental",
-          "latest_version": "3.2.0-dev.730+20261106.0e6fd62",
+          "latest_version": "3.2.0-dev.876+20261111.f5a6f4f",
           "history_limit": 10,
           "versions": [
+            {
+              "version": "3.2.0-dev.876+20261111.f5a6f4f",
+              "released_at": "2026-11-11T12:00:00Z",
+              "commit": "f5a6f4f",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "cccp-3.2.0-dev.876+20261111.f5a6f4f-linux-amd64.tar.gz",
+                  "alias": "cccp-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.876+20261111.f5a6f4f-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "a4947561bd1704afa24dacf864a778ab5d8445caf854e1090450ad24c05df56c"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "cccp-3.2.0-dev.876+20261111.f5a6f4f-linux-arm64.tar.gz",
+                  "alias": "cccp-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.876+20261111.f5a6f4f-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "89a0ab0498a2bedfa6ef8a6de7f504cca6e3dd66122e40592ee3645c71b2de66"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "cccp-3.2.0-dev.876+20261111.f5a6f4f-windows-amd64.zip",
+                  "alias": "cccp-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.876+20261111.f5a6f4f-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-windows-x86_64.zip",
+                  "sha256": "b218d334b7c259cd8e02e2ee69a0232c4c5259b909441d4f71aff1ae6230a72f"
+                }
+              ]
+            },
             {
               "version": "3.2.0-dev.730+20261106.0e6fd62",
               "released_at": "2026-11-06T12:00:00Z",
@@ -353,43 +390,6 @@
                   "sha256": "139de9d504f3211723fb6a4ecc915320fe6f9ed883ee84c4fc2fc3c986b7cb38"
                 }
               ]
-            },
-            {
-              "version": "3.2.0-dev.462+20261030.0497ffe",
-              "released_at": "2026-10-30T12:00:00Z",
-              "commit": "0497ffe",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "cccp-3.2.0-dev.462+20261030.0497ffe-linux-amd64.tar.gz",
-                  "alias": "cccp-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "020c1228c27bfaf35e9fd82804bf43ed208cc1a7a9a7fa7d8f4992089f1269cd"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "cccp-3.2.0-dev.462+20261030.0497ffe-linux-arm64.tar.gz",
-                  "alias": "cccp-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "952a44da77a808cb69d0627de41f616ba09cf69f0b9588cce97e5293058f40af"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "cccp-3.2.0-dev.462+20261030.0497ffe-windows-amd64.zip",
-                  "alias": "cccp-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.462+20261030.0497ffe-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-windows-x86_64.zip",
-                  "sha256": "537e878f48f195c5c73e0b01170a61593a392ffb10336967d65bd17d5d677882"
-                }
-              ]
             }
           ]
         }
@@ -539,15 +539,238 @@
       "channels": {
         "stable": {
           "label": "Versão Recomendada",
-          "latest_version": "",
+          "latest_version": "0.5.1",
           "history_limit": 5,
-          "versions": []
+          "versions": [
+            {
+              "version": "0.5.1",
+              "released_at": "2026-11-10T12:00:00Z",
+              "commit": "main",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lauda-0.5.1-linux-amd64.tar.gz",
+                  "alias": "lauda-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lauda/stable/lauda-0.5.1-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lauda/stable/lauda-latest-linux-x86_64.tar.gz",
+                  "sha256": "f28991b52b4fe4df30d9a8c72de7c8d44301d8310df61f9abcefb6db8cbb0c21"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lauda-0.5.1-linux-arm64.tar.gz",
+                  "alias": "lauda-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lauda/stable/lauda-0.5.1-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lauda/stable/lauda-latest-linux-arm64.tar.gz",
+                  "sha256": "8ea736756d3efbec6eb89a6a4c5a97d43c0ce556f31c27c28bd2dfe82af120aa"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "lauda-0.5.1-windows-amd64.zip",
+                  "alias": "lauda-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/lauda/stable/lauda-0.5.1-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/lauda/stable/lauda-latest-windows-x86_64.zip",
+                  "sha256": "e04714853c722e99a2a2a2d7fb4a4eb3d3b72cb98446dd09eaef15817627becc"
+                }
+              ]
+            }
+          ]
         },
         "dev": {
           "label": "Versão Experimental",
-          "latest_version": "0.5.0-dev.508+20261107.c6530c0-dev.20261109.d62c204",
+          "latest_version": "0.6.0-dev.8+20261111.7157704",
           "history_limit": 10,
           "versions": [
+            {
+              "version": "0.6.0-dev.8+20261111.7157704",
+              "released_at": "2026-11-11T12:00:00Z",
+              "commit": "7157704",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lauda-0.6.0-dev.8+20261111.7157704-linux-amd64.tar.gz",
+                  "alias": "lauda-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.6.0-dev.8+20261111.7157704-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "6c472a17e7e2cd235afe900269446413f6ee53abfbc9cfc7238025ef9ae07898"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lauda-0.6.0-dev.8+20261111.7157704-linux-arm64.tar.gz",
+                  "alias": "lauda-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.6.0-dev.8+20261111.7157704-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "a2b862a0df8a3fa26dcf5eb8c73895fd28879f83867e8ca5f8dda8881fd0e9b6"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "lauda-0.6.0-dev.8+20261111.7157704-windows-amd64.zip",
+                  "alias": "lauda-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.6.0-dev.8+20261111.7157704-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-windows-x86_64.zip",
+                  "sha256": "a9a88fe2884bf66ee71a6112796e799798023ee4caf274a8a2b1ed0b8c04fdcd"
+                }
+              ]
+            },
+            {
+              "version": "0.5.1-dev.20261110.6a5d1fc",
+              "released_at": "2026-11-10T12:00:00Z",
+              "commit": "main",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lauda-0.5.1-dev.20261110.6a5d1fc-linux-amd64.tar.gz",
+                  "alias": "lauda-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.1-dev.20261110.6a5d1fc-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "9119978db0598752ffd8f4c7373a48268d736622e4f64f90af30d9511b712844"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lauda-0.5.1-dev.20261110.6a5d1fc-linux-arm64.tar.gz",
+                  "alias": "lauda-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.1-dev.20261110.6a5d1fc-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "cea3cdb3c467153e882b30616443fe649044456bbf476e21c6df9b63d2018819"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "lauda-0.5.1-dev.20261110.6a5d1fc-windows-amd64.zip",
+                  "alias": "lauda-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.1-dev.20261110.6a5d1fc-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-windows-x86_64.zip",
+                  "sha256": "c74255775ce706755cec1451d3b4a07d7331648750b5175a31a76319a9cc89ca"
+                }
+              ]
+            },
+            {
+              "version": "0.1.0-dev.563+20261110.b603587",
+              "released_at": "2026-11-10T12:00:00Z",
+              "commit": "b603587",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lauda-0.1.0-dev.563+20261110.b603587-linux-amd64.tar.gz",
+                  "alias": "lauda-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.1.0-dev.563+20261110.b603587-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "782e259f85ade507a4dd4cfe7c0a7f075aa652ce62b2c04e24429b53bcad3395"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lauda-0.1.0-dev.563+20261110.b603587-linux-arm64.tar.gz",
+                  "alias": "lauda-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.1.0-dev.563+20261110.b603587-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "15cb27107091d5091a73c5635f206a7e0554d6a7423de92d9d51bfbdbb676f91"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "lauda-0.1.0-dev.563+20261110.b603587-windows-amd64.zip",
+                  "alias": "lauda-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.1.0-dev.563+20261110.b603587-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-windows-x86_64.zip",
+                  "sha256": "79618dba6e9525f2b340c97094cf81eb3c290336a11b91dc60510ec85c4a05e5"
+                }
+              ]
+            },
+            {
+              "version": "0.5.0-dev.508+20261107.c6530c0-dev.20261110.0d42562",
+              "released_at": "2026-11-10T12:00:00Z",
+              "commit": "0d42562",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.0d42562-linux-amd64.tar.gz",
+                  "alias": "lauda-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.0d42562-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "e5bf62e91d8965c3a91846268571bce687e8d30e92798c9c7479236ae9b320a6"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.0d42562-linux-arm64.tar.gz",
+                  "alias": "lauda-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.0d42562-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "80569d7f2c9db8e8473d360d9c034272473ddce308dd02121bfa2c9e421ed6b2"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.0d42562-windows-amd64.zip",
+                  "alias": "lauda-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.0d42562-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-windows-x86_64.zip",
+                  "sha256": "feb71ec1d2d0ff10071f887f04401d05a80d9ed832ffcc53584defcfc7631062"
+                }
+              ]
+            },
+            {
+              "version": "0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8",
+              "released_at": "2026-11-10T12:00:00Z",
+              "commit": "33be0d8",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-linux-amd64.tar.gz",
+                  "alias": "lauda-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "f5b73f3b2afc3c517e158d7d1690633d68c8d48e306a183df6a417f951892d45"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-linux-arm64.tar.gz",
+                  "alias": "lauda-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "6d467f816dab5e52e237c77120546e8b43496a0388dcb6a484029f6b5afd71db"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-windows-amd64.zip",
+                  "alias": "lauda-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-windows-x86_64.zip",
+                  "sha256": "e468c175d49f6c50d8ffd278b3e8adfb882386f20031a9a9c5e28a27bca9d157"
+                }
+              ]
+            },
             {
               "version": "0.5.0-dev.508+20261107.c6530c0-dev.20261109.d62c204",
               "released_at": "2026-11-09T12:00:00Z",
@@ -730,191 +953,6 @@
                   "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261108.c6f97fb-windows-amd64.zip",
                   "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-windows-x86_64.zip",
                   "sha256": "6e8e03275ae77823d5eec41b943b0c3c1cc9980a40bf231313eef076e0f0730e"
-                }
-              ]
-            },
-            {
-              "version": "0.5.0-dev.508+20261107.c6530c0-dev.20261108.d2eddbc",
-              "released_at": "2026-11-08T12:00:00Z",
-              "commit": "d2eddbc",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261108.d2eddbc-linux-amd64.tar.gz",
-                  "alias": "lauda-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261108.d2eddbc-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "6e7eff188f2a61348dabe3daa544b31513d9c01d03c286cdc09ccd786141a92a"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261108.d2eddbc-linux-arm64.tar.gz",
-                  "alias": "lauda-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261108.d2eddbc-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "64bffea468e476474edfb805bacfab64edc3cb5fc568a7ebf2f0b8648d76a2e5"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261108.d2eddbc-windows-amd64.zip",
-                  "alias": "lauda-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261108.d2eddbc-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-windows-x86_64.zip",
-                  "sha256": "b2f4cdbc487467e78e192ef85db07e477bb18e2649b08c1d6092358e51f0122e"
-                }
-              ]
-            },
-            {
-              "version": "0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a",
-              "released_at": "2026-11-06T12:00:00Z",
-              "commit": "2756d8a",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lauda-0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a-linux-amd64.tar.gz",
-                  "alias": "lauda-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "d801d4b6cd85845c77b2199a3015684918745db36047d3463d0bc45e97c6935e"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lauda-0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a-linux-arm64.tar.gz",
-                  "alias": "lauda-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "9ec4820a550c84328c020d488b9a209fb0f761fec991a2f4bca05d08528a5502"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "lauda-0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a-windows-amd64.zip",
-                  "alias": "lauda-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.487+20261106.a8acaa9-dev.20261106.2756d8a-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-windows-x86_64.zip",
-                  "sha256": "850d932b75e5bc0cb2d9006d11ea8fa28873b2f4cfbcf55303989f9c53ce431b"
-                }
-              ]
-            },
-            {
-              "version": "0.5.0-dev.289+20261027.bf671e9-dev.20261106.a8acaa9",
-              "released_at": "2026-11-06T12:00:00Z",
-              "commit": "a8acaa9",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261106.a8acaa9-linux-amd64.tar.gz",
-                  "alias": "lauda-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261106.a8acaa9-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "d4c0d4428cfa24be8284c9dc59aafd79c0fd8a5575762266cc9ed50a515dd3e8"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261106.a8acaa9-linux-arm64.tar.gz",
-                  "alias": "lauda-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261106.a8acaa9-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "863530d3a329694ab32a0f3eb9bceb78884d8b19ea4b1b6dfb837ea9b610c4e9"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261106.a8acaa9-windows-amd64.zip",
-                  "alias": "lauda-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261106.a8acaa9-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-windows-x86_64.zip",
-                  "sha256": "558b76dfac3ed88c6fe5e259b8f3ee07fabfb3d459f0f0dd5c77447d55ceaa5e"
-                }
-              ]
-            },
-            {
-              "version": "0.5.0-dev.289+20261027.bf671e9-dev.20261103.c7f26fb",
-              "released_at": "2026-11-03T12:00:00Z",
-              "commit": "c7f26fb",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261103.c7f26fb-linux-amd64.tar.gz",
-                  "alias": "lauda-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261103.c7f26fb-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "cd974a5e54da108185f8e56979884c7fac59441397554424503af4e96562082f"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261103.c7f26fb-linux-arm64.tar.gz",
-                  "alias": "lauda-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261103.c7f26fb-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "f717f98f5593d696a75c1aba609aa3b1ed81b583069308da4eb9b813f7b43640"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261103.c7f26fb-windows-amd64.zip",
-                  "alias": "lauda-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261103.c7f26fb-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-windows-x86_64.zip",
-                  "sha256": "63a424805908129e39acc04441815a4d47988f5e7a122d683bb5b57e2130ece0"
-                }
-              ]
-            },
-            {
-              "version": "0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21",
-              "released_at": "2026-11-01T12:00:00Z",
-              "commit": "2ec9c21",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21-linux-amd64.tar.gz",
-                  "alias": "lauda-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "11723c142a53751b1141f4c6a9f7e577bca3b0f12441fa9f2eb4bcf8113623d4"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21-linux-arm64.tar.gz",
-                  "alias": "lauda-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "b36f6c54ab3cb470ece9fc30700f070192ad314a78deeca8f4a33cfc13353e50"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21-windows-amd64.zip",
-                  "alias": "lauda-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.289+20261027.bf671e9-dev.20261101.2ec9c21-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-windows-x86_64.zip",
-                  "sha256": "7904894a47992e227b3f1938255e9960911eea0c9b99b2ba198322f4eeec5130"
                 }
               ]
             }
@@ -2032,9 +2070,231 @@
         },
         "dev": {
           "label": "Versão Experimental",
-          "latest_version": "0.1.0-dev.37+20261109.7c7e632",
+          "latest_version": "0.1.0-dev.37+20261111.831b6bd",
           "history_limit": 10,
           "versions": [
+            {
+              "version": "0.1.0-dev.37+20261111.831b6bd",
+              "released_at": "2026-11-11T12:00:00Z",
+              "commit": "831b6bd",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "ayvu-0.1.0-dev.37+20261111.831b6bd-linux-amd64.tar.gz",
+                  "alias": "ayvu-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261111.831b6bd-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "6175b4621a7fae805251715f6ee5721f3126d930ecdceb3e4ec2b1af34ec0f7f"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "ayvu-0.1.0-dev.37+20261111.831b6bd-linux-arm64.tar.gz",
+                  "alias": "ayvu-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261111.831b6bd-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "e574d6d9e6019a0450b8eed62f20c8aaf55918dc3384a1b563d1d92ec72b1825"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "ayvu-0.1.0-dev.37+20261111.831b6bd-windows-amd64.zip",
+                  "alias": "ayvu-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261111.831b6bd-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-windows-x86_64.zip",
+                  "sha256": "db2abecebb334a3a1ee48bde1345d2f4c2f0a8515e506b39ea77b918649b57bc"
+                }
+              ]
+            },
+            {
+              "version": "0.1.0-dev.37+20261111.638418d",
+              "released_at": "2026-11-11T12:00:00Z",
+              "commit": "638418d",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "ayvu-0.1.0-dev.37+20261111.638418d-linux-amd64.tar.gz",
+                  "alias": "ayvu-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261111.638418d-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "e2a84f15ddc8ac9ec3009fc0445316fb4bab8af359364c9c7d0be6c863fe4436"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "ayvu-0.1.0-dev.37+20261111.638418d-linux-arm64.tar.gz",
+                  "alias": "ayvu-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261111.638418d-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "e3e485a5070e951f09cdc8c6fea19a8a72bbfa96bf04a650be904d56b4fb9917"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "ayvu-0.1.0-dev.37+20261111.638418d-windows-amd64.zip",
+                  "alias": "ayvu-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261111.638418d-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-windows-x86_64.zip",
+                  "sha256": "72cfeea0d12e0f4ff2d3c099668a5bb0f6ae5e750c50f110a2da3be594755816"
+                }
+              ]
+            },
+            {
+              "version": "0.1.0-dev.37+20261111.a7bfaeb",
+              "released_at": "2026-11-11T12:00:00Z",
+              "commit": "a7bfaeb",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "ayvu-0.1.0-dev.37+20261111.a7bfaeb-linux-amd64.tar.gz",
+                  "alias": "ayvu-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261111.a7bfaeb-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "96ae0e4e1fc52fbc053c46bcdd5bf5e36ede902ff3aeb32891ac057720e8d14d"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "ayvu-0.1.0-dev.37+20261111.a7bfaeb-linux-arm64.tar.gz",
+                  "alias": "ayvu-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261111.a7bfaeb-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "95268011761a6afd640528dac86ad6f165c0860bedf94a9b62acacfc91754b00"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "ayvu-0.1.0-dev.37+20261111.a7bfaeb-windows-amd64.zip",
+                  "alias": "ayvu-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261111.a7bfaeb-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-windows-x86_64.zip",
+                  "sha256": "e3b5d9b5c4c013fe50b01ad6f709482a7585d23c55e84a85caaa3187dd41b86c"
+                }
+              ]
+            },
+            {
+              "version": "0.1.0-dev.37+20261111.ac6d12d",
+              "released_at": "2026-11-11T12:00:00Z",
+              "commit": "ac6d12d",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "ayvu-0.1.0-dev.37+20261111.ac6d12d-linux-amd64.tar.gz",
+                  "alias": "ayvu-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261111.ac6d12d-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "2ef6318ddd798053f69181988b83e0631946a1f291cca8eaebd2469ef77d4fe4"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "ayvu-0.1.0-dev.37+20261111.ac6d12d-linux-arm64.tar.gz",
+                  "alias": "ayvu-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261111.ac6d12d-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "1a4afb82420888200f80458c8aec2473ac3800f25d56f8def5c317313f3776c0"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "ayvu-0.1.0-dev.37+20261111.ac6d12d-windows-amd64.zip",
+                  "alias": "ayvu-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261111.ac6d12d-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-windows-x86_64.zip",
+                  "sha256": "68c671330f19162d5b8283cc93bc9090664a7ee1469e3c01d8b5cadd7ff2852a"
+                }
+              ]
+            },
+            {
+              "version": "0.1.0-dev.37+20261110.6d493c1",
+              "released_at": "2026-11-11T12:00:00Z",
+              "commit": "6d493c1",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "ayvu-0.1.0-dev.37+20261110.6d493c1-linux-amd64.tar.gz",
+                  "alias": "ayvu-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261110.6d493c1-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "8020ca530ad71879dbb4ef35a4f0d4875873c4ffe7869b7409393862a1eddcd0"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "ayvu-0.1.0-dev.37+20261110.6d493c1-linux-arm64.tar.gz",
+                  "alias": "ayvu-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261110.6d493c1-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "6c2262b5266f6df2e7c50ce277e5c91c2f85062b0cd80d7a3d62f10ab0e7792b"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "ayvu-0.1.0-dev.37+20261110.6d493c1-windows-amd64.zip",
+                  "alias": "ayvu-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261110.6d493c1-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-windows-x86_64.zip",
+                  "sha256": "72ce5b939d73799019dfd869550a8652a6b3f7f27753aed3cefc2974f310af3f"
+                }
+              ]
+            },
+            {
+              "version": "0.1.0-dev.37+20261110.109d1f4",
+              "released_at": "2026-11-10T12:00:00Z",
+              "commit": "109d1f4",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "ayvu-0.1.0-dev.37+20261110.109d1f4-linux-amd64.tar.gz",
+                  "alias": "ayvu-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261110.109d1f4-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "fcf5d8c206241b8a1e04b44d455c4f4e8dad026491cd043a4feaa9f886870c92"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "ayvu-0.1.0-dev.37+20261110.109d1f4-linux-arm64.tar.gz",
+                  "alias": "ayvu-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261110.109d1f4-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "f870905f34e65026bea7ba8ff653278f6cb879647394e945596e51d2f4a8206f"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "ayvu-0.1.0-dev.37+20261110.109d1f4-windows-amd64.zip",
+                  "alias": "ayvu-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/ayvu/nightly/ayvu-0.1.0-dev.37+20261110.109d1f4-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/ayvu/dev/ayvu-dev-latest-windows-x86_64.zip",
+                  "sha256": "15325d1c335757e60fcab17521ec24459d0cc9d44d0a2427aaf9df10ccd23196"
+                }
+              ]
+            },
             {
               "version": "0.1.0-dev.37+20261109.7c7e632",
               "released_at": "2026-11-09T12:00:00Z",
@@ -2813,9 +3073,46 @@
         },
         "dev": {
           "label": "Versão Experimental",
-          "latest_version": "0.1.0-dev.388+20261109.ed41900",
+          "latest_version": "0.1.0-dev.398+20261109.af807c8",
           "history_limit": 10,
           "versions": [
+            {
+              "version": "0.1.0-dev.398+20261109.af807c8",
+              "released_at": "2026-11-09T12:00:00Z",
+              "commit": "af807c8",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "mandu-0.1.0-dev.398+20261109.af807c8-linux-amd64.tar.gz",
+                  "alias": "mandu-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.398+20261109.af807c8-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/mandu/dev/mandu-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "1c7744461656f1c12c85f25cde028de61f6e904851569439911f9c298b0e8cf7"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "mandu-0.1.0-dev.398+20261109.af807c8-linux-arm64.tar.gz",
+                  "alias": "mandu-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.398+20261109.af807c8-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/mandu/dev/mandu-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "a071c7f4bc48d5d15d830f47861ef06a32a169f654b80351b48408a0d6de9c66"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "mandu-0.1.0-dev.398+20261109.af807c8-windows-amd64.zip",
+                  "alias": "mandu-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.398+20261109.af807c8-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/mandu/dev/mandu-dev-latest-windows-x86_64.zip",
+                  "sha256": "d405e6447f2c48c6e9e579aca7c82c6e57b5fe007ed18a7ba3837e5136dc8418"
+                }
+              ]
+            },
             {
               "version": "0.1.0-dev.388+20261109.ed41900",
               "released_at": "2026-11-09T12:00:00Z",
@@ -3106,23 +3403,6 @@
                   "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.283+20261031.70a7225-linux-amd64.tar.gz",
                   "alias_url": "https://dist.2lp.in/mandu/dev/mandu-dev-latest-linux-x86_64.tar.gz",
                   "sha256": "bc4af1d4db5400b65a28f410efe39568df66c59b3ab1343cc02041893b6e6b59"
-                }
-              ]
-            },
-            {
-              "version": "0.1.0-dev.263+20261026.50938f7",
-              "released_at": "2026-10-26T12:00:00Z",
-              "commit": "50938f7",
-              "assets": [
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "mandu-0.1.0-dev.263+20261026.50938f7-windows-amd64.zip",
-                  "alias": "mandu-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.263+20261026.50938f7-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/mandu/dev/mandu-dev-latest-windows-x86_64.zip",
-                  "sha256": "5f667de17c1a82e3fb8073d4c42e3a6a7f47282cc774e62fdc9addceffea8917"
                 }
               ]
             }
