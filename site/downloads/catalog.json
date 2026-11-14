@@ -1,6 +1,6 @@
 {
   "$schema": "./catalog.schema.json",
-  "updated_at": "2026-11-14T14:51:35.561794+00:00",
+  "updated_at": "2026-11-14T17:15:10.775501+00:00",
   "apps": {
     "cccp": {
       "metadata": {
@@ -18,9 +18,46 @@
         },
         "dev": {
           "label": "Versão Experimental",
-          "latest_version": "3.2.0-dev.876+20261111.f5a6f4f",
+          "latest_version": "3.2.0-dev.901+20261114.623e248",
           "history_limit": 10,
           "versions": [
+            {
+              "version": "3.2.0-dev.901+20261114.623e248",
+              "released_at": "2026-11-14T12:00:00Z",
+              "commit": "623e248",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "cccp-3.2.0-dev.901+20261114.623e248-linux-amd64.tar.gz",
+                  "alias": "cccp-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.901+20261114.623e248-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "2e5c7d771a86d11b8e15edc1faabd7b73a797efdcd1abff009b9906edc0730e0"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "cccp-3.2.0-dev.901+20261114.623e248-linux-arm64.tar.gz",
+                  "alias": "cccp-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.901+20261114.623e248-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "7c6d81858e097c16716c192b9175af42b51e20ab673dd346b373e1f81320aefd"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "cccp-3.2.0-dev.901+20261114.623e248-windows-amd64.zip",
+                  "alias": "cccp-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.901+20261114.623e248-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-windows-x86_64.zip",
+                  "sha256": "a2dae690535f5ddb54c265027ae99e0e935c29c5d93a4bdd5d4e47d1d47f910d"
+                }
+              ]
+            },
             {
               "version": "3.2.0-dev.876+20261111.f5a6f4f",
               "released_at": "2026-11-11T12:00:00Z",
@@ -351,43 +388,6 @@
                   "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.474+20261030.1ef8222-windows-amd64.zip",
                   "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-windows-x86_64.zip",
                   "sha256": "9b264404c5d5ce94396d9103697daf9be32251aee021854e8cd62596c96afa62"
-                }
-              ]
-            },
-            {
-              "version": "3.2.0-dev.468+20261030.fefc1cd",
-              "released_at": "2026-10-30T12:00:00Z",
-              "commit": "fefc1cd",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "cccp-3.2.0-dev.468+20261030.fefc1cd-linux-amd64.tar.gz",
-                  "alias": "cccp-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.468+20261030.fefc1cd-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "aefcd26e3e506bc1fd83f1ee3e1210fa01a1f54f34a0fb8de5dfed1a34150147"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "cccp-3.2.0-dev.468+20261030.fefc1cd-linux-arm64.tar.gz",
-                  "alias": "cccp-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.468+20261030.fefc1cd-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "963280d0adc585f19651a650913f5345fbb86857758c15d52d09389904464130"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "cccp-3.2.0-dev.468+20261030.fefc1cd-windows-amd64.zip",
-                  "alias": "cccp-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.468+20261030.fefc1cd-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-windows-x86_64.zip",
-                  "sha256": "139de9d504f3211723fb6a4ecc915320fe6f9ed883ee84c4fc2fc3c986b7cb38"
                 }
               ]
             }
