@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Fixes
+  - (pratilera) servir mandu.apk diretamente sem redirects e validar fail-fast (closes #59)
   - (pratilera) suportar repositorio mandu-mobile para apks e icones (closes #58)
   - (catalog) sincronizar catalogo com releases ativas de jornaleira e cccp (closes #51)
   - (downloads) suportar pacotes multi-binarios e corrigir links r2 (closes #40)
