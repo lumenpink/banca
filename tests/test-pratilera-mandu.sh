@@ -229,6 +229,24 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 10. [MUTAÇÃO] Validar aniquilação de mutante que reintroduz redirects para mandu.apk
+echo -n "-> 10. [MUTAÇÃO] Testando rejeição estrita de mutação com redirect para mandu.apk... "
+MUT_REDIRECT=$(python3 -c "
+with open('$GERAR_SCRIPT') as f:
+    content = f.read()
+# Assegurar que o script não gera regras de redirect para mandu.apk
+assert '/pratilera/mandu.apk https://' not in content, 'Redirect reintroduzido no script'
+# Assegurar que a cópia direta para PRATILERA_DIR está ativa
+assert 'target_pratilera_apk = PRATILERA_DIR / meta[\"apk_filename\"]' in content, 'Cópia direta ausente'
+print('OK')
+" 2>&1)
+if [ "$MUT_REDIRECT" == "OK" ]; then
+    echo "✅ OK (Mutantes de redirect rejeitados e cópia direta assegurada)"
+else
+    echo "❌ FALHOU no teste de mutação de redirect: $MUT_REDIRECT"
+    FAILURES=$((FAILURES + 1))
+fi
+
 
 echo "================================================================="
 if [ "$FAILURES" -gt 0 ]; then
