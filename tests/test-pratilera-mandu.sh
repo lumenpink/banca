@@ -65,6 +65,35 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 2b. Verificar presença física do arquivo mandu.apk em site/pratilera (entrega direta sem redirects)
+echo -n "-> 2b. Verificando presença física de site/pratilera/mandu.apk (>= 1MB)... "
+MANDU_APK="$PRATILERA_DIR/mandu.apk"
+if [ -f "$MANDU_APK" ]; then
+    APK_SZ=$(stat -c%s "$MANDU_APK" 2>/dev/null || stat -f%z "$MANDU_APK" 2>/dev/null || echo 0)
+    if [ "$APK_SZ" -ge 1048576 ] && [ "$APK_SZ" -le 26214400 ]; then
+        echo "✅ OK ($APK_SZ bytes)"
+    else
+        echo "❌ FALHOU (tamanho do APK anômalo: $APK_SZ bytes)"
+        FAILURES=$((FAILURES + 1))
+    fi
+else
+    echo "❌ FALHOU (site/pratilera/mandu.apk inexistente - entrega direta necessária sem redirects)"
+    FAILURES=$((FAILURES + 1))
+fi
+
+# 2c. Verificar ausência de gambiarra de redirecionamento 302 para mandu.apk
+echo -n "-> 2c. Verificando que não há redirecionamento 302 para mandu.apk em site/_redirects... "
+if [ -f "$REPO_ROOT/site/_redirects" ]; then
+    if grep -q "mandu.apk" "$REPO_ROOT/site/_redirects"; then
+        echo "❌ FALHOU (redirecionamento 302 para mandu.apk detectado em site/_redirects)"
+        FAILURES=$((FAILURES + 1))
+    else
+        echo "✅ OK (sem redirects para mandu.apk)"
+    fi
+else
+    echo "✅ OK (site/_redirects ausente)"
+fi
+
 # 3. Verificar ícones Fastlane e de densidade do Mandu
 echo -n "-> 3. Verificando ícones Fastlane e densidades do Mandu... "
 FASTLANE_OK=true
