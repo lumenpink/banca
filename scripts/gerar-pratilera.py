@@ -489,7 +489,12 @@ def build_index_v1():
             apk_signer = extract_apk_signer(apk_path)
             apk_meta = extract_apk_metadata(apk_path)
 
-            # Publicação direta na Pratilera (HTTP 200 direto) para artefatos <= 25 MB (limite Workers)
+            # Nota de arquitetura (Natasha):
+            # A Pratilera publica pacotes <= 25 MB diretamente como assets estáticos em site/pratilera/.
+            # Clientes F-Droid/Droid-ify requisitam o caminho canônico do repositório configurado.
+            # É expressamente proibido usar regras de redirecionamento 302 silenciosas para mascarar
+            # a ausência de APKs: o binário deve residir fisicamente na loja, garantindo HTTP 200 direto
+            # e fail-fast em caso de ausência ou corrupção do arquivo.
             target_pratilera_apk = PRATILERA_DIR / meta["apk_filename"]
             if apk_size <= 26214400 and apk_path.resolve() != target_pratilera_apk.resolve():
                 shutil.copy2(apk_path, target_pratilera_apk)
