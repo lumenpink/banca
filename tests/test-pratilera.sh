@@ -466,7 +466,11 @@ if [ -f "$PRATILERA_DIR/index-v1.json" ] && command -v aapt >/dev/null 2>&1; the
             elif [[ "$PKG" == *"mocambo"* ]]; then
                 SLUG="mocambo"
             elif [[ "$PKG" == *"mandu"* ]]; then
-                SLUG="mandu"
+                if [ -f "$REPO_ROOT/../mandu-mobile/VERSION" ]; then
+                    SLUG="mandu-mobile"
+                else
+                    SLUG="mandu"
+                fi
             fi
 
             EXPECTED_NAME=""

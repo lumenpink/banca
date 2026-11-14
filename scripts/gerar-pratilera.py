@@ -199,7 +199,8 @@ def import_external_apks():
         mandu_mobile_dir / "dist" / "mandu.apk",
         mandu_dir / "dist" / "android" / "mandu.apk",
         mandu_dir / "dist" / "mandu.apk",
-        mandu_dir / "site" / "mandu.apk"
+        mandu_dir / "site" / "mandu.apk",
+        CACHE_APK_DIR / "mandu.apk"
     ]:
         if apk_candidate.exists() and apk_candidate.stat().st_size >= 1048576:
             dst = PRATILERA_DIR / "mandu.apk"
@@ -487,6 +488,12 @@ def build_index_v1():
             apk_hash = sha256_file(apk_path)
             apk_signer = extract_apk_signer(apk_path)
             apk_meta = extract_apk_metadata(apk_path)
+
+            # Publicação direta na Pratilera (HTTP 200 direto) para artefatos <= 25 MB (limite Workers)
+            target_pratilera_apk = PRATILERA_DIR / meta["apk_filename"]
+            if apk_size <= 26214400 and apk_path.resolve() != target_pratilera_apk.resolve():
+                shutil.copy2(apk_path, target_pratilera_apk)
+                print(f"-> Publicado diretamente na Pratilera: {meta['apk_filename']} ({apk_size} bytes)")
         elif prev_entry.get("size", 0) > 1024 and prev_entry.get("hash") and not prev_entry.get("hash").startswith("000000"):
             apk_size = prev_entry["size"]
             apk_hash = prev_entry["hash"]
