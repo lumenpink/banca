@@ -4,9 +4,32 @@
   "description": "Cofre autônomo de arquivos, documentos e fotos",
   "repo": "https://gambi.2lp.in/lumen/mocambo",
   "stable_latest": "",
-  "nightly_latest": "0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c",
+  "nightly_latest": "0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847",
+      "date": "2026-11-14",
+      "sha256": "d91cff24fdcef2cf7abb043307e6e2a279806c74e5f5b1de39890bdd2db7c6ef",
+      "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847-linux-amd64.tar.gz",
+          "sha256": "d91cff24fdcef2cf7abb043307e6e2a279806c74e5f5b1de39890bdd2db7c6ef"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847-linux-arm64.tar.gz",
+          "sha256": "144e981b83f84aafd79b7fab877adff16790aabdcb915ba14061970a703a7f3f"
+        },
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847-windows-amd64.zip",
+          "sha256": "c55b2771ece3470caaf2ee04ee96e1ee2ebba295c39c80050fd3e7ed90580f93"
+        }
+      }
+    },
     {
       "version": "0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c",
       "date": "2026-11-04",
