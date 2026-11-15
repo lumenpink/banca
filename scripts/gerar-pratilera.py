@@ -361,11 +361,11 @@ def is_prerelease(version_name: str) -> bool:
     return any(marker in v for marker in ["-dev", "-alpha", "-beta", "-rc", "+"])
 
 def get_project_version(project_name: str, fallback: str = "0.2.0") -> str:
-    """Tenta ler a versão canônica do CCCP em VERSION do projeto irmão ou em site/downloads/{project_name}/index.json."""
+    """Tenta ler a versão canônica do CCCP em VERSION do projeto irmão ou remotamente via Forgejo/downloads."""
     candidates = [
         REPO_ROOT.parent / project_name / "VERSION",
     ]
-    if project_name == "mandu":
+    if project_name in ("mandu", "mandu-mobile"):
         candidates.insert(0, REPO_ROOT.parent / "mandu-mobile" / "VERSION")
 
     # 1. Tentar ler do arquivo VERSION no repositório irmão (ambiente local integrado)
@@ -378,7 +378,20 @@ def get_project_version(project_name: str, fallback: str = "0.2.0") -> str:
             except Exception:
                 pass
 
-    # 2. Resolução hermética: ler do manifesto de downloads da Banca (site/downloads/{project_name}/index.json)
+    # 2. Resolução remota para mandu-mobile (garantindo que o APK não herde versão do CLI mandu de desktop)
+    if project_name in ("mandu", "mandu-mobile"):
+        try:
+            import urllib.request
+            req = urllib.request.Request("https://gambi.2lp.in/api/v1/repos/lumen/mandu-mobile/raw/VERSION", headers={"User-Agent": "Banca-Pratilera-Builder/1.0"})
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                val = resp.read().decode("utf-8").strip()
+                if val:
+                    return val
+        except Exception:
+            pass
+        return fallback
+
+    # 3. Resolução hermética: ler do manifesto de downloads da Banca (site/downloads/{project_name}/index.json)
     downloads_manifest = SITE_DIR / "downloads" / project_name / "index.json"
     if downloads_manifest.exists():
         try:
@@ -531,10 +544,11 @@ def build_index_v1():
 
         # Metadados do aplicativo:
         # - versionCode DEVE vir do APK real para evitar 'Metadado inválido' no Android/Droid-ify.
-        # - versionName DEVE vir canonicamente do CCCP (arquivo VERSION do repositório irmão).
-        project_slug = "lacraia" if "lacraia" in pkg_id else ("lauda" if "lauda" in pkg_id else ("mocambo" if "mocambo" in pkg_id else ("mandu" if "mandu" in pkg_id else "")))
+        # - versionName DEVE vir canonicamente do CCCP (arquivo VERSION do repositório irmão ou remoto).
+        project_slug = "lacraia" if "lacraia" in pkg_id else ("lauda" if "lauda" in pkg_id else ("mocambo" if "mocambo" in pkg_id else ("mandu-mobile" if "mandu" in pkg_id else "")))
         fallback_ver = apk_meta.get("version_name") or prev_entry.get("versionName") or meta["version_name"]
         ver_name = get_project_version(project_slug, fallback_ver) if project_slug else fallback_ver
+
         ver_code = apk_meta.get("version_code", prev_entry.get("versionCode", meta.get("version_code", 1)))
 
         min_sdk = apk_meta.get("min_sdk", prev_entry.get("minSdkVersion", meta["min_sdk"]))
