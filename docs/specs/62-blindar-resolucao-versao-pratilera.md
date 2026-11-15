@@ -34,3 +34,9 @@ Para que a Natasha compreenda os motivos de cada escolha arquitetural:
 O script de testes `tests/test-pratilera.sh` deve incluir uma verificação contratual que comprove:
 1. `get_project_version` resolve com sucesso a versão do Mocambo e do Mandu a partir de `site/downloads/{app}/index.json` mesmo quando o diretório irmão não existe.
 2. A versão resultante em `site/pratilera/index-v1.json` para `in.twolp.mocambo` corresponde à versão registrada no manifesto de downloads (ex.: prefixada com `0.3.0-dev.`).
+
+---
+
+## 4. Conclusão e Homologação (Fase 9)
+Resolução canônica blindada com sucesso: o gerador `gerar-pratilera.py` agora extrai versões de `site/downloads/{app}/index.json` sem falhar quando os diretórios irmãos não estiverem presentes. Todos os 32 testes de validação em `tests/test-pratilera.sh` foram homologados com êxito.
+
