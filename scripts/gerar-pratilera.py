@@ -361,13 +361,14 @@ def is_prerelease(version_name: str) -> bool:
     return any(marker in v for marker in ["-dev", "-alpha", "-beta", "-rc", "+"])
 
 def get_project_version(project_name: str, fallback: str = "0.2.0") -> str:
-    """Tenta ler a versão canônica do CCCP em VERSION do projeto irmão."""
+    """Tenta ler a versão canônica do CCCP em VERSION do projeto irmão ou em site/downloads/{project_name}/index.json."""
     candidates = [
         REPO_ROOT.parent / project_name / "VERSION",
     ]
     if project_name == "mandu":
         candidates.insert(0, REPO_ROOT.parent / "mandu-mobile" / "VERSION")
 
+    # 1. Tentar ler do arquivo VERSION no repositório irmão (ambiente local integrado)
     for candidate in candidates:
         if candidate.exists():
             try:
@@ -376,6 +377,19 @@ def get_project_version(project_name: str, fallback: str = "0.2.0") -> str:
                     return val
             except Exception:
                 pass
+
+    # 2. Resolução hermética: ler do manifesto de downloads da Banca (site/downloads/{project_name}/index.json)
+    downloads_manifest = SITE_DIR / "downloads" / project_name / "index.json"
+    if downloads_manifest.exists():
+        try:
+            with open(downloads_manifest, encoding="utf-8") as f:
+                data = json.load(f)
+                latest_ver = data.get("stable_latest") or data.get("nightly_latest")
+                if latest_ver:
+                    return str(latest_ver).strip()
+        except Exception:
+            pass
+
     return fallback
 
 def extract_apk_signer(apk_path: Path) -> str:
