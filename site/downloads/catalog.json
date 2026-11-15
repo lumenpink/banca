@@ -1,6 +1,6 @@
 {
   "$schema": "./catalog.schema.json",
-  "updated_at": "2026-11-15T17:43:53.116849+00:00",
+  "updated_at": "2026-11-15T19:26:38.075428+00:00",
   "apps": {
     "cccp": {
       "metadata": {
@@ -1369,9 +1369,46 @@
         },
         "dev": {
           "label": "Versão Experimental",
-          "latest_version": "0.2.0-dev.137+20261115.1332d80",
+          "latest_version": "0.2.0-dev.137+20261115.d6d14c6",
           "history_limit": 10,
           "versions": [
+            {
+              "version": "0.2.0-dev.137+20261115.d6d14c6",
+              "released_at": "2026-11-15T12:00:00Z",
+              "commit": "d6d14c6",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "joaju-0.2.0-dev.137+20261115.d6d14c6-linux-amd64.tar.gz",
+                  "alias": "joaju-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261115.d6d14c6-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "1ce69317104544ff37c8347feab9c3844eaffef6c374f13318546e0715710e4f"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "joaju-0.2.0-dev.137+20261115.d6d14c6-linux-arm64.tar.gz",
+                  "alias": "joaju-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261115.d6d14c6-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "506160eed067125fcd94e4b789fe74fc5a93a2c32befb6a03e26ec22aab53859"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "joaju-0.2.0-dev.137+20261115.d6d14c6-windows-amd64.zip",
+                  "alias": "joaju-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261115.d6d14c6-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-windows-x86_64.zip",
+                  "sha256": "17f77bc9c783bbe6dcc53ec660b7a9284d7289bdaf6414088709f6b43705e9d7"
+                }
+              ]
+            },
             {
               "version": "0.2.0-dev.137+20261115.1332d80",
               "released_at": "2026-11-15T12:00:00Z",
@@ -1702,43 +1739,6 @@
                   "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.72+20261023.9672441+20261023.ec3330b-windows-amd64.zip",
                   "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-windows-x86_64.zip",
                   "sha256": "a142a62752f0d6b5c1e180cee63a8a8418bf0f38f536ffef4fac5b5aa5f898aa"
-                }
-              ]
-            },
-            {
-              "version": "0.2.0-dev.69+20261022.61bacde+20261022.e46558e",
-              "released_at": "2026-10-22T12:00:00Z",
-              "commit": "61bacde",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "joaju-0.2.0-dev.69+20261022.61bacde+20261022.e46558e-linux-amd64.tar.gz",
-                  "alias": "joaju-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.69+20261022.61bacde+20261022.e46558e-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "28c77d67a048bff52eb3349aa8291e7a96afd795d489dac6cceb099ba9a66fef"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "joaju-0.2.0-dev.69+20261022.61bacde+20261022.e46558e-linux-arm64.tar.gz",
-                  "alias": "joaju-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.69+20261022.61bacde+20261022.e46558e-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "af2fbc8bd93839f86a07072e5cf9a8cfdb9e0358c9de158c743cebfc8abed2ea"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "joaju-0.2.0-dev.69+20261022.61bacde+20261022.e46558e-windows-amd64.zip",
-                  "alias": "joaju-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.69+20261022.61bacde+20261022.e46558e-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-windows-x86_64.zip",
-                  "sha256": "b3aa56358bad00a79ee5cbd7d6c98b53204e5179bbd75f119fbdbd78a4ae45f0"
                 }
               ]
             }
@@ -2657,9 +2657,46 @@
         },
         "dev": {
           "label": "Versão Experimental",
-          "latest_version": "0.3.0-dev.52+20261115.a655433-dev.20261115.b4be9a2",
+          "latest_version": "0.3.0-dev.58+20261115.1d4d12e-dev.20261115.1348bee",
           "history_limit": 10,
           "versions": [
+            {
+              "version": "0.3.0-dev.58+20261115.1d4d12e-dev.20261115.1348bee",
+              "released_at": "2026-11-15T12:00:00Z",
+              "commit": "1348bee",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "mocambo-0.3.0-dev.58+20261115.1d4d12e-dev.20261115.1348bee-linux-amd64.tar.gz",
+                  "alias": "mocambo-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.58+20261115.1d4d12e-dev.20261115.1348bee-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/mocambo/dev/mocambo-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "f6c13c671cdba06d9c2f4b013633156ab0e58f8a01b68f9d4026cf9e5266a395"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "mocambo-0.3.0-dev.58+20261115.1d4d12e-dev.20261115.1348bee-linux-arm64.tar.gz",
+                  "alias": "mocambo-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.58+20261115.1d4d12e-dev.20261115.1348bee-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/mocambo/dev/mocambo-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "99b3bfc427e2700d8b2e13bed68fd646bee0683a6c2d890eeea7c75f1ac3c48f"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "mocambo-0.3.0-dev.58+20261115.1d4d12e-dev.20261115.1348bee-windows-amd64.zip",
+                  "alias": "mocambo-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.58+20261115.1d4d12e-dev.20261115.1348bee-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/mocambo/dev/mocambo-dev-latest-windows-x86_64.zip",
+                  "sha256": "6e492990f454758fbd8e1f0ef96e1f2db7d18f9ba76247be6ab5d841b48ba6f4"
+                }
+              ]
+            },
             {
               "version": "0.3.0-dev.52+20261115.a655433-dev.20261115.b4be9a2",
               "released_at": "2026-11-15T12:00:00Z",
@@ -2990,43 +3027,6 @@
                   "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.34+20261029.fc099a6-dev.20261029.473d8e5-windows-amd64.zip",
                   "alias_url": "https://dist.2lp.in/mocambo/dev/mocambo-dev-latest-windows-x86_64.zip",
                   "sha256": "3042450e69a533c70d442e7a991b3b4abbf3813c42b450244b93f6836258c5d0"
-                }
-              ]
-            },
-            {
-              "version": "0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301",
-              "released_at": "2026-10-25T12:00:00Z",
-              "commit": "cbbd301",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-linux-amd64.tar.gz",
-                  "alias": "mocambo-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/mocambo/dev/mocambo-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "0b9cb6e102904b69ea0297c6a1772a2005d8b28e2b6388b131365ef961393233"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-linux-arm64.tar.gz",
-                  "alias": "mocambo-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/mocambo/dev/mocambo-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "b0816ebc5f7536dd977eefd054aa39097a8c6c79d1fcb7a927383e3fadf1d30c"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-windows-amd64.zip",
-                  "alias": "mocambo-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.28+20261025.c5e5e27-dev.20261025.cbbd301-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/mocambo/dev/mocambo-dev-latest-windows-x86_64.zip",
-                  "sha256": "d17063405fa196111c9bdc2825c672967223b64894d2b782c35230cd7cb25af2"
                 }
               ]
             }
