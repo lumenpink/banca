@@ -4,9 +4,32 @@
   "description": "Cockpit de som brutalista e jukebox comunitária",
   "repo": "https://gambi.2lp.in/lumen/lacraia",
   "stable_latest": "",
-  "nightly_latest": "0.2.0-dev.252+20261102-dev.20261115.05e51ce",
+  "nightly_latest": "0.2.0-dev.252+20261102-dev.20261115.121e7c4",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.2.0-dev.252+20261102-dev.20261115.121e7c4",
+      "date": "2026-11-15",
+      "sha256": "095d584d306570dc2fb85100e960684d03d145e78a693dfaf5d158b08750fafc",
+      "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.121e7c4-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.121e7c4-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.121e7c4-linux-amd64.tar.gz",
+          "sha256": "095d584d306570dc2fb85100e960684d03d145e78a693dfaf5d158b08750fafc"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.121e7c4-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.121e7c4-linux-arm64.tar.gz",
+          "sha256": "ddcf30a314b9e5fa5dab1c4b52d13fda4ba0448bf2d5a93a39cdb3345a11d703"
+        },
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.121e7c4-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.121e7c4-windows-amd64.zip",
+          "sha256": "de61c9133d86ad69aef514c3d405b637e0a357838e367c6e5697f85d538ef142"
+        }
+      }
+    },
     {
       "version": "0.2.0-dev.252+20261102-dev.20261115.05e51ce",
       "date": "2026-11-15",
@@ -211,29 +234,6 @@
           "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-windows-amd64.zip",
           "sha256": "4e3cf7facfbe24ae5ccfe7ce49019cf82fb631f375aef0c4899eafc53c798b8e"
-        }
-      }
-    },
-    {
-      "version": "0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde",
-      "date": "2026-10-25",
-      "sha256": "a93e25bfa8ee4a98f5ddd15fe71766d6fcd682815e0af4ba86a0377e4f47e4b5",
-      "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde-linux-amd64.tar.gz",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde-linux-amd64.tar.gz",
-          "sha256": "a93e25bfa8ee4a98f5ddd15fe71766d6fcd682815e0af4ba86a0377e4f47e4b5"
-        },
-        "linux-arm64": {
-          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde-linux-arm64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde-linux-arm64.tar.gz",
-          "sha256": "ec2e7d686c889ae817b927087c31936f2b6faf3afa45fb1cd67df7aebcb727c2"
-        },
-        "windows-x86_64": {
-          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde-windows-amd64.zip",
-          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde-windows-amd64.zip",
-          "sha256": "93799e05f3679d7a002078fa4b41bf722f365fd1b3cb69872d769fd26ddec865"
         }
       }
     }
