@@ -4,9 +4,32 @@
   "description": "Cockpit de som brutalista e jukebox comunitária",
   "repo": "https://gambi.2lp.in/lumen/lacraia",
   "stable_latest": "",
-  "nightly_latest": "0.2.0-dev.252+20261102-dev.20261115.3bf04d5",
+  "nightly_latest": "0.2.0-dev.252+20261102-dev.20261115.e60424b",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.2.0-dev.252+20261102-dev.20261115.e60424b",
+      "date": "2026-11-15",
+      "sha256": "5386a4244796464a07a7d473fbe3f8ca2955c484e9906b19e5a81cd5213033c4",
+      "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.e60424b-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.e60424b-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.e60424b-linux-amd64.tar.gz",
+          "sha256": "5386a4244796464a07a7d473fbe3f8ca2955c484e9906b19e5a81cd5213033c4"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.e60424b-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.e60424b-linux-arm64.tar.gz",
+          "sha256": "ccc3a952f45f1571b9fa718feea3d2b2192d9f22b5bb473601167f816e544169"
+        },
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.e60424b-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.e60424b-windows-amd64.zip",
+          "sha256": "01513c3ecb083d2082e472b5053ed734fc47a94931f157d87352b534c69072cb"
+        }
+      }
+    },
     {
       "version": "0.2.0-dev.252+20261102-dev.20261115.3bf04d5",
       "date": "2026-11-15",
@@ -211,29 +234,6 @@
           "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.242+20261027.1fba108-dev.20261028.e92c91b-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.242+20261027.1fba108-dev.20261028.e92c91b-windows-amd64.zip",
           "sha256": "433cea351b35b6ea6d2a58c2294ee53baa3f6c71b0bafacdc888dd1e8a7f11b8"
-        }
-      }
-    },
-    {
-      "version": "0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7",
-      "date": "2026-10-26",
-      "sha256": "70b0bd5c34fe099788b38598d952e3807b062784aabea04e569bb371c15df603",
-      "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7-linux-amd64.tar.gz",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7-linux-amd64.tar.gz",
-          "sha256": "70b0bd5c34fe099788b38598d952e3807b062784aabea04e569bb371c15df603"
-        },
-        "linux-arm64": {
-          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7-linux-arm64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7-linux-arm64.tar.gz",
-          "sha256": "0581fded284130b3a55cb610efad1408aa08c0856b2fe87acc8619028c8f0f97"
-        },
-        "windows-x86_64": {
-          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7-windows-amd64.zip",
-          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7-windows-amd64.zip",
-          "sha256": "5fad2b9f176e669c16de68cb40bdaf1880d3956e4585748eb797f4b2cbb39fed"
         }
       }
     }
