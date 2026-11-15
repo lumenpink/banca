@@ -1,6 +1,6 @@
 {
   "$schema": "./catalog.schema.json",
-  "updated_at": "2026-11-14T17:15:10.775501+00:00",
+  "updated_at": "2026-11-15T12:20:32.351300+00:00",
   "apps": {
     "cccp": {
       "metadata": {
@@ -18,9 +18,46 @@
         },
         "dev": {
           "label": "Versão Experimental",
-          "latest_version": "3.2.0-dev.901+20261114.623e248",
+          "latest_version": "3.2.0-dev.908+20261115.0a8bdc6",
           "history_limit": 10,
           "versions": [
+            {
+              "version": "3.2.0-dev.908+20261115.0a8bdc6",
+              "released_at": "2026-11-15T12:00:00Z",
+              "commit": "0a8bdc6",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "cccp-3.2.0-dev.908+20261115.0a8bdc6-linux-amd64.tar.gz",
+                  "alias": "cccp-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.908+20261115.0a8bdc6-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "eb6b940037ab7279b61e8ff9187cbd5ecb5d5ac41f6b912217eca557fbd57b76"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "cccp-3.2.0-dev.908+20261115.0a8bdc6-linux-arm64.tar.gz",
+                  "alias": "cccp-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.908+20261115.0a8bdc6-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "3627fc1c522719292a67097116a4c6384cc3dbe1010ed21af2fe0f0643848730"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "cccp-3.2.0-dev.908+20261115.0a8bdc6-windows-amd64.zip",
+                  "alias": "cccp-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.908+20261115.0a8bdc6-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-windows-x86_64.zip",
+                  "sha256": "bdf5d873e6e4ad62a06c225e3eb5a1b9cc93f0eb4d1ad8ae2b65476149a6a5ae"
+                }
+              ]
+            },
             {
               "version": "3.2.0-dev.901+20261114.623e248",
               "released_at": "2026-11-14T12:00:00Z",
@@ -351,43 +388,6 @@
                   "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.532+20261031.1e2d017-windows-amd64.zip",
                   "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-windows-x86_64.zip",
                   "sha256": "39c5b1cd26e6446a5702465ff5c534c29a8c50a60b001a27b1223a89356a6b1c"
-                }
-              ]
-            },
-            {
-              "version": "3.2.0-dev.474+20261030.1ef8222",
-              "released_at": "2026-10-30T12:00:00Z",
-              "commit": "1ef8222",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "cccp-3.2.0-dev.474+20261030.1ef8222-linux-amd64.tar.gz",
-                  "alias": "cccp-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.474+20261030.1ef8222-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "7093bfa7eca6faf0dfe1b0db8f255967faa22ee636ea0dd269028abfe440a42f"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "cccp-3.2.0-dev.474+20261030.1ef8222-linux-arm64.tar.gz",
-                  "alias": "cccp-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.474+20261030.1ef8222-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "d532638605deb7218dee442bbe468483d04f16f9473c54960a9cda43f5c342c4"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "cccp-3.2.0-dev.474+20261030.1ef8222-windows-amd64.zip",
-                  "alias": "cccp-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/cccp/nightly/cccp-3.2.0-dev.474+20261030.1ef8222-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/cccp/dev/cccp-dev-latest-windows-x86_64.zip",
-                  "sha256": "9b264404c5d5ce94396d9103697daf9be32251aee021854e8cd62596c96afa62"
                 }
               ]
             }
@@ -976,9 +976,268 @@
         },
         "dev": {
           "label": "Versão Experimental",
-          "latest_version": "0.2.0-dev.252+20261102-dev.20261103.49619af",
+          "latest_version": "0.2.0-dev.252+20261102-dev.20261115.662b901",
           "history_limit": 10,
           "versions": [
+            {
+              "version": "0.2.0-dev.252+20261102-dev.20261115.662b901",
+              "released_at": "2026-11-15T12:00:00Z",
+              "commit": "662b901",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.662b901-linux-amd64.tar.gz",
+                  "alias": "lacraia-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.662b901-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "95e82ac780498d63d7f2ca0419c5d045ecdf705c064d3dc33158ccc4e7cb75a2"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.662b901-linux-arm64.tar.gz",
+                  "alias": "lacraia-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.662b901-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "c99e914db68b7d921bcd7a94b165145cea83c14e131cf24f64c1d25b3b56c50d"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.662b901-windows-amd64.zip",
+                  "alias": "lacraia-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.662b901-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-windows-x86_64.zip",
+                  "sha256": "e1c35242a1268f2694c1824afe629c854b4390e3bb67999ad38a78fb922a92c7"
+                }
+              ]
+            },
+            {
+              "version": "0.2.0-dev.252+20261102-dev.20261115.ed73df3",
+              "released_at": "2026-11-15T12:00:00Z",
+              "commit": "ed73df3",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.ed73df3-linux-amd64.tar.gz",
+                  "alias": "lacraia-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.ed73df3-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "640f04f3120fa0ddcf66113dcd4ddea41990e8b74aef83736db9559cb73992c2"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.ed73df3-linux-arm64.tar.gz",
+                  "alias": "lacraia-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.ed73df3-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "e09438ad6b28a087f449a2b613ac31e590e164053ad88f598d6fd84ba77b39ba"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.ed73df3-windows-amd64.zip",
+                  "alias": "lacraia-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.ed73df3-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-windows-x86_64.zip",
+                  "sha256": "f1f1ca41d709dc8c0166bd3188cc88dd239e42b613e354fd2f34b19d75c0262d"
+                }
+              ]
+            },
+            {
+              "version": "0.2.0-dev.252+20261102-dev.20261115.e60424b",
+              "released_at": "2026-11-15T12:00:00Z",
+              "commit": "e60424b",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.e60424b-linux-amd64.tar.gz",
+                  "alias": "lacraia-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.e60424b-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "5386a4244796464a07a7d473fbe3f8ca2955c484e9906b19e5a81cd5213033c4"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.e60424b-linux-arm64.tar.gz",
+                  "alias": "lacraia-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.e60424b-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "ccc3a952f45f1571b9fa718feea3d2b2192d9f22b5bb473601167f816e544169"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.e60424b-windows-amd64.zip",
+                  "alias": "lacraia-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.e60424b-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-windows-x86_64.zip",
+                  "sha256": "01513c3ecb083d2082e472b5053ed734fc47a94931f157d87352b534c69072cb"
+                }
+              ]
+            },
+            {
+              "version": "0.2.0-dev.252+20261102-dev.20261115.3bf04d5",
+              "released_at": "2026-11-15T12:00:00Z",
+              "commit": "3bf04d5",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.3bf04d5-linux-amd64.tar.gz",
+                  "alias": "lacraia-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.3bf04d5-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "47fe62ea7f92e8c2725cf58305e0c5ef9fdda2c3e587d7597f48585be652b1a9"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.3bf04d5-linux-arm64.tar.gz",
+                  "alias": "lacraia-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.3bf04d5-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "f1d8ce900937ed8aa580f55d1e009c86777f33013fc2616c1a41ce471704965a"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.3bf04d5-windows-amd64.zip",
+                  "alias": "lacraia-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.3bf04d5-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-windows-x86_64.zip",
+                  "sha256": "0f673b037a06b44263013375c0b2586725462c3006a6eb5acb6e9b43e93331b5"
+                }
+              ]
+            },
+            {
+              "version": "0.2.0-dev.252+20261102-dev.20261115.121e7c4",
+              "released_at": "2026-11-15T12:00:00Z",
+              "commit": "121e7c4",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.121e7c4-linux-amd64.tar.gz",
+                  "alias": "lacraia-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.121e7c4-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "095d584d306570dc2fb85100e960684d03d145e78a693dfaf5d158b08750fafc"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.121e7c4-linux-arm64.tar.gz",
+                  "alias": "lacraia-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.121e7c4-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "ddcf30a314b9e5fa5dab1c4b52d13fda4ba0448bf2d5a93a39cdb3345a11d703"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.121e7c4-windows-amd64.zip",
+                  "alias": "lacraia-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.121e7c4-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-windows-x86_64.zip",
+                  "sha256": "de61c9133d86ad69aef514c3d405b637e0a357838e367c6e5697f85d538ef142"
+                }
+              ]
+            },
+            {
+              "version": "0.2.0-dev.252+20261102-dev.20261115.05e51ce",
+              "released_at": "2026-11-15T12:00:00Z",
+              "commit": "05e51ce",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.05e51ce-linux-amd64.tar.gz",
+                  "alias": "lacraia-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.05e51ce-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "47d543c5d38e5b39818a3d57eb8d0cff6336b8fd8d54a3ecd060e061fdc3ad2f"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.05e51ce-linux-arm64.tar.gz",
+                  "alias": "lacraia-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.05e51ce-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "2e030dc74070b151ba8358eebf2c216531a68bc61b85ec00ca1e5d12572ea19f"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.05e51ce-windows-amd64.zip",
+                  "alias": "lacraia-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.05e51ce-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-windows-x86_64.zip",
+                  "sha256": "8965a25aec9324f4c2c5808b5d2e9a61059351616435784273526559e7805372"
+                }
+              ]
+            },
+            {
+              "version": "0.2.0-dev.252+20261102-dev.20261115.caf09e4",
+              "released_at": "2026-11-15T12:00:00Z",
+              "commit": "caf09e4",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.caf09e4-linux-amd64.tar.gz",
+                  "alias": "lacraia-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.caf09e4-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "b86966f3123e1da3f8fed6856d27e560906624f8f8a801f0663637f2afb7d25c"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.caf09e4-linux-arm64.tar.gz",
+                  "alias": "lacraia-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.caf09e4-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "a87ac67fdfed13524bdd52aca7215b65d897848d20737df1e8f9c1c98e5437fc"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "lacraia-0.2.0-dev.252+20261102-dev.20261115.caf09e4-windows-amd64.zip",
+                  "alias": "lacraia-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.252+20261102-dev.20261115.caf09e4-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-windows-x86_64.zip",
+                  "sha256": "bbc2175b1805f612b5eedc648507734b4245b16d82a62f84b945f8fa31947c33"
+                }
+              ]
+            },
             {
               "version": "0.2.0-dev.252+20261102-dev.20261103.49619af",
               "released_at": "2026-11-03T12:00:00Z",
@@ -1087,265 +1346,6 @@
                   "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261030.8d166f0-windows-amd64.zip",
                   "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-windows-x86_64.zip",
                   "sha256": "8b2c53c70a3d80967861cde302c8f985327a8108ccc4a295bf5b1b41fed908eb"
-                }
-              ]
-            },
-            {
-              "version": "0.2.0-dev.251+20261030.580f23f-dev.20261030.3a95b5b",
-              "released_at": "2026-10-30T12:00:00Z",
-              "commit": "3a95b5b",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261030.3a95b5b-linux-amd64.tar.gz",
-                  "alias": "lacraia-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261030.3a95b5b-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "169b827b03df32c74ac231ec159a6a60baf442689dce328c05e79d9a4aa5bb53"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261030.3a95b5b-linux-arm64.tar.gz",
-                  "alias": "lacraia-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261030.3a95b5b-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "ad3a9f8b3e2d6c929c696a36b780369199c0aa62ba69085ce8fb4ef9e6a487c7"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261030.3a95b5b-windows-amd64.zip",
-                  "alias": "lacraia-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261030.3a95b5b-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-windows-x86_64.zip",
-                  "sha256": "565ed3ccc05ae65c742927c9e2f53af074e20350b22082b0d948c9651d74bcb7"
-                }
-              ]
-            },
-            {
-              "version": "0.2.0-dev.242+20261027.1fba108-dev.20261028.e92c91b",
-              "released_at": "2026-10-28T12:00:00Z",
-              "commit": "e92c91b",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lacraia-0.2.0-dev.242+20261027.1fba108-dev.20261028.e92c91b-linux-amd64.tar.gz",
-                  "alias": "lacraia-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.242+20261027.1fba108-dev.20261028.e92c91b-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "7048244087714ed8c09edf0a6f00e81731c62b07ab38955be8e6240bf3e37bd4"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lacraia-0.2.0-dev.242+20261027.1fba108-dev.20261028.e92c91b-linux-arm64.tar.gz",
-                  "alias": "lacraia-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.242+20261027.1fba108-dev.20261028.e92c91b-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "dec3774fe14f5b36dbef0f3e758fac9874e8d88997e62da397b968e822207eba"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "lacraia-0.2.0-dev.242+20261027.1fba108-dev.20261028.e92c91b-windows-amd64.zip",
-                  "alias": "lacraia-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.242+20261027.1fba108-dev.20261028.e92c91b-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-windows-x86_64.zip",
-                  "sha256": "433cea351b35b6ea6d2a58c2294ee53baa3f6c71b0bafacdc888dd1e8a7f11b8"
-                }
-              ]
-            },
-            {
-              "version": "0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7",
-              "released_at": "2026-10-26T12:00:00Z",
-              "commit": "32ab9e7",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lacraia-0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7-linux-amd64.tar.gz",
-                  "alias": "lacraia-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "70b0bd5c34fe099788b38598d952e3807b062784aabea04e569bb371c15df603"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lacraia-0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7-linux-arm64.tar.gz",
-                  "alias": "lacraia-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "0581fded284130b3a55cb610efad1408aa08c0856b2fe87acc8619028c8f0f97"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "lacraia-0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7-windows-amd64.zip",
-                  "alias": "lacraia-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.239+20261026.7a3e626-dev.20261026.32ab9e7-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-windows-x86_64.zip",
-                  "sha256": "5fad2b9f176e669c16de68cb40bdaf1880d3956e4585748eb797f4b2cbb39fed"
-                }
-              ]
-            },
-            {
-              "version": "0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f",
-              "released_at": "2026-10-26T12:00:00Z",
-              "commit": "c5ad46f",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-linux-amd64.tar.gz",
-                  "alias": "lacraia-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "ed9b31abb46613648ff450dc35b4d1e7e71f4fe678059eb9c865b13b064b2e0e"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-linux-arm64.tar.gz",
-                  "alias": "lacraia-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "2ce39eaebc97c405732dac7388f433ccdde7bfb0a9c7333b303ab4b284986a02"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-windows-amd64.zip",
-                  "alias": "lacraia-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261026.c5ad46f-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-windows-x86_64.zip",
-                  "sha256": "4e3cf7facfbe24ae5ccfe7ce49019cf82fb631f375aef0c4899eafc53c798b8e"
-                }
-              ]
-            },
-            {
-              "version": "0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde",
-              "released_at": "2026-10-25T12:00:00Z",
-              "commit": "2484dde",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde-linux-amd64.tar.gz",
-                  "alias": "lacraia-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "a93e25bfa8ee4a98f5ddd15fe71766d6fcd682815e0af4ba86a0377e4f47e4b5"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde-linux-arm64.tar.gz",
-                  "alias": "lacraia-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "ec2e7d686c889ae817b927087c31936f2b6faf3afa45fb1cd67df7aebcb727c2"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde-windows-amd64.zip",
-                  "alias": "lacraia-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.2484dde-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-windows-x86_64.zip",
-                  "sha256": "93799e05f3679d7a002078fa4b41bf722f365fd1b3cb69872d769fd26ddec865"
-                }
-              ]
-            },
-            {
-              "version": "0.2.0-dev.235+20261024.abe50b7-dev.20261025.72a7598",
-              "released_at": "2026-10-25T12:00:00Z",
-              "commit": "72a7598",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.72a7598-linux-amd64.tar.gz",
-                  "alias": "lacraia-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.72a7598-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "e77fcdc8ee620b340a93671f5b7ce1c00370e090d672312e8d550664b6b66212"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.72a7598-linux-arm64.tar.gz",
-                  "alias": "lacraia-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.72a7598-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "ace68241f6cb1597d017d362a626f550e456c5c351948a2d409237658b1881bd"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.72a7598-windows-amd64.zip",
-                  "alias": "lacraia-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.235+20261024.abe50b7-dev.20261025.72a7598-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-windows-x86_64.zip",
-                  "sha256": "492c8b41549bd4275774cc3265fcec2495d71b1af193ee69c7bac391021cad02"
-                }
-              ]
-            },
-            {
-              "version": "0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7",
-              "released_at": "2026-10-24T12:00:00Z",
-              "commit": "f9e1bc7",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lacraia-0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7-linux-amd64.tar.gz",
-                  "alias": "lacraia-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "085e02e9baa0ea7869e8689fbc44b9d976b8530ead183a7d2d39a765a9ffdc1a"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lacraia-0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7-linux-arm64.tar.gz",
-                  "alias": "lacraia-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "beef69da87316dc5b1894dd3d2a169fe30676577d780bcb4aa5001334be3b965"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "lacraia-0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7-windows-amd64.zip",
-                  "alias": "lacraia-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.223+20261023.e20be39-dev.20261024.f9e1bc7-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/lacraia/dev/lacraia-dev-latest-windows-x86_64.zip",
-                  "sha256": "4c68924e5814b1b52203718710a85f1920ee4c6f6f739fbd42fc962602f85ef1"
                 }
               ]
             }
@@ -2620,9 +2620,46 @@
         },
         "dev": {
           "label": "Versão Experimental",
-          "latest_version": "0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c",
+          "latest_version": "0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847",
           "history_limit": 10,
           "versions": [
+            {
+              "version": "0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847",
+              "released_at": "2026-11-14T12:00:00Z",
+              "commit": "d169847",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "mocambo-0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847-linux-amd64.tar.gz",
+                  "alias": "mocambo-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/mocambo/dev/mocambo-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "d91cff24fdcef2cf7abb043307e6e2a279806c74e5f5b1de39890bdd2db7c6ef"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "mocambo-0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847-linux-arm64.tar.gz",
+                  "alias": "mocambo-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/mocambo/dev/mocambo-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "144e981b83f84aafd79b7fab877adff16790aabdcb915ba14061970a703a7f3f"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "mocambo-0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847-windows-amd64.zip",
+                  "alias": "mocambo-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.45+20261114.f828c99-dev.20261114.d169847-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/mocambo/dev/mocambo-dev-latest-windows-x86_64.zip",
+                  "sha256": "c55b2771ece3470caaf2ee04ee96e1ee2ebba295c39c80050fd3e7ed90580f93"
+                }
+              ]
+            },
             {
               "version": "0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c",
               "released_at": "2026-11-04T12:00:00Z",
