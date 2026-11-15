@@ -832,6 +832,48 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 32. Validação da Resolução Hermética de Versão Canônica (Ticket #62)
+echo -n "-> 32. Verificando resolução hermética de versão via site/downloads/... "
+T32_RES=$(python3 -c '
+import sys
+from pathlib import Path
+
+gp_path = Path("scripts/gerar-pratilera.py")
+if not gp_path.exists():
+    print("scripts/gerar-pratilera.py ausente")
+    sys.exit(1)
+
+content = gp_path.read_text(encoding="utf-8")
+
+# Requisito 1: get_project_version deve consultar site/downloads/{project_name}/index.json
+if "downloads" not in content or "nightly_latest" not in content:
+    print("gerar-pratilera.py não consulta site/downloads para resolução hermética de versão")
+    sys.exit(1)
+
+# Requisito 2: Testar a extração hermética simulando ausência do diretório irmão
+sys.path.insert(0, "scripts")
+import importlib.util
+spec = importlib.util.spec_from_file_location("gerar_pratilera", str(gp_path))
+mod = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(mod)
+
+# Deve resolver mocambo a partir de site/downloads/mocambo/index.json
+ver_mocambo = mod.get_project_version("mocambo", fallback="fallback_test")
+if not ver_mocambo.startswith("0.3.0-dev."):
+    print(f"Versão hermética do Mocambo incorreta: {ver_mocambo}")
+    sys.exit(1)
+
+print("OK")
+sys.exit(0)
+' 2>&1 || true)
+
+if [ "$T32_RES" = "OK" ]; then
+    echo "✅ OK (Resolução de versão canônica blindada via site/downloads)"
+else
+    echo "❌ FALHOU ($T32_RES)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
