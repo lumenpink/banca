@@ -1,6 +1,6 @@
 {
   "$schema": "./catalog.schema.json",
-  "updated_at": "2026-11-17T00:25:59.253707+00:00",
+  "updated_at": "2026-11-17T01:03:02.379459+00:00",
   "apps": {
     "cccp": {
       "metadata": {
@@ -1369,9 +1369,46 @@
         },
         "dev": {
           "label": "Versão Experimental",
-          "latest_version": "0.2.0-dev.138+20261117.00f3aed",
+          "latest_version": "0.2.0-dev.138+20261117.811d4c7",
           "history_limit": 10,
           "versions": [
+            {
+              "version": "0.2.0-dev.138+20261117.811d4c7",
+              "released_at": "2026-11-17T12:00:00Z",
+              "commit": "811d4c7",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "joaju-0.2.0-dev.138+20261117.811d4c7-linux-amd64.tar.gz",
+                  "alias": "joaju-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.138+20261117.811d4c7-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "a30fef99a32d845258a032159618f30d2093694d2bb36baff14933dfd226a4db"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "joaju-0.2.0-dev.138+20261117.811d4c7-linux-arm64.tar.gz",
+                  "alias": "joaju-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.138+20261117.811d4c7-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "5a39d6e177ce36feec6cbd0b704bd0a0354b167f223a3e6220e21ca178315631"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "joaju-0.2.0-dev.138+20261117.811d4c7-windows-amd64.zip",
+                  "alias": "joaju-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.138+20261117.811d4c7-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-windows-x86_64.zip",
+                  "sha256": "a607806189b1e583586d45704d3060b960a4698188a0a0f4749d1e7c5e292fba"
+                }
+              ]
+            },
             {
               "version": "0.2.0-dev.138+20261117.00f3aed",
               "released_at": "2026-11-17T12:00:00Z",
@@ -1702,43 +1739,6 @@
                   "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261101.2c4fe02-windows-amd64.zip",
                   "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-windows-x86_64.zip",
                   "sha256": "a2fda80e6a6cf04eb493d85b7493bcfdbdafe7ebc6ef6cebbccd6509a35671da"
-                }
-              ]
-            },
-            {
-              "version": "0.2.0-dev.137+20261029.d698d99",
-              "released_at": "2026-10-29T12:00:00Z",
-              "commit": "d698d99",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "joaju-0.2.0-dev.137+20261029.d698d99-linux-amd64.tar.gz",
-                  "alias": "joaju-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261029.d698d99-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "2859f6bfc9c73110d10850fb178cfdff8544ef6c092092172b3ad26b34e42d93"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "joaju-0.2.0-dev.137+20261029.d698d99-linux-arm64.tar.gz",
-                  "alias": "joaju-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261029.d698d99-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "38bd5387a89cfff5e10c37d7376d5f293f8d38aa48b210a73a31172cba83e5f0"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "joaju-0.2.0-dev.137+20261029.d698d99-windows-amd64.zip",
-                  "alias": "joaju-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261029.d698d99-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-windows-x86_64.zip",
-                  "sha256": "2aeb5bbbf2a2e1ca8b18d70ea4bc579281ca645ac6fa943a60205cfac92ee34c"
                 }
               ]
             }
