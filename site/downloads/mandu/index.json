@@ -4,9 +4,22 @@
   "description": "Editor brutalista de notas em texto puro, Markdown e Joaju",
   "repo": "https://gambi.2lp.in/lumen/mandu",
   "stable_latest": "",
-  "nightly_latest": "0.1.0-dev.398+20261109.af807c8",
+  "nightly_latest": "0.1.0-dev.405+20261118.15c68c4",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.405+20261118.15c68c4",
+      "date": "2026-11-18",
+      "sha256": "42e6e2341c05f9a40ff5c313f566c3e499970630dbc03454af74b97594bc36e4",
+      "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.405+20261118.15c68c4-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.405+20261118.15c68c4-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.405+20261118.15c68c4-linux-amd64.tar.gz",
+          "sha256": "42e6e2341c05f9a40ff5c313f566c3e499970630dbc03454af74b97594bc36e4"
+        }
+      }
+    },
     {
       "version": "0.1.0-dev.398+20261109.af807c8",
       "date": "2026-11-09",
@@ -201,19 +214,6 @@
           "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.285+20261101.651760f-linux-amd64.tar.gz",
           "binary_url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.285+20261101.651760f-linux-amd64.tar.gz",
           "sha256": "ec9120004b1720aa20c0b09cabb398d8f66cd77e242b142fdb5736568c212fcd"
-        }
-      }
-    },
-    {
-      "version": "0.1.0-dev.283+20261031.70a7225",
-      "date": "2026-10-31",
-      "sha256": "bc4af1d4db5400b65a28f410efe39568df66c59b3ab1343cc02041893b6e6b59",
-      "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.283+20261031.70a7225-linux-amd64.tar.gz",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.283+20261031.70a7225-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.283+20261031.70a7225-linux-amd64.tar.gz",
-          "sha256": "bc4af1d4db5400b65a28f410efe39568df66c59b3ab1343cc02041893b6e6b59"
         }
       }
     }
