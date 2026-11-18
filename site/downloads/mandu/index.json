@@ -4,9 +4,22 @@
   "description": "Editor brutalista de notas em texto puro, Markdown e Joaju",
   "repo": "https://gambi.2lp.in/lumen/mandu",
   "stable_latest": "",
-  "nightly_latest": "0.1.0-dev.405+20261118.15c68c4",
+  "nightly_latest": "0.1.0-dev.412+20261118.4bd0013",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.412+20261118.4bd0013",
+      "date": "2026-11-18",
+      "sha256": "b906769315e3dfe9d9ad54e3857995589b147fb29e0c193edbea9dcf54034b14",
+      "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.412+20261118.4bd0013-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.412+20261118.4bd0013-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.412+20261118.4bd0013-linux-amd64.tar.gz",
+          "sha256": "b906769315e3dfe9d9ad54e3857995589b147fb29e0c193edbea9dcf54034b14"
+        }
+      }
+    },
     {
       "version": "0.1.0-dev.405+20261118.15c68c4",
       "date": "2026-11-18",
@@ -211,19 +224,6 @@
           "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.292+20261101.9fd4c5a-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.292+20261101.9fd4c5a-windows-amd64.zip",
           "sha256": "d213b27fca670fadd02109e3d8eaf7b96d3619a9c75f967b826049b9e6c5f912"
-        }
-      }
-    },
-    {
-      "version": "0.1.0-dev.285+20261101.651760f",
-      "date": "2026-11-01",
-      "sha256": "ec9120004b1720aa20c0b09cabb398d8f66cd77e242b142fdb5736568c212fcd",
-      "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.285+20261101.651760f-linux-amd64.tar.gz",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.285+20261101.651760f-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.285+20261101.651760f-linux-amd64.tar.gz",
-          "sha256": "ec9120004b1720aa20c0b09cabb398d8f66cd77e242b142fdb5736568c212fcd"
         }
       }
     }
