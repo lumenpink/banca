@@ -26,7 +26,7 @@ A Banca disponibilizará os seguintes endpoints estáticos para execução diret
    - Criar o diretório de destino caso não exista (`mkdir -p "$TARGET_DIR"`).
 2. **Rejeição de Sistemas Apple / Darwin:**
    - Detectar via `uname -s`. Se for `Darwin`, abortar com código de saída 1 e a mensagem:
-     `"macOS/Darwin não é suportado pelo ecossistema soberano da Banca."`
+     `"macOS/Darwin não é suportado pelo ecossistema autônomo da Banca."`
 3. **Detecção de Arquitetura Linux:**
    - `x86_64` $\to$ `linux-amd64`
    - `aarch64` ou `arm64` $\to$ `linux-arm64`

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Banca — Gerador Soberano da Pratilera (Loja e Repositório F-Droid / Droid-ify)
+Banca — Gerador Autônomo da Pratilera (Loja e Repositório F-Droid / Droid-ify)
 Gera os índices index-v1.json, entry.json, index-v2.json e assina index-v1.jar com jarsigner.
 """
 import os
@@ -53,7 +53,7 @@ APPS_METADATA = {
     },
     "in.twolp.lauda": {
         "name": "Lauda",
-        "summary": "Cliente de Correio Soberano Minimalista",
+        "summary": "Cliente de Correio Autônomo Minimalista",
         "description": "Cliente de e-mail em texto puro com suporte a Dioxus, Maildir e sincronização sem rastreamento.",
         "icon": "in.twolp.lauda.png",
         "categories": ["Internet", "Email"],
@@ -68,7 +68,7 @@ APPS_METADATA = {
     },
     "in.twolp.mocambo": {
         "name": "Mocambo",
-        "summary": "Cofre Soberano de Arquivos e Fotos",
+        "summary": "Cofre Autônomo de Arquivos e Fotos",
         "description": "Cliente mobile oficial do Mocambo com sincronização WebDAV contínua, galeria de fotos com miniaturas e busca semântica.",
         "icon": "in.twolp.mocambo.png",
         "categories": ["Internet", "Graphics", "Utility"],
@@ -362,11 +362,14 @@ def is_prerelease(version_name: str) -> bool:
 
 def get_project_version(project_name: str, fallback: str = "0.2.0") -> str:
     """Tenta ler a versão canônica do CCCP em VERSION do projeto irmão ou remotamente via Forgejo/downloads."""
-    candidates = [
-        REPO_ROOT.parent / project_name / "VERSION",
-    ]
     if project_name in ("mandu", "mandu-mobile"):
-        candidates.insert(0, REPO_ROOT.parent / "mandu-mobile" / "VERSION")
+        candidates = [
+            REPO_ROOT.parent / "mandu-mobile" / "VERSION",
+        ]
+    else:
+        candidates = [
+            REPO_ROOT.parent / project_name / "VERSION",
+        ]
 
     # 1. Tentar ler do arquivo VERSION no repositório irmão (ambiente local integrado)
     for candidate in candidates:
@@ -629,7 +632,7 @@ def build_index_v1():
     index_v1 = {
         "repo": {
             "name": "A Pratilera (Banca 2lp)",
-            "description": "Loja e Repositório Soberano de Aplicativos do Ecossistema 2lp. Fanzines, paredões, correio e ferramentas de calçada.",
+            "description": "Loja e Repositório Autônomo de Aplicativos do Ecossistema 2lp. Fanzines, paredões, correio e ferramentas de calçada.",
             "address": "https://bucket.2lp.in",
             "icon": "icon.png",
             "timestamp": now_ms,
@@ -775,7 +778,7 @@ def clean_heavy_site_assets():
 
 def main():
     print("=================================================================")
-    print("Banca — Gerador Soberano da Pratilera F-Droid / Droid-ify")
+    print("Banca — Gerador Autônomo da Pratilera F-Droid / Droid-ify")
     print("=================================================================")
     ensure_dirs()
     import_external_apks()

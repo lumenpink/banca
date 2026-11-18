@@ -1,7 +1,7 @@
-# Especificação Técnica: Infraestrutura Soberana de Downloads, Multi-Arquitetura e Canais do Updater (Tickets #35 & #32)
+# Especificação Técnica: Infraestrutura Autônoma de Downloads, Multi-Arquitetura e Canais do Updater (Tickets #35 & #32)
 
 ## 1. Contexto e Motivação
-A distribuição de utilitários de linha de comando (CLI) e aplicações gráficas/terminais do ecossistema 2lp/Gosplan (`cccp`, `mandu`, `lauda`, `lacraia`, `navalha`, etc.) é centralizada soberanamente na infraestrutura da Banca (`https://banca.2lp.in/downloads`).
+A distribuição de utilitários de linha de comando (CLI) e aplicações gráficas/terminais do ecossistema 2lp/Gosplan (`cccp`, `mandu`, `lauda`, `lacraia`, `navalha`, etc.) é centralizada de forma autônoma na infraestrutura da Banca (`https://banca.2lp.in/downloads`).
 
 Esta especificação unifica as necessidades do **Ticket #35** (infraestrutura pública de `/downloads/`) e do **Ticket #32** (suporte a múltiplos canais de distribuição para o módulo `updater`), estabelecendo um contrato de metadados transparente, multi-arquitetura e estritamente aderente à política de retenção da norma GOST (5 versões estáveis e 10 nightlies).
 
@@ -125,4 +125,4 @@ O módulo de atualização cliente (`updater`) deve seguir o seguinte protocolo 
      Invoke-WebRequest -Uri "https://banca.2lp.in/downloads/<app>/stable-latest/<app>-windows-amd64.zip" -OutFile "$HOME\Downloads\<app>.zip"
      ```
 3. **Ficha do Mandu:**
-   - Atualizada para *"Editor Soberano de Notas em Texto Puro, Markdown e Joaju"* na categoria *"Editorial & Escrita"*.
+   - Atualizada para *"Editor Autônomo de Notas em Texto Puro, Markdown e Joaju"* na categoria *"Editorial & Escrita"*.

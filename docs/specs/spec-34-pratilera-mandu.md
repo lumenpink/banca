@@ -2,7 +2,7 @@
 
 ## 1. Contexto e Objetivo
 O **Mandu** (`in.twolp.mandu`) é o editor brutalista de notas e conhecimento em texto puro do ecossistema 2lp, escrito em Rust (Dioxus 0.7 no Android), com suporte a wikilinks, diagramas Joaju, compilação Typst e digitação touch ergonômica.
-O objetivo desta especificação é formalizar a integração soberana do Mandu ao repositório F-Droid / Droid-ify (**A Pratilera**) e ao catálogo estático público da Banca (`data/projects.json`).
+O objetivo desta especificação é formalizar a integração autônoma do Mandu ao repositório F-Droid / Droid-ify (**A Pratilera**) e ao catálogo estático público da Banca (`data/projects.json`).
 
 ## 2. Requisitos Técnicos
 

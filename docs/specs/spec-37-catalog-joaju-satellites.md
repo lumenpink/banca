@@ -1,7 +1,7 @@
 # Especificação Técnica — Satélites do Joaju no Catálogo da Banca (#37)
 
 ## 1. Contexto e Objetivo
-O ecossistema **Joaju** é a infraestrutura soberana de publicação acadêmica, diagramação técnica e modelagem clínica do ecossistema 2LP.
+O ecossistema **Joaju** é a infraestrutura autônoma de publicação acadêmica, diagramação técnica e modelagem clínica do ecossistema 2LP.
 Para além do compilador principal (`joaju`), o ecossistema é composto por 6 módulos satélites especializados.
 Esta especificação formaliza a integração desses 6 projetos ao catálogo público da vitrine estática da Banca (`data/projects.json`).
 

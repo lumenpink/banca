@@ -17,7 +17,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: "Verify Essential Files & Build"
         run: |
-          test -f GOSTVER || { echo "GOSTVER missing"; exit 1; }
+          test -f .gost/GOST.md || { echo ".gost/GOST.md missing"; exit 1; }
+          cccp check --strict
+          black --check scripts/ || true
           test -f README.md || { echo "README.md missing"; exit 1; }
           test -f LICENSE || { echo "LICENSE missing"; exit 1; }
           test -f VERSION || { echo "VERSION missing"; exit 1; }

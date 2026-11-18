@@ -1,7 +1,7 @@
-# Especificação Técnica: Vitrine de Downloads da Banca e Retenção Soberana (Ticket #31)
+# Especificação Técnica: Vitrine de Downloads da Banca e Retenção Autônoma (Ticket #31)
 
 ## 1. Contexto e Motivação
-A distribuição de ferramentas CLI e binários compilados pelo ecossistema 2lp/Gosplan passa a ser hospedada de forma soberana na Banca (`https://banca.2lp.in/downloads`).
+A distribuição de ferramentas CLI e binários compilados pelo ecossistema 2lp/Gosplan passa a ser hospedada de forma autônoma na Banca (`https://banca.2lp.in/downloads`).
 Para manter o desktop do usuário e a máquina de trabalho 100% responsivos, a compilação de binários ocorre unicamente na esteira sequencial (Forgejo Runner).
 A Banca atua como a interface web de vitrine estática e catálogo de entrega, consumindo metadados atômicos e disponibilizando os binários com controle estrito de retenção:
 - **5 versões estáveis** mais recentes (com alias `stable-latest`)

@@ -19,7 +19,7 @@ Para que a Natasha compreenda os motivos de cada escolha arquitetural:
   - *Motivo do Descarte:* Introduz dependência de rede, tokens adicionais de acesso e eleva desnecessariamente o tempo de execução do CI.
 - **Alternativa Descartada B:** Depender apenas do manifesto interno do APK (`aapt dump badging`).
   - *Motivo do Descarte:* Se o APK remoto for de canal antigo ou estiver temporariamente indisponível no R2, o catálogo da loja quebra ou exibe versões antigas.
-- **Escolha Adotada:** O ecossistema soberano já mantém o catálogo consolidado em `site/downloads/{app}/index.json`, atualizado atomicamente pelos respectivos CIs de cada projeto. Se o diretório irmão não existir localmente no disco, `get_project_version()` deve inspecionar prioritariamente `site/downloads/{app}/index.json` (campos `stable_latest` ou `nightly_latest`), extraindo a versão canônica oficial já homologada.
+- **Escolha Adotada:** O ecossistema autônomo já mantém o catálogo consolidado em `site/downloads/{app}/index.json`, atualizado atomicamente pelos respectivos CIs de cada projeto. Se o diretório irmão não existir localmente no disco, `get_project_version()` deve inspecionar prioritariamente `site/downloads/{app}/index.json` (campos `stable_latest` ou `nightly_latest`), extraindo a versão canônica oficial já homologada.
 
 ### Decisão 2: Ordem estrita de precedência na resolução de versão
 1. `REPO_ROOT.parent / project_name / "VERSION"` (se existir localmente no ambiente de desenvolvimento integrado).

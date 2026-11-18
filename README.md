@@ -3,14 +3,14 @@
 > **A Banca de Zines e Projetos: Vitrine Estática e Anti-Design do Ecossistema Lumen**
 
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](LICENSE)
-[![GOST: v1.5.0](https://img.shields.io/badge/GOST-v1.5.0-red.svg)](.gost/GOST.md)
+[![GOST: v2.1.0](https://img.shields.io/badge/GOST-v2.1.0-red.svg)](.gost/GOST.md)
 [![SemVer 2.0.0](https://img.shields.io/badge/SemVer-2.0.0-green.svg)](VERSION)
 
 ---
 
 ## 🎪 Sobre a Banca
 
-A **Banca** é o catálogo e vitrine pública oficial dos projetos, ferramentas de terminal, utilitários e publicações independentes desenvolvidos e mantidos por **Lumen Pink (Baquara)**.
+A **Banca** é o catálogo e vitrine pública oficial dos projetos, ferramentas de terminal, utilitários e publicações independentes desenvolvidos e mantidos por [lumen.pink](https://lumen.pink).
 
 * **URL Pública:** [banca.2lp.in](https://banca.2lp.in)
 * **Arquitetura:** Gerador estático em Shell POSIX puro, sem dependências externas de runtime.

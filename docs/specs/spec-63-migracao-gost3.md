@@ -15,3 +15,18 @@ A infraestrutura Gosplan/Tulipa padronizou a metanorma no GOST v3.0, onde a auto
 - Arquivo `GOSTVER` ausente na raiz.
 - Diretório `.gost/` contendo `GOST.md`, `rules.toml`, `metadata.json` e `delivery.toml`.
 - `cccp check --strict` aprovado com 100% de conformidade.
+
+## 4. Laudo de Resolução (Fase 9)
+- **Status:** Concluído com 100% de conformidade GOST.
+- **Implementação:**
+  - `GOSTVER` legado na raiz purgado.
+  - `.gost/` compilado com 24 regras do perfil Lilya v2.1.0 e Kollontai v2.1.0.
+  - `.gost/delivery.toml` configurado para `sites` (Cloudflare Pages, diretório `site/`).
+  - `.cccprc` alinhado à forja canônica Gambi (`forgejo_url = https://gambi.2lp.in`).
+  - `LICENSE-LOGO` atualizado com o cabeçalho canônico CC-BY-ND-4.0.
+  - `README.md` integrado com assertiva de identidade transfeminista (`lumen.pink`).
+  - Workflows da CI (`.forgejo/workflows/ci.yml`) ajustados com `--strict` e verificação de formatação.
+  - Expurgo de termos monárquicos em todas as especificações (`docs/specs/*.md`), gerador da Pratilera e metadados F-Droid.
+  - Hooks do maestro instalados via `cccp hook -i -f`.
+- **Validação:** Teste de estrutura GOST aprovado e `cccp check --strict` com 24 regras conformes (100%).
+
