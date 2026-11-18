@@ -4,9 +4,32 @@
   "description": "Blindagem e firewall de borda com regras atômicas",
   "repo": "https://gambi.2lp.in/lumen/tatupeba",
   "stable_latest": "",
-  "nightly_latest": "0.1.0-dev.34+20261025.7ab45fb-dev.20261117.f9b5080",
+  "nightly_latest": "0.1.0-dev.34+20261025.7ab45fb-dev.20261118.8d32e35",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.34+20261025.7ab45fb-dev.20261118.8d32e35",
+      "date": "2026-11-18",
+      "sha256": "bdc4cfd5781e635142561ccec88e7bd5288ddfe2caa8b9301f1208fc7155f3b8",
+      "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.8d32e35-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.8d32e35-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.8d32e35-linux-amd64.tar.gz",
+          "sha256": "bdc4cfd5781e635142561ccec88e7bd5288ddfe2caa8b9301f1208fc7155f3b8"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.8d32e35-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.8d32e35-linux-arm64.tar.gz",
+          "sha256": "57e58b19885bea60881e4ba989d45a5040b331b08514b033ed7976cbd30fa769"
+        },
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.8d32e35-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.8d32e35-windows-amd64.zip",
+          "sha256": "1c68e072f30be3e4b20bf9d68e32dab869bc4358957e7ac12d68e873988f5fef"
+        }
+      }
+    },
     {
       "version": "0.1.0-dev.34+20261025.7ab45fb-dev.20261117.f9b5080",
       "date": "2026-11-17",
