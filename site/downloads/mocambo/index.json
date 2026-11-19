@@ -4,9 +4,32 @@
   "description": "Cofre autônomo de arquivos, documentos e fotos",
   "repo": "https://gambi.2lp.in/lumen/mocambo",
   "stable_latest": "",
-  "nightly_latest": "0.3.0-dev.74+20261118.5168adf-dev.20261118.61a48b2",
+  "nightly_latest": "0.3.0-dev.87+20261119.337d6c4-dev.20261119.109465c",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.3.0-dev.87+20261119.337d6c4-dev.20261119.109465c",
+      "date": "2026-11-19",
+      "sha256": "bec0d3bc9ea71b25f73932071cf0c9813f4437670a18c4972d83d0fbad722464",
+      "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.87+20261119.337d6c4-dev.20261119.109465c-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.87+20261119.337d6c4-dev.20261119.109465c-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.87+20261119.337d6c4-dev.20261119.109465c-linux-amd64.tar.gz",
+          "sha256": "bec0d3bc9ea71b25f73932071cf0c9813f4437670a18c4972d83d0fbad722464"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.87+20261119.337d6c4-dev.20261119.109465c-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.87+20261119.337d6c4-dev.20261119.109465c-linux-arm64.tar.gz",
+          "sha256": "99b8438e875cea1c9244fd05c72a7d59ae6a6f7a675328e827b6fa24cd2e0a6c"
+        },
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.87+20261119.337d6c4-dev.20261119.109465c-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.87+20261119.337d6c4-dev.20261119.109465c-windows-amd64.zip",
+          "sha256": "d0e525659bec89e71b996b92449dd6aa56b40578d4a2ba77f04f4369af3dcf39"
+        }
+      }
+    },
     {
       "version": "0.3.0-dev.74+20261118.5168adf-dev.20261118.61a48b2",
       "date": "2026-11-18",
@@ -211,29 +234,6 @@
           "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261104.af27e8c-windows-amd64.zip",
           "sha256": "28bb333bcabc29d4511780a904f90f9d6f1e7059e76cb171fe7742c704c8d1da"
-        }
-      }
-    },
-    {
-      "version": "0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c",
-      "date": "2026-11-03",
-      "sha256": "54b9e7a64c7dbf48adab8ade26db0e60767f6c7ce68534530650ea75c851cf3c",
-      "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-linux-amd64.tar.gz",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-linux-amd64.tar.gz",
-          "sha256": "54b9e7a64c7dbf48adab8ade26db0e60767f6c7ce68534530650ea75c851cf3c"
-        },
-        "linux-arm64": {
-          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-linux-arm64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-linux-arm64.tar.gz",
-          "sha256": "28eebb8de57d6e53176b7d8457a8cde0d15b4cda642b5b73adcb8d60635ba1e0"
-        },
-        "windows-x86_64": {
-          "url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-windows-amd64.zip",
-          "binary_url": "https://bucket.2lp.in/downloads/mocambo/nightly/mocambo-0.3.0-dev.41+20261102.cc22671-dev.20261103.af27e8c-windows-amd64.zip",
-          "sha256": "b9c1e826dc0053c0e8cb0c3a691d7deacc6d4f04af10fe6780f81246cb20b138"
         }
       }
     }
