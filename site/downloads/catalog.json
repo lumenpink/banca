@@ -1,6 +1,6 @@
 {
   "$schema": "./catalog.schema.json",
-  "updated_at": "2026-11-19T18:27:32.264235+00:00",
+  "updated_at": "2026-11-19T19:19:00.758593+00:00",
   "apps": {
     "cccp": {
       "metadata": {
@@ -3967,9 +3967,46 @@
         },
         "dev": {
           "label": "Versão Experimental",
-          "latest_version": "0.1.0-dev.249+20261118.f948fcf",
+          "latest_version": "0.1.0-dev.250+20261119.c9e4ff1",
           "history_limit": 10,
           "versions": [
+            {
+              "version": "0.1.0-dev.250+20261119.c9e4ff1",
+              "released_at": "2026-11-19T12:00:00Z",
+              "commit": "c9e4ff1",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "pult-0.1.0-dev.250+20261119.c9e4ff1-linux-amd64.tar.gz",
+                  "alias": "pult-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.250+20261119.c9e4ff1-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/pult/dev/pult-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "53ea71b8fb99febcf8634fdae36876499634c7d88a1282fe7e4267a7c00d7653"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "pult-0.1.0-dev.250+20261119.c9e4ff1-linux-arm64.tar.gz",
+                  "alias": "pult-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.250+20261119.c9e4ff1-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/pult/dev/pult-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "0e53bcd6ed7e2a0d39be61c5b4693ab563b2dac755bb667e2d428628dc6c4ee7"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "pult-0.1.0-dev.250+20261119.c9e4ff1-windows-amd64.zip",
+                  "alias": "pult-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/pult/nightly/pult-0.1.0-dev.250+20261119.c9e4ff1-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/pult/dev/pult-dev-latest-windows-x86_64.zip",
+                  "sha256": "f58b514d2b2894545c2dbc5a74449a6f44aa382434e806fcd1fa34cc01e840e7"
+                }
+              ]
+            },
             {
               "version": "0.1.0-dev.249+20261118.f948fcf",
               "released_at": "2026-11-18T12:00:00Z",
