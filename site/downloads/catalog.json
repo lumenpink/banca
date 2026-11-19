@@ -1,6 +1,6 @@
 {
   "$schema": "./catalog.schema.json",
-  "updated_at": "2026-11-18T15:30:27.746171+00:00",
+  "updated_at": "2026-11-19T18:27:32.264235+00:00",
   "apps": {
     "cccp": {
       "metadata": {
@@ -583,9 +583,46 @@
         },
         "dev": {
           "label": "Versão Experimental",
-          "latest_version": "0.6.0-dev.48+20261114.5b5c4c4",
+          "latest_version": "0.6.0-dev.62+20261118.252daa3",
           "history_limit": 10,
           "versions": [
+            {
+              "version": "0.6.0-dev.62+20261118.252daa3",
+              "released_at": "2026-11-19T12:00:00Z",
+              "commit": "252daa3",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lauda-0.6.0-dev.62+20261118.252daa3-linux-amd64.tar.gz",
+                  "alias": "lauda-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.6.0-dev.62+20261118.252daa3-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "2e9e2e2400ef854b621c76f7291b96d5ff1a92bd9f39f8fa9d786213dd3689e9"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "lauda-0.6.0-dev.62+20261118.252daa3-linux-arm64.tar.gz",
+                  "alias": "lauda-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.6.0-dev.62+20261118.252daa3-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "d9af348364dd1178a3b777f3b035f5ab598542cae1fce04b2e48daa84982699d"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "lauda-0.6.0-dev.62+20261118.252daa3-windows-amd64.zip",
+                  "alias": "lauda-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.6.0-dev.62+20261118.252daa3-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-windows-x86_64.zip",
+                  "sha256": "cb1a070a7b9808516e31852a6044182ebc01c9d885c5e338257d987ba615b5aa"
+                }
+              ]
+            },
             {
               "version": "0.6.0-dev.48+20261114.5b5c4c4",
               "released_at": "2026-11-14T12:00:00Z",
@@ -916,43 +953,6 @@
                   "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.0d42562-windows-amd64.zip",
                   "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-windows-x86_64.zip",
                   "sha256": "feb71ec1d2d0ff10071f887f04401d05a80d9ed832ffcc53584defcfc7631062"
-                }
-              ]
-            },
-            {
-              "version": "0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8",
-              "released_at": "2026-11-10T12:00:00Z",
-              "commit": "33be0d8",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-linux-amd64.tar.gz",
-                  "alias": "lauda-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "f5b73f3b2afc3c517e158d7d1690633d68c8d48e306a183df6a417f951892d45"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-linux-arm64.tar.gz",
-                  "alias": "lauda-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "6d467f816dab5e52e237c77120546e8b43496a0388dcb6a484029f6b5afd71db"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-windows-amd64.zip",
-                  "alias": "lauda-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.33be0d8-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/lauda/dev/lauda-dev-latest-windows-x86_64.zip",
-                  "sha256": "e468c175d49f6c50d8ffd278b3e8adfb882386f20031a9a9c5e28a27bca9d157"
                 }
               ]
             }
@@ -1369,9 +1369,46 @@
         },
         "dev": {
           "label": "Versão Experimental",
-          "latest_version": "0.2.0-dev.138+20261117.5d1471e",
+          "latest_version": "0.2.0-dev.138+20261119.092ab5d",
           "history_limit": 10,
           "versions": [
+            {
+              "version": "0.2.0-dev.138+20261119.092ab5d",
+              "released_at": "2026-11-19T12:00:00Z",
+              "commit": "092ab5d",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "joaju-0.2.0-dev.138+20261119.092ab5d-linux-amd64.tar.gz",
+                  "alias": "joaju-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.138+20261119.092ab5d-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "54f44ce6d9e87c71583d1483f31858e439f73eec1ea66fe77b4318b19013ade2"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "joaju-0.2.0-dev.138+20261119.092ab5d-linux-arm64.tar.gz",
+                  "alias": "joaju-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.138+20261119.092ab5d-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "47083da30e11d43f1c86898d825d78ef5e55ef0ccc923a4d419422f9adf36dcb"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "joaju-0.2.0-dev.138+20261119.092ab5d-windows-amd64.zip",
+                  "alias": "joaju-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.138+20261119.092ab5d-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-windows-x86_64.zip",
+                  "sha256": "d6d16b4d3e68f7ce12cde6fdc1d10a96e5d134dd6d519c0e70522af66d0be035"
+                }
+              ]
+            },
             {
               "version": "0.2.0-dev.138+20261117.5d1471e",
               "released_at": "2026-11-17T12:00:00Z",
@@ -1702,43 +1739,6 @@
                   "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261106.6eda140-windows-amd64.zip",
                   "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-windows-x86_64.zip",
                   "sha256": "0a308c60806ae1c5b1099c546370a75313847f4cff4a4d73ae90f4fd2e0146f2"
-                }
-              ]
-            },
-            {
-              "version": "0.2.0-dev.137+20261105.e672a64",
-              "released_at": "2026-11-05T12:00:00Z",
-              "commit": "e672a64",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "joaju-0.2.0-dev.137+20261105.e672a64-linux-amd64.tar.gz",
-                  "alias": "joaju-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261105.e672a64-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "375ebfde7469271d55079ce2dd3ba45876f73f157dfa61865a2402d4a3507708"
-                },
-                {
-                  "target": "linux-arm64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "joaju-0.2.0-dev.137+20261105.e672a64-linux-arm64.tar.gz",
-                  "alias": "joaju-dev-latest-linux-arm64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261105.e672a64-linux-arm64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-linux-arm64.tar.gz",
-                  "sha256": "9ee4d6abb088220ebe7d59ebc2d0813401ed8c5e461a8e6657ed35e5916989ae"
-                },
-                {
-                  "target": "windows-x86_64",
-                  "type": "archive",
-                  "format": "zip",
-                  "filename": "joaju-0.2.0-dev.137+20261105.e672a64-windows-amd64.zip",
-                  "alias": "joaju-dev-latest-windows-x86_64.zip",
-                  "url": "https://bucket.2lp.in/downloads/joaju/nightly/joaju-0.2.0-dev.137+20261105.e672a64-windows-amd64.zip",
-                  "alias_url": "https://dist.2lp.in/joaju/dev/joaju-dev-latest-windows-x86_64.zip",
-                  "sha256": "6c6ed172e8419c4058ac753bc859a94d77b4554848ec3b5cffb9d1a484043826"
                 }
               ]
             }
@@ -3147,9 +3147,46 @@
         },
         "dev": {
           "label": "Versão Experimental",
-          "latest_version": "0.1.0-dev.405+20261118.15c68c4",
+          "latest_version": "0.1.0-dev.412+20261118.4bd0013",
           "history_limit": 10,
           "versions": [
+            {
+              "version": "0.1.0-dev.412+20261118.4bd0013",
+              "released_at": "2026-11-18T12:00:00Z",
+              "commit": "4bd0013",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "mandu-0.1.0-dev.412+20261118.4bd0013-linux-amd64.tar.gz",
+                  "alias": "mandu-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.412+20261118.4bd0013-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/mandu/dev/mandu-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "b906769315e3dfe9d9ad54e3857995589b147fb29e0c193edbea9dcf54034b14"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "mandu-0.1.0-dev.412+20261118.4bd0013-linux-arm64.tar.gz",
+                  "alias": "mandu-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.412+20261118.4bd0013-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/mandu/dev/mandu-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "de8b8463200981726ae2384e984a8f471db68377d3d9cd4e7647a60398a327a1"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "mandu-0.1.0-dev.412+20261118.4bd0013-windows-amd64.zip",
+                  "alias": "mandu-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.412+20261118.4bd0013-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/mandu/dev/mandu-dev-latest-windows-x86_64.zip",
+                  "sha256": "6e444409ac74cdd9a0fcc8e794203f362c94cbcb5472de46f1baef38dc552ed0"
+                }
+              ]
+            },
             {
               "version": "0.1.0-dev.405+20261118.15c68c4",
               "released_at": "2026-11-18T12:00:00Z",
@@ -3482,23 +3519,6 @@
                   "sha256": "d213b27fca670fadd02109e3d8eaf7b96d3619a9c75f967b826049b9e6c5f912"
                 }
               ]
-            },
-            {
-              "version": "0.1.0-dev.285+20261101.651760f",
-              "released_at": "2026-11-01T12:00:00Z",
-              "commit": "651760f",
-              "assets": [
-                {
-                  "target": "linux-x86_64",
-                  "type": "archive",
-                  "format": "tar.gz",
-                  "filename": "mandu-0.1.0-dev.285+20261101.651760f-linux-amd64.tar.gz",
-                  "alias": "mandu-dev-latest-linux-x86_64.tar.gz",
-                  "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.285+20261101.651760f-linux-amd64.tar.gz",
-                  "alias_url": "https://dist.2lp.in/mandu/dev/mandu-dev-latest-linux-x86_64.tar.gz",
-                  "sha256": "ec9120004b1720aa20c0b09cabb398d8f66cd77e242b142fdb5736568c212fcd"
-                }
-              ]
             }
           ]
         }
@@ -3520,9 +3540,157 @@
         },
         "dev": {
           "label": "Versão Experimental",
-          "latest_version": "0.1.0-dev.34+20261025.7ab45fb-dev.20261117.f9b5080",
+          "latest_version": "0.1.0-dev.34+20261025.7ab45fb-dev.20261119.ed562c0",
           "history_limit": 10,
           "versions": [
+            {
+              "version": "0.1.0-dev.34+20261025.7ab45fb-dev.20261119.ed562c0",
+              "released_at": "2026-11-19T12:00:00Z",
+              "commit": "ed562c0",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261119.ed562c0-linux-amd64.tar.gz",
+                  "alias": "tatupeba-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261119.ed562c0-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/tatupeba/dev/tatupeba-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "b7b8939269863abe5b921198b4f85c5143a980e1762ed8e41fced110c16ad9d1"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261119.ed562c0-linux-arm64.tar.gz",
+                  "alias": "tatupeba-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261119.ed562c0-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/tatupeba/dev/tatupeba-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "1fcbaea69a7a424aea5e34f9fc52d2109dc779950e87565b8b2349893e647073"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261119.ed562c0-windows-amd64.zip",
+                  "alias": "tatupeba-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261119.ed562c0-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/tatupeba/dev/tatupeba-dev-latest-windows-x86_64.zip",
+                  "sha256": "9cd11ed93a96612376539f01a3cfb139762538a58ae5554cee488769738b36f4"
+                }
+              ]
+            },
+            {
+              "version": "0.1.0-dev.34+20261025.7ab45fb-dev.20261118.ead3858",
+              "released_at": "2026-11-18T12:00:00Z",
+              "commit": "ead3858",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.ead3858-linux-amd64.tar.gz",
+                  "alias": "tatupeba-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.ead3858-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/tatupeba/dev/tatupeba-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "433b9df339fa375ab4ad19e8b2d10c2e87e550b1641321e9e22b82eb318ef840"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.ead3858-linux-arm64.tar.gz",
+                  "alias": "tatupeba-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.ead3858-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/tatupeba/dev/tatupeba-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "11f9d9709a227deda88ac46eac749e9eda4ec1702eb4c6c51964a067aa010999"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.ead3858-windows-amd64.zip",
+                  "alias": "tatupeba-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.ead3858-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/tatupeba/dev/tatupeba-dev-latest-windows-x86_64.zip",
+                  "sha256": "6bd8f0d30139dd07d6ef6404f4ee1e42b0b66ea4d4343dfec740860a36923e64"
+                }
+              ]
+            },
+            {
+              "version": "0.1.0-dev.34+20261025.7ab45fb-dev.20261118.214553c",
+              "released_at": "2026-11-18T12:00:00Z",
+              "commit": "214553c",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.214553c-linux-amd64.tar.gz",
+                  "alias": "tatupeba-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.214553c-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/tatupeba/dev/tatupeba-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "98aeff8692ccabfe21d2bbc8dac095dd7f8b7ee4dec6118e5edb331f61a0b705"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.214553c-linux-arm64.tar.gz",
+                  "alias": "tatupeba-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.214553c-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/tatupeba/dev/tatupeba-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "b4848a53a16508bbb1e50582f2a89b0b0087af8989c6f74303e27922fd68db25"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.214553c-windows-amd64.zip",
+                  "alias": "tatupeba-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.214553c-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/tatupeba/dev/tatupeba-dev-latest-windows-x86_64.zip",
+                  "sha256": "777649ebf0a791fdc1156455021261b73c6873f222b23a9ee99a75d024548672"
+                }
+              ]
+            },
+            {
+              "version": "0.1.0-dev.34+20261025.7ab45fb-dev.20261118.8d32e35",
+              "released_at": "2026-11-18T12:00:00Z",
+              "commit": "8d32e35",
+              "assets": [
+                {
+                  "target": "linux-x86_64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.8d32e35-linux-amd64.tar.gz",
+                  "alias": "tatupeba-dev-latest-linux-x86_64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.8d32e35-linux-amd64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/tatupeba/dev/tatupeba-dev-latest-linux-x86_64.tar.gz",
+                  "sha256": "bdc4cfd5781e635142561ccec88e7bd5288ddfe2caa8b9301f1208fc7155f3b8"
+                },
+                {
+                  "target": "linux-arm64",
+                  "type": "archive",
+                  "format": "tar.gz",
+                  "filename": "tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.8d32e35-linux-arm64.tar.gz",
+                  "alias": "tatupeba-dev-latest-linux-arm64.tar.gz",
+                  "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.8d32e35-linux-arm64.tar.gz",
+                  "alias_url": "https://dist.2lp.in/tatupeba/dev/tatupeba-dev-latest-linux-arm64.tar.gz",
+                  "sha256": "57e58b19885bea60881e4ba989d45a5040b331b08514b033ed7976cbd30fa769"
+                },
+                {
+                  "target": "windows-x86_64",
+                  "type": "archive",
+                  "format": "zip",
+                  "filename": "tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.8d32e35-windows-amd64.zip",
+                  "alias": "tatupeba-dev-latest-windows-x86_64.zip",
+                  "url": "https://bucket.2lp.in/downloads/tatupeba/nightly/tatupeba-0.1.0-dev.34+20261025.7ab45fb-dev.20261118.8d32e35-windows-amd64.zip",
+                  "alias_url": "https://dist.2lp.in/tatupeba/dev/tatupeba-dev-latest-windows-x86_64.zip",
+                  "sha256": "1c68e072f30be3e4b20bf9d68e32dab869bc4358957e7ac12d68e873988f5fef"
+                }
+              ]
+            },
             {
               "version": "0.1.0-dev.34+20261025.7ab45fb-dev.20261117.f9b5080",
               "released_at": "2026-11-17T12:00:00Z",
