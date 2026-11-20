@@ -55,6 +55,39 @@ if idx_hook >= idx_check:
 
 check "3. Verificando inclusao do teste no script de validacao da esteira" grep -q "test-ci-hooks-install.sh" "$CI_WORKFLOW"
 
+# Testes de Mutação (Fase 7)
+check "4. [MUTAÇÃO] Rejeição de workflow sem cccp hook -i" python3 -c '
+import sys
+
+def validate(content):
+    idx_hook = content.find("cccp hook -i")
+    idx_check = content.find("cccp check --strict")
+    if idx_hook == -1 or idx_check == -1 or idx_hook >= idx_check:
+        return False
+    return True
+
+mutant = "test -f .gost/GOST.md\ncccp check --strict\n"
+if validate(mutant):
+    print("ERRO: Validador nao rejeitou mutante sem hook", file=sys.stderr)
+    sys.exit(1)
+'
+
+check "5. [MUTAÇÃO] Rejeição de workflow com ordem invertida" python3 -c '
+import sys
+
+def validate(content):
+    idx_hook = content.find("cccp hook -i")
+    idx_check = content.find("cccp check --strict")
+    if idx_hook == -1 or idx_check == -1 or idx_hook >= idx_check:
+        return False
+    return True
+
+mutant_inverted = "cccp check --strict\ncccp hook -i\n"
+if validate(mutant_inverted):
+    print("ERRO: Validador nao rejeitou mutante com ordem invertida", file=sys.stderr)
+    sys.exit(1)
+'
+
 echo "================================================================="
 if [ "$FAIL" -gt 0 ]; then
     echo "❌ $FAIL teste(s) falharam."
