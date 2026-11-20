@@ -4,9 +4,22 @@
   "description": "Gestor central de aplicativos e auto-update da Banca",
   "repo": "https://gambi.2lp.in/lumen/jornaleira",
   "stable_latest": "",
-  "nightly_latest": "0.1.0-dev.51+20261103.5aba6e6",
+  "nightly_latest": "0.1.0-dev.54+20261120.8b0d6ea",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.54+20261120.8b0d6ea",
+      "date": "2026-11-20",
+      "sha256": "0067d6785338f906f358e494fad12ce871982d666475a3680bd4cd2e5a3bd4cc",
+      "url": "https://bucket.2lp.in/downloads/jornaleira/nightly/jornaleira-0.1.0-dev.54+20261120.8b0d6ea-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/jornaleira/nightly/jornaleira-0.1.0-dev.54+20261120.8b0d6ea-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/jornaleira/nightly/jornaleira-0.1.0-dev.54+20261120.8b0d6ea-linux-amd64.tar.gz",
+          "sha256": "0067d6785338f906f358e494fad12ce871982d666475a3680bd4cd2e5a3bd4cc"
+        }
+      }
+    },
     {
       "version": "0.1.0-dev.51+20261103.5aba6e6",
       "date": "2026-11-03",
