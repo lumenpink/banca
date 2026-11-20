@@ -4,9 +4,32 @@
   "description": "Despachante e canivete suíço para deploy e automação",
   "repo": "https://gambi.2lp.in/lumen/navalha",
   "stable_latest": "",
-  "nightly_latest": "0.1.0-dev.106+20261104.2df538c",
+  "nightly_latest": "0.1.0-dev.119+20261120.2eade12",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.119+20261120.2eade12",
+      "date": "2026-11-20",
+      "sha256": "5dc1d7e380d9fb08edf9c808c6db4c95162f8f167c46604221af897f755c3876",
+      "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.119+20261120.2eade12-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.119+20261120.2eade12-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.119+20261120.2eade12-linux-amd64.tar.gz",
+          "sha256": "5dc1d7e380d9fb08edf9c808c6db4c95162f8f167c46604221af897f755c3876"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.119+20261120.2eade12-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.119+20261120.2eade12-linux-arm64.tar.gz",
+          "sha256": "74a2713600a0b442238c58796a6b9ee73354ac6f8a442ff2541ddc3094d6707a"
+        },
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.119+20261120.2eade12-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/navalha/nightly/navalha-0.1.0-dev.119+20261120.2eade12-windows-amd64.zip",
+          "sha256": "0646c486ad1599ca8f5679382009276eb1edc0026d549c0ddfba777889fe98f5"
+        }
+      }
+    },
     {
       "version": "0.1.0-dev.106+20261104.2df538c",
       "date": "2026-11-04",
