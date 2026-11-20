@@ -53,6 +53,8 @@ if idx_hook >= idx_check:
     sys.exit(1)
 '
 
+check "3. Verificando inclusao do teste no script de validacao da esteira" grep -q "test-ci-hooks-install.sh" "$CI_WORKFLOW"
+
 echo "================================================================="
 if [ "$FAIL" -gt 0 ]; then
     echo "❌ $FAIL teste(s) falharam."
