@@ -24,3 +24,13 @@ Como consequência, a regra `KOLLONTAI-018` (`GIT-HOOKS-MAESTRO-PARITY`) acusa a
    - *Decisão:* Corrigir imediatamente no workflow da Banca seguindo o precedente do `joaju-refs`.
    - *Alternativa Descartada:* Bloquear o deploy da vitrine até um novo ciclo e release do perfil upstream `gost-profile-kollontai`.
    - *Justificativa:* A vitrine da Banca acumula rotações pendentes de artefatos de diversos projetos que dependem do deploy para ficarem acessíveis.
+
+## 5. Laudo de Resolução (Fases 8 e 9)
+- **Status:** Concluído com 100% de conformidade GOST.
+- **Data de Fechamento:** 2026-11-20
+- **Validação Final:** Aprovado em todos os gates.
+- **Implementação:**
+  - Adicionado `cccp hook -i` no `.forgejo/workflows/ci.yml` antecedendo `cccp check --strict`.
+  - Adicionado teste de validação e testes de mutação em `tests/test-ci-hooks-install.sh`.
+  - Integrado `tests/test-ci-hooks-install.sh` na suíte de verificação da esteira.
+- **Validação:** `cccp check --strict` com 24 regras conformes (100%), suite de testes aprovada.
