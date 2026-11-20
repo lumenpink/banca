@@ -18,8 +18,10 @@ jobs:
       - name: "Verify Essential Files & Build"
         run: |
           test -f .gost/GOST.md || { echo ".gost/GOST.md missing"; exit 1; }
+          cccp hook -i
           cccp check --strict
           black --check scripts/ || true
+          ./tests/test-ci-hooks-install.sh
           test -f README.md || { echo "README.md missing"; exit 1; }
           test -f LICENSE || { echo "LICENSE missing"; exit 1; }
           test -f VERSION || { echo "VERSION missing"; exit 1; }
