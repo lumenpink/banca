@@ -4,9 +4,32 @@
   "description": "Camada de conectividade e mensageria P2P distribuída",
   "repo": "https://gambi.2lp.in/lumen/svyaz",
   "stable_latest": "",
-  "nightly_latest": "0.1.0-dev.30+20261025.441fd9f",
+  "nightly_latest": "0.1.0-dev.32+20261120.ee8d2d8",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.32+20261120.ee8d2d8",
+      "date": "2026-11-20",
+      "sha256": "3f307d535147eecea8d537d2bca39249b5a5ce6a3c16e368db3df46ed7adba1f",
+      "url": "https://bucket.2lp.in/downloads/svyaz/nightly/svyaz-0.1.0-dev.32+20261120.ee8d2d8-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/svyaz/nightly/svyaz-0.1.0-dev.32+20261120.ee8d2d8-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/svyaz/nightly/svyaz-0.1.0-dev.32+20261120.ee8d2d8-linux-amd64.tar.gz",
+          "sha256": "3f307d535147eecea8d537d2bca39249b5a5ce6a3c16e368db3df46ed7adba1f"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/svyaz/nightly/svyaz-0.1.0-dev.32+20261120.ee8d2d8-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/svyaz/nightly/svyaz-0.1.0-dev.32+20261120.ee8d2d8-linux-arm64.tar.gz",
+          "sha256": "5d3a436c3563de6a267a4d937e4344412c174de4d44b184ae2c249ddda7dd6c2"
+        },
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/svyaz/nightly/svyaz-0.1.0-dev.32+20261120.ee8d2d8-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/svyaz/nightly/svyaz-0.1.0-dev.32+20261120.ee8d2d8-windows-amd64.zip",
+          "sha256": "67c15f263172feba8c061076f4e58fc8b145aef1c582b2ad565f57b8b5cc5b17"
+        }
+      }
+    },
     {
       "version": "0.1.0-dev.30+20261025.441fd9f",
       "date": "2026-10-25",
