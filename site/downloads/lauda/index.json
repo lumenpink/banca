@@ -4,7 +4,7 @@
   "description": "Cliente de correio autônomo e interface editorial",
   "repo": "https://gambi.2lp.in/lumen/lauda",
   "stable_latest": "0.5.1",
-  "nightly_latest": "0.6.0-dev.62+20261118.252daa3",
+  "nightly_latest": "0.6.0-dev.90+20261119.5a998c7",
   "stables": [
     {
       "version": "0.5.1",
@@ -31,6 +31,29 @@
     }
   ],
   "nightlies": [
+    {
+      "version": "0.6.0-dev.90+20261119.5a998c7",
+      "date": "2026-11-20",
+      "sha256": "b69a5f5a8e91f2ecc8f4e1d7314e04dbf3d1e8009c9d561637ac24fbd22fdea6",
+      "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.6.0-dev.90+20261119.5a998c7-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.6.0-dev.90+20261119.5a998c7-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.6.0-dev.90+20261119.5a998c7-linux-amd64.tar.gz",
+          "sha256": "b69a5f5a8e91f2ecc8f4e1d7314e04dbf3d1e8009c9d561637ac24fbd22fdea6"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.6.0-dev.90+20261119.5a998c7-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.6.0-dev.90+20261119.5a998c7-linux-arm64.tar.gz",
+          "sha256": "6a5b3450ad17454d9e9ca83cadd1d6a6073de4bb22f7c8b86b4511c8ba7ab39e"
+        },
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.6.0-dev.90+20261119.5a998c7-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.6.0-dev.90+20261119.5a998c7-windows-amd64.zip",
+          "sha256": "e615e37799f569563eb8b178b986bc66c871feed8c61c467430c0991c55383cf"
+        }
+      }
+    },
     {
       "version": "0.6.0-dev.62+20261118.252daa3",
       "date": "2026-11-19",
@@ -235,29 +258,6 @@
           "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.1.0-dev.563+20261110.b603587-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.1.0-dev.563+20261110.b603587-windows-amd64.zip",
           "sha256": "79618dba6e9525f2b340c97094cf81eb3c290336a11b91dc60510ec85c4a05e5"
-        }
-      }
-    },
-    {
-      "version": "0.5.0-dev.508+20261107.c6530c0-dev.20261110.0d42562",
-      "date": "2026-11-10",
-      "sha256": "e5bf62e91d8965c3a91846268571bce687e8d30e92798c9c7479236ae9b320a6",
-      "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.0d42562-linux-amd64.tar.gz",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.0d42562-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.0d42562-linux-amd64.tar.gz",
-          "sha256": "e5bf62e91d8965c3a91846268571bce687e8d30e92798c9c7479236ae9b320a6"
-        },
-        "linux-arm64": {
-          "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.0d42562-linux-arm64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.0d42562-linux-arm64.tar.gz",
-          "sha256": "80569d7f2c9db8e8473d360d9c034272473ddce308dd02121bfa2c9e421ed6b2"
-        },
-        "windows-x86_64": {
-          "url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.0d42562-windows-amd64.zip",
-          "binary_url": "https://bucket.2lp.in/downloads/lauda/nightly/lauda-0.5.0-dev.508+20261107.c6530c0-dev.20261110.0d42562-windows-amd64.zip",
-          "sha256": "feb71ec1d2d0ff10071f887f04401d05a80d9ed832ffcc53584defcfc7631062"
         }
       }
     }
