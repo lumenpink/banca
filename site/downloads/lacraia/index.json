@@ -4,9 +4,32 @@
   "description": "Cockpit de som brutalista e jukebox comunitária",
   "repo": "https://gambi.2lp.in/lumen/lacraia",
   "stable_latest": "",
-  "nightly_latest": "0.2.0-dev.252+20261102-dev.20261115.662b901",
+  "nightly_latest": "0.2.0-dev.345+20261120.98e174e-dev.20261120.f665632",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.2.0-dev.345+20261120.98e174e-dev.20261120.f665632",
+      "date": "2026-11-20",
+      "sha256": "c6833d6dc30d5ba349e960896f095f939be498eb53c6af05f9b18aba4385a176",
+      "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.345+20261120.98e174e-dev.20261120.f665632-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.345+20261120.98e174e-dev.20261120.f665632-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.345+20261120.98e174e-dev.20261120.f665632-linux-amd64.tar.gz",
+          "sha256": "c6833d6dc30d5ba349e960896f095f939be498eb53c6af05f9b18aba4385a176"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.345+20261120.98e174e-dev.20261120.f665632-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.345+20261120.98e174e-dev.20261120.f665632-linux-arm64.tar.gz",
+          "sha256": "2402f066965e5c462d5ccd4bccb3ab8315b22fc4dc2ddf8d74bf21ced83ea6b8"
+        },
+        "windows-x86_64": {
+          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.345+20261120.98e174e-dev.20261120.f665632-windows-amd64.zip",
+          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.345+20261120.98e174e-dev.20261120.f665632-windows-amd64.zip",
+          "sha256": "008f22d6d0778596dabbe686c597acb284f25e77dff6dadacc6d0da9d09b89c9"
+        }
+      }
+    },
     {
       "version": "0.2.0-dev.252+20261102-dev.20261115.662b901",
       "date": "2026-11-15",
@@ -211,29 +234,6 @@
           "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261102.5be473e-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261102.5be473e-windows-amd64.zip",
           "sha256": "b228340322694c124725fe8a17a45814e42025a7acfc4de942fe230719a40a9b"
-        }
-      }
-    },
-    {
-      "version": "0.2.0-dev.251+20261030.580f23f-dev.20261030.8d166f0",
-      "date": "2026-10-30",
-      "sha256": "6a6f7f9c50a28c9a5becd373ae40213448dffb2bb086b9df72ef545ad1dc8298",
-      "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261030.8d166f0-linux-amd64.tar.gz",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261030.8d166f0-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261030.8d166f0-linux-amd64.tar.gz",
-          "sha256": "6a6f7f9c50a28c9a5becd373ae40213448dffb2bb086b9df72ef545ad1dc8298"
-        },
-        "linux-arm64": {
-          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261030.8d166f0-linux-arm64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261030.8d166f0-linux-arm64.tar.gz",
-          "sha256": "754c276e653f41b0503b4d82b7ea6bb9d1ec768322ffc2c66f6178f181e372c3"
-        },
-        "windows-x86_64": {
-          "url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261030.8d166f0-windows-amd64.zip",
-          "binary_url": "https://bucket.2lp.in/downloads/lacraia/nightly/lacraia-0.2.0-dev.251+20261030.580f23f-dev.20261030.8d166f0-windows-amd64.zip",
-          "sha256": "8b2c53c70a3d80967861cde302c8f985327a8108ccc4a295bf5b1b41fed908eb"
         }
       }
     }
