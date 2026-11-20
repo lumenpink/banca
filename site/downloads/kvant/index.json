@@ -4,9 +4,27 @@
   "description": "Motor analítico de dados e processamento vetorial",
   "repo": "https://gambi.2lp.in/lumen/kvant",
   "stable_latest": "",
-  "nightly_latest": "0.1.0-dev.32+20261025.632e317",
+  "nightly_latest": "0.1.0-dev.34+20261120.8a65047",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.34+20261120.8a65047",
+      "date": "2026-11-20",
+      "sha256": "5d4175c33dcbd49ca74c50fd8af65511f0b63d7d73379cd594b199295a9ad33e",
+      "url": "https://bucket.2lp.in/downloads/kvant/nightly/kvant-0.1.0-dev.34+20261120.8a65047-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/kvant/nightly/kvant-0.1.0-dev.34+20261120.8a65047-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/kvant/nightly/kvant-0.1.0-dev.34+20261120.8a65047-linux-amd64.tar.gz",
+          "sha256": "5d4175c33dcbd49ca74c50fd8af65511f0b63d7d73379cd594b199295a9ad33e"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/kvant/nightly/kvant-0.1.0-dev.34+20261120.8a65047-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/kvant/nightly/kvant-0.1.0-dev.34+20261120.8a65047-linux-arm64.tar.gz",
+          "sha256": "38e4360cf99de8b0821ee933017514bf224985c48f9839cf838005d0cf2eecd9"
+        }
+      }
+    },
     {
       "version": "0.1.0-dev.32+20261025.632e317",
       "date": "2026-10-25",
