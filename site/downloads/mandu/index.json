@@ -4,9 +4,22 @@
   "description": "Editor brutalista de notas em texto puro, Markdown e Joaju",
   "repo": "https://gambi.2lp.in/lumen/mandu",
   "stable_latest": "",
-  "nightly_latest": "0.1.0-dev.421+20261120.3491bf6",
+  "nightly_latest": "0.1.0-dev.426+20261120.e6db895",
   "stables": [],
   "nightlies": [
+    {
+      "version": "0.1.0-dev.426+20261120.e6db895",
+      "date": "2026-11-20",
+      "sha256": "86ddb1dcafa305f5b151325ad06b14c5ae5e36fd052cc3b5150ffac2215dfb71",
+      "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.426+20261120.e6db895-linux-amd64.tar.gz",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.426+20261120.e6db895-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.426+20261120.e6db895-linux-amd64.tar.gz",
+          "sha256": "86ddb1dcafa305f5b151325ad06b14c5ae5e36fd052cc3b5150ffac2215dfb71"
+        }
+      }
+    },
     {
       "version": "0.1.0-dev.421+20261120.3491bf6",
       "date": "2026-11-20",
@@ -211,29 +224,6 @@
           "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.354+20261103.06bb129-windows-amd64.zip",
           "binary_url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.354+20261103.06bb129-windows-amd64.zip",
           "sha256": "db4861f346aee65a138a4d8296e7994968841659393026b5410814f8c023d18e"
-        }
-      }
-    },
-    {
-      "version": "0.1.0-dev.297+20261102.3447bde",
-      "date": "2026-11-02",
-      "sha256": "a5cb07c888a27621c93b02ec7b464476c399f69201c032c29a3bcc82d329643f",
-      "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.297+20261102.3447bde-linux-amd64.tar.gz",
-      "artifacts": {
-        "linux-amd64": {
-          "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.297+20261102.3447bde-linux-amd64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.297+20261102.3447bde-linux-amd64.tar.gz",
-          "sha256": "a5cb07c888a27621c93b02ec7b464476c399f69201c032c29a3bcc82d329643f"
-        },
-        "linux-arm64": {
-          "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.297+20261102.3447bde-linux-arm64.tar.gz",
-          "binary_url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.297+20261102.3447bde-linux-arm64.tar.gz",
-          "sha256": "e8dd9b5f4694bb16a8102067b644d83796b9bafcbd2352ed6d19a3dee0d9882f"
-        },
-        "windows-x86_64": {
-          "url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.297+20261102.3447bde-windows-amd64.zip",
-          "binary_url": "https://bucket.2lp.in/downloads/mandu/nightly/mandu-0.1.0-dev.297+20261102.3447bde-windows-amd64.zip",
-          "sha256": "e6a9cb49d09c92169f7c7e9bfee70a107813b56f3f09b9c4bdeccf3ad79acfd8"
         }
       }
     }
