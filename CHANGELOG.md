@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Fixes
+  - (ci) delegar deploy do site da Banca ao Kombinat via Generic Packages (`cccp package upload site`) (closes #66)
   - (ci) instalar hooks do maestro antes da auditoria de conformidade (closes #65)
   - (pratilera) blindar resolucao de versao canonica via manifestos de download (closes #62)
   - (pratilera) servir mandu.apk diretamente sem redirects e validar fail-fast (closes #59)

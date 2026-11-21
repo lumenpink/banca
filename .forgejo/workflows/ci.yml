@@ -34,7 +34,7 @@ jobs:
           echo "All essential files, static build and Pratilera F-Droid store validated successfully."
 
   deploy-site:
-    name: "Deploy Documentation Site"
+    name: "Publish Banca Site Bundle to Generic Packages"
     runs-on: ubuntu-latest
     container:
       image: gambi.2lp.in/lumen/gost-ci-banca:latest
@@ -46,28 +46,8 @@ jobs:
         run: |
           ./build.sh
           python3 scripts/gerar-pratilera.py
-      - name: "Deploy to Cloudflare Workers"
+      - name: "Upload Site Bundle for Kombinat"
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          GAMBI_2LP_IN_TOKEN: ${{ secrets.REGISTRY_TOKEN || secrets.GAMBI_2LP_IN_TOKEN || secrets.FORGEJO_TOKEN || secrets.GIT_2LP_TOKEN }}
         run: |
-          if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
-            attempt=1
-            max_attempts=4
-            delay=5
-            while [ "$attempt" -le "$max_attempts" ]; do
-              echo "  -> Deploying to Cloudflare (tentativa $attempt/$max_attempts)..."
-              if npx wrangler deploy; then
-                echo "  ✓ Deploy do site da Banca concluído com sucesso."
-                exit 0
-              fi
-              echo "  ⚠️ Falha transitória ao fazer deploy. Aguardando ${delay}s..."
-              sleep "$delay"
-              attempt=$((attempt + 1))
-              delay=$((delay * 2))
-            done
-            echo "❌ ERRO CRÍTICO: Falha permanente após $max_attempts tentativas no deploy do site da Banca."
-            exit 1
-          else
-            echo "CLOUDFLARE_API_TOKEN not set, skipping Cloudflare deploy."
-          fi
+          cccp package upload site
