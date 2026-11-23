@@ -6,8 +6,6 @@
 /repo/*  /pratilera/:splat  301
 
 # Redirecionamentos de compatibilidade e acesso direto para Cloudflare R2
-/pratilera/index-v1.json   https://bucket.2lp.in/pratilera/index-v1.json 302
-/pratilera/index-v1.jar    https://bucket.2lp.in/pratilera/index-v1.jar 302
 /pratilera/lacraia-app.apk https://bucket.2lp.in/lacraia.apk 302
 /pratilera/lacraia.apk     https://bucket.2lp.in/lacraia.apk 302
 /pratilera/simbiotyka.apk  https://bucket.2lp.in/simbiotyka.apk 302
@@ -18,8 +16,7 @@
 # Redirecionamento da vitrine de downloads
 /downloads  /downloads/  301
 
-# Redirecionamento de binários e catálogo dinâmico da Banca para Cloudflare R2 (Ticket #43, #67)
-/downloads/catalog.json https://bucket.2lp.in/downloads/catalog.json 302
+# Redirecionamento de binários da Banca para Cloudflare R2 (Ticket #43)
 /downloads/:app/stable-latest/* https://bucket.2lp.in/downloads/:app/stable-latest/:splat 302
 /downloads/:app/nightly-latest/* https://bucket.2lp.in/downloads/:app/nightly-latest/:splat 302
 /downloads/:app/stable/* https://bucket.2lp.in/downloads/:app/stable/:splat 302
