@@ -5,19 +5,19 @@
 > A precedência é estrita de baixo para cima: cada camada subsequente sobrepõe as definições anteriores.
 
 ### 🌳 Árvore de Herança e Precedência Resolvida:
-1. Camada 1: `https://kollontai.2lp.in/2.1.0/RULES.md`
-2. Camada 2: `https://lilya.2lp.in/2.1.0/RULES.md`
+1. Camada 1: `https://kollontai.2lp.in/2.2.0/RULES.md`
+2. Camada 2: `https://lilya.2lp.in/2.2.0/RULES.md`
 
 ---
 
 <!-- ===================================================================== -->
-<!-- CAMADA 1: https://kollontai.2lp.in/2.1.0/RULES.md -->
+<!-- CAMADA 1: https://kollontai.2lp.in/2.2.0/RULES.md -->
 <!-- ===================================================================== -->
 
 ---
 standard: "kollontai"
 tier: "tactical"
-version: "2.1.0"
+version: "2.2.0"
 locale: "pt-br"
 authority: "Standards Committee"
 published_at: "2026-11-08"
@@ -446,21 +446,21 @@ O catálogo tático do perfil Kollontai estabelece parâmetros objetivos de enge
 ---
 
 <!-- ===================================================================== -->
-<!-- CAMADA 2: https://lilya.2lp.in/2.1.0/RULES.md -->
+<!-- CAMADA 2: https://lilya.2lp.in/2.2.0/RULES.md -->
 <!-- ===================================================================== -->
 
 ---
 standard: "lilya"
 tier: "operational"
-version: "2.1.0"
+version: "2.2.0"
 locale: "pt-br"
 authority: "Standards Committee"
 published_at: "2026-11-08"
 inherits_from:
   standard: "kollontai"
   tier: "tactical"
-  version: "2.1.0"
-  base_url: "https://kollontai.2lp.in/2.1.0/"
+  version: "2.2.0"
+  base_url: "https://kollontai.2lp.in/2.2.0/"
 ---
 
 # Perfil de Implementação GOST: Lilya
