@@ -874,6 +874,41 @@ else
     FAILURES=$((FAILURES + 1))
 fi
 
+# 33. Validação de Blindagem contra Regressão de Versão no Lauda (Ticket #69)
+echo -n "-> 33. Verificando blindagem de versão do Lauda sem diretório irmão... "
+T33_RES=$(python3 -c '
+import sys
+from pathlib import Path
+
+gp_path = Path("scripts/gerar-pratilera.py")
+sys.path.insert(0, "scripts")
+import importlib.util
+spec = importlib.util.spec_from_file_location("gerar_pratilera", str(gp_path))
+mod = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(mod)
+
+# Simular runner hermético de CI onde REPO_ROOT.parent / "lauda" não existe
+mod.REPO_ROOT = Path("/tmp/fake-ci-banca")
+
+ver_lauda = mod.get_project_version("lauda", fallback="0.6.0-dev.169")
+if ver_lauda == "0.5.1":
+    print(f"REGRESSÃO: Lauda regrediu para 0.5.1 em vez de adotar versão canônica ({ver_lauda})")
+    sys.exit(1)
+if not ver_lauda.startswith("0.6.0-dev."):
+    print(f"Versão inválida para Lauda: {ver_lauda}")
+    sys.exit(1)
+
+print("OK")
+sys.exit(0)
+' 2>&1 || true)
+
+if [ "$T33_RES" = "OK" ]; then
+    echo "✅ OK (Lauda não regride para 0.5.1 em ambiente hermético)"
+else
+    echo "❌ FALHOU ($T33_RES)"
+    FAILURES=$((FAILURES + 1))
+fi
+
 echo "================================================================="
 if [ $FAILURES -eq 0 ]; then
     echo "🎉 TODOS OS TESTES DA VITRINE PASSARAM!"
