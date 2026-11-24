@@ -879,6 +879,7 @@ echo -n "-> 33. Verificando blindagem de versão do Lauda sem diretório irmão.
 T33_RES=$(python3 -c '
 import sys
 from pathlib import Path
+import unittest.mock as mock
 
 gp_path = Path("scripts/gerar-pratilera.py")
 sys.path.insert(0, "scripts")
@@ -887,9 +888,8 @@ spec = importlib.util.spec_from_file_location("gerar_pratilera", str(gp_path))
 mod = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(mod)
 
-# Simular runner hermético de CI onde REPO_ROOT.parent / "lauda" não existe
+# Caso 1: Runner hermético de CI com rede (resolução remota)
 mod.REPO_ROOT = Path("/tmp/fake-ci-banca")
-
 ver_lauda = mod.get_project_version("lauda", fallback="0.6.0-dev.169")
 if ver_lauda == "0.5.1":
     print(f"REGRESSÃO: Lauda regrediu para 0.5.1 em vez de adotar versão canônica ({ver_lauda})")
@@ -898,12 +898,30 @@ if not ver_lauda.startswith("0.6.0-dev."):
     print(f"Versão inválida para Lauda: {ver_lauda}")
     sys.exit(1)
 
+# Caso 2 (Mutação): Falha total de rede/offline sem diretório irmão (fallback hermético SemVer)
+with mock.patch("urllib.request.urlopen", side_effect=Exception("Offline")):
+    ver_offline = mod.get_project_version("lauda", fallback="0.6.0-dev.169")
+    if ver_offline == "0.5.1":
+        print(f"REGRESSÃO OFFLINE: Lauda regrediu para 0.5.1 quando offline: {ver_offline}")
+        sys.exit(1)
+    if not ver_offline.startswith("0.6.0-dev."):
+        print(f"Versão offline inválida: {ver_offline}")
+        sys.exit(1)
+
+# Caso 3 (Mutação): parse_semver_sort_key com estabilidade e dev
+k_dev = mod.parse_semver_sort_key("0.6.0-dev.176+hash")
+k_old = mod.parse_semver_sort_key("0.5.1")
+k_stable = mod.parse_semver_sort_key("0.6.0")
+if not (k_stable > k_dev > k_old):
+    print(f"Erro na hierarquia SemVer: stable={k_stable}, dev={k_dev}, old={k_old}")
+    sys.exit(1)
+
 print("OK")
 sys.exit(0)
 ' 2>&1 || true)
 
 if [ "$T33_RES" = "OK" ]; then
-    echo "✅ OK (Lauda não regride para 0.5.1 em ambiente hermético)"
+    echo "✅ OK (Lauda blindado contra regressão e mutações SemVer validadas)"
 else
     echo "❌ FALHOU ($T33_RES)"
     FAILURES=$((FAILURES + 1))
