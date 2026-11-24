@@ -32,5 +32,13 @@ O diagnóstico comprovou que:
 
 ## 4. Critérios de Aceitação
 1. Em ambiente simulado sem o diretório `../lauda`, `get_project_version("lauda")` deve retornar a versão canônica remota ou SemVer maior (ex.: `0.6.0-dev.*`), nunca regredindo para `0.5.1`.
-2. A suíte `./tests/test-pratilera.sh` deve passar com 100% de sucesso (32/32 testes) incluindo a validação de metadados.
+2. A suíte `./tests/test-pratilera.sh` deve passar com 100% de sucesso (33/33 testes) incluindo a validação de metadados.
 3. O catálogo `site/pratilera/index-v1.json` gerado deve conter `in.twolp.lauda` com a versão `0.6.0-dev.*`.
+
+---
+
+## 5. Laudo de Fechamento e Homologação
+- **Status:** Concluído e Aprovado no Quality Gate.
+- **Implementação:** Resolução remota universal via Forgejo e ordenação SemVer no fallback hermético implementadas em `scripts/gerar-pratilera.py`.
+- **Validação:** 33/33 testes em `tests/test-pratilera.sh` e 24/24 checagens no `cccp check --strict` aprovadas com 100% de conformidade.
+
