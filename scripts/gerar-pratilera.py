@@ -360,16 +360,26 @@ def is_prerelease(version_name: str) -> bool:
     v = version_name.lower()
     return any(marker in v for marker in ["-dev", "-alpha", "-beta", "-rc", "+"])
 
+def parse_semver_sort_key(version_str: str) -> tuple:
+    """Chave de ordenação SemVer com suporte a pre-releases -dev."""
+    if not version_str:
+        return (0, 0, 0, -1)
+    m = re.match(r"^(\d+)\.(\d+)\.(\d+)(?:-dev\.([0-9a-zA-Z.]+))?", version_str.strip())
+    if not m:
+        return (0, 0, 0, -1)
+    major, minor, patch, dev = m.groups()
+    dev_num = 999999
+    if dev:
+        dm = re.match(r"^(\d+)", dev)
+        dev_num = int(dm.group(1)) if dm else 0
+    return (int(major), int(minor), int(patch), dev_num)
+
 def get_project_version(project_name: str, fallback: str = "0.2.0") -> str:
     """Tenta ler a versão canônica do CCCP em VERSION do projeto irmão ou remotamente via Forgejo/downloads."""
-    if project_name in ("mandu", "mandu-mobile"):
-        candidates = [
-            REPO_ROOT.parent / "mandu-mobile" / "VERSION",
-        ]
-    else:
-        candidates = [
-            REPO_ROOT.parent / project_name / "VERSION",
-        ]
+    repo_slug = "mandu-mobile" if project_name in ("mandu", "mandu-mobile") else project_name
+    candidates = [
+        REPO_ROOT.parent / repo_slug / "VERSION",
+    ]
 
     # 1. Tentar ler do arquivo VERSION no repositório irmão (ambiente local integrado)
     for candidate in candidates:
@@ -381,28 +391,35 @@ def get_project_version(project_name: str, fallback: str = "0.2.0") -> str:
             except Exception:
                 pass
 
-    # 2. Resolução remota para mandu-mobile (garantindo que o APK não herde versão do CLI mandu de desktop)
-    if project_name in ("mandu", "mandu-mobile"):
-        try:
-            import urllib.request
-            req = urllib.request.Request("https://gambi.2lp.in/api/v1/repos/lumen/mandu-mobile/raw/VERSION", headers={"User-Agent": "Banca-Pratilera-Builder/1.0"})
-            with urllib.request.urlopen(req, timeout=10) as resp:
-                val = resp.read().decode("utf-8").strip()
-                if val:
-                    return val
-        except Exception:
-            pass
-        return fallback
+    # 2. Resolução remota universal via Forgejo (para ambientes herméticos de CI)
+    try:
+        import urllib.request
+        req = urllib.request.Request(
+            f"https://gambi.2lp.in/api/v1/repos/lumen/{repo_slug}/raw/VERSION",
+            headers={"User-Agent": "Banca-Pratilera-Builder/1.0"}
+        )
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            val = resp.read().decode("utf-8").strip()
+            if val and parse_semver_sort_key(val) > (0, 0, 0, -1):
+                return val
+    except Exception:
+        pass
 
     # 3. Resolução hermética: ler do manifesto de downloads da Banca (site/downloads/{project_name}/index.json)
+    # Seleciona dinamicamente a maior versão SemVer entre os canais disponíveis e o fallback do APK
     downloads_manifest = SITE_DIR / "downloads" / project_name / "index.json"
     if downloads_manifest.exists():
         try:
             with open(downloads_manifest, encoding="utf-8") as f:
                 data = json.load(f)
-                latest_ver = data.get("stable_latest") or data.get("nightly_latest")
-                if latest_ver:
-                    return str(latest_ver).strip()
+                stable_ver = (data.get("stable_latest") or "").strip()
+                nightly_ver = (data.get("nightly_latest") or "").strip()
+                candidates_ver = [
+                    v for v in [stable_ver, nightly_ver, fallback]
+                    if v and parse_semver_sort_key(v) > (0, 0, 0, -1)
+                ]
+                if candidates_ver:
+                    return max(candidates_ver, key=parse_semver_sort_key)
         except Exception:
             pass
 
