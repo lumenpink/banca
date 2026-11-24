@@ -38,7 +38,9 @@ O diagnóstico comprovou que:
 ---
 
 ## 5. Laudo de Fechamento e Homologação
-- **Status:** Concluído e Aprovado no Quality Gate.
+- **Status:** Concluído e Aprovado no Quality Gate (Fase 8).
 - **Implementação:** Resolução remota universal via Forgejo e ordenação SemVer no fallback hermético implementadas em `scripts/gerar-pratilera.py`.
 - **Validação:** 33/33 testes em `tests/test-pratilera.sh` e 24/24 checagens no `cccp check --strict` aprovadas com 100% de conformidade.
+- **Data de Homologação:** 2026-11-24
+
 
