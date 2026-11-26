@@ -696,8 +696,8 @@ with open(index_path, encoding="utf-8") as f:
 
 repo = data.get("repo", {})
 addr = repo.get("address")
-if addr != "https://bucket.2lp.in":
-    print("repo.address incorreto: " + str(addr) + ", esperado: https://bucket.2lp.in")
+if addr != "https://bucket.2lp.in/pratilera":
+    print("repo.address incorreto: " + str(addr) + ", esperado: https://bucket.2lp.in/pratilera")
     sys.exit(1)
 
 packages = data.get("packages", {})
@@ -725,7 +725,7 @@ if not redirects_path.exists():
 
 red_text = redirects_path.read_text(encoding="utf-8")
 for exp_apk in expected_apks.values():
-    if "https://bucket.2lp.in/" + exp_apk not in red_text:
+    if "https://bucket.2lp.in/pratilera/" + exp_apk not in red_text:
         print("Regra de redirect para " + exp_apk + " ausente em site/_redirects")
         sys.exit(1)
 

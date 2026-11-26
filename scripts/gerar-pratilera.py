@@ -274,8 +274,8 @@ def resolve_apk_binary(meta: dict) -> Path | None:
             print(f"-> Copiado do projeto irmão para cache: {c.name} -> {cached_apk}")
             return cached_apk
 
-    # 4. Tentar baixar do bucket oficial https://bucket.2lp.in/<apk>
-    remote_url = f"https://bucket.2lp.in/{apk_name}"
+    # 4. Tentar baixar do bucket oficial https://bucket.2lp.in/pratilera/<apk>
+    remote_url = f"https://bucket.2lp.in/pratilera/{apk_name}"
     print(f"-> Buscando APK canônico remoto no bucket: {remote_url}...")
     try:
         import urllib.request
@@ -650,7 +650,7 @@ def build_index_v1():
         "repo": {
             "name": "A Pratilera (Banca 2lp)",
             "description": "Loja e Repositório Autônomo de Aplicativos do Ecossistema 2lp. Fanzines, paredões, correio e ferramentas de calçada.",
-            "address": "https://bucket.2lp.in",
+            "address": "https://bucket.2lp.in/pratilera",
             "icon": "icon.png",
             "timestamp": now_ms,
             "version": 20
@@ -765,12 +765,12 @@ def update_redirects():
         "/repo/*  /pratilera/:splat  301",
         "",
         "# Redirecionamentos de compatibilidade e acesso direto para Cloudflare R2",
-        "/pratilera/lacraia-app.apk https://bucket.2lp.in/lacraia.apk 302",
-        "/pratilera/lacraia.apk     https://bucket.2lp.in/lacraia.apk 302",
-        "/pratilera/simbiotyka.apk  https://bucket.2lp.in/simbiotyka.apk 302",
-        "/pratilera/lauda-latest.apk https://bucket.2lp.in/lauda.apk 302",
-        "/pratilera/lauda.apk       https://bucket.2lp.in/lauda.apk 302",
-        "/pratilera/mocambo.apk     https://bucket.2lp.in/mocambo.apk 302",
+        "/pratilera/lacraia-app.apk https://bucket.2lp.in/pratilera/lacraia.apk 302",
+        "/pratilera/lacraia.apk     https://bucket.2lp.in/pratilera/lacraia.apk 302",
+        "/pratilera/simbiotyka.apk  https://bucket.2lp.in/pratilera/simbiotyka.apk 302",
+        "/pratilera/lauda-latest.apk https://bucket.2lp.in/pratilera/lauda.apk 302",
+        "/pratilera/lauda.apk       https://bucket.2lp.in/pratilera/lauda.apk 302",
+        "/pratilera/mocambo.apk     https://bucket.2lp.in/pratilera/mocambo.apk 302",
         "",
         "# Redirecionamento da vitrine de downloads",
         "/downloads  /downloads/  301",
