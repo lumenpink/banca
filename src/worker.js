@@ -58,13 +58,27 @@ export default {
     }
 
     if (route.kind === "proxy") {
+      const isIndex =
+        route.upstream.endsWith("/index-v1.json") || route.upstream.endsWith("/index-v1.jar");
       const upstreamReq = new Request(route.upstream, {
         method: request.method,
         headers: request.headers,
       });
-      const upstreamRes = await fetch(upstreamReq);
+      const upstreamRes = await fetch(
+        upstreamReq,
+        isIndex ? { cf: { cacheTtl: 0 } } : undefined,
+      );
       if (upstreamRes.status !== 404 || !env?.ASSETS) {
-        return upstreamRes;
+        if (!isIndex) {
+          return upstreamRes;
+        }
+        const headers = new Headers(upstreamRes.headers);
+        headers.set("Cache-Control", "no-store, must-revalidate");
+        return new Response(upstreamRes.body, {
+          status: upstreamRes.status,
+          statusText: upstreamRes.statusText,
+          headers,
+        });
       }
       const assetUrl = new URL(request.url);
       assetUrl.pathname = route.fallbackAssetPath;
