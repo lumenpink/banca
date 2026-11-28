@@ -15,6 +15,11 @@
           "url": "https://bucket.2lp.in/downloads/mandu-server/nightly/mandu-server-0.1.0-dev.26+20261128.e239b61-linux-amd64.tar.gz",
           "binary_url": "https://bucket.2lp.in/downloads/mandu-server/nightly/mandu-server-0.1.0-dev.26+20261128.e239b61-linux-amd64.tar.gz",
           "sha256": "698e714e653f2972ce776ad62a02c37d413e5dbdb1218b5f318ddd24100037b7"
+        },
+        "linux-arm64": {
+          "url": "https://bucket.2lp.in/downloads/mandu-server/nightly/mandu-server-0.1.0-dev.26+20261128.e239b61-linux-arm64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mandu-server/nightly/mandu-server-0.1.0-dev.26+20261128.e239b61-linux-arm64.tar.gz",
+          "sha256": "a85b50d52683e2a3c21e5db330c844b07ae8b31407f1f1381c2e9c504f3a8fc8"
         }
       },
       "tarball": "mandu-server-0.1.0-dev.26+20261128.e239b61-linux-amd64.tar.gz"
