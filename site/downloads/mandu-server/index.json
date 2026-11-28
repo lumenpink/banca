@@ -6,6 +6,20 @@
   },
   "nightlies": [
     {
+      "version": "0.1.0-dev.8+20261128.3647dd9",
+      "url": "https://bucket.2lp.in/downloads/mandu-server/nightly/mandu-server-0.1.0-dev.8+20261128.3647dd9-linux-amd64.tar.gz",
+      "date": "2026-11-28",
+      "sha256": "8ebfdd8a40665f69eed342a7a82d285da1f29bb68e19856ff125c4252bfac3fe",
+      "artifacts": {
+        "linux-amd64": {
+          "url": "https://bucket.2lp.in/downloads/mandu-server/nightly/mandu-server-0.1.0-dev.8+20261128.3647dd9-linux-amd64.tar.gz",
+          "binary_url": "https://bucket.2lp.in/downloads/mandu-server/nightly/mandu-server-0.1.0-dev.8+20261128.3647dd9-linux-amd64.tar.gz",
+          "sha256": "8ebfdd8a40665f69eed342a7a82d285da1f29bb68e19856ff125c4252bfac3fe"
+        }
+      },
+      "tarball": "mandu-server-0.1.0-dev.8+20261128.3647dd9-linux-amd64.tar.gz"
+    },
+    {
       "version": "0.1.0-dev.25+20261120.8c4ea04",
       "url": "https://bucket.2lp.in/downloads/mandu-server/nightly/mandu-server-0.1.0-dev.25+20261120.8c4ea04-linux-amd64.tar.gz",
       "date": "2026-11-20",
@@ -82,5 +96,5 @@
       "tarball": "mandu-server-0.1.0-dev.8+20261108.3647dd9-linux-amd64.tar.gz"
     }
   ],
-  "nightly_latest": "0.1.0-dev.25+20261120.8c4ea04"
+  "nightly_latest": "0.1.0-dev.8+20261128.3647dd9"
 }
